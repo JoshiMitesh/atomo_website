@@ -1,3 +1,5 @@
+
+
 .matter-content {
     display: flex;
     position: relative;
@@ -485,7 +487,7 @@ body {
 
 /* ========== SECOND PAGE HEADINGS, DESCRIPTION, AND TEXT ========== */
 #second-title {
-    font-size: 2.25rem;
+    font-size: 3.25rem;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 16px;
@@ -493,8 +495,8 @@ body {
 }
 
 #second-subtitle {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: 33px;
+    font-weight: 500;
     color: var(--text-dark);
     margin-bottom: 16px;
     line-height: 1.2;
@@ -503,7 +505,7 @@ body {
 }
 
 #second-description {
-    font-size: 1.5rem;
+    font-size: 39px;
     font-weight: 500;
     color: var(--text-dark);
     text-align: left;
@@ -514,7 +516,7 @@ body {
 
 #second-text {
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 600;
     color: #4a5568;
     max-width: 800px;
     text-align: left;
@@ -641,6 +643,7 @@ body {
 
 .box h4 {
     font-size: 1.5rem;
+    width: 31vh;
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 12px;
