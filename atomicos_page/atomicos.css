@@ -782,7 +782,6 @@ body {
 
     .section-description {
         font-size: 1.25rem;
-        margin-top: 20px;
     }
 }
 
@@ -1012,6 +1011,8 @@ body {
 
     .step-box h3 {
         font-size: 1.3rem;
+            margin-top: -14px;
+
     }
 
     .step-box p {
