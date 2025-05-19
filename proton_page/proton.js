@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.warn('Hamburger or navList not found!');
             return;
         }
-
+ 
         hamburger.addEventListener('click', function () {
             navList.classList.toggle('active');
             this.classList.toggle('open');
@@ -533,259 +533,64 @@ document.addEventListener('DOMContentLoaded', () => {
         video.currentTime = video.duration; // Ensure it stays on the last frame
     });
 });
-document.addEventListener('DOMContentLoaded', function () {
-    const featureSlider2 = document.querySelector('.features-slider2');
-    const featureSlides2 = document.querySelectorAll('.feature-slide2');
-    const prevFeatureBtn2 = document.querySelector('#second-page .prev-feature');
-    const nextFeatureBtn2 = document.querySelector('#second-page .next-feature');
-    const secondPageSection = document.querySelector('#second-page');
 
-    let currentFeatureIndex2 = 0;
-    const autoSlideInterval2 = 10000; // 10 seconds interval for regular sliding
-    const restartDelay = 1000; // 1 second delay for restart
-    let autoSlideTimer2 = null;
-    let isAutoSliding2 = false;
-
-    function updateSlidesToShow2() {
-        if (window.innerWidth <= 480) return 1;
-        if (window.innerWidth <= 768) return 2;
-        if (window.innerWidth <= 1024) return 3;
-        return 4;
-    }
-
-    function updateFeatureSlider2() {
-        const slidesToShow = updateSlidesToShow2();
-        const slideWidth = featureSlides2[0].offsetWidth + 30; // Width + margin
-        const translateX = -currentFeatureIndex2 * slideWidth;
-        featureSlider2.style.transform = `translateX(${translateX}px)`;
-
-        // Disable buttons at boundaries
-        prevFeatureBtn2.disabled = currentFeatureIndex2 === 0;
-        nextFeatureBtn2.disabled = currentFeatureIndex2 >= featureSlides2.length - slidesToShow;
-    }
-
-    function autoSlide2() {
-        const slidesToShow = updateSlidesToShow2();
-        // Check if the current index is at the last visible slide
-        if (currentFeatureIndex2 >= featureSlides2.length - slidesToShow) {
-            // Wait for 1 second before restarting
-            setTimeout(() => {
-                currentFeatureIndex2 = 0; // Reset to the first slide
-                updateFeatureSlider2();
-                // Resume with the normal 10-second interval if still in view
-                if (isAutoSliding2) {
-                    autoSlideTimer2 = setTimeout(autoSlide2, autoSlideInterval2);
-                }
-            }, restartDelay);
-        } else {
-            // Move to the next slide
-            currentFeatureIndex2++;
-            updateFeatureSlider2();
-            // Continue with the normal 10-second interval if still in view
-            if (isAutoSliding2) {
-                autoSlideTimer2 = setTimeout(autoSlide2, autoSlideInterval2);
-            }
-        }
-    }
-
-    // Intersection Observer to detect when the second page is in view
-    const observer2 = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    // Start auto-sliding when the section comes into view
-                    if (!isAutoSliding2) {
-                        isAutoSliding2 = true;
-                        autoSlideTimer2 = setTimeout(autoSlide2, autoSlideInterval2);
-                    }
-                } else {
-                    // Stop auto-sliding when the section is out of view
-                    if (isAutoSliding2) {
-                        isAutoSliding2 = false;
-                        clearTimeout(autoSlideTimer2);
-                    }
-                }
-            });
-        },
-        {
-            threshold: 0.3, // Start when 30% of the section is visible
-        }
-    );
-
-    // Start observing the second page section
-    observer2.observe(secondPageSection);
-
-    // Pause auto-sliding on button click and resume after a delay
-    prevFeatureBtn2.addEventListener('click', () => {
-        clearTimeout(autoSlideTimer2); // Pause auto-sliding
-        if (currentFeatureIndex2 > 0) {
-            currentFeatureIndex2--; // Move one slide backward
-            updateFeatureSlider2();
-        }
-        // Resume auto-sliding after 10 seconds if the section is still in view
-        if (isAutoSliding2) {
-            autoSlideTimer2 = setTimeout(autoSlide2, autoSlideInterval2);
-        }
-    });
-
-    nextFeatureBtn2.addEventListener('click', () => {
-        clearTimeout(autoSlideTimer2); // Pause auto-sliding
-        const slidesToShow = updateSlidesToShow2();
-        if (currentFeatureIndex2 < featureSlides2.length - slidesToShow) {
-            currentFeatureIndex2++; // Move one slide forward
-            updateFeatureSlider2();
-            // Resume with the normal 10-second interval if still in view
-            if (isAutoSliding2) {
-                autoSlideTimer2 = setTimeout(autoSlide2, autoSlideInterval2);
-            }
-        } else {
-            // At the last slide, wait 1 second before restarting
-            setTimeout(() => {
-                currentFeatureIndex2 = 0; // Reset to the first slide
-                updateFeatureSlider2();
-                // Resume with the normal 10-second interval if still in view
-                if (isAutoSliding2) {
-                    autoSlideTimer2 = setTimeout(autoSlide2, autoSlideInterval2);
-                }
-            }, restartDelay);
-        }
-    });
-
-    // Responsive handling for the second page slider
-    window.addEventListener('resize', () => {
-        updateFeatureSlider2();
-    });
-
-    // Initialize the second page slider
-    updateFeatureSlider2();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
+// Add this to your electron.js file
+document.addEventListener('DOMContentLoaded', function() {
+    // Feature Slider Functionality
     const featureSlider = document.querySelector('.features-slider');
     const featureSlides = document.querySelectorAll('.feature-slide');
-    const prevFeatureBtn = document.querySelector('#fourth-page .prev-feature');
-    const nextFeatureBtn = document.querySelector('#fourth-page .next-feature');
-    const fourthPageSection = document.querySelector('#fourth-page');
-
+    const prevFeatureBtn = document.querySelector('.prev-feature');
+    const nextFeatureBtn = document.querySelector('.next-feature');
+    
     let currentFeatureIndex = 0;
-    const autoSlideInterval = 10000; // 10 seconds interval for regular sliding
-    const restartDelay = 1000; // 1 second delay for restart
-    let autoSlideTimer = null;
-    let isAutoSliding = false;
-
-    function updateSlidesToShow() {
-        if (window.innerWidth <= 480) return 1;
-        if (window.innerWidth <= 768) return 2;
-        if (window.innerWidth <= 1024) return 3;
-        return 4;
-    }
-
+    const slidesToShow = 4; // Default number of slides to show
+    
     function updateFeatureSlider() {
-        const slidesToShow = updateSlidesToShow();
-        const slideWidth = featureSlides[0].offsetWidth + 30; // Width + margin
+        const slideWidth = featureSlides[0].offsetWidth + 30; // width + margin
         const translateX = -currentFeatureIndex * slideWidth;
         featureSlider.style.transform = `translateX(${translateX}px)`;
-
+        
         // Disable buttons at boundaries
         prevFeatureBtn.disabled = currentFeatureIndex === 0;
         nextFeatureBtn.disabled = currentFeatureIndex >= featureSlides.length - slidesToShow;
     }
-
-    function autoSlide() {
-        const slidesToShow = updateSlidesToShow();
-        // Check if the current index is at the last visible slide
-        if (currentFeatureIndex >= featureSlides.length - slidesToShow) {
-            // Wait for 1 second before restarting
-            setTimeout(() => {
-                currentFeatureIndex = 0; // Reset to the first slide
-                updateFeatureSlider();
-                // Resume with the normal 10-second interval if still in view
-                if (isAutoSliding) {
-                    autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-                }
-            }, restartDelay);
-        } else {
-            // Move to the next slide
+    
+    prevFeatureBtn.addEventListener('click', () => {
+        if (currentFeatureIndex > 0) {
+            currentFeatureIndex--;
+            updateFeatureSlider();
+        }
+    });
+    
+    nextFeatureBtn.addEventListener('click', () => {
+        if (currentFeatureIndex < featureSlides.length - slidesToShow) {
             currentFeatureIndex++;
             updateFeatureSlider();
-            // Continue with the normal 10-second interval if still in view
-            if (isAutoSliding) {
-                autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-            }
+        }
+    });
+    
+    // Handle responsive slides count
+    function updateSlidesToShow() {
+        if (window.innerWidth <= 480) {
+            return 1;
+        } else if (window.innerWidth <= 768) {
+            return 2;
+        } else if (window.innerWidth <= 1024) {
+            return 3;
+        } else {
+            return 4;
         }
     }
-
-    // Intersection Observer to detect when the fourth page is in view
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    // Start auto-sliding when the section comes into view
-                    if (!isAutoSliding) {
-                        isAutoSliding = true;
-                        autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-                    }
-                } else {
-                    // Stop auto-sliding when the section is out of view
-                    if (isAutoSliding) {
-                        isAutoSliding = false;
-                        clearTimeout(autoSlideTimer);
-                    }
-                }
-            });
-        },
-        {
-            threshold: 0.3, // Start when 30% of the section is visible
-        }
-    );
-
-    // Start observing the fourth page section
-    observer.observe(fourthPageSection);
-
-    // Pause auto-sliding on button click and resume after a delay
-    prevFeatureBtn.addEventListener('click', () => {
-        clearTimeout(autoSlideTimer); // Pause auto-sliding
-        if (currentFeatureIndex > 0) {
-            currentFeatureIndex--; // Move one slide backward
-            updateFeatureSlider();
-        }
-        // Resume auto-sliding after 10 seconds if the section is still in view
-        if (isAutoSliding) {
-            autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-        }
-    });
-
-    nextFeatureBtn.addEventListener('click', () => {
-        clearTimeout(autoSlideTimer); // Pause auto-sliding
-        const slidesToShow = updateSlidesToShow();
-        if (currentFeatureIndex < featureSlides.length - slidesToShow) {
-            currentFeatureIndex++; // Move one slide forward
-            updateFeatureSlider();
-            // Resume with the normal 10-second interval if still in view
-            if (isAutoSliding) {
-                autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-            }
-        } else {
-            // At the last slide, wait 1 second before restarting
-            setTimeout(() => {
-                currentFeatureIndex = 0; // Reset to the first slide
-                updateFeatureSlider();
-                // Resume with the normal 10-second interval if still in view
-                if (isAutoSliding) {
-                    autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-                }
-            }, restartDelay);
-        }
-    });
-
-    // Responsive handling for the fourth page slider
+    
     window.addEventListener('resize', () => {
+        slidesToShow = updateSlidesToShow();
         updateFeatureSlider();
     });
-
-    // Initialize the fourth page slider
+    
+    // Initialize
     updateFeatureSlider();
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const buyButtons = document.querySelectorAll('.buy-button');
