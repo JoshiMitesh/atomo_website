@@ -7,6 +7,11 @@
     <title>ATOMO</title>
     <link rel="icon" type="image/png" href="/assets/mainfavicon.ico">
     <link rel="stylesheet" href="atomicos.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -199,7 +204,7 @@
                         <img src="/atomicos_page/power.svg" alt="Power Icon" class="step-icon">
                         <h3>Power</h3>
                     </div>
-                    <p>Connect your APU to a stable 5V 3A power supply using a USB-C input Ensure the power source is clean and regulated to avoid boot or performance issues Proper power delivery is essential for stable operation, especially under load.</p>
+                    <p>Connect your APU to a stable 5V 3A USB-C power supply with a clean, regulated source for optimal performance and stability.</p>
                     <p class="para">1.</p>
                 </div>
                 <div class="step-box">
@@ -207,15 +212,15 @@
                         <img src="/atomicos_page/boot.svg" alt="Boot Icon" class="step-icon">
                         <h3>Boot</h3>
                     </div>
-                    <p>On first startup, AtomicOS initializes all core services and hardware drivers First Boot time on entry-level boards may take up to 30 seconds - faster on higher-end models Subsequent boots are significantly faster due to streamlined initialization.</p>
+                    <p>On first startup, AtomicOS initializes core services and drivers, with boot time up to 30 seconds on entry-level boards, faster on higher-end models, and quicker subsequent boots.</p>
                     <p class="para">2.</p>
                 </div>
                 <div class="step-box">
                     <div class="step-header">
-                        <img src="/atomicos_page/login.svg" alt="Login Icon" class="step-icon">
+                        <img src="/atomicos_page/login.svg" alt="Log in Icon" class="step-icon">
                         <h3>Login</h3>
                     </div>
-                    <p>Once booted, access the terminal through Network console Default credentials: user: XXXX | password: XXXXX (Provided via Email) You’re now ready to interact with SSH.</p>
+                    <p>After booting, access the terminal via Network console with the default credentials (user: XXXX, password: XXXXX) and start interacting with SSH.</p>
                     <p class="para">3.</p>
                 </div>
                 <div class="step-box">
@@ -223,7 +228,7 @@
                         <img src="/atomicos_page/configure.svg" alt="Configure Icon" class="step-icon">
                         <h3>Configure</h3>
                     </div>
-                    <p>Use the atomicconfig tool to set up Wi-Fi, hostname, and essential system settings Modular configuration files are located in /etc/atomic/, designed for clarity and control Initial setup can be completed in minutes with guided prompts and auto-detection.</p>
+                    <p>Use the atomicconfig tool to quickly set up Wi-Fi, hostname, and system settings, with modular configuration files in /etc/atomic/ for easy control and auto-detection.</p>
                     <p class="para">4.</p>
                 </div>
             </div>
@@ -288,6 +293,58 @@
     </section>
 
     <script src="atomicos.js"></script>
+   <script>
+// Enhanced smooth scrolling for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (target) {
+      const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 60; // Adjust for navbar height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Add subtle fade-in effect as elements appear
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.box, .step-box, .section-text-container, .section-title').forEach(el => {
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+// Debounce scroll events to ensure smooth scrolling
+let isScrolling = false;
+window.addEventListener('scroll', () => {
+  if (!isScrolling) {
+    isScrolling = true;
+    requestAnimationFrame(() => {
+      // Ensure smooth scrolling is maintained
+      document.documentElement.style.scrollBehavior = 'smooth';
+      isScrolling = false;
+    });
+  }
+});
+
+// Ensure smooth scrolling on touch devices
+document.addEventListener('touchmove', () => {
+  document.documentElement.style.scrollBehavior = 'smooth';
+}, { passive: true });
+</script>
 </body>
 
 </html>
