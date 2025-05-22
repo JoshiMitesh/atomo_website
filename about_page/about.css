@@ -820,67 +820,71 @@ body {
 }
 
 .headingg {
-    font-size: 38px;
+    font-size: 67.85px;
     padding-left: 2vh;
+        margin-top: 0vh;
+
 }
 
-/* ========== THIRD TO EIGHTH PAGES ========== */
+/* Ensure no horizontal overflow for the entire page */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Third, Fourth, and Fifth Pages */
 #third-page,
 #fourth-page,
-#fifth-page,
-#sixth-page,
-#seventh-page,
-#eighth-page {
+#fifth-page {
     position: relative;
     min-height: 40vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
+    padding: 13px 20px;
     box-sizing: border-box;
     margin-bottom: 10px;
+    background-color: #ffffff; /* Match the white background from the image */
 }
 
 .section-content {
     width: 100%;
-    max-width: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-dark);
-    padding-right: 141vh;
+    color: #181818; /* Dark color for the heading, matching the image */
     margin-bottom: 24px;
-    text-align: center;
+    text-align: left; /* Align left to match the image */
     animation: fadeInUp 1s ease-out;
 }
 
 .section-text-container {
-    background-color: rgb(238, 238, 238);
     border-radius: 12px;
     padding: 32px;
-    display: flex;
-    flex-direction: row;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.05);
     min-height: 28vh;
-    width: 96%;
-    text-align: center;
+    width: 100%; /* Full width within the max-width of section-content */
+    text-align: left; /* Align text to the left as in the image */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .section-description {
-    font-size: 29px;
+    font-size: 44.5px;
     font-weight: 400;
-    color: #4a5568;
+    color: #4a5568; /* Match the text color from the image */
     line-height: 1.7;
 }
 
+/* Responsive adjustments */
 @media (max-width: 1024px) {
     .section-title {
         font-size: 2.25rem;
@@ -888,29 +892,24 @@ body {
 
     .section-text-container {
         padding: 24px;
-        height: 0vh;
         min-height: 25vh;
     }
 
     .section-description {
         font-size: 1.75rem;
-        margin-top: 40px;
     }
 }
 
 @media (max-width: 768px) {
-
     #third-page,
     #fourth-page,
-    #fifth-page,
-    #sixth-page,
-    #seventh-page,
-    #eighth-page {
+    #fifth-page {
         padding: 32px 16px;
     }
 
     .section-title {
         font-size: 2rem;
+        text-align: center; /* Center on smaller screens for better readability */
     }
 
     .section-text-container {
@@ -920,7 +919,7 @@ body {
 
     .section-description {
         font-size: 1.5rem;
-        margin-top: -36px;
+        text-align: center; /* Center text on smaller screens */
     }
 }
 
@@ -931,13 +930,23 @@ body {
 
     .section-text-container {
         padding: 16px;
-        display: flex;
-        flex-direction: column;
         min-height: 35vh;
     }
 
     .section-description {
         font-size: 1.25rem;
+    }
+}
+
+/* Animation for smooth fade-in effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
