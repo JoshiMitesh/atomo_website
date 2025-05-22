@@ -235,7 +235,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 70px;
     flex-direction: column;
 
 }
@@ -258,11 +258,176 @@ body {
 
 }
 
-.assisted-logo {
-    width: auto;
-    object-fit: contain;
+@media (max-width: 1600px) {
+
+    .assisted-logos
+ {
+        gap: 7vw;
+        max-width: 95vw;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Responsive adjustments for #first-page */
+@media (max-width: 1200px) {
+    #first-page {
+        padding: 16px 30px;
+    }
+
+    .about-title {
+        font-size: 60px;
+    }
+
+    .about-subtitle {
+        font-size: 35px;
+        padding-bottom: 6vh;
+    }
+
+    .about-description {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    .assisted-title {
+        font-size: 55px;
+    }
+
+    .assisted-logos {
+        gap: 7vw;
+        max-width: 90vw;
+    }
+
+
 }
 
+@media (max-width: 1020px) {
+    #first-page {
+        padding: 14px 20px;
+    }
+
+    .header-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .about-title {
+                padding-top: 2vh;
+
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .about-subtitle {
+        font-size: 30px;
+        text-align: center;
+        padding-bottom: 4vh;
+        margin-top: 0;
+    }
+
+    .about-description {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .assisted-title {
+        font-size: 45px;
+    }
+
+    .assisted-logos {
+       gap: 7vw;
+        max-width: 95vw;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+}
+
+@media (max-width: 768px) {
+    #first-page {
+        padding: 40px 16px;
+;
+    }
+
+    .about-container {
+        padding: 0 15px;
+    }
+
+    .about-title {
+        font-size: 40px;
+    }
+
+    .about-subtitle {
+        font-size: 25px;
+        padding-bottom: 3vh;
+    }
+
+    .about-description {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .assisted-title {
+        font-size: 35px;
+    }
+
+    .assisted-logos {
+        gap: 4vw;
+        max-width: 95vw;
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+    #first-page {
+        padding: 10px 12px;
+    }
+
+    .about-container {
+        padding: 32px 10px;
+    }
+
+    .header-row {
+        gap: 10px;
+    }
+
+    .about-title {
+        font-size: 32px;
+    }
+
+    .about-subtitle {
+        font-size: 20px;
+        padding-bottom: 2vh;
+    }
+
+    .about-description {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 30px;
+    }
+
+    .about-divider {
+        margin: 30px 0;
+    }
+
+    .assisted-title {
+        font-size: 28px;
+    }
+
+    .assisted-logos {
+        gap: 21vw;
+        max-width: 100%;
+    }
+
+    .assisted-logo {
+        max-width:126%;
+    }
+}
 
 
 /* Existing styles for other sections remain unchanged */
@@ -850,6 +1015,7 @@ body {
 }
 
 .section-content {
+   
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
@@ -870,7 +1036,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.05);
     min-height: 28vh;
-    width: 100%; /* Full width within the max-width of section-content */
+    width: 84%;
     text-align: left; /* Align text to the left as in the image */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 0 auto;
@@ -880,6 +1046,7 @@ body {
 .section-description {
     font-size: 44.5px;
     font-weight: 400;
+    
     color: #4a5568; /* Match the text color from the image */
     line-height: 1.7;
 }
@@ -921,6 +1088,15 @@ body {
         font-size: 1.5rem;
         text-align: center; /* Center text on smaller screens */
     }
+
+    .section-content {
+        border-radius: 12px;
+        width: 80%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    margin: 0 auto;
+    padding: 0 20px;
+}
 }
 
 @media (max-width: 480px) {
@@ -936,6 +1112,10 @@ body {
     .section-description {
         font-size: 1.25rem;
     }
+
+    .headingg {
+    font-size: 31.85px;
+}
 }
 
 /* Animation for smooth fade-in effect */
@@ -1558,7 +1738,7 @@ body {
     }
 
     .section-description {
-        font-size: 1rem;
+        font-size: 2rem;
     }
 
     .step-box {
@@ -1679,15 +1859,6 @@ body {
 
     }
 
-
-
-    .section-description {
-        font-size: 0.95rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        padding: 24px;
-        border-radius: 12px;
-    }
 
     .steps-container {
         flex-direction: column;
