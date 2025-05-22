@@ -203,11 +203,13 @@ body {
 }
 
 .about-subtitle {
-    font-size: 40px;
+        font-size: 40px;
     font-weight: 400;
     color: #181818;
     line-height: 1.3;
+    margin-top: -12vh;
     text-align: right;
+    padding-bottom: 8vh;
 }
 
 .about-content {
@@ -261,111 +263,7 @@ body {
     object-fit: contain;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1200px) {
-    .about-title {
-        font-size: 42px;
-    }
 
-    .about-subtitle {
-        font-size: 22px;
-    }
-
-    .about-description {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 992px) {
-    #first-page {
-        padding: 60px 30px;
-    }
-
-    .about-title {
-        font-size: 36px;
-    }
-
-    .about-subtitle {
-        font-size: 20px;
-    }
-
-    .about-description {
-        font-size: 15px;
-        margin-bottom: 30px;
-    }
-
-    .about-divider {
-        margin: 30px 0;
-    }
-}
-
-@media (max-width: 768px) {
-    #first-page {
-        padding: 50px 25px;
-        min-height: auto;
-    }
-
-    .header-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .about-title {
-        font-size: 32px;
-        text-align: left;
-    }
-
-    .about-subtitle {
-        font-size: 18px;
-        text-align: left;
-    }
-
-    .about-description {
-        font-size: 14px;
-        margin-bottom: 25px;
-    }
-
-    .about-divider {
-        margin: 25px 0;
-    }
-
-    .assisted-by {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    #first-page {
-        padding: 40px 20px;
-    }
-
-    .about-title {
-        font-size: 28px;
-    }
-
-    .about-subtitle {
-        font-size: 16px;
-    }
-
-    .about-description {
-        font-size: 13px;
-        margin-bottom: 20px;
-    }
-
-    .about-divider {
-        margin: 20px 0;
-    }
-
-    .assisted-logos {
-        gap: 15px;
-    }
-
-    .assisted-logo {
-        height: 25px;
-    }
-}
 
 /* Existing styles for other sections remain unchanged */
 /* Include the rest of your CSS here to ensure the file is complete */
@@ -934,7 +832,7 @@ body {
 #seventh-page,
 #eighth-page {
     position: relative;
-    min-height: 62vh;
+    min-height: 40vh;
     width: 100%;
     display: flex;
     justify-content: center;
