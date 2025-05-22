@@ -471,21 +471,11 @@ body {
 }
 
 .slider-container {
-    position: static;
-    height: 100%;
+    position: relative;
     width: 100%;
-    /* margin: -34px auto; */
+    overflow: hidden;
     margin-top: 34px;
-    overflow: hidden;
 }
-
-.slider-container1 {
-    position: static;
-    margin: 0 auto;
-    top: 12px;
-    overflow: hidden;
-}
-
 
 .slider {
     display: flex;
@@ -493,21 +483,25 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
-/* Add these styles to your CSS */
+.slide {
+    flex: 0 0 25%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 97%;
+    height: auto;
+    border-radius: 11px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .slider-controls-container {
     width: 96%;
     display: flex;
     justify-content: flex-end;
     padding-right: 20px;
     margin-top: 2%;
-}
-
-.slider-controls-container1 {
-    width: 96%;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 20px;
-    margin-top: 0%;
 }
 
 .slider-controls {
@@ -534,6 +528,55 @@ body {
     color: #fff;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .slide {
+        flex: 0 0 33.33%;
+    }
+     .devices-title {
+    font-size: 44px;
+    padding-left: 30px;
+}
+}
+
+@media (max-width: 900px) {
+    .slide {
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        margin-top: 28%;
+    }
+}
+
+@media (max-width: 600px) {
+    .slide {
+        flex: 0 0 100%;
+    }
+    
+    .slider-controls-container {
+        margin-top: -4%;
+    }
+    
+    .round-button {
+        width: 50px;
+        height: 50px;
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+    .slider-controls {
+        padding-bottom: 1vh;
+    }
+    
+    .slider-container {
+        margin-top: 34px;
+    }
+}
 .headingg {
    padding-left: 3vh;
    font-size: 3rem;
@@ -686,109 +729,157 @@ width: 6.66vw;
     line-height: 1.6;
 }
 
-/* Responsive Adjustments for Third Page */
-@media (max-width: 1180px) {
+
+
+/* ========== THIRD PAGE RESPONSIVE ADJUSTMENTS ========== */
+@media (max-width: 1600px) {
+    .values-container {
+        width: 100%;
+    }
+    
     .values-title {
-        font-size: 2rem;
+        width: 100%;
+        padding: 0 20px;
     }
+}
 
+@media (max-width: 1400px) {
     .values-grid {
-        gap: 20px;
+        height: auto;
     }
-
+    
     .value-card {
-        padding: 20px;
+        height: auto;
+        min-height: 400px;
     }
+}
 
-    .value-card-title {
-        font-size: 1.3rem;
+@media (max-width: 1200px) {
+    .value-icon img {
+        width: 5vw;
+        height: 8vh;
     }
+}
 
-    .value-card-description {
-        font-size: 0.95rem;
+@media (max-width: 992px) {
+    #third-page {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+    
+    .value-card {
+        min-height: 350px;
     }
 }
 
 @media (max-width: 768px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        height: auto;
+    }
+    
+    .value-card {
+        width: 100%;
+        min-height: 300px;
+    }
+    
+    .value-icon img {
+        width: 7vw;
+        height: 10vh;
+    }
+}
+
+@media (max-width: 576px) {
     #third-page {
         padding: 40px 15px;
     }
-
+    
     .values-title {
-        font-size: 1.8rem;
+        font-size: 50px;
+        margin-bottom: 30px;
     }
-
-    .values-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .value-card {
-        padding: 20px;
-    }
-
+    
     .value-card-title {
-        font-size: 1.3rem;
+        font-size: 30px;
     }
-
+    
     .value-card-description {
-        font-size: 0.95rem;
+        font-size: 22px;
+    }
+}
+
+/* Add to your existing CSS */
+.form-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.form-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #2b6cb0;
+    cursor: pointer;
+}
+
+.form-checkbox-group label {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+/* Adjust existing recaptcha container margin */
+.recaptcha-container {
+    margin: 20px 0; /* Changed from auto to maintain alignment */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-checkbox-group {
+        margin: 15px 0;
+    }
+    
+    .form-checkbox-group label {
+        font-size: 14px;
+    }
+    
+    .recaptcha-container {
+        margin: 15px 0;
     }
 }
 
 @media (max-width: 480px) {
-    #third-page {
-        padding: 30px 10px;
-    }
-
     .values-title {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
+        font-size: 17px;
     }
-
-    .values-grid {
-        gap: 12px;
-    }
-
+    
     .value-card {
-        padding: 16px;
+        min-height: 250px;
+        padding: 20px;
     }
-
+    
     .value-card-title {
-        font-size: 1.2rem;
+        font-size: 26px;
     }
-
+    
     .value-card-description {
-        font-size: 0.9rem;
+        font-size: 18px;
     }
-
+    
     .value-icon img {
-        width: 40px;
-        height: 40px;
+        width: 10vw;
+        height: 8vh;
     }
 }
 
-/* ========== FOURTH PAGE (FEATURES SLIDER) ========== */
+/* ========== FOURTH PAGE (CONTACT FORM) RESPONSIVE ========== */
 #fourth-page {
     position: relative;
-    height: 100vh;
-    min-height: 500px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    background-color: rgb(185, 166, 166);
-}
-
-/* ========== FOURTH PAGE (CONTACT FORM) ========== */
-#fourth-page {
-    position: relative;
-    height: auto;
     min-height: 80vh;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -798,9 +889,10 @@ width: 6.66vw;
 }
 
 .contact-form-container {
+    width: 108.26vw;
     max-width: 1500px;
-    height: 77vh;
-width: 108.26vw;
+    height: auto; /* Changed from fixed height */
+    min-height: 64vh;
     margin: 0 auto;
     padding: 40px;
     background-color: #fff;
@@ -810,25 +902,28 @@ width: 108.26vw;
 
 .form-header {
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .follow-text {
-    font-size: 1rem;
+    font-size: 1rem; /* Maintain your exact size */
     color: #666;
     margin-bottom: 8px;
 }
 
 .form-title {
-    font-size: 48.15px;
+    font-size: 48.15px; /* Maintain your exact size */
     font-weight: 600;
     color: #181818;
     margin: 0 0 8px 0;
+    line-height: 1.2;
 }
 
 .form-subtitle {
-    font-size: 27.52px;
+    font-size: 27.52px; /* Maintain your exact size */
     color: #666;
     margin: 0;
+    line-height: 1.3;
 }
 
 .contact-form {
@@ -839,181 +934,138 @@ width: 108.26vw;
 
 .form-row {
     display: flex;
-gap: 32px;
+    flex-wrap: wrap;
+    gap: 32px;
     width: 100%;
 }
 
 .form-group {
     flex: 1;
+    min-width: 300px; /* Adjusted for responsiveness */
     display: flex;
     flex-direction: column;
 }
 
 .form-group label {
-    font-size: 24.76px;
+    font-size: 24.76px; /* Maintain your exact size */
     color: #333;
     margin-bottom: 8px;
     font-weight: 500;
 }
 
 .form-group input {
-    height: 60px;
+    height: 60px; /* Maintain your exact size */
     padding: 12px 16px;
     border: 1px solid #ddd;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 1rem; /* Maintain your exact size */
     background-color: #f9f9f9;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
-.form-group input:focus {
-    outline: none;
-    border-color: #2b6cb0;
-    background-color: #fff;
-    box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.1);
-}
-
-.form-checkbox {
+.recaptcha-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 8px;
-}
-
-.form-checkbox input {
-    width: 18px;
-    height: 18px;
-    accent-color: #2b6cb0;
-}
-
-.form-checkbox label {
-    font-size: 0.95rem;
-    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    width: fit-content;
+    margin: 0 auto; /* Centered */
+    font-family: 'Inter', sans-serif;
 }
 
 .submit-button {
-    height: 5.81vh;
-width: 14.47vw;
+    height: auto; /* More flexible */
+    width: auto; /* More flexible */
+    min-width: 14.47vw; /* Maintain your ratio */
     padding: 14px 24px;
     background-color: #EAE9E9;
     color: #000000;
     border: none;
-border-radius: 46px;
-    font-size: 1rem;
+    border-radius: 46px;
+    font-size: 1rem; /* Maintain your exact size */
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 10px;
-        margin-left: 59vh;
-
+    margin: 30px auto 0; /* Centered */
+    display: block;
 }
 
-.submit-button:hover {
-    background-color: #1a4971;
+/* Responsive adjustments (only layout, no font-size changes) */
+@media (max-width: 1400px) {
+    .contact-form-container {
+        width: 95vw;
+    }
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .form-row {
-        flex-direction: column;
-        gap: 16px;
+@media (max-width: 1200px) {
+    .contact-form-container {
+        width: 100%;
+        padding: 40px 30px;
+    }
+    
+    .form-group {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 992px) {
+    #fourth-page {
+        padding: 60px 20px;
     }
     
     .contact-form-container {
-        padding: 30px 20px;
+        padding: 40px;
     }
     
-    .form-title {
-        font-size: 2rem;
+    .form-row {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 30px;
     }
     
-    .form-subtitle {
-        font-size: 1rem;
+    .form-group {
+        min-width: 100%;
+    }
+    
+    .recaptcha-container {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .submit-button {
+        min-width: 200px;
+        width: 100%;
+        max-width: 300px;
     }
 }
 
 @media (max-width: 480px) {
     #fourth-page {
-        padding: 60px 15px;
+        padding: 40px 15px;
     }
     
     .contact-form-container {
-        padding: 25px 15px;
+        padding: 25px 20px;
     }
     
-    .form-title {
-        font-size: 1.8rem;
+    .form-header {
+        margin-bottom: 30px;
     }
     
-    .follow-text {
-        font-size: 0.9rem;
+    .form-title,
+    .form-subtitle {
+        text-align: center;
     }
 }
-
-/* reCAPTCHA Styles */
-.recaptcha-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 16px;
-    width: fit-content;
-    margin-left: 64vh;
-  font-family: 'Inter', sans-serif;
-}
-
-.recaptcha-checkbox {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.recaptcha-checkbox input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #2b6cb0;
-  cursor: pointer;
-}
-
-.recaptcha-checkbox label {
-  font-size: 14px;
-  color: #333;
-  cursor: pointer;
-}
-
-.recaptcha-branding {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 10px;
-  color: #555;
-}
-
-.recaptcha-branding span:first-child {
-  font-weight: 500;
-}
-
-.recaptcha-links {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.recaptcha-links a {
-  color: #2b6cb0;
-  text-decoration: none;
-}
-
-.recaptcha-links a:hover {
-  text-decoration: underline;
-}
-
-.recaptcha-links span {
-  color: #777;
-}
-
 /* ========== SIXTH PAGE (FOOTER) ========== */
 #sixth-page {
     width: 100%;
@@ -1200,11 +1252,11 @@ border-radius: 46px;
     }
 
     #third-page {
-        height:114vh;
+        height:auto;
     }
 
     #fourth-page {
-        height: 58vh;
+        height: auto;
     }
 
     #sixth-page {
@@ -1302,7 +1354,6 @@ border-radius: 46px;
         display: flex;
         justify-content: flex-end;
         padding-right: 20px;
-        margin-top: 28%;
     }
 
 
@@ -1609,9 +1660,12 @@ border-radius: 46px;
 
     #first-page {
         padding: 50px 5px 5px;
-        height: 73vh;
+        height: auto;
     }
 
+    .devices-title{
+        font-size: 23px;
+    }
 
     .slide {
         flex: 0 0 100%;
@@ -1713,7 +1767,7 @@ border-radius: 46px;
 }
 
 #fourth-page {
-    height: 63vh;
+    height: auto;
 }
 
 }
@@ -1721,7 +1775,7 @@ border-radius: 46px;
 /* Second Page Header Styles */
 #second-page {
     position: relative;
-    padding-top: 0px;
+    padding-top: 25px;
     /* Creates space for the header */
 }
 
