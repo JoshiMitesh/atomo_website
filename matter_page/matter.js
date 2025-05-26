@@ -543,3 +543,100 @@ document.addEventListener('DOMContentLoaded', () => {
         video.currentTime = video.duration; // Ensure it stays on the last frame
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.querySelector('#navbar ul');
+    
+    if (hamburger && navList) {
+        hamburger.addEventListener('click', function() {
+            navList.classList.toggle('active');
+            this.classList.toggle('open');
+        });
+    }
+
+    // Initialize slider for third page
+    const sliderContainer = document.querySelector('.slider-container1');
+    if (sliderContainer) {
+        const slider = sliderContainer.querySelector('.slider');
+        const slides = sliderContainer.querySelectorAll('.slide');
+        const prevBtn = sliderContainer.querySelector('.round-button:first-child');
+        const nextBtn = sliderContainer.querySelector('.round-button:last-child');
+        
+        if (slider && slides.length > 0) {
+            let currentIndex = 0;
+            const slideCount = slides.length;
+            const visibleSlides = getVisibleSlides();
+            
+            function getVisibleSlides() {
+                const width = window.innerWidth;
+                if (width <= 480) return 1;
+                if (width <= 768) return 2;
+                if (width <= 1024) return 3;
+                return 4;
+            }
+            
+            function updateSlider() {
+                const slideWidth = 100 / visibleSlides;
+                const offset = -currentIndex * slideWidth;
+                slider.style.transform = `translateX(${offset}%)`;
+                
+                // Update active class for slides
+                slides.forEach((slide, index) => {
+                    if (index >= currentIndex && index < currentIndex + visibleSlides) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+            }
+            
+            function nextSlide() {
+                if (currentIndex < slideCount - visibleSlides) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0; // Loop back to start
+                }
+                updateSlider();
+            }
+            
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = slideCount - visibleSlides; // Loop to end
+                }
+                updateSlider();
+            }
+            
+            // Button event listeners
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                const newVisibleSlides = getVisibleSlides();
+                if (newVisibleSlides !== visibleSlides) {
+                    currentIndex = Math.min(currentIndex, slideCount - newVisibleSlides);
+                    updateSlider();
+                }
+            });
+            
+            // Initialize slider
+            updateSlider();
+            
+            // Optional: Auto-slide
+            let autoSlideInterval = setInterval(nextSlide, 3000);
+            
+            // Pause auto-slide on hover
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+            
+            sliderContainer.addEventListener('mouseleave', () => {
+                autoSlideInterval = setInterval(nextSlide, 3000);
+            });
+        }
+    }
+});
