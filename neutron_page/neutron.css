@@ -135,8 +135,8 @@ body {
 }
 
 #navbar a:hover {
-    color: var(--accent-color);
-    background-color: rgba(255, 255, 255, 0.05);
+    color:rgb(71, 160, 233);
+    background-color: rgba(190, 170, 170, 0.05);
 }
 
 #navbar a::after {
@@ -176,12 +176,12 @@ body {
 }
 
 #hamburger:hover span {
-    background-color: var(--accent-color);
+    background-color: #085fd7;
 }
 
 #hamburger.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    background-color: var(--accent-color);
+    background-color: #085fd7;
 }
 
 #hamburger.open span:nth-child(2) {
@@ -190,7 +190,7 @@ body {
 
 #hamburger.open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-    background-color: var(--accent-color);
+    background-color: #085fd7;
 }
 
 /* ========== FIRST PAGE ========== */
@@ -1614,8 +1614,8 @@ body {
     }
 
     #navbar a:hover {
-        color: var(--accent-color);
-    }
+color:rgb(71, 160, 233);
+    background-color: rgba(190, 170, 170, 0.05);    }
 
     /* Other responsive adjustments */
     .slide {
@@ -2224,6 +2224,7 @@ body {
         /* padding: 0px 20px; */
         box-sizing: border-box;
         overflow-x: hidden;
+        margin-top: -4vh;
         /* min-height: 7vh; */
         height: auto;
 }
