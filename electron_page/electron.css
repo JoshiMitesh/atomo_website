@@ -1686,9 +1686,7 @@ body {
 }
 
 @media (max-width: 480px) {
-    .slider-controls {
-        margin-bottom: 3vh;
-    }
+   
 
     .slider-container1 {
         position: static;
