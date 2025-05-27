@@ -2188,6 +2188,8 @@ body {
 #second-page .slides-wrapper {
     width: 100%;
     overflow: hidden;
+        height: 54vh;
+
     position: relative;
     padding: 0 10px;
 }
