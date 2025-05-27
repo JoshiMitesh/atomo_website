@@ -1113,7 +1113,6 @@ body {
         flex: 0 0 calc(100% - 10px);
         margin: 0 5px;
         height: 55vh;
-        padding: 34px;
     }
 
     .feature-icon {
@@ -1132,7 +1131,7 @@ body {
     }
 
     .feature-desc {
-        font-size: 30px;
+        font-size: 22px;
     }
 
     .slider-controls-container1 {
@@ -2294,11 +2293,7 @@ body {
 
 @media (max-width: 375px) {
     #second-page .slides-wrapper {
-    width: 100%;
-    overflow: hidden;
-        height: 88vh;
-    position: relative;
-    padding: 0 10px;
+        height: 74vh;
 }}
 
 /* second page css ends */
