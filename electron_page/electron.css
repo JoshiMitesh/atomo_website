@@ -1111,10 +1111,9 @@ body {
 
     .feature-slide {
         flex: 0 0 calc(100% - 10px);
-        /* Full width on mobile */
         margin: 0 5px;
         height: 55vh;
-        padding: 15px;
+        padding: 34px;
     }
 
     .feature-icon {

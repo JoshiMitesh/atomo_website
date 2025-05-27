@@ -135,7 +135,7 @@ body {
 }
 
 #navbar a:hover {
-    color:rgb(71, 160, 233);
+    color: rgb(71, 160, 233);
     background-color: rgba(190, 170, 170, 0.05);
 }
 
@@ -238,8 +238,10 @@ body {
 }
 
 #subtitle {
-        padding-top: 4vh;
-        color: #3C3C3C; font-size: 45px;font-style: italic;
+    padding-top: 4vh;
+    color: #3C3C3C;
+    font-size: 45px;
+    font-style: italic;
 }
 
 /* Responsive adjustments for first page */
@@ -572,7 +574,8 @@ body {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .slider-controls-container {
-        bottom: 15px; /* Adjust for smaller screens */
+        bottom: 15px;
+        /* Adjust for smaller screens */
         right: 15px;
     }
 
@@ -585,9 +588,11 @@ body {
 
 @media (max-width: 480px) {
     .slider-controls-container {
-        bottom: 10px; /* Closer to bottom on small screens */
+        bottom: 10px;
+        /* Closer to bottom on small screens */
         right: 10px;
-        transform: translateY(0); /* Remove any negative margins */
+        transform: translateY(0);
+        /* Remove any negative margins */
     }
 
     .round-button {
@@ -599,6 +604,7 @@ body {
 
 /* Device-Specific Adjustments */
 @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+
     /* iPhone 13 Pro */
     .slider-controls-container {
         bottom: 12px;
@@ -607,6 +613,7 @@ body {
 }
 
 @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+
     /* iPhone 11 */
     .slider-controls-container {
         bottom: 15px;
@@ -615,6 +622,7 @@ body {
 }
 
 @media only screen and (min-width: 360px) and (max-width: 412px) and (min-device-pixel-ratio: 2) {
+
     /* Samsung A15 and similar Android devices */
     .slider-controls-container {
         bottom: 10px;
@@ -706,6 +714,8 @@ body {
 .headingg {
     padding-left: 3vh;
     font-size: 3rem;
+    padding-top: 8vh;
+
     font-weight: 600;
 }
 
@@ -919,7 +929,7 @@ body {
     .product-logo {
         width: 50vh;
         height: 37vh;
-        padding-bottom: 4vh;
+        padding-bottom: 11vh;
     }
 
     .price-button,
@@ -986,7 +996,7 @@ body {
     /* Reduced margin to minimize gaps */
     margin: 0 5px;
     /* Adjusted margin for tighter spacing */
-    background-color: #fff;
+    background-color: #8da2ca;
     border-radius: 12px;
     padding: 20px 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -1000,7 +1010,7 @@ body {
 .feature-icon {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 10px;
 }
 
@@ -1018,7 +1028,7 @@ body {
 .feature-title {
     font-size: 32px;
     font-weight: 600;
-        text-align: left;
+    text-align: left;
 
     color: #333;
     margin-bottom: 12px;
@@ -1026,8 +1036,8 @@ body {
 }
 
 .feature-desc {
-    font-size: 25px;
-        text-align: left;
+    font-size: 16px;
+    text-align: left;
 
     color: #666;
     line-height: 1.5;
@@ -1101,10 +1111,9 @@ body {
 
     .feature-slide {
         flex: 0 0 calc(100% - 10px);
-        /* Full width on mobile */
         margin: 0 5px;
         height: 55vh;
-        padding: 15px;
+        padding: 34px;
     }
 
     .feature-icon {
@@ -1119,11 +1128,11 @@ body {
     }
 
     .feature-title {
-        font-size: 18px;
+        font-size: 40px;
     }
 
     .feature-desc {
-        font-size: 1.2rem;
+        font-size: 30px;
     }
 
     .slider-controls-container1 {
@@ -1327,7 +1336,7 @@ body {
     }
 
     #fourth-page {
-        height: 58vh;
+        height: auto;
     }
 
     #sixth-page {
@@ -1593,7 +1602,7 @@ body {
     #navbar ul.active {
         max-height: 474px;
         padding: 10px 0;
-        
+
         background-color: white;
         /* Ensure solid white background when active */
         opacity: 1;
@@ -1614,8 +1623,9 @@ body {
     }
 
     #navbar a:hover {
-color:rgb(71, 160, 233);
-    background-color: rgba(190, 170, 170, 0.05);    }
+        color: rgb(71, 160, 233);
+        background-color: rgba(190, 170, 170, 0.05);
+    }
 
     /* Other responsive adjustments */
     .slide {
@@ -1645,7 +1655,8 @@ color:rgb(71, 160, 233);
 
     .headingg {
         padding-left: 5vh;
-                padding-top: 7vh;
+        padding-top: 7vh;
+        padding-bottom: 1vh;
 
         font-size: 34px;
     }
@@ -2192,6 +2203,13 @@ color:rgb(71, 160, 233);
 
 /* Responsive adjustments for second page slider */
 @media (max-width: 1200px) {
+    #second-page .slides-container {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 10px;
+        height: 57vh;
+    }
+
     #second-page .slide {
         width: 300px;
         height: 450px;
@@ -2219,7 +2237,7 @@ color:rgb(71, 160, 233);
 
 @media (max-width: 480px) {
     #second-page {
-   position: relative;
+        position: relative;
         width: 100%;
         /* padding: 0px 20px; */
         box-sizing: border-box;
@@ -2227,7 +2245,8 @@ color:rgb(71, 160, 233);
         margin-top: -4vh;
         /* min-height: 7vh; */
         height: auto;
-}
+    }
+
     #second-page .slide {
         width: calc(100vw - 40px);
         max-height: 100vh;
