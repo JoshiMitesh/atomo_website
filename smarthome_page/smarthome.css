@@ -968,8 +968,8 @@ device-item {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(275px, 0fr));
     gap: 26px;
-    width: 100%;
-    max-width: 740px;
+        width: 36%;
+    max-width: 627px;
     position: relative;
     left: 55%;
     bottom: 177px;
@@ -977,45 +977,39 @@ device-item {
 
 .app-icon1 {
     border-radius: 10px;
-    position: relative;
     right: 39px;
-   height: 37.18vh;
-  width: 22.54vh;
+    height: 37.18vh;
+    width: 22.54vh;
 }
 
 .app-icon2 {
     border-radius: 10px;
-    position: relative;
     top: 100px;
-   height: 37.18vh;
-  width: 22.54vh;
+    height: 37.18vh;
+    width: 22.54vh;
 }
 
 .app-icon3 {
     border-radius: 10px;
     height: 37.18vh;
-  width: 22.54vh;
+    width: 22.54vh;
     right: 21px;
-    position: relative;
 }
 
 .app-icon4 {
     border-radius: 10px;
-    position: relative;
     top: 83px;
-   height: 37.18vh;
-  width: 22.54vh;
+    height: 37.18vh;
+    width: 22.54vh;
 
 }
 
 .app-store-title {
-    font-size: 46px;
-    width: 90%;
+    width: 168%;
 }
 
 .app-store-desc {
-    font-size: 20px;
-    width: 70%;
+    width: 169%;
 }
 
 /* Eight page modified section started */
@@ -1296,7 +1290,7 @@ device-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 20px;
+    padding-top: 13vh;
     box-sizing: border-box;
     background-color: rgb(248 248 248);
     overflow-x: hidden;
@@ -2452,15 +2446,11 @@ device-item {
 }
 
 
-
-
-
-
 /* Seventh Page - Energy Insights Section */
 #seventh-page {
     position: relative;
     width: 100%;
-    min-height: 85vh;
+    min-height: 68vh;
     height: auto;
     display: flex;
     justify-content: center;
@@ -2476,7 +2466,7 @@ device-item {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1818px;
     margin: 0 auto;
     padding: 0 40px;
     box-sizing: border-box;
@@ -2490,25 +2480,29 @@ device-item {
 }
 
 .insights-title {
-    font-size: 3rem;
+    font-size: 70px;
     font-weight: 700;
     color: #333;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    text-transform: uppercase;
+    /* margin-bottom: 20px; */
+    /* line-height: 1.2; */
+    display: flex;
+    /* text-transform: uppercase; */
+    justify-content: center;
 }
 
 .insights-subtitle {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 70px;
+    font-weight: 700;
     color: #333;
     margin-bottom: 15px;
 }
 
 .insights-desc {
-    font-size: 1.2rem;
+    font-size: 40px;
     color: #555;
     line-height: 1.6;
+    width: 87vh;
+
     margin: 0;
 }
 
@@ -2520,8 +2514,8 @@ device-item {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 50vh;
-    margin-left: 20px;
+    height: 51vh;
+    margin-left: 203px;
 }
 
 .energy-slider-container {
@@ -2764,7 +2758,7 @@ device-item {
 }
 
 .phone-item {
-        flex: 1;
+    flex: 1;
     min-width: 200px;
     max-width: 282px;
 }

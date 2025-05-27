@@ -383,7 +383,12 @@
         max-width: 62%;
 
     }
+    
+    .asdf{
+height: auto;
+    width: 128px;
 
+    }
     #description {
         font-size: 40px;
         font-weight: 400;
@@ -602,8 +607,7 @@
         }
 
         .grid-item p {
-            font-size: clamp(0.6rem, 1.4vw, 0.8rem);
-            padding-top: clamp(6px, 1vh, 10px);
+            padding-top: clamp(6px, 2vh, 10px);
         }
 
         .grid-item .icon {
@@ -1891,6 +1895,10 @@
     }
 
     @media (max-width: 768px) {
+        .asdf {
+    height: auto;
+    width: 45px;
+}
         #navbar {
             border-bottom: none;
             box-shadow: none;
@@ -1985,6 +1993,8 @@
 
         .slider {
             height: 300px;
+                    width: 220vh;
+
         }
 
         .dot {
@@ -2014,7 +2024,7 @@
         }
 
         .grid-item-fourth h3 {
-            font-size: 18px;
+        font-size: 14px;
         }
 
         .grid-item-fourth p {
@@ -2067,7 +2077,6 @@
         }
 
         #main-title {
-            font-size: clamp(1.5rem, 6vw, 2.2rem);
             font-weight: 700;
             color: #333333;
             margin: 0 0 10px 0;

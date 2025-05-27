@@ -239,6 +239,7 @@ body {
 
 #subtitle {
         padding-top: 4vh;
+        color: #3C3C3C; font-size: 45px;font-style: italic;
 }
 
 /* Responsive adjustments for first page */
@@ -1017,6 +1018,8 @@ body {
 .feature-title {
     font-size: 32px;
     font-weight: 600;
+        text-align: left;
+
     color: #333;
     margin-bottom: 12px;
     transition: color 0.3s ease;
@@ -1024,6 +1027,8 @@ body {
 
 .feature-desc {
     font-size: 25px;
+        text-align: left;
+
     color: #666;
     line-height: 1.5;
     margin: 0;
@@ -1098,7 +1103,7 @@ body {
         flex: 0 0 calc(100% - 10px);
         /* Full width on mobile */
         margin: 0 5px;
-        min-height: 200px;
+        height: 55vh;
         padding: 15px;
     }
 
@@ -1639,8 +1644,10 @@ body {
     }
 
     .headingg {
-        padding-left: 1vh;
-        font-size: 2rem;
+        padding-left: 5vh;
+                padding-top: 7vh;
+
+        font-size: 34px;
     }
 
 }
@@ -1832,7 +1839,7 @@ body {
     }
 
     #fourth-page {
-        height: 63vh;
+        height: auto;
     }
 
 }
@@ -2164,7 +2171,7 @@ body {
     display: flex;
     transition: transform 0.5s ease;
     gap: 10px;
-    height: 64vh;
+    height: 72vh;
 }
 
 #second-page .slides-wrapper {
@@ -2211,6 +2218,16 @@ body {
 }
 
 @media (max-width: 480px) {
+    #second-page {
+   position: relative;
+        width: 100%;
+        /* padding: 0px 20px; */
+        box-sizing: border-box;
+        overflow-x: hidden;
+        margin-top: -4vh;
+        /* min-height: 7vh; */
+        height: auto;
+}
     #second-page .slide {
         width: calc(100vw - 40px);
         max-height: 100vh;

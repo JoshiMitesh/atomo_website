@@ -471,7 +471,7 @@
 }
 
 #sixth-page .app-store-title {
-    font-size: 2.5rem;
+    font-size: 70px;
     color: var(--text-dark);
     margin-bottom: 20px;
     overflow-wrap: break-word; /* Wrap long words */
@@ -479,7 +479,7 @@
 }
 
 #sixth-page .app-store-desc {
-    font-size: 1.1rem;
+    font-size: 40px;
     color: var(--text-dark);
     line-height: 1.6;
     overflow-wrap: break-word; /* Wrap long words */
@@ -590,7 +590,7 @@
         justify-content: space-between;
         height: 100%;
         width: 100%;
-        max-width: 90%;
+        max-width: 95%;
         margin: 0 auto;
     }
 
