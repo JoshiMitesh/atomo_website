@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATOMO</title>
     <link rel="icon" type="image/png" href="/assets/mainfavicon.ico">
-    <link rel="stylesheet" href="proton.css">
+    <link rel="stylesheet" href="/proton_page/proton.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -38,64 +38,64 @@
                 <li><a href="">Support</a></li>
             </ul>
         </nav>
-        <div class="matter-content">
+       <div class="matter-content" style="z-index: 30;">
             <h1 id="main-title">Proton</h1>
-            <p id="subtitle" style="color: #3C3C3C; font-size: 16px;font-style: italic;">Design to be perform</p>
+            <p id="subtitle" style="color: #3C3C3C; font-size: 40px;font-style: italic;">Design to be perform</p>
         </div>
         <video autoplay muted playsinline id="electron-video">
-            <source src="/proton_page/FinalRenderWhiteBackground.webm" type="video/webm">
+            <source src="/proton_page/outputvp8.webm" type="video/webm">
         </video>
-
-        <script>
-            const video = document.getElementById('electron-video');
-            video.onended = () => {
-                video.pause();
-                video.currentTime = video.duration; // Snap to last frame
-            };
-        </script>
-
-
     </section>
 
-
-    <h2 class="headingg">Get to know Proton</h2>
+    <h2 class="headingg">Get to know proton</h2>
     <!-- Second Page Section -->
-    <section id="second-page">
-        <div class="section-header">
-        </div>
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slide"><img src="Frame 1000004612.svg" alt="Slide 1"></div>
-                <div class="slide"><img src="Frame 1000004613.svg" alt="Slide 2"></div>
-                <div class="slide"><img src="Frame 1000004614.svg" alt="Slide 3"></div>
-                <div class="slide"><img src="Frame 1000004615.svg" alt="Slide 4"></div>
-                <div class="slide"><img src="Frame 1000004616.svg" alt="Slide 5"></div>
-                <div class="slide"><img src="Frame 1000004617.svg" alt="Slide 6"></div>
-                <div class="slide"><img src="Frame 1000004618.svg" alt="Slide 7"></div>
-                <div class="slide"><img src="Frame 1000004619.svg" alt="Slide 8"></div>
-                <div class="slide"><img src="Frame 1000004620.svg" alt="Slide 9"></div>
-                <div class="slide"><img src="Frame 1000004621.svg" alt="Slide 10"></div>
-            </div>
 
-            <!-- Add this inside your #second-page section, after the slider-container -->
-            <div class="slider-controls-container">
-                <div class="slider-controls">
-                    <button class="round-button">❮</button>
-                    <button class="round-button">❯</button>
+    <!-- Second Page Section -->
+    <!-- <section id="second-page">
+        <div class="w-full" style="padding-top: 20px;">
+            <div class="slides-wrapper">
+                <div class="slides-container" id="slidesContainer">
+                </div>
+                <div class="navigation">
+                    <button class="nav-btn" id="prevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section id="second-page">
+        <div class="w-full" style="padding-top: 20px;">
+            <div class="slides-wrapper">
+                <div class="slides-container" id="slidesContainer"></div>
+                <div class="slider-controls-container">
+                    <div class="slider-controls">
+                        <button class="round-button prev-slide" disabled><i class="fas fa-chevron-left"></i></button>
+                        <button class="round-button next-slide"><i class="fas fa-chevron-right"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+
+
+
     <h2 class="headingg">Explore Proton</h2>
     <!-- Third Page Section -->
     <section id="third-page">
         <div class="product-container">
             <div class="product-image">
-                <img src="PROTON.71.png" alt="Electron Logo" class="product-logo">
+                <img src="/proton_page/PROTON.71.png" alt="Proton Logo" class="product-logo">
             </div>
             <div class="price-section">
                 <button class="price-button">25,000 /-</button>
-                <button class="buy-button">Buy</button>
+                <button class="action-button buy-button" id="buy">Buy</button>
             </div>
             <div class="spec-labels">
                 <ul class="spec-label-list">
@@ -167,15 +167,16 @@
         </div>
     </section>
 
-    <h2 class="headingg">Why Proton is the best of device in the world</h2>
+    <h2 class="headingg">Why proton is the best of device in the world</h2>
     <!-- Fourth Page Section -->
+    <!-- Replace the existing fourth-page section with this code -->
     <section id="fourth-page">
         <div class="features-slider-container">
             <div class="features-slider">
                 <!-- Feature Box 1 -->
                 <div class="feature-slide">
                     <div class="feature-icon">
-                        <img src="icon1.svg" alt="Performance Icon">
+                        <img src="/proton_page/icon1.svg" alt="Performance Icon">
                     </div>
                     <h3 class="feature-title">Multi-Protocol Connectivity</h3>
                     <p class="feature-desc">Supports Matter, Thread, Zigbee, WiFi, BLE, RF, IR, enabling seamless
@@ -185,7 +186,7 @@
                 <!-- Feature Box 2 -->
                 <div class="feature-slide">
                     <div class="feature-icon">
-                        <img src="icon2.svg" alt="AI Icon">
+                        <img src="/proton_page/icon2.svg" alt="AI Icon">
                     </div>
                     <h3 class="feature-title">Built-In AI Engine</h3>
                     <p class="feature-desc">Learns your habits and automates your home intelligently — from adaptive
@@ -195,7 +196,7 @@
                 <!-- Feature Box 3 -->
                 <div class="feature-slide">
                     <div class="feature-icon">
-                        <img src="icon3.svg" alt="Memory Icon">
+                        <img src="/proton_page/icon3.svg" alt="Memory Icon">
                     </div>
                     <h3 class="feature-title">Local Processing for Privacy</h3>
                     <p class="feature-desc">Automations run locally on Proton, ensuring faster response times and
@@ -205,7 +206,7 @@
                 <!-- Feature Box 4 -->
                 <div class="feature-slide">
                     <div class="feature-icon">
-                        <img src="icon4.svg" alt="Storage Icon">
+                        <img src="/proton_page/icon4.svg" alt="Storage Icon">
                     </div>
                     <h3 class="feature-title">App + Voice + Gesture Control</h3>
                     <p class="feature-desc">Control your home using mobile apps, voice assistants (like Alexa/Google),
@@ -215,7 +216,7 @@
                 <!-- Feature Box 5 -->
                 <div class="feature-slide">
                     <div class="feature-icon">
-                        <img src="icon5.svg" alt="Power Icon">
+                        <img src="/proton_page/icon5.svg" alt="Power Icon">
                     </div>
                     <h3 class="feature-title">Interoperability Hub</h3>
                     <p class="feature-desc">Bridges devices from different brands and standards into one unified smart
@@ -225,7 +226,7 @@
                 <!-- Feature Box 6 -->
                 <div class="feature-slide">
                     <div class="feature-icon">
-                        <img src="icon6.svg" alt="Connectivity Icon">
+                        <img src="/proton_page/icon6.svg" alt="Connectivity Icon">
                     </div>
                     <h3 class="feature-title">Energy Optimization Module</h3>
                     <p class="feature-desc">Monitors and optimizes energy consumption across appliances to help reduce
@@ -235,7 +236,7 @@
                 <!-- Feature Box 7 -->
                 <div class="feature-slide">
                     <div class="feature-icon">
-                        <img src="icon7.svg" alt="WiFi Icon">
+                        <img src="/proton_page/icon7.svg" alt="WiFi Icon">
                     </div>
                     <h3 class="feature-title">End-to-End Encryption & Secure Boot</h3>
                     <p class="feature-desc">Protects your data and device integrity with industrial-grade cybersecurity
@@ -245,7 +246,7 @@
                 <!-- Feature Box 8 -->
                 <div class="feature-slide">
                     <div class="feature-icon">
-                        <img src="icon8.svg" alt="Bluetooth Icon">
+                        <img src="/proton_page/icon8.svg" alt="Bluetooth Icon">
                     </div>
                     <h3 class="feature-title">Advanced Scene & Routine Builder</h3>
                     <p class="feature-desc">Create powerful automation routines based on time, sensor input,
@@ -255,7 +256,7 @@
                 <!-- Feature Box 9 -->
                 <div class="feature-slide">
                     <div class="feature-icon">
-                        <img src="icon9.svg" alt="Smart Home Icon">
+                        <img src="/proton_page/icon9.svg" alt="Smart Home Icon">
                     </div>
                     <h3 class="feature-title">Developer-Friendly API & SDK</h3>
                     <p class="feature-desc">Allows custom integrations and third-party plugins for advanced users and
@@ -265,7 +266,7 @@
                 <!-- Feature Box 10 -->
                 <div class="feature-slide">
                     <div class="feature-icon">
-                        <img src="icon10.svg" alt="Future Proof Icon">
+                        <img src="/proton_page/icon10.svg" alt="Future Proof Icon">
                     </div>
                     <h3 class="feature-title">OTA Updates & Future-Ready</h3>
                     <p class="feature-desc">Supports Over-the-Air firmware upgrades and is future-proofed to adopt
@@ -284,7 +285,6 @@
     </section>
 
 
-
     <!-- Sixth Page Section (Footer) -->
     <section id="sixth-page">
         <footer id="footer">
@@ -294,13 +294,13 @@
                     <h2 class="company-name">Atomo Innovation PVT. LTD.</h2>
                     <p class="footer-tagline">Innovating the future of smart living</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link"><img
+                        <a href="https://x.com/AtomoHQ" class="social-link"><img
                                 src="https://img.icons8.com/ios-filled/50/ffffff/twitterx.png" alt="Twitter"></a>
-                        <a href="#" class="social-link"><img
+                        <a href="https://www.facebook.com/profile.php?id=61574809191751" class="social-link"><img
                                 src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"></a>
-                        <a href="#" class="social-link"><img
+                        <a href="https://www.instagram.com/atomo.in/" class="social-link"><img
                                 src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
-                        <a href="#" class="social-link"><img
+                        <a href="https://www.linkedin.com/company/atomo-in" class="social-link"><img
                                 src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
                     </div>
                 </div>
@@ -339,6 +339,7 @@
                     </div>
 
 
+                   <a href="/index.html" style="text-decoration: none;"> <p>© 2025 Atomo Innovation Pvt. Ltd. All rights reserved.</p></a>
                 </div>
             </div>
         </footer>
@@ -354,8 +355,7 @@
         </div>
     </div>
 
-
-    <script src="proton.js"></script>
+<script src="/proton_page/proton.js"></script>
 </body>
 
 </html>

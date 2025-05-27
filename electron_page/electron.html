@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="electron.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -37,120 +37,54 @@
             </ul>
         </nav>
 
-        <div class="matter-content">
+        <div class="matter-content" style="z-index: 30;">
             <h1 id="main-title">Electron</h1>
-            <p id="subtitle" style="color: #3C3C3C; font-size: 16px;font-style: italic;">Design to be perform</p>
+            <p id="subtitle" style="color: #3C3C3C; font-size: 45px;font-style: italic;">Design to be perform</p>
         </div>
         <video autoplay muted playsinline id="electron-video">
-            <source src="/electron_page/electronfinal1.webm" type="video/webm">
+            <source src="/electron_page/electronvp8.webm" type="video/webm">
         </video>
     </section>
 
     <h2 class="headingg">Get to know electron</h2>
     <!-- Second Page Section -->
+
+    <!-- Second Page Section -->
+    <!-- <section id="second-page">
+        <div class="w-full" style="padding-top: 20px;">
+            <div class="slides-wrapper">
+                <div class="slides-container" id="slidesContainer">
+                </div>
+                <div class="navigation">
+                    <button class="nav-btn" id="prevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section> -->
     <section id="second-page">
-    <div class="features-slider-container1">
-        <div class="features-slider2">
-            <!-- Feature Box 1 -->
-            <div class="feature-slide2">
-                <div class="feature-icon2">
-                    <img src="/Atomo - primary (1) 1.svg" alt="Performance Icon">
+        <div class="w-full" style="padding-top: 20px;">
+            <div class="slides-wrapper">
+                <div class="slides-container" id="slidesContainer"></div>
+                <div class="slider-controls-container">
+                    <div class="slider-controls">
+                        <button class="round-button prev-slide" disabled><i class="fas fa-chevron-left"></i></button>
+                        <button class="round-button next-slide"><i class="fas fa-chevron-right"></i></button>
+                    </div>
                 </div>
-                <h3 class="feature-title2">What Is Electron?</h3>
-                <p class="feature-desc2">Electron is Atomo Innovation’s industrial-grade edge computing platform, engineered to bring intelligence to the edge of operations.</p>
-            </div>
-
-            <!-- Feature Box 2 -->
-            <div class="feature-slide2">
-                <div class="feature-icon2">
-                    <img src="/Atomo - primary (1) 1.svg" alt="AI Icon">
-                </div>
-                <h3 class="feature-title2">Why It Exists?</h3>
-                <p class="feature-desc2">Designed to modernize industries by enabling local AI decision-making without depending on cloud infrastructure.</p>
-            </div>
-
-            <!-- Feature Box 3 -->
-            <div class="feature-slide2">
-                <div class="feature-icon2">
-                    <img src="/Atomo - primary (1) 1.svg" alt="Memory Icon">
-                </div>
-                <h3 class="feature-title2">Who It's For?</h3>
-                <p class="feature-desc2">Ideal for system integrators, automation engineers, and industrial IoT solution providers looking to build smart, resilient systems.</p>
-            </div>
-
-            <!-- Feature Box 4 -->
-            <div class="feature-slide2">
-                <div class="feature-icon2">
-                    <img src="/Atomo - primary (1) 1.svg" alt="Storage Icon">
-                </div>
-                <h3 class="feature-title2">Built for Harsh Realities!</h3>
-                <p class="feature-desc2">Electron thrives in the field - whether it's a remote farm, a factory floor, or a power station.</p>
-            </div>
-
-            <!-- Feature Box 5 -->
-            <div class="feature-slide2">
-                <div class="feature-icon2">
-                    <img src="/Atomo - primary (1) 1.svg" alt="Power Icon">
-                </div>
-                <h3 class="feature-title2">Not Just a Device – A Platform!</h3>
-                <p class="feature-desc2">Electron thrives in the field - whether it's a remote farm, a factory floor, or a power station.</p>
-            </div>
-
-            <!-- Feature Box 6 -->
-            <div class="feature-slide2">
-                <div class="feature-icon2">
-                    <img src="/Atomo - primary (1) 1.svg" alt="Connectivity Icon">
-                </div>
-                <h3 class="feature-title2">Powers Smarter Operations</h3>
-                <p class="feature-desc2">It helps machines talk, predict issues, and optimize performance autonomously at the edge.</p>
-            </div>
-
-            <!-- Feature Box 7 -->
-            <div class="feature-slide2">
-                <div class="feature-icon2">
-                    <img src="/Atomo - primary (1) 1.svg" alt="WiFi Icon">
-                </div>
-                <h3 class="feature-title2">Your First Step into Industry 4.0!</h3>
-                <p class="feature-desc2">Electron is a gateway to modern industrial practices, bridging legacy systems with future-ready intelligence.</p>
-            </div>
-
-            <!-- Feature Box 8 -->
-            <div class="feature-slide2">
-                <div class="feature-icon2">
-                    <img src="/Atomo - primary (1) 1.svg" alt="Bluetooth Icon">
-                </div>
-                <h3 class="feature-title2">Easy to Integrate, Hard to Replace</h3>
-                <p class="feature-desc2">Electron fits right into existing setups, but once it’s in place, you’ll wonder how things worked without it.</p>
-            </div>
-
-            <!-- Feature Box 9 -->
-            <div class="feature-slide2">
-                <div class="feature-icon2">
-                    <img src="/Atomo - primary (1) 1.svg" alt="Smart Home Icon">
-                </div>
-                <h3 class="feature-title2">Part of a Bigger Family</h3>
-                <p class="feature-desc2">Works hand-in-hand with Atomo’s Neutron (home) and Proton (pro home) systems to enable full-spectrum smart environments.</p>
-            </div>
-
-            <!-- Feature Box 10 -->
-            <div class="feature-slide2">
-                <div class="feature-icon2">
-                    <img src="/Atomo - primary (1) 1.svg" alt="Future Proof Icon">
-                </div>
-                <h3 class="feature-title2">Designed in India, Made for the World!</h3>
-                <p class="feature-desc2">A proudly Indian innovation aimed at empowering industries both locally and globally.</p>
             </div>
         </div>
+    </section>
 
-        <!-- Slider Controls -->
-        <div class="slider-controls-container1">
-            <div class="slider-controls second-page-controls">
-                <button class="round-button prev-feature">❮</button>
-                <button class="round-button next-feature">❯</button>
-            </div>
-        </div>
-    </div>
-</section>
+
+
+
+
+
     <h2 class="headingg">Explore Electron</h2>
     <!-- Third Page Section -->
     <section id="third-page">
@@ -353,13 +287,13 @@
                     <h2 class="company-name">Atomo Innovation PVT. LTD.</h2>
                     <p class="footer-tagline">Innovating the future of smart living</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link"><img
+                        <a href="https://x.com/AtomoHQ" class="social-link"><img
                                 src="https://img.icons8.com/ios-filled/50/ffffff/twitterx.png" alt="Twitter"></a>
-                        <a href="#" class="social-link"><img
+                        <a href="https://www.facebook.com/profile.php?id=61574809191751" class="social-link"><img
                                 src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"></a>
-                        <a href="#" class="social-link"><img
+                        <a href="https://www.instagram.com/atomo.in/" class="social-link"><img
                                 src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
-                        <a href="#" class="social-link"><img
+                        <a href="https://www.linkedin.com/company/atomo-in" class="social-link"><img
                                 src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
                     </div>
                 </div>
@@ -398,6 +332,7 @@
                     </div>
 
 
+                   <a href="/index.html" style="text-decoration: none;"> <p>© 2025 Atomo Innovation Pvt. Ltd. All rights reserved.</p></a>
                 </div>
             </div>
         </footer>
@@ -413,10 +348,7 @@
         </div>
     </div>
 
-
-    <script src="electron.js"></script>
-
-
+<script src="electron.js"></script>
 </body>
 
 </html>

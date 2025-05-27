@@ -123,11 +123,11 @@ html, body {
 .matter-content {
     display: flex;
     position: relative;
-    width: 100%;
+    width: 90%;
     height: 100px;
     max-width: 93%;
     /* margin-bottom: -135px; */
-    top: 11%;
+    top: 9%;
     flex-direction: row;
     align-items: end;
     justify-content: space-between;

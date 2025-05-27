@@ -199,7 +199,6 @@ body {
     align-items: center;
     overflow: hidden;
     margin-bottom: 10px;
-    background-color: #ffffff; /* Fallback background to match page design */
 }
 
 #electron-video {
@@ -217,37 +216,24 @@ body {
     height: 100px;
     max-width: 90%;
     /* margin-bottom: -135px; */
-    top: 14%;
-    z-index: 20;
-
+    top: 17%;
+    display: flex;
+    justify-content: space-between;
 }
 
 #main-title {
-    position: absolute;
     /* bottom: 100%; */
     /* right: 104%; */
-    font-size: 4rem;
+    font-size: 70px;
     font-weight: 700;
-    color: #333333;
+    color: #3c3c3c;
     margin: 0;
     /* line-height: 1; */
     letter-spacing: 2px;
 }
 
 #subtitle {
-    position: absolute;
-    /* bottom: 100%; */
-    left: 83%;
-    top: 20px;
-    /* right: -27%; */
-    font-size: 1.2rem;
-    font-weight: 400;
-    width: 17%;
-    color: #666666;
-    /* margin: 0; */
-    max-width: 403px;
-    /* line-height: 1.5; */
-    text-align: right;
+        padding-top: 4vh;
 }
 
 /* Responsive adjustments for first page */
@@ -266,19 +252,369 @@ body {
 
 }
 
-/* ========== SECOND PAGE (SLIDER) ========== */
-#second-page {
+/* Second and Fourth Page Slider Fixes */
+.features-slider-container,
+.features-slider-container1 {
+    width: 100%;
     position: relative;
-    height: 90vh;
-    background-color: white;
+    overflow: hidden;
+    /* This will hide anything going outside */
+    padding: 0 10px;
+    /* Add some padding so content doesn't touch edges */
+    box-sizing: border-box;
+}
+
+.features-slider,
+.features-slider2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    padding: 0 5px;
+    /* Reduced padding */
+    box-sizing: border-box;
+    will-change: transform;
+    /* Optimize for animation */
+}
+
+.feature-slide,
+.feature-slide2 {
+    flex: 0 0 calc(100% - 20px);
+    /* Full width minus margins on mobile */
+    margin: 0 10px;
+    /* Reduced margin on mobile */
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px 15px;
+    /* Reduced padding on mobile */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    height: auto;
+    /* Let content determine height */
+    min-height: 300px;
+    /* Minimum height for consistency */
+    box-sizing: border-box;
+}
+
+/* Adjust slider controls positioning */
+.slider-controls-container,
+.slider-controls-container1 {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* Center controls */
+    padding: 20px 0;
+    /* Add some vertical spacing */
+    margin-top: 0;
+}
+
+/* Responsive adjustments */
+@media (min-width: 480px) {
+
+    .feature-slide,
+    .feature-slide2 {
+        flex: 0 0 calc(50% - 20px);
+        /* 2 slides on small tablets */
+    }
+}
+
+@media (min-width: 768px) {
+
+    .feature-slide,
+    .feature-slide2 {
+        flex: 0 0 calc(33.33% - 20px);
+        /* 3 slides on tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .feature-slide,
+    .feature-slide2 {
+        flex: 0 0 calc(25% - 30px);
+        /* 4 slides on desktop */
+        margin: 0 15px;
+        padding: 30px 25px;
+    }
+
+    .features-slider,
+    .features-slider2 {
+        padding: 0 20px;
+    }
+}
+
+/* Specific adjustments for second page dark slides */
+.feature-slide2 {
+    background-color: #3b3b3b;
+}
+
+/* Fix for feature icons in second page */
+.feature-icon2 img {
+    width: 80px !important;
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: 0 auto 15px !important;
+    display: block !important;
+}
+
+/* Adjust text sizes for mobile */
+@media (max-width: 768px) {
+    .feature-title {
+        font-size: 1.5rem;
+    }
+
+    .feature-title2 {
+        font-size: 1.5rem;
+    }
+
+    .feature-desc,
+    .feature-desc2 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-title {
+        font-size: 1.3rem;
+    }
+
+    .feature-title2 {
+        font-size: 1.3rem;
+    }
+
+    .feature-desc,
+    .feature-desc2 {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========== SECOND PAGE (SLIDER) ========== */
+#second-page {
+    position: relative;
+    height: auto;
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 40px 20px;
     box-sizing: border-box;
     margin-bottom: 10px;
+    background-color: white;
 }
+
+.features-slider-container {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden !important;
+    /* Strictly enforce overflow hiding */
+
+}
+
+.features-slider2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.feature-slide2 {
+    flex: 0 0 calc(25% - 30px);
+    margin: 0 15px;
+    background-color: #3b3b3b;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    height: 76vh;
+}
+
+.feature-icon2 {
+    display: flex;
+    align-items: center;
+}
+
+
+.feature-icon2 img {
+    width: 120px;
+    position: relative;
+    left: 281px;
+    bottom: 33px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.feature-title2 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    padding-top: 2vh;
+    transition: color 0.3s ease;
+}
+
+.feature-slide2:hover .feature-title2 {
+    color: #8f9dad;
+}
+
+.feature-desc2 {
+    font-size: 36px;
+    color: #ffffff;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Slider Controls */
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .feature-slide2 {
+        flex: 0 0 calc(33.33% - 15px);
+        min-height: 380px;
+    }
+
+    .feature-title2 {
+        font-size: 1.3rem;
+    }
+
+    .feature-desc2 {
+        font-size: 1rem;
+    }
+
+    .feature-desc {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+
+
+    .headingg {
+        font-size: 2.5rem;
+        padding-left: 2vh;
+    }
+
+    .feature-slide2 {
+        flex: 0 0 calc(50% - 15px);
+        min-height: 350px;
+        padding: 25px 20px;
+    }
+
+    .feature-icon2 img {
+        width: 100px;
+    }
+
+    .feature-title2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .headingg {
+        font-size: 2rem;
+        padding-left: 1vh;
+        margin-bottom: 20px;
+    }
+
+    #second-page {
+        padding: 20px 10px;
+    }
+
+    .features-slider2 {
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    .feature-slide2 {
+        flex: 0 0 calc(100% - 15px);
+        min-height: 300px;
+        padding: 20px 15px;
+    }
+
+    .feature-icon2 img {
+        position: relative;
+        width: 80px;
+        /* right: 226vh; */
+        left: 224px;
+        bottom: 23px;
+    }
+
+    .feature-title2 {
+        font-size: 1.1rem;
+    }
+
+    .feature-desc2 {
+        font-size: 0.9rem;
+    }
+
+    .slider-controls {
+        gap: 15px;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .slider-controls-container {
+        bottom: 15px; /* Adjust for smaller screens */
+        right: 15px;
+    }
+
+    .round-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-controls-container {
+        bottom: 10px; /* Closer to bottom on small screens */
+        right: 10px;
+        transform: translateY(0); /* Remove any negative margins */
+    }
+
+    .round-button {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Device-Specific Adjustments */
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+    /* iPhone 13 Pro */
+    .slider-controls-container {
+        bottom: 12px;
+        right: 12px;
+    }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+    /* iPhone 11 */
+    .slider-controls-container {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 412px) and (min-device-pixel-ratio: 2) {
+    /* Samsung A15 and similar Android devices */
+    .slider-controls-container {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+
 
 .slider-container {
     position: static;
@@ -304,30 +640,42 @@ body {
 }
 
 /* Add these styles to your CSS */
+/* changing code of .slidecontrolscontainerbyanmol */
 .slider-controls-container {
-    width: 96%;
+    position: absolute;
+    bottom: 0px;
+    /* Fixed distance from bottom */
+    right: 20px;
+    /* Fixed distance from right */
     display: flex;
     justify-content: flex-end;
-    padding-right: 20px;
-    margin-top: 2%;
+    align-items: center;
+    z-index: 10;
+    /* Ensure buttons are above slides */
+    padding: 0;
+    width: auto;
+    /* Allow natural width */
 }
 
 .slider-controls-container1 {
     width: 96%;
     display: flex;
     justify-content: flex-end;
-    padding-right: 20px;
+    padding-right: 0px;
+    padding-top: 0px;
     margin-top: 0%;
 }
 
 .slider-controls {
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    /* Consistent gap between buttons */
 }
 
 .round-button {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    /* Slightly smaller for better mobile fit */
+    height: 50px;
     border-radius: 50%;
     background-color: white;
     border: 2px solid #000;
@@ -335,8 +683,11 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    /* Slightly smaller font for mobile */
     transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
 }
 
 .round-button:hover {
@@ -345,77 +696,13 @@ body {
 }
 
 .headingg {
-   padding-left: 3vh;
-   font-size: 3rem;
+    padding-left: 3vh;
+    font-size: 3rem;
+    font-weight: 600;
 }
 
 
 
-/* Remove any conflicting button styles */
-.prev-btn,
-.next-btn {
-    display: none !important;
-}
-
-.slide {
-    flex: 0 0 25%;
-    padding: 10px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease;
-}
-
-.slide img {
-    width: 97%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 11px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.slide.active {
-    transform: scale(1.05);
-}
-
-
-
-.prev-btn,
-.next-btn {
-    position: absolute;
-    top: 49%;
-    transform: translateY(-50%);
-    background-color: #d1bd8200;
-    color: var(--text-light);
-    border: none;
-    border-radius: 8px;
-    width: 48px;
-    height: 48px;
-    font-size: 24px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.prev-btn {
-    left: 20px;
-}
-
-/* Remove the old absolute positioned buttons */
-.prev-btn,
-.next-btn {
-    display: none;
-}
-
-.next-btn {
-    right: 20px;
-}
-
-.prev-btn:hover,
-.next-btn:hover {
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
 
 .dots-container {
     position: absolute;
@@ -622,7 +909,7 @@ body {
     }
 
     .product-logo {
-        width: 100%;
+        width: 50vh;
         height: 37vh;
         padding-bottom: 4vh;
     }
@@ -649,8 +936,8 @@ body {
         height: 40px;
     }
 
-    
-   
+
+
 }
 
 /* ========== FOURTH PAGE (FEATURES SLIDER) ========== */
@@ -662,43 +949,52 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 40px 0;
+    /* Adjusted padding to remove extra space */
     box-sizing: border-box;
     margin-bottom: 10px;
     background-color: white;
+    overflow-x: hidden;
+    /* Ensure no overflow at the section level */
 }
 
 .features-slider-container {
     width: 100%;
     position: relative;
+    overflow-x: hidden !important;
+    /* Strictly enforce overflow hiding */
 }
 
 .features-slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 100%;
-    padding: 0 20px;
+    padding: 0;
     box-sizing: border-box;
 }
 
 .feature-slide {
-    flex: 0 0 calc(25% - 30px);
-    margin: 0 15px;
+    flex: 0 0 calc(25% - 10px);
+    /* Reduced margin to minimize gaps */
+    margin: 0 5px;
+    /* Adjusted margin for tighter spacing */
     background-color: #fff;
     border-radius: 12px;
-    padding: 30px 25px;
+    padding: 20px 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
     height: 43vh;
+    box-sizing: border-box;
 }
 
 .feature-icon {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
-
 
 .feature-icon img {
     width: 70px;
@@ -707,20 +1003,20 @@ body {
     transition: all 0.3s ease;
 }
 
+.feature-slide:hover .feature-title {
+    color: #19528f;
+}
+
 .feature-title {
-    font-size: 2.1rem;
+    font-size: 32px;
     font-weight: 600;
     color: #333;
     margin-bottom: 12px;
     transition: color 0.3s ease;
 }
 
-.feature-slide:hover .feature-title {
-    color: #19528f;
-}
-
 .feature-desc {
-    font-size: 22px;
+    font-size: 25px;
     color: #666;
     line-height: 1.5;
     margin: 0;
@@ -728,45 +1024,81 @@ body {
 
 /* Slider Controls */
 .slider-controls-container1 {
-    width: 96%;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding-right: 20px;
+    padding-right: 0px;
     margin-top: 30px;
+}
+
+.slider-controls {
+    display: flex;
+    gap: 20px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .feature-slide {
-        flex: 0 0 calc(33.33% - 30px);
+        flex: 0 0 calc(33.33% - 10px);
+        min-height: 250px;
+        margin: 0 5px;
+    }
+
+    .feature-title {
+        font-size: 22px;
+    }
+
+    .feature-desc {
+        font-size: 13px;
     }
 }
 
 @media (max-width: 768px) {
     #fourth-page {
-        padding: 30px 15px;
+        padding: 30px 0;
+    }
+
+    .features-slider {
+        padding: 0;
     }
 
     .feature-slide {
-        flex: 0 0 calc(50% - 30px);
+        flex: 0 0 calc(50% - 10px);
+        margin: 0 5px;
         min-height: 230px;
+        padding: 15px;
+    }
+
+    .feature-title {
+        font-size: 20px;
+    }
+
+    .feature-desc {
+        font-size: 12px;
     }
 }
 
 @media (max-width: 480px) {
     #fourth-page {
-        padding: 20px 10px;
+        padding: 20px 0;
+    }
+
+    .features-slider {
+        padding: 0;
     }
 
     .feature-slide {
-        flex: 0 0 calc(100% - 30px);
+        flex: 0 0 calc(100% - 10px);
+        /* Full width on mobile */
+        margin: 0 5px;
         min-height: 200px;
+        padding: 15px;
     }
 
     .feature-icon {
         width: 50px;
         height: 50px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .feature-icon img {
@@ -775,11 +1107,21 @@ body {
     }
 
     .feature-title {
-        font-size: 17px;
-        }
+        font-size: 18px;
+    }
 
     .feature-desc {
-        font-size: 17px;
+        font-size: 1.2rem;
+    }
+
+    .slider-controls-container1 {
+        margin-top: 20px;
+    }
+
+    .round-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }
 
@@ -965,11 +1307,11 @@ body {
     .slider-controls {
         display: flex;
         gap: 20px;
-        padding-top: 3vh;
+        padding-top: 0px;
     }
 
     #third-page {
-        height:114vh;
+        height: 114vh;
     }
 
     #fourth-page {
@@ -1013,6 +1355,8 @@ body {
     .link-group a {
         font-size: 0.85rem;
     }
+
+
 
     #navbar ul {
         gap: 8px;
@@ -1067,11 +1411,12 @@ body {
 @media (max-width: 768px) {
 
     .slider-controls-container {
-        width: 96%;
+        width: 100%;
         display: flex;
         justify-content: flex-end;
-        padding-right: 20px;
-        margin-top: 28%;
+        padding-right: 2px;
+        margin-top: 2%;
+        padding-top: 65px;
     }
 
 
@@ -1088,7 +1433,6 @@ body {
         max-width: 135%;
         /* Full width on smaller screens */
         margin-top: 23vh;
-        
     }
 
     .section-header1 h2 {
@@ -1238,7 +1582,7 @@ body {
     #navbar ul.active {
         max-height: 474px;
         padding: 10px 0;
-        
+
         background-color: white;
         /* Ensure solid white background when active */
         opacity: 1;
@@ -1291,17 +1635,43 @@ body {
     .headingg {
         padding-left: 1vh;
         font-size: 2rem;
-     }
-     
-}
-
-@media (max-width: 480px) {
-    .slider-controls-container {
-       
-        margin-top: -4%;
     }
 
+}
 
+
+/* iPhone SE (~375px wide) */
+@media (max-width: 380px) {
+    .slider-controls-container {
+        margin-top: -20%;
+    }
+}
+
+/* Medium phones (~390-420px) like Samsung A51 */
+@media (min-width: 381px) and (max-width: 480px) {
+    .slider-controls-container {
+        margin-top: -45%;
+        /* Tune based on testing */
+    }
+}
+
+
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+
+    /* iPhone 13 Pro specific styles here */
+    .slider-controls-container {
+        bottom: 8vh;
+        /* adjust based on your layout */
+        margin-top: 0;
+        /* or whatever override you need */
+    }
+}
+
+
+
+
+
+@media (max-width: 480px) {
     #main-title {
         font-size: 2rem;
     }
@@ -1320,16 +1690,17 @@ body {
 }
 
 @media (max-width: 480px) {
-   .slider-controls{
-    padding-bottom: 1vh;
-   }
+    .slider-controls {
+        padding-bottom: 2vh;
+        z-index: 30;
+    }
 
-   .slider-container1 {
-    position: static;
-    /* margin: 0 auto; */
-    top: 12px;
-    padding-top: 2vh;
-}
+    .slider-container1 {
+        position: static;
+        /* margin: 0 auto; */
+        top: 12px;
+        padding-top: 2vh;
+    }
 
     #main-title {
         font-size: 2rem;
@@ -1474,23 +1845,22 @@ body {
     }
 
     /* Second Page Header Styles */
-#second-page {
-    position: relative;
-    padding-top: 0px;
-    height: 96vh;
-    /* Creates space for the header */
-}
+    #second-page {
+        position: relative;
+        padding-bottom: 9vh;
+        height: 70vh;
+        /* Creates space for the header */
+    }
 
-#fourth-page {
-    height: 63vh;
-}
+    #fourth-page {
+        height: 63vh;
+    }
 
 }
 
 /* Second Page Header Styles */
 #second-page {
     position: relative;
-    padding-top: 0px;
     /* Creates space for the header */
 }
 
@@ -1535,24 +1905,6 @@ body {
     gap: 10px;
 }
 
-.round-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 1px solid #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-}
-
-.round-button:hover {
-    background-color: #000;
-    color: #fff;
-}
 
 .spec-labels {
     display: flex;
@@ -1658,105 +2010,6 @@ body {
 
 } */
 
-
-/* ========== POPUP STYLES ========== */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup.active {
-    display: flex;
-}
-
-.popup-content {
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 30px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.popup-content h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #333;
-    margin: 0 0 10px 0;
-}
-
-.popup-content p {
-    font-size: 1rem;
-    color: #666;
-    margin: 0 0 20px 0;
-}
-
-.popup-content input[type="email"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: #f5f5f5;
-    color: #666;
-    box-sizing: border-box;
-}
-
-.subscribe-button {
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #666;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.subscribe-button:hover {
-    background-color: #e0e0e0;
-    color: #333;
-}
-
-/* Responsive Adjustments for Popup */
-@media (max-width: 480px) {
-    .popup-content {
-        padding: 20px;
-        max-width: 300px;
-    }
-
-    .popup-content h2 {
-        font-size: 1.25rem;
-    }
-
-    .popup-content p {
-        font-size: 0.9rem;
-    }
-
-    .popup-content input[type="email"] {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-
-    .subscribe-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-}
-
-
 /* ========== POPUP STYLES ========== */
 .popup {
     display: none;
@@ -1766,6 +2019,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent overlay */
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -1853,3 +2107,133 @@ body {
         font-size: 0.9rem;
     }
 }
+
+/* second page css starts */
+/* ========== SECOND PAGE (SLIDER) ========== */
+/* ========== SECOND PAGE (SLIDER) ========== */
+#second-page {
+    position: relative;
+    width: 100%;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    min-height: 75vh;
+    /* Match slides-container height */
+}
+
+#second-page * {
+    box-sizing: border-box;
+}
+
+#second-page .slide {
+    width: 357px;
+    height: 550px;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    /* Static depth shadow for popped-up box effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    /* Solid background for card effect */
+    z-index: 1;
+}
+
+#second-page .slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 20px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+#second-page .slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#second-page .slides-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 10px;
+    height: 64vh;
+}
+
+#second-page .slides-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0 10px;
+}
+
+#second-page .navigation {
+    position: absolute;
+    bottom: 20px;
+    right: 53px;
+    display: flex;
+    gap: 10px;
+    z-index: 3;
+}
+
+/* Responsive adjustments for second page slider */
+@media (max-width: 1200px) {
+    #second-page .slide {
+        width: 300px;
+        height: 450px;
+        /* Adjust shadow for smaller screens */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.15);
+    }
+}
+
+@media (max-width: 768px) {
+    #second-page .slide {
+        width: 45vw;
+        height: 400px;
+        /* Slightly reduce shadow */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    #second-page .slide-content h3 {
+        font-size: 1.2rem;
+    }
+
+    #second-page .slide-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #second-page .slide {
+        width: calc(100vw - 40px);
+        max-height: 100vh;
+        max-width: 72vw;
+        /* Further reduce shadow for mobile */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    #second-page .slide-content {
+        padding: 15px;
+    }
+
+    #second-page .slide-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #second-page .slide-content p {
+        font-size: 0.8rem;
+    }
+}
+
+/* second page css ends */
