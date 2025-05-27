@@ -2207,7 +2207,7 @@ body {
         display: flex;
         transition: transform 0.5s ease;
         gap: 10px;
-        height: 57vh;
+        height: 72vh;
     }
 
     #second-page .slide {
