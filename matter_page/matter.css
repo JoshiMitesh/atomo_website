@@ -365,7 +365,7 @@
     #main-title {
         font-size: 70px;
         font-weight: 700;
-        color: var(--text-dark);
+    color: #3c3c3c;
         margin: 0;
         line-height: 1.2;
         letter-spacing: 1px;
@@ -375,8 +375,8 @@
     #subtitle {
         font-size: 40px;
         font-weight: 400;
-        padding-top: 4vh;
-        color: #666666;
+        padding-top: 3vh;
+    color: #3c3c3c;
         margin: 0;
         line-height: 1.5;
         text-align: right;

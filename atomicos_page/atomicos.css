@@ -219,7 +219,7 @@ body {
     position: relative;
     font-size: 70px;
     font-weight: 700;
-    color: #333333;
+    color: #3c3c3c;
     margin: 0;
     letter-spacing: 2px;
 }
@@ -228,7 +228,7 @@ body {
     position: relative;
     font-size: 45px;
     font-weight: 400;
-    color: #666666;
+    color: #3c3c3c;
     margin: 2px 0px 12px;
     max-width: 474px;
     line-height: 1.5;
