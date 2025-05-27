@@ -2188,7 +2188,7 @@ body {
 #second-page .slides-wrapper {
     width: 100%;
     overflow: hidden;
-    height: 70vh;
+    height: 52vh;
 
     position: relative;
     padding: 0 10px;
@@ -2221,6 +2221,13 @@ body {
 }
 
 @media (max-width: 768px) {
+    #second-page .slides-wrapper {
+    width: 100%;
+    overflow: hidden;
+    height: 70vh;
+    position: relative;
+    padding: 0 10px;
+}
     #second-page .slide {
         width: 45vw;
         height: 400px;
