@@ -667,7 +667,7 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
     background-color: #ffffff;
     border-radius: 12px;
     padding: 24px;
-    height: auto;
+    height: 43vh;
     min-height: 300px;
     flex: 1 1 300px; /* Flex grow, shrink, basis */
     max-width: calc(33.33% - 24px); /* 3 boxes per row with gap */
@@ -1779,6 +1779,7 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 
     .box p {
         font-size: 0.875rem;
+
     }
 
     .section-title,
@@ -1792,6 +1793,8 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 
     .section-description {
         font-size: 0.875rem;
+                        text-align: left;
+
     }
 
     .step-box h3 {
