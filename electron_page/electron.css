@@ -1055,7 +1055,6 @@ body {
 
 .slider-controls {
     display: flex;
-    gap: 20px;
 }
 
 /* Responsive adjustments */
@@ -1111,9 +1110,8 @@ body {
 
     .feature-slide {
         flex: 0 0 calc(100% - 10px);
-        margin: 0 5px;
+        margin: 0 4px;
         height: 55vh;
-        padding: 34px;
     }
 
     .feature-icon {
@@ -2236,6 +2234,13 @@ body {
 }
 
 @media (max-width: 480px) {
+    #second-page .slides-wrapper {
+    width: 100%;
+    height: 52vh;
+    overflow: hidden;
+    position: relative;
+    padding: 0 10px;
+}
     #second-page {
         position: relative;
         width: 100%;
@@ -2270,3 +2275,11 @@ body {
 }
 
 /* second page css ends */
+@media (max-width: 375px) {
+    #second-page .slides-wrapper {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+    padding: 0 10px;
+}}
