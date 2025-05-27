@@ -1113,6 +1113,7 @@ body {
         flex: 0 0 calc(100% - 10px);
         margin: 0 5px;
         height: 55vh;
+        padding: 34px;
     }
 
     .feature-icon {
@@ -1131,7 +1132,7 @@ body {
     }
 
     .feature-desc {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .slider-controls-container1 {
@@ -2187,7 +2188,6 @@ body {
 #second-page .slides-wrapper {
     width: 100%;
     overflow: hidden;
-    height: auto;
     position: relative;
     padding: 0 10px;
 }
@@ -2203,19 +2203,11 @@ body {
 
 /* Responsive adjustments for second page slider */
 @media (max-width: 1200px) {
-    #second-page .slides-wrapper {
-    width: 100%;
-    overflow: hidden;
-        height: 61vh;
-    position: relative;
-    padding: 0 10px;
-}
-    
     #second-page .slides-container {
         display: flex;
         transition: transform 0.5s ease;
         gap: 10px;
-        height: 72vh;
+        height: 57vh;
     }
 
     #second-page .slide {
@@ -2227,20 +2219,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    #second-page .slides-wrapper {
-    width: 100%;
-    overflow: hidden;
-        height: 61vh;
-    position: relative;
-    padding: 0 10px;
-}
-    #second-page .slides-wrapper {
-    width: 100%;
-    overflow: hidden;
-        height: 56vh;
-    position: relative;
-    padding: 0 10px;
-}
     #second-page .slide {
         width: 45vw;
         height: 400px;
@@ -2266,7 +2244,7 @@ body {
         overflow-x: hidden;
         margin-top: -4vh;
         /* min-height: 7vh; */
-        height: 73vh;
+        height: auto;
     }
 
     #second-page .slide {
@@ -2290,10 +2268,5 @@ body {
         font-size: 0.8rem;
     }
 }
-
-@media (max-width: 375px) {
-    #second-page .slides-wrapper {
-        height: 74vh;
-}}
 
 /* second page css ends */
