@@ -996,7 +996,6 @@ body {
     /* Reduced margin to minimize gaps */
     margin: 0 5px;
     /* Adjusted margin for tighter spacing */
-    background-color: #8da2ca;
     border-radius: 12px;
     padding: 20px 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
