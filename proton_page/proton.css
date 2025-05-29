@@ -1,3 +1,83 @@
+@media (max-width: 768px) {
+    #second-page {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 60vh;
+        padding: 0 15px;
+        margin-top: 0;
+    }
+
+    #second-page .slides-wrapper {
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        position: relative;
+        padding: 0;
+    }
+
+    #second-page .slides-container {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 15px;
+        height: 100%;
+    }
+
+    #second-page .slide {
+        width: 45vw;
+        height: 45vh;
+        min-height: 350px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    #second-page .slide-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #second-page .slide-content {
+        padding: 15px;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+    #second-page .slide-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        white-space: normal;
+        text-align: left;
+    }
+
+    #second-page .slide-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        text-align: left;
+        max-width: 90%;
+    }
+
+    .slider-controls-container {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        width: auto;
+        margin-top: 0;
+    }
+
+    .round-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .headingg {
+        font-size: 2rem;
+        padding-left: 2vh;
+        padding-top: 5vh;
+        padding-bottom: 1vh;
+    }
+}
+
 /* Style for the top right text */
 .top-right-text {
     position: absolute;
@@ -712,7 +792,7 @@ body {
 .headingg {
     padding-left: 3vh;
     font-size: 40px;
-    padding-top: 11vh;
+    padding-top: 4vh;
     font-weight: 600;
 }
 
@@ -2326,7 +2406,7 @@ body {
 #second-page .slide-content h3 {
     font-size: 27px; /* Slightly smaller than text-xl for better fit */
     font-weight: bold;
-    margin-bottom: -28px;
+    margin-bottom: 18px;
     color: #ffffff;
     white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden; /* Hide overflow */
@@ -2359,7 +2439,7 @@ body {
 @media (max-width: 1200px) {
     #second-page .slide {
         width: 300px;
-        height: 450px;
+        height:fit-content;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.15);
     }
 
