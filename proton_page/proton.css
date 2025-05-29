@@ -2124,6 +2124,8 @@ body {
     }
 }
 
+
+
 /* second page css starts */
 /* ========== SECOND PAGE (SLIDER) ========== */
 /* ========== SECOND PAGE (SLIDER) ========== */
@@ -2182,7 +2184,7 @@ body {
 #second-page .slides-container {
     display: flex;
     transition: transform 0.5s ease;
-    gap: 10px;
+    gap: 53px;
     height: 72vh;
 }
 
@@ -2204,6 +2206,17 @@ body {
 
 /* Responsive adjustments for second page slider */
 @media (max-width: 1200px) {
+
+#second-page .slides-wrapper {
+        width: 100%;
+        height: 63vh;
+    overflow: hidden;
+    /* padding: 0 10px; */
+    padding: 0 10px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
     #second-page .slides-container {
         display: flex;
         transition: transform 0.5s ease;
@@ -2286,3 +2299,147 @@ body {
     position: relative;
     padding: 0 10px;
 }}
+/* Second Page Slider Text Alignment */
+#second-page .slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center-align text horizontally */
+    text-align: center; /* Ensure text is centered */
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    color: white;
+    padding: 20px; /* Consistent padding */
+    z-index: 2;
+    pointer-events: none; /* Prevent interaction with text */
+}
+
+#second-page .slide-content h3 {
+    font-size: 1.25rem; /* Slightly smaller than text-xl for better fit */
+    font-weight: bold;
+    margin-bottom: 10px; /* Consistent spacing between title and description */
+    color: #ffffff;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for long titles */
+    max-width: 100%; /* Ensure it stays within slide width */
+}
+
+#second-page .slide-content p {
+    font-size: 0.875rem; /* Consistent with text-sm */
+    color: #ffffff;
+    line-height: 1.5; /* Improved readability */
+    margin: 0; /* Remove default margin */
+    max-width: 80%; /* Consistent width for text block to align first line */
+}
+
+/* Ensure slide dimensions and layout are consistent */
+#second-page .slide {
+    width: 357px;
+    height: 550px;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    z-index: 1;
+}
+
+/* Responsive adjustments for second page slider */
+@media (max-width: 1200px) {
+    #second-page .slide {
+        width: 300px;
+        height: 450px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    #second-page .slides-container {
+        height: 57vh;
+    }
+
+    #second-page .slide-content h3 {
+        font-size: 1.1rem; /* Smaller font to fit in one line */
+    }
+
+    #second-page .slide-content p {
+        font-size: 0.85rem;
+        max-width: 85%; /* Slightly wider for smaller slides */
+    }
+}
+
+@media (max-width: 768px) {
+    #second-page .slide {
+        width: 45vw;
+        height: 400px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    #second-page .slide-content h3 {
+        font-size: 1rem; /* Further reduced for smaller screens */
+    }
+
+    #second-page .slide-content p {
+        font-size: 0.8rem;
+        max-width: 90%; /* Adjust for narrower slides */
+    }
+}
+
+@media (max-width: 480px) {
+    #second-page {
+        margin-top: -4vh;
+        height: auto;
+        min-height: 75vh;
+    }
+
+    #second-page .slides-wrapper {
+        width: 100%;
+        height: 67vh;
+        overflow: hidden;
+        position: relative;
+        padding: 0 10px;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+    }
+
+    #second-page .slide {
+        width: calc(100vw - 40px);
+        max-width: 72vw;
+        height: 100%;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    #second-page .slide-content {
+        padding: 15px;
+    }
+
+    #second-page .slide-content h3 {
+        font-size: 0.95rem; /* Small enough to fit in one line on mobile */
+        margin-bottom: 8px;
+    }
+
+    #second-page .slide-content p {
+        font-size: 0.75rem;
+        line-height: 1.4;
+        max-width: 95%; /* Maximize width for single slide */
+    }
+}
+
+@media (max-width: 375px) {
+    #second-page .slides-wrapper {
+        height: 70vh;
+    }
+
+    #second-page .slide-content h3 {
+        font-size: 0.9rem; /* Further adjustment for very small screens */
+    }
+
+    #second-page .slide-content p {
+        font-size: 0.75rem;
+        max-width: 95%;
+    }
+}
