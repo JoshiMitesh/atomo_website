@@ -782,14 +782,14 @@ body {
 /* Styles for third-page */
 #third-page {
     position: relative;
-    height: 103vh;
+    height: 109vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
     box-sizing: border-box;
-    margin-top: -66px;
+    margin-top: -4px;
 }
 
 /* Styles for the heading */
@@ -973,7 +973,7 @@ body {
 }
 
 .features-slider-container {
-    width: 99%;
+    width: 100%;
     position: relative;
     overflow-x: hidden !important;
     /* Strictly enforce overflow hiding */
@@ -2130,10 +2130,9 @@ body {
 #second-page {
     position: relative;
     width: 100%;
-    padding: 0px 20px;
+    height: 72vh;
     box-sizing: border-box;
     overflow-x: hidden;
-    height: 75vh;
     /* Match slides-container height */
 }
 
@@ -2174,21 +2173,19 @@ body {
 }
 
 #second-page .slide-img {
-    width: 100%;
-    height: 100%;
+    
     object-fit: cover;
 }
 
 #second-page .slides-container {
     display: flex;
     transition: transform 0.5s ease;
-    gap: 53px;
-    height: 72vh;
+    gap: 34px;
+    height: 57vh;
 }
 
 #second-page .slides-wrapper {
     width: 100%;
-    overflow: hidden;
     position: relative;
     padding: 0 10px;
 }
@@ -2309,7 +2306,7 @@ body {
 }}
 /* Second Page Slider Text Alignment */
 #second-page .slide-content {
-    position: absolute;
+  position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -2317,19 +2314,19 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center-align text horizontally */
-    text-align: center; /* Ensure text is centered */
-    background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    align-items: flex-start;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
     color: white;
-    padding: 20px; /* Consistent padding */
+    padding: 20px;
     z-index: 2;
-    pointer-events: none; /* Prevent interaction with text */
+    pointer-events: none;
 }
 
 #second-page .slide-content h3 {
-    font-size: 1.25rem; /* Slightly smaller than text-xl for better fit */
+    font-size: 27px; /* Slightly smaller than text-xl for better fit */
     font-weight: bold;
-    margin-bottom: 10px; /* Consistent spacing between title and description */
+    margin-bottom: -28px;
     color: #ffffff;
     white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden; /* Hide overflow */
@@ -2338,17 +2335,17 @@ body {
 }
 
 #second-page .slide-content p {
-    font-size: 0.875rem; /* Consistent with text-sm */
+    font-size: 20px;
     color: #ffffff;
-    line-height: 1.5; /* Improved readability */
+    line-height: 22px; /* Improved readability */
+    text-align: left;
     margin: 0; /* Remove default margin */
-    max-width: 80%; /* Consistent width for text block to align first line */
 }
 
 /* Ensure slide dimensions and layout are consistent */
 #second-page .slide {
-    width: 357px;
-    height: 550px;
+    height: 49.07vh;
+  width: 20.78vw;
     position: relative;
     flex-shrink: 0;
     overflow: hidden;
