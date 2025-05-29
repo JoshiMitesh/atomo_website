@@ -1046,7 +1046,7 @@ body {
     padding: 40px 0;
     /* Adjusted padding to remove extra space */
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-bottom: -25px;
     background-color: white;
     overflow-x: hidden;
     /* Ensure no overflow at the section level */
