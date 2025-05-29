@@ -999,7 +999,8 @@ body {
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
-    height: 43vh;
+    height: 28.33vh; /* Adjust based on your viewport height */
+  width: 39.72vh; /* Adjust based on your viewport height */
     box-sizing: border-box;
 }
 
