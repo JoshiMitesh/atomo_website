@@ -88,12 +88,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Second Page Slider (Updated to match Fourth Page Slider)
+    // Second Page Slider
     function initializeSecondPageSlider() {
         const slider = document.querySelector('#slidesContainer');
         const prevBtn = document.querySelector('#second-page .prev-slide');
         const nextBtn = document.querySelector('#second-page .next-slide');
         const secondPageSection = document.querySelector('#second-page');
+
+        // Check if all required elements exist
+        if (!slider || !prevBtn || !nextBtn || !secondPageSection) {
+            console.warn('Slider elements not found:', { slider, prevBtn, nextBtn, secondPageSection });
+            return;
+        }
 
         let currentIndex = 0;
         const autoSlideInterval = 10000; // 10 seconds
@@ -101,22 +107,22 @@ document.addEventListener('DOMContentLoaded', function () {
         let autoSlideTimer = null;
         let isAutoSliding = false;
 
-        // Sample data for slides (same as provided)
+        // Sample data for slides
         const slidesData = [
             {
                 image: '/electron_page/Frame.svg',
                 title: 'What Is Electron?',
-                description: 'Electron is Atomo Innovation’s industrial-grade edge computing platform, designed to bring advanced intelligence and real-time decision-making to the edge of industrial operations. It empowers businesses with faster data processing, enhanced automation, and seamless system integration.'
+                description: 'Atomo Innovation’s Electron is a powerful edge computing platform for industries, offering real-time intelligence, faster processing and automation at the edge.'
             },
             {
                 image: '/electron_page/Frame.svg',
                 title: 'Why It Exists?',
-                description: 'Designed to modernize industries by enabling local AI decision-making without relying on cloud infrastructure, Electron ensures faster, more secure, and uninterrupted operations even in remote or disconnected environments.'
+                description: 'With Electron, industries can run AI locally—no cloud needed. This means faster, secure, and reliable operations, even offline or in remote locations.'
             },
             {
                 image: '/electron_page/Frame.svg',
                 title: "Who It's For?",
-                description: 'Ideal for system integrators, automation engineers, and industrial IoT solution providers aiming to build intelligent, resilient systems with enhanced performance, reliability, and scalability at the edge.'
+                description: 'Built for system integrators and IIoT providers, Electron delivers smart, scalable, and ultra-reliable edge computing solutions.'
             },
             {
                 image: '/electron_page/Frame.svg',
@@ -126,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 image: '/electron_page/Frame.svg',
                 title: 'Not Just a Device – A Platform!',
-                description: 'Electron is built to perform in the toughest environments-be it remote farms, factory floors, or power stations-ensuring dependable edge computing wherever its deployed.'
+                description: 'Industrial-grade toughness. Electron thrives in farms, factories, and power plants—ensuring AI never quits, even off-grid.'
             },
             {
                 image: '/electron_page/Frame.svg',
@@ -146,12 +152,12 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 image: '/electron_page/Frame.svg',
                 title: 'Part of a Bigger Family',
-                description: 'Electron works seamlessly with Atomo’s Neutron (Home) and Proton (Pro Home) systems, creating a unified ecosystem that powers comprehensive smart environments across residential and industrial settings.'
+                description: 'Electron works seamlessly with Atomo’s Neutron and Proton systems, creating a powerful connected smart ecosystem for homes and industries.'
             },
             {
                 image: '/electron_page/Frame.svg',
                 title: 'Designed in India, Made for the World!',
-                description: 'A proudly Indian innovation, Electron is designed to empower industries both locally and globally, combining robust engineering with a vision for worldwide impact.'
+                description: 'Born in India, built for the world—Electron combines rugged engineering with scalable intelligence to transform industries everywhere.'
             }
         ];
 
@@ -170,6 +176,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         const slides = document.querySelectorAll('#second-page .slide');
+
+        // Ensure slides exist
+        if (slides.length === 0) {
+            console.warn('No slides found in #slidesContainer');
+            return;
+        }
 
         function updateSlidesToShow() {
             if (window.innerWidth <= 480) return 1;
@@ -191,11 +203,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 translateX += offset;
             }
 
+            console.log('Updating slider: currentIndex:', currentIndex, 'translateX:', translateX);
             slider.style.transform = `translateX(${translateX}px)`;
 
-            // Disable buttons at boundaries
+            // Update button states
             prevBtn.disabled = currentIndex === 0;
             nextBtn.disabled = currentIndex >= slides.length - slidesToShow;
+            console.log('Button states:', { prevDisabled: prevBtn.disabled, nextDisabled: nextBtn.disabled });
         }
 
         function autoSlide() {
@@ -239,10 +253,12 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(secondPageSection);
 
         prevBtn.addEventListener('click', () => {
+            console.log('Prev button clicked, currentIndex before:', currentIndex);
             clearTimeout(autoSlideTimer);
             if (currentIndex > 0) {
                 currentIndex--;
                 updateSlider();
+                console.log('Prev button clicked, currentIndex after:', currentIndex);
             }
             if (isAutoSliding) {
                 autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
@@ -250,6 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         nextBtn.addEventListener('click', () => {
+            console.log('Next button clicked, currentIndex:', currentIndex);
             clearTimeout(autoSlideTimer);
             const slidesToShow = updateSlidesToShow();
             if (currentIndex < slides.length - slidesToShow) {
@@ -272,6 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
             updateSlider();
         });
 
+        // Initial update
         updateSlider();
     }
 
@@ -284,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const fourthPageSection = document.querySelector('#fourth-page');
 
         let currentFeatureIndex = 0;
-        const autoSlideInterval = 10000; // 10 seconds
+        const autoSlideinterval = 10000; // 10 seconds
         const restartDelay = 1000; // 1 second
         let autoSlideTimer = null;
         let isAutoSliding = false;

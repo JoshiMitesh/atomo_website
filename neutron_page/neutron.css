@@ -203,14 +203,13 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin-bottom: 10px;
 }
 
 #electron-video {
-    width: 85%;
-    margin-top: 112px;
+    width: 78%;
+    padding-top: 9vh;
     /* max-width: 1126px; */
-    height: 119%;
+    height: 110%;
     display: block;
     z-index: 10;
 }
@@ -229,7 +228,7 @@ body {
 #main-title {
     /* bottom: 100%; */
     /* right: 104%; */
-    font-size: 70px;
+    font-size: 45px;
     font-weight: 700;
     color: #3c3c3c;
     margin: 0;
@@ -240,7 +239,7 @@ body {
 #subtitle {
     padding-top: 4vh;
     color: #3C3C3C;
-    font-size: 45px;
+    font-size: 30px;
     font-style: italic;
 }
 
@@ -505,9 +504,7 @@ body {
 }
 
 @media (max-width: 768px) {
-
-
-
+   
     .headingg {
         font-size: 2.5rem;
         padding-left: 2vh;
@@ -573,6 +570,7 @@ body {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    
     .slider-controls-container {
         bottom: 15px;
         /* Adjust for smaller screens */
@@ -713,14 +711,10 @@ body {
 
 .headingg {
     padding-left: 3vh;
-    font-size: 3rem;
-    padding-top: 8vh;
-
+    font-size: 40px;
+    padding-top: 11vh;
     font-weight: 600;
 }
-
-
-
 
 .dots-container {
     position: absolute;
@@ -788,7 +782,7 @@ body {
 /* Styles for third-page */
 #third-page {
     position: relative;
-    height: 114vh;
+    height: 103vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -851,6 +845,8 @@ body {
 .price-section {
     position: inherit;
     margin-top: -420px;
+        padding-bottom: 3vh;
+
 }
 
 .price-button {
@@ -859,11 +855,11 @@ body {
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 65px;
     font-size: 1rem;
     margin-right: 10px;
-    height: 50px;
-    width: 130px;
+    height: 5.74vh;
+    width: 20.46vh;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -878,10 +874,10 @@ body {
     color: #2b6cb0;
     border: 2px solid #2b6cb0;
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 65px;
     font-size: 1rem;
-    height: 50px;
-    width: 85px;
+     height: 5.74vh;
+    width: 20.46vh;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -1002,7 +998,8 @@ body {
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
-    height: 43vh;
+    height: 28.33vh; /* Adjust based on your viewport height */
+  width: 39.72vh; /* Adjust based on your viewport height */
     box-sizing: border-box;
 }
 
@@ -1683,6 +1680,7 @@ body {
     }
 
     #electron-video {
+        
         max-width: 163%;
         padding-right: 18px;
         border-radius: 8px;
@@ -1908,7 +1906,7 @@ body {
     height: 40px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.7);
-    border: 1px solid #000;
+    border: 2px solid #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1977,7 +1975,7 @@ body {
     font-weight: 400;
     color: #666;
     /* Lighter color to distinguish from the label */
-    margin-left: 141px;
+    margin-left: 100px;
 }
 
 /* Responsive adjustments */
@@ -2135,7 +2133,7 @@ body {
     padding: 0px 20px;
     box-sizing: border-box;
     overflow-x: hidden;
-    min-height: 75vh;
+    height: 75vh;
     /* Match slides-container height */
 }
 
@@ -2204,12 +2202,22 @@ body {
     z-index: 3;
 }
 
+
 /* Responsive adjustments for second page slider */
 @media (max-width: 1200px) {
+    #second-page {
+    position: relative;
+    width: 100%;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    height: 54vh;
+    /* Match slides-container height */
+}
 
 #second-page .slides-wrapper {
         width: 100%;
-        height: 63vh;
+        height: 52vh;
     overflow: hidden;
     /* padding: 0 10px; */
     padding: 0 10px;
