@@ -1,5 +1,6 @@
 /* Add this at the top of your CSS to prevent horizontal overflow */
-html, body {
+html,
+body {
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -14,7 +15,8 @@ html, body {
     padding: 0 20px;
     box-sizing: border-box;
     margin: 40px auto 0;
-    max-width: calc(100% - 40px); /* Ensure it never exceeds viewport */
+    max-width: calc(100% - 40px);
+    /* Ensure it never exceeds viewport */
 }
 
 /* Ensure all sections stay within viewport */
@@ -64,12 +66,12 @@ html, body {
         width: calc(100% - 40px);
         margin: 0 auto;
     }
-    
+
     .section-text-container {
         width: calc(100% - 30px);
         padding: 20px;
     }
-    
+
     .hero-image {
         width: 90%;
     }
@@ -80,21 +82,21 @@ html, body {
         width: calc(100% - 20px);
         padding: 15px;
     }
-    
+
     .section-text-container {
         width: calc(100% - 20px);
         padding: 15px;
     }
-    
+
     .hero-image {
         width: 95%;
     }
-    
+
     #main-title {
         font-size: 2rem;
         white-space: nowrap;
     }
-    
+
     #subtitle {
         font-size: 1.2rem;
         white-space: normal;
@@ -217,7 +219,7 @@ body {
 
 #main-title {
     position: relative;
-    font-size: 70px;
+    font-size: 45px;
     font-weight: 700;
     color: #3c3c3c;
     margin: 0;
@@ -226,14 +228,15 @@ body {
 
 #subtitle {
     position: relative;
-    font-size: 45px;
     font-weight: 400;
     color: #3c3c3c;
     margin: 2px 0px 12px;
     max-width: 474px;
     line-height: 1.5;
     text-align: center;
-color: #3C3C3C; font-size: 40px;font-style: italic;
+    color: #3C3C3C;
+    font-size: 30px;
+    font-style: italic;
 }
 
 
@@ -253,13 +256,15 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 
     #first-page {
         padding: 70px 15px 15px;
+        
     }
 }
 
 @media (max-width: 768px) {
-        .matter-content {
+    .matter-content {
         top: 6%;
     }
+
     #main-title {
         font-size: 3rem;
     }
@@ -277,9 +282,7 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 
 @media (max-width: 480px) {
     #first-page {
-        padding: 50px 5px 5px;
         height: auto;
-        min-height: 73vh;
     }
 
     .hero-container {
@@ -324,7 +327,7 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 
 @media (max-width: 1180px) {
     .hero-image {
-       width: 80%;
+        width: 80%;
         top: 40vh;
         position: relative;
         left: 42%;
@@ -333,7 +336,7 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 
 @media (max-width: 768px) {
     .hero-image {
-       width: 80%;
+        width: 80%;
         top: 40vh;
         position: relative;
         left: 42%;
@@ -347,8 +350,8 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
     }
 
     .hero-image {
-       width: 80%;
-        top: 40vh;
+        width: 80%;
+        top: 46vh;
         position: relative;
         left: 42%;
     }
@@ -598,7 +601,7 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 /* Second Page - Keeping your exact structure */
 #second-page {
     position: relative;
-    min-height: 100vh;
+    min-height: 80vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -617,14 +620,14 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 }
 
 #second-title {
-    font-size: 70px;
+    font-size: 40px;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 16px;
 }
 
 #second-subtitle {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: -17px;
@@ -632,19 +635,20 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 }
 
 #second-description {
-    font-size: 65px;
+    font-size: 35px;
     font-weight: 500;
     color: var(--text-dark);
-    text-align: left;
+    padding-bottom: 3vh;
+    text-align: center;
     margin-top: 62px;
     width: 100%;
 }
 
 #second-text {
-    font-size: 40px;
+    font-size: 22px;
     font-weight: 400;
     color: #4a5568;
-    text-align: left;
+    text-align: center;
     width: 100%;
     line-height: 1.7;
     margin-top: -6vh;
@@ -657,50 +661,58 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
     gap: 24px;
     width: 100%;
     flex-wrap: wrap;
-    padding: 0 20px; /* Add padding to prevent edge touching */
-    box-sizing: border-box; /* Include padding in width calculation */
+    padding: 0 20px;
+    /* Add padding to prevent edge touching */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
     margin: 40px auto 0;
-    max-width: 1800px; /* Set a reasonable max-width */
+    max-width: 1800px;
+    /* Set a reasonable max-width */
 }
 
 .box {
     background-color: #ffffff;
     border-radius: 12px;
     padding: 24px;
-    height: 43vh;
-    min-height: 300px;
-    flex: 1 1 300px; /* Flex grow, shrink, basis */
-    max-width: calc(33.33% - 24px); /* 3 boxes per row with gap */
+   height: 36.76vh;
+  width: 46.00vh; /* or 25.88vw if using viewport width */
+    flex: 1 1 300px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     background-color: lightgrey;
-    box-sizing: border-box; /* Include padding in width */
-    overflow: hidden; /* Prevent content from overflowing */
+    box-sizing: border-box;
+    /* Include padding in width */
+    overflow: hidden;
+    /* Prevent content from overflowing */
 }
 
 .box h4 {
-    font-size: clamp(24px, 2.5vw, 33px); /* Responsive font size */
+    font-size: 28px;
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 12px;
-    word-break: break-word; /* Prevent heading overflow */
+    word-break: break-word;
+    /* Prevent heading overflow */
 }
 
 .box p {
-    font-size: clamp(16px, 2vw, 20px); /* Responsive font size */
+    font-size: 22px;
+    /* Responsive font size */
     text-align: center;
     font-weight: 400;
     color: #4a5568;
     line-height: 1.6;
     margin: 0;
-    word-break: break-word; /* Prevent text overflow */
+    word-break: break-word;
+    /* Prevent text overflow */
 }
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .box {
-        max-width: calc(50% - 24px); /* 2 boxes per row on medium screens */
+        max-width: calc(50% - 24px);
+        /* 2 boxes per row on medium screens */
     }
 }
 
@@ -709,8 +721,10 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
         gap: 16px;
         padding: 0 15px;
     }
+
     .box {
-        max-width: 100%; /* 1 box per row on small screens */
+        max-width: 100%;
+        /* 1 box per row on small screens */
         min-height: auto;
         padding: 20px;
     }
@@ -720,12 +734,15 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
     .box-container {
         padding: 0 10px;
     }
+
     .box {
         padding: 16px;
     }
+
     .box h4 {
         font-size: 20px;
     }
+
     .box p {
         font-size: 16px;
     }
@@ -736,19 +753,24 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
     #second-title {
         font-size: 60px;
     }
+
     #second-subtitle {
         font-size: 35px;
     }
+
     #second-description {
         font-size: 55px;
         margin-top: 50px;
     }
+
     #second-text {
         font-size: 35px;
     }
+
     .box h4 {
         font-size: 28px;
     }
+
     .box p {
         font-size: 25px;
     }
@@ -758,22 +780,28 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
     #second-title {
         font-size: 50px;
     }
+
     #second-subtitle {
         font-size: 30px;
     }
+
     #second-description {
         font-size: 45px;
         margin-top: 40px;
     }
+
     #second-text {
         font-size: 30px;
     }
+
     .box {
         min-width: 250px;
     }
+
     .box h4 {
         font-size: 24px;
     }
+
     .box p {
         font-size: 20px;
     }
@@ -784,23 +812,30 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
         min-height: auto;
         padding: 60px 20px;
     }
+
     #second-title {
         font-size: 40px;
     }
+
     #second-subtitle {
         font-size: 25px;
     }
-    #second-description, #second-text {
+
+    #second-description,
+    #second-text {
         text-align: center;
     }
+
     #second-description {
         font-size: 35px;
         margin-top: 30px;
     }
+
     #second-text {
         font-size: 25px;
         margin-top: 20px;
     }
+
     .box-container {
         gap: 20px;
     }
@@ -810,22 +845,28 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
     #second-title {
         font-size: 35px;
     }
+
     #second-subtitle {
         font-size: 22px;
     }
+
     #second-description {
         font-size: 30px;
     }
+
     #second-text {
         font-size: 20px;
     }
+
     .box {
         min-width: 100%;
         max-width: 100%;
     }
+
     .box h4 {
         font-size: 22px;
     }
+
     .box p {
         font-size: 18px;
     }
@@ -835,18 +876,22 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
     #second-title {
         font-size: 30px;
     }
+
     #second-subtitle {
         font-size: 20px;
         margin-bottom: -10px;
     }
+
     #second-description {
         font-size: 25px;
         margin-top: 20px;
     }
+
     #second-text {
         font-size: 18px;
         margin-top: 15px;
     }
+
     .box {
         padding: 20px;
     }
@@ -859,12 +904,13 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 }
 
 .zzz1 {
-    width: 9vh;
-    height: 7vh;
+    --vh: calc(55 / 1080 * 100vh); /* Adjust 1080 to your design's reference viewport height */
+  height: var(--vh);
+  width: var(--vh); /* Use vw if width is relative to viewport width */
 }
 
 .headingg {
-    font-size: 38px;
+    font-size: 30px;
     padding-left: 2vh;
 }
 
@@ -876,7 +922,7 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 #seventh-page,
 #eighth-page {
     position: relative;
-    min-height: 62vh;
+    min-height: 44vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -887,7 +933,7 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 }
 
 .section-content {
-    width: 100%;
+    width: 70%;
     max-width: 100%;
     margin: 0;
     padding: 0 20px;
@@ -911,16 +957,17 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
     flex-direction: row;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.05);
-    min-height: 28vh;
-    width: 96%;
+   height: 19.17vh;
+  width: 67.34vw;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 0 auto;
 }
 
 .section-description {
-    font-size: 29px;
+    font-size: 22px;
     font-weight: 400;
+    text-align: left;
     color: #4a5568;
     line-height: 1.7;
 }
@@ -1031,7 +1078,7 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 }
 
 .section-title1 {
-    font-size: 70px;
+    font-size: 35px;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 32px;
@@ -1135,7 +1182,7 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 }
 
 .tagline {
-    font-size: 3.125rem;
+    font-size: 2.1875rem;
     font-weight: 400;
     color: #4a5568;
     margin-top: 34px;
@@ -1793,7 +1840,7 @@ color: #3C3C3C; font-size: 40px;font-style: italic;
 
     .section-description {
         font-size: 0.875rem;
-                        text-align: left;
+        text-align: left;
 
     }
 
