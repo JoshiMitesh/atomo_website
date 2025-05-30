@@ -997,15 +997,7 @@ body {
 
 @media (max-width: 768px) {
 
-    #third-page,
-    #fourth-page,
-    #fifth-page,
-    #sixth-page,
-    #seventh-page,
-    #eighth-page {
-        padding: 32px 16px;
-    }
-
+   
     .section-title {
         font-size: 2rem;
     }
@@ -1046,7 +1038,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
+    padding-top: 16vh;
     box-sizing: border-box;
     margin-bottom: 10px;
 }
@@ -1065,11 +1057,9 @@ body {
 }
 
 .step-icon {
-    width: 86px;
+    width: 32px;
     height: 32px;
-
-    padding-right: 4vh;
-    margin-right: 12px;
+    margin-right: 16px;
     filter: brightness(0) saturate(100%) invert(15%) sepia(5%) saturate(1355%) hue-rotate(202deg) brightness(95%) contrast(88%);
 }
 
@@ -1132,7 +1122,6 @@ body {
     font-weight: 500;
     color: #4a5568;
     line-height: 1.6;
-    padding-top: 8vh;
     overflow-wrap: break-word;
 }
 
@@ -1225,11 +1214,11 @@ body {
         line-height: 1.5;
     }
 
-    .step-icon {
+    /* .step-icon {
         width: 28px;
         height: 28px;
         padding-right: 2vh;
-    }
+    } */
 
     .para {
         font-size: 1.1rem;
@@ -1277,12 +1266,12 @@ body {
         line-height: 1.5;
     }
 
-    .step-icon {
+    /* .step-icon {
         width: 24px;
         height: 24px;
         padding-right: 1vh;
         margin-right: 8px;
-    }
+    } */
 
     .para {
         font-size: 1rem;
@@ -1329,14 +1318,14 @@ body {
         line-height: 1.4;
     }
 
-    .step-icon {
+    /* .step-icon {
         width: 20px;
         height: 20px;
         padding-bottom: 2vh;
 
         padding-right: 0.5vh;
         margin-right: 6px;
-    }
+    } */
 
     .para {
         font-size: 0.9rem;
@@ -1660,6 +1649,12 @@ body {
 }
 
 @media (max-width: 768px) {
+    .step-header {
+    display: flex
+;
+    align-items: center;
+    padding-bottom: 5vh;
+}
     #navbar {
         border-bottom: none;
         box-shadow: none;
@@ -1723,7 +1718,9 @@ body {
     #eighth-page,
     #ninth-page {
         min-height: auto;
-        padding: 32px 16px;
+        padding-top: 15vh;
+
+
 
     }
 
