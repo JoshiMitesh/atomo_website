@@ -815,7 +815,7 @@ body {
 @media (max-width: 992px) {
     #second-page {
         min-height: auto;
-        padding: 60px 20px;
+        margin-bottom: -11vh;
     }
 
     #second-title {
