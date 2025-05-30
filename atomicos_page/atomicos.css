@@ -337,7 +337,7 @@ body {
 @media (max-width: 768px) {
     .hero-image {
         width: 80%;
-        top: 40vh;
+        top: 47vh;
         position: relative;
         left: 42%;
     }
@@ -991,7 +991,7 @@ body {
 
     .section-description {
         font-size: 1.75rem;
-        margin-top: 40px;
+        margin-top: 15px;
     }
 }
 
@@ -1257,8 +1257,6 @@ body {
 
     .step-box h3 {
         font-size: 1.3rem;
-        margin-top: -14px;
-
     }
 
     .step-box p {
