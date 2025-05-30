@@ -638,7 +638,7 @@ body {
     font-size: 35px;
     font-weight: 500;
     color: var(--text-dark);
-    padding-bottom: 3vh;
+    padding-bottom: 6vh;
     text-align: center;
     margin-top: 62px;
     width: 100%;
@@ -671,7 +671,7 @@ body {
 }
 
 .box {
-    background-color: #ffffff;
+    background-color: #ededed;
     border-radius: 12px;
     padding: 24px;
    height: 36.76vh;
@@ -680,7 +680,6 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    background-color: lightgrey;
     box-sizing: border-box;
     /* Include padding in width */
     overflow: hidden;
@@ -693,6 +692,8 @@ body {
 
 .box h4 {
     font-size: 28px;
+        padding-bottom: 2vh;
+
     font-weight: 600;
     color: var(--text-dark);
     margin-top: 0px;
@@ -703,7 +704,7 @@ body {
 .box p {
     font-size: 22px;
     /* Responsive font size */
-    text-align: center;
+    text-align: left;
     font-weight: 400;
     color: #4a5568;
     line-height: 1.6;
@@ -971,6 +972,7 @@ body {
 .section-description {
     font-size: 22px;
     font-weight: 400;
+    padding: 2vh;
     text-align: left;
     color: #4a5568;
     line-height: 1.7;
@@ -1044,7 +1046,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
+    padding: 72px 20px;;
     box-sizing: border-box;
     margin-bottom: 10px;
 }
@@ -1058,6 +1060,8 @@ body {
 .step-header {
     display: flex;
     align-items: center;
+        padding-bottom: 2vh;
+
 }
 
 .step-icon {
