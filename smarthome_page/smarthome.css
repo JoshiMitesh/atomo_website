@@ -21,7 +21,7 @@
 
 .hero-headline {
     color: #3c3c3c;
-    font-size: 70px;
+    font-size: 45px;
     font-weight: 700;
     letter-spacing: 1px;
     margin: 0;
@@ -29,7 +29,7 @@
 
 .hero-quote {
     color: #3c3c3c;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 400;
     font-style: normal;
     margin: 0;
@@ -566,7 +566,7 @@ body {
 /* Smart Home Content */
 .smart-home-content {
     flex: 1;
-    max-width: 40vw;
+    max-width: 48vw;
     text-align: center;
     padding-right: 40px;
     z-index: 2;
@@ -589,9 +589,9 @@ body {
 }
 
 .atomic-os-section h2 {
-    font-size: 4.5rem;
+    font-size: 40px;
     font-weight: 600;
-    width: 116%;
+    width: 146%;
     color: #000;
     /* margin-bottom: 15px; */
     line-height: 1.2;
@@ -606,11 +606,12 @@ body {
 }
 
 .atomic-os-section .quote {
-    font-size: 2.2rem;
+    font-size: 30px;
     color: #666;
+    width: 92vh;
+
     font-style: normal;
-    margin-bottom: 0px;
-    margin-left: 2vw;
+    margin-bottom: -29px;
 }
 
 /* Smart Home Image */
@@ -669,7 +670,6 @@ body {
     margin: 0 auto;
     padding: 80px 40px;
     box-sizing: border-box;
-    gap: 60px;
 }
 
 #smart-home-section {
@@ -714,22 +714,27 @@ device-item {
 }
 
 .devices-right {
+        padding-right: 9vh;
+
     flex: 1;
-    max-width: 40%;
-    text-align: left;
+        max-width: 70%;
+    text-align: center;
 }
 
 .devices-title {
-    font-size: 3.2rem;
+    font-size: 40px;
     text-align: center;
     font-weight: 600;
+    
     color: #000;
     line-height: 1.4;
 }
 
 .devices-tagline {
-    font-size: 4rem;
+    font-size: 35px;
     font-weight: 600;
+        padding-top: 13vh;
+
     color: #000;
     margin-bottom: 20px;
     font-style: normal;
@@ -737,9 +742,12 @@ device-item {
 }
 
 .devices-text {
-    font-size: 2.5rem;
+    font-size: 30px;
     color: #555;
     line-height: 1.6;
+        text-align: center;
+    width: 105vh;
+    
 }
 
 
