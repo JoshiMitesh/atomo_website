@@ -632,6 +632,177 @@ body {
     right: 0;
 }
 
+/* First Page Responsive Adjustments */
+@media (max-width: 1024px) {
+    #first-page {
+        height: auto;
+        min-height: 80vh;
+        padding: 60px 0;
+    }
+
+    .hero-section {
+        padding: 60px 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .hero-headline {
+        font-size: 2.8rem;
+    }
+
+    .hero-quote {
+        font-size: 1.3rem;
+        padding-top: 10px;
+    }
+
+    .smart-home-container {
+        padding: 0 20px;
+        height: auto;
+    }
+
+    .smart-home-content {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .atomic-os-section {
+        width: 100%;
+        padding-bottom: 10%;
+    }
+
+    .atomic-os-section h2 {
+        font-size: 2.2rem;
+        width: 100%;
+    }
+
+    .atomic-os-section .quote {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .smart-home-image-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .smart-home-image {
+        width: 80vw;
+        height: auto;
+        position: relative;
+        right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #first-page {
+        min-height: 70vh;
+        padding: 40px 0;
+    }
+
+    .hero-section {
+        padding: 40px 15px;
+        min-height: 80px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-headline {
+        font-size: 2rem;
+    }
+
+    .hero-quote {
+        font-size: 1rem;
+        text-align: center;
+        padding-top: 8px;
+    }
+
+    .smart-home-container {
+        flex-direction: column;
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+
+    .smart-home-content {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .atomic-os-section {
+        padding-bottom: 5%;
+    }
+
+    .atomic-os-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .atomic-os-section .quote {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .smart-home-image-container {
+        height: 40vh;
+    }
+
+    .smart-home-image {
+        width: 100vw;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 480px) {
+    #first-page {
+        min-height: 60vh;
+        padding: 30px 0;
+    }
+
+    .hero-section {
+        padding: 20px 10px;
+    }
+
+    .hero-headline {
+        font-size: 1.7rem;
+    }
+
+    .hero-quote {
+        font-size: 0.9rem;
+        padding-top: 5px;
+    }
+
+    .smart-home-container {
+        padding: 0 10px;
+        margin-top: 10px;
+    }
+
+    .atomic-os-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .atomic-os-section .quote {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .smart-home-image-container {
+        height: 30vh;
+    }
+
+    .smart-home-image {
+        width: 100vw;
+        height: 100%;
+    }
+}
+
 /* ========== OTHER SECTIONS ========== */
 #second-page,
 #third-page,
@@ -843,6 +1014,180 @@ device-item {
 
 
 
+/* Responsive Adjustments for Second Page */
+@media (max-width: 1024px) {
+    #second-page .devices-container {
+        padding: 60px 30px;
+    }
+
+    #smart-home-section {
+        max-width: 100%;
+    }
+
+    #smart-home-section .devices-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .device-item {
+        width: 140px;
+        height: 140px;
+    }
+
+    .device-item img.device-icon {
+        width: 60px;
+        height: 63px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+
+    .device-item p {
+        font-size: 1.2rem;
+    }
+
+    .status-icon {
+        width: 28px;
+        height: 34px;
+    }
+
+    .devices-right {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .devices-title {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+
+    .devices-tagline {
+        font-size: 1.8rem;
+        padding-top: 10vh;
+    }
+
+    .devices-text {
+        font-size: 1.2rem;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    #second-page {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    #second-page .devices-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    #smart-home-section {
+        max-width: 100%;
+        order: 2;
+    }
+
+    #smart-home-section .devices-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 100%;
+    }
+
+    .device-item {
+        width: 120px;
+        height: 120px;
+    }
+
+    .device-item img.device-icon {
+        width: 50px;
+        height: 52px;
+        margin-bottom: 15px;
+        margin-left: 8px;
+    }
+
+    .device-item p {
+        font-size: 1rem;
+    }
+
+    .status-icon {
+        width: 24px;
+        height: 30px;
+    }
+
+    .devices-right {
+        order: 1;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .devices-title {
+        font-size: 1.8rem;
+    }
+
+    .devices-tagline {
+        font-size: 1.5rem;
+        padding-top: 5vh;
+    }
+
+    .devices-text {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #second-page {
+        padding: 30px 0;
+    }
+
+    #second-page .devices-container {
+        padding: 20px 10px;
+    }
+
+    #smart-home-section .devices-container {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .device-item {
+        width: 100px;
+        height: 100px;
+    }
+
+    .device-item img.device-icon {
+        width: 40px;
+        height: 42px;
+        margin-bottom: 10px;
+        margin-left: 6px;
+    }
+
+    .device-item p {
+        font-size: 0.9rem;
+    }
+
+    .status-icon {
+        width: 20px;
+        height: 24px;
+        top: 8px;
+        right: 8px;
+    }
+
+    .devices-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .devices-tagline {
+        font-size: 1.2rem;
+        padding-top: 3vh;
+    }
+
+    .devices-text {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+}
 
 /* Fourth Page - Device Compatibility Section */
 
@@ -876,7 +1221,7 @@ device-item {
 }
 
 .graph-content h2 {
-    font-size: 2.5rem;
+    font-size: 35PX;
     font-weight: 600;
     color: #333;
     margin-bottom: 20px;
@@ -975,7 +1320,7 @@ device-item {
 .app-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(275px, 0fr));
-    gap: 26px;
+    gap: 6px;
         width: 36%;
     max-width: 627px;
     position: relative;
@@ -986,45 +1331,132 @@ device-item {
 .app-icon1 {
     border-radius: 10px;
     right: 39px;
-    height: 37.18vh;
-    width: 22.54vh;
+    height: 44.35vh;
+    width: 26.88vh;
 }
 
 .app-icon2 {
     border-radius: 10px;
     top: 100px;
-    height: 37.18vh;
-    width: 22.54vh;
+     height: 44.35vh;
+    width: 26.88vh;
 }
 
 .app-icon3 {
     border-radius: 10px;
-    height: 37.18vh;
-    width: 22.54vh;
+     height: 44.35vh;
+    width: 26.88vh;
     right: 21px;
 }
 
 .app-icon4 {
     border-radius: 10px;
     top: 83px;
-    height: 37.18vh;
-    width: 22.54vh;
-
+     height: 44.35vh;
+    width: 26.88vh;
 }
 
-.app-store-title {
-    width: 168%;
+/* Sixth Page - App Grid Responsive Adjustments for to App Icons Visibility */
+@media (max-width: 1024px) {
+    .app-grid {
+        display: 100%;
+        grid-template-columns: repeat(2, 1fr); /* 2x2 for layout four icons */
+        width: 100%;
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
+        max-width: 600px; /* Reduced to ensure fit */
+        margin: 0px auto;
+    }
+
+    .app-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center icons */
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        min-height: 120px; /* Smaller for tablet fit */
+        box-sizing: border-box;
+    }
+
+    .app-item img.app-icon1,
+    .app-item img.app-icon2,
+    .app-item img.app-icon3,
+    .app-item img.app-icon4 {
+        width: 100%;
+        max-width: 80px; /* Smaller icons for tablet */
+        height: auto;
+        object-fit: contain;
+    }
+
+    .app-item p {
+        font-size: 0.95rem;
+        margin-top: 8px;
+        text-align: center;
+    }
 }
 
-.app-store-desc {
-    width: 169%;
+@media (max-width: 768px) {
+        .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        /* padding: 15px; */
+        max-width: 65%;
+    }
+
+    .app-item {
+        min-height: 100px;
+    }
+
+    .app-item img.app-icon1,
+    .app-item img.app-icon2,
+    .app-item img.app-icon3,
+    .app-item img.app-icon4 {
+        max-width: 70px;
+    }
+
+    .app-item p {
+        font-size: 0.9rem;
+        margin-top: 6px;
+    }
 }
+
+@media (max-width: 480px) {
+        .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* gap: 10px; */
+        /* padding: 10px; */
+        padding-right: 58vh;
+    }
+
+    .app-item {
+        min-height: 80px;
+    }
+
+    .app-item img.app-icon1,
+    .app-item img.app-icon2,
+    .app-item img.app-icon3,
+    .app-item img.app-icon4 {
+               max-width: 148px;
+        padding-right: 18vh;
+        /* height: 36vh; */
+        position: relative;
+        top: 182px;
+    }
+
+    .app-item p {
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+}
+
 
 /* Eight page modified section started */
 
 /* Eighth Page */
 #eighth-page {
-    width: 100%;
+    width: 126%;
     min-height: 85vh;
     height: auto;
     display: flex;
@@ -1067,11 +1499,7 @@ device-item {
     transform: translate(-50%, -50%);
 }
 
-.socket img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
+
 
 /* Plug Styles */
 .plug {
@@ -1087,9 +1515,12 @@ device-item {
 }
 
 .plug img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+      width: 171vh;
+    height: 64vh;
+    position: absolute;
+    right: -51vh;
+    /* object-fit: contain; */
+    bottom: -22vh;
 }
 
 .plugged-in {
@@ -1158,14 +1589,15 @@ device-item {
 /* Text Content */
 .text-content {
     flex: 1;
-    text-align: left;
+    text-align: center;
 }
 
 .text-content h2 {
-    font-size: 2.5rem;
+    font-size: 35px;
     font-weight: 600;
     color: #333;
     margin-bottom: 20px;
+    width: 69vh;
     line-height: 1.2;
 }
 
@@ -2481,14 +2913,14 @@ device-item {
 }
 
 .energy-insights-content {
-    flex: 1;
-    max-width: 500px;
-    text-align: left;
+       flex: 1;
+    max-width: 816px;
+    text-align: center;
     margin-left: 0;
 }
 
 .insights-title {
-    font-size: 70px;
+    font-size: 35px;
     font-weight: 700;
     color: #333;
     /* margin-bottom: 20px; */
@@ -2499,14 +2931,14 @@ device-item {
 }
 
 .insights-subtitle {
-    font-size: 70px;
+    font-size: 35px;
     font-weight: 700;
     color: #333;
     margin-bottom: 15px;
 }
 
 .insights-desc {
-    font-size: 40px;
+    font-size: 25px;
     color: #555;
     line-height: 1.6;
     width: 87vh;
@@ -2722,11 +3154,10 @@ device-item {
 .app-compatibility-content {
     text-align: center;
     max-width: 1283px;
-    margin-bottom: 60px;
 }
 
 .app-title {
-    font-size: 70px;
+    font-size: 35px;
     font-weight: 700;
     color: #000;
     margin-bottom: 20px;
@@ -2734,7 +3165,7 @@ device-item {
 }
 
 .app-text {
-    font-size: 40px;
+    font-size: 30px;
     width: 128vh;
     color: #555;
     line-height: 1.6;
@@ -2777,67 +3208,50 @@ device-item {
     object-fit: contain;
     border-radius: 10px;
 }
-
-/* Responsive Adjustments */
+/* Third Page - App Compatibility Section Responsive Adjustments */
 @media (max-width: 1024px) {
-    .app-title {
-        font-size: 2.2rem;
-    }
-
-    .app-text {
-        font-size: 1rem;
-    }
-
-    .phone-grid {
-        gap: 15px;
-    }
-
-    .phone-item {
-        min-width: 180px;
-        max-width: 250px;
-    }
-}
-
-@media (max-width: 768px) {
     #third-page {
         padding: 60px 20px;
     }
 
     .app-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+
+    .app-text {
+        font-size: 1.2rem;
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    #third-page {
+        padding: 40px 15px;
+        min-height: auto;
+    }
+
+    .app-title {
+        font-size: 1.8rem;
     }
 
     .app-text {
         font-size: 1rem;
-    }
-
-    .phone-item {
-        min-width: 150px;
-        max-width: 200px;
+        max-width: 90%;
     }
 }
 
 @media (max-width: 480px) {
     #third-page {
-        padding-top: 59px;
-        padding-left: 0px;
-        padding-right: 0px;
+        padding: 30px 10px;
     }
 
     .app-title {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
     .app-text {
         font-size: 0.9rem;
-    }
-
-    .phone-grid {
-        gap: 100px;
-    }
-
-    .phone-item {
-        min-width: 120px;
-        max-width: 150px;
+        max-width: 100%;
     }
 }
