@@ -685,13 +685,17 @@ body {
     /* Include padding in width */
     overflow: hidden;
     /* Prevent content from overflowing */
+    justify-content: center;
+    align-items: normal;
+    flex-direction: column;
+    display: flex;
 }
 
 .box h4 {
     font-size: 28px;
     font-weight: 600;
     color: var(--text-dark);
-    margin-bottom: 12px;
+    margin-top: 0px;
     word-break: break-word;
     /* Prevent heading overflow */
 }
@@ -929,7 +933,7 @@ body {
     align-items: center;
     padding: 40px 20px;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-bottom: -90px;
 }
 
 .section-content {
@@ -952,7 +956,7 @@ body {
 .section-text-container {
     background-color: rgb(238, 238, 238);
     border-radius: 12px;
-    padding: 32px;
+    padding: 14px;
     display: flex;
     flex-direction: row;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -1054,7 +1058,6 @@ body {
 .step-header {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
 }
 
 .step-icon {
