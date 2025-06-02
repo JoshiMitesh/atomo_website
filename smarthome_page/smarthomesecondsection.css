@@ -475,7 +475,7 @@
     font-size: 35px;
     text-align: center;
     /* color: var(--text-dark); */
-    width: 47vh;
+    width: 100vh;
     /* margin-bottom: 20px; */
     /* overflow-wrap: break-word; */
     /* word-break: break-word; */
@@ -529,6 +529,15 @@
 
 /* Small mobile devices (max-width: 480px) */
 @media (max-width: 480px) {
+    .bulb-power-section .text-container h2 {
+                font-size: 35px;
+                font-weight: bold;
+                color: #ffffff;
+                text-align: center;
+                margin-bottom: 10px;
+    width: 85vh;
+            }
+
     #sixth-page .app-store-content {
         width: 100%;
         padding: 0 10px; /* Tighter padding for small screens */
@@ -630,13 +639,14 @@
 
     #eighth-page .flex.flex-col.md\:flex-row {
         flex-direction: column;
-        gap: 133px;
+        gap: -45px;
         justify-content: flex-start;
         align-items: center;
         width: 100%;
+        height: 136vh;
         max-width: 600px;
         margin: 0 auto;
-    }
+    }   
 
     .text-content { /* Matches HTML class */
         order: 1;

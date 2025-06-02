@@ -1678,12 +1678,13 @@
     }
 
     .text-content h2 {
-        font-size: 35px;
-        font-weight: 600;
-        color: #333;
-        margin: 0 0 20px;
-        line-height: 1.2;
-        max-width: 90%;
+    font-size: 35px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 20px;
+    line-height: 1.2;
+    max-width: 90%;
+    width: 65vh;
     }
 
     .text-content .subtitle {
@@ -3177,6 +3178,7 @@
     .insights-title {
         font-size: 35px;
         font-weight: 700;
+            padding-top: 5vh;
         color: #333;
         /* margin-bottom: 20px; */
         /* line-height: 1.2; */
@@ -3189,6 +3191,7 @@
         font-size: 35px;
         font-weight: 700;
         color: #333;
+            width: 100vh;
         margin-bottom: 15px;
     }
 
@@ -3196,7 +3199,7 @@
         font-size: 25px;
         color: #555;
         line-height: 1.6;
-        width: 40vh;
+    width: 100vh;
         margin: 0;
     }
 
