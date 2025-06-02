@@ -2749,25 +2749,25 @@
             display: block;
         }
 
-        #navbar ul {
-            position: fixed;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            flex-direction: column;
-            background-color: #ffffff;
-            padding: 0;
-            margin: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            border: none;
-        }
-
-        #navbar ul.active {
-            max-height: 400px;
-            padding: 10px 0;
-        }
+            #navbar ul {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #ffffff;
+        padding: 0;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        border: none;
+    }
+    
+            #navbar ul.active {
+        max-height: 562px;
+        padding: 10px 0;
+    }
 
         #navbar li {
             width: 100%;
