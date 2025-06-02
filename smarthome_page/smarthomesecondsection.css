@@ -630,7 +630,7 @@
 
     #eighth-page .flex.flex-col.md\:flex-row {
         flex-direction: column;
-        gap: 61px;
+        gap: 133px;
         justify-content: flex-start;
         align-items: center;
         width: 100%;
