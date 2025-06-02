@@ -676,11 +676,14 @@
         gap: 16px !important; /* Override embedded gap */
     }
 
+    
+
     .bulb-power-section .text-container {
         order: 1;
         width: 100%;
         text-align: center;
         margin-bottom: 20px;
+        text-align: center;
     }
 
     .bulb-power-section .text-container p {
@@ -748,6 +751,7 @@
 
 /* responsive code for 9th page by rajat kuchara  */
 @media (max-width: 480px) {
+    
     #ninth-page {
         padding: 40px 15px; /* Slightly reduce padding for smaller screens */
         min-height: 70vh; /* Reduce min-height to fit smaller screens better */
