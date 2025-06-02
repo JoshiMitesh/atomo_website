@@ -3350,7 +3350,7 @@
             justify-content: flex-start;
             width: 100%;
             max-width: 600px;
-        height: 82vh;
+            height: 82vh;
             padding: 0 15px;
         }
 
@@ -3394,6 +3394,7 @@
         .insights-title {
             font-size: 1.7rem;
             text-align: center;
+            padding-top: 6vh;
         }
 
         .insights-subtitle {
@@ -3405,7 +3406,7 @@
         }
 
         .slider-dots {
-        margin-top: -13vh;
+            margin-top: -13vh;
             gap: 8px;
         }
 
