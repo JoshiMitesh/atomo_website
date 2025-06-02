@@ -5,13 +5,16 @@
         padding: 0;
     }
 
-    html, body {
+    html,
+    body {
         width: 100%;
-        overflow-x: hidden; /* Prevent horizontal scrolling */
+        overflow-x: hidden;
+        /* Prevent horizontal scrolling */
     }
 
     body {
-        margin: 0 auto; /* Center the body */
+        margin: 0 auto;
+        /* Center the body */
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         color: var(--text-dark);
         scroll-behavior: smooth;
@@ -905,10 +908,10 @@
     }
 
     .devices-right {
-            padding-right: 9vh;
+        padding-right: 9vh;
 
         flex: 1;
-            max-width: 70%;
+        max-width: 70%;
         text-align: center;
     }
 
@@ -916,7 +919,7 @@
         font-size: 40px;
         text-align: center;
         font-weight: 600;
-        
+
         color: #000;
         line-height: 1.4;
     }
@@ -924,7 +927,7 @@
     .devices-tagline {
         font-size: 35px;
         font-weight: 600;
-            padding-top: 13vh;
+        padding-top: 13vh;
 
         color: #000;
         margin-bottom: 20px;
@@ -936,9 +939,9 @@
         font-size: 30px;
         color: #555;
         line-height: 1.6;
-            text-align: center;
+        text-align: center;
         width: 105vh;
-        
+
     }
 
 
@@ -1341,7 +1344,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(275px, 0fr));
         gap: 6px;
-            width: 36%;
+        width: 36%;
         max-width: 627px;
         position: relative;
         left: 55%;
@@ -1380,23 +1383,27 @@
     @media (max-width: 1024px) {
         .app-grid {
             display: 100%;
-            grid-template-columns: repeat(2, 1fr); /* 2x2 for layout four icons */
+            grid-template-columns: repeat(2, 1fr);
+            /* 2x2 for layout four icons */
             width: 100%;
             gap: 20px;
             padding: 20px;
             width: 100%;
-            max-width: 600px; /* Reduced to ensure fit */
+            max-width: 600px;
+            /* Reduced to ensure fit */
             margin: 0px auto;
         }
 
         .app-item {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center icons */
+            align-items: center;
+            /* Center icons */
             justify-content: center;
             width: 100%;
             height: auto;
-            min-height: 120px; /* Smaller for tablet fit */
+            min-height: 120px;
+            /* Smaller for tablet fit */
             box-sizing: border-box;
         }
 
@@ -1405,7 +1412,8 @@
         .app-item img.app-icon3,
         .app-item img.app-icon4 {
             width: 100%;
-            max-width: 80px; /* Smaller icons for tablet */
+            max-width: 80px;
+            /* Smaller icons for tablet */
             height: auto;
             object-fit: contain;
         }
@@ -1418,7 +1426,7 @@
     }
 
     @media (max-width: 768px) {
-            .app-grid {
+        .app-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             /* padding: 15px; */
@@ -1443,7 +1451,7 @@
     }
 
     @media (max-width: 480px) {
-            .app-grid {
+        .app-grid {
             grid-template-columns: repeat(2, 1fr);
             /* gap: 10px; */
             /* padding: 10px; */
@@ -1458,7 +1466,7 @@
         .app-item img.app-icon2,
         .app-item img.app-icon3,
         .app-item img.app-icon4 {
-                max-width: 148px;
+            max-width: 148px;
             padding-right: 18vh;
             /* height: 36vh; */
             position: relative;
@@ -1486,7 +1494,7 @@
         overflow-x: hidden;
     }
 
-    #eighth-page > div {
+    #eighth-page>div {
         display: flex;
         flex-direction: row;
         gap: 40px;
@@ -1518,7 +1526,7 @@
     }
 
     .socket img {
-    width: 100%;
+        width: 100%;
         height: auto;
         position: absolute;
         bottom: -78px;
@@ -1542,7 +1550,7 @@
     }
 
     .plug img {
-    width: 80vh;
+        width: 80vh;
         height: auto;
         position: absolute;
         /* right: -86vh; */
@@ -1562,46 +1570,50 @@
 
 
 
-#eighth-page .plug {
-    /* Add rotation to match the image's angle */
-    transform: translate(-50%, -50%) rotate(-45deg);
-    transition: transform 0.5s ease; /* Smooth transition for both position and rotation */
-}
-
-/* Adjust plugged-in and plugged-out states to include rotation */
-#eighth-page .plugged-in {
-    transform: translate(-50%, -50%) translateX(-20%) rotate(-0deg);
-}
-
-#eighth-page .plugged-out {
-    transform: translate(-50%, -50%) translateX(-60%) rotate(-0deg);
-}
-
-
-/* Responsive adjustments for the cable */
-@media (max-width: 1024px) {
-    #eighth-page .plug::after {
-        width: 150px; /* Shorter cable for tablet */
-        bottom: -40px;
-        left: -100px;
+    #eighth-page .plug {
+        /* Add rotation to match the image's angle */
+        transform: translate(-50%, -50%) rotate(-45deg);
+        transition: transform 0.5s ease;
+        /* Smooth transition for both position and rotation */
     }
-}
 
-@media (max-width: 768px) {
-    #eighth-page .plug::after {
-        width: 120px; /* Shorter cable for mobile */
-        bottom: -30px;
-        left: -80px;
+    /* Adjust plugged-in and plugged-out states to include rotation */
+    #eighth-page .plugged-in {
+        transform: translate(-50%, -50%) translateX(-20%) rotate(-0deg);
     }
-}
 
-@media (max-width: 480px) {
-    #eighth-page .plug::after {
-        width: 100px; /* Even shorter cable for small screens */
-        bottom: -20px;
-        left: -60px;
+    #eighth-page .plugged-out {
+        transform: translate(-50%, -50%) translateX(-60%) rotate(-0deg);
     }
-}
+
+
+    /* Responsive adjustments for the cable */
+    @media (max-width: 1024px) {
+        #eighth-page .plug::after {
+            width: 150px;
+            /* Shorter cable for tablet */
+            bottom: -40px;
+            left: -100px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #eighth-page .plug::after {
+            width: 120px;
+            /* Shorter cable for mobile */
+            bottom: -30px;
+            left: -80px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #eighth-page .plug::after {
+            width: 100px;
+            /* Even shorter cable for small screens */
+            bottom: -20px;
+            left: -60px;
+        }
+    }
 
     /* Graph Section */
     .graph-section {
@@ -1656,7 +1668,7 @@
 
     /* Text Content */
     .text-content {
-            max-width: 73vh;
+        max-width: 73vh;
         flex: 1;
         text-align: center;
         display: flex;
@@ -1688,7 +1700,7 @@
             padding: 60px 20px;
         }
 
-        #eighth-page > div {
+        #eighth-page>div {
             gap: 30px;
         }
 
@@ -1754,7 +1766,7 @@
             padding: 40px 15px;
         }
 
-        #eighth-page > div {
+        #eighth-page>div {
             flex-direction: column;
             gap: 20px;
             align-items: center;
@@ -1767,7 +1779,7 @@
         }
 
         .socket img {
-                width: 85%;
+            width: 85%;
             bottom: -15px;
             right: 0;
             transform: translateX(-50%);
@@ -1779,11 +1791,11 @@
         }
 
         .plug img {
-                    width: 100%;
-        right: 0;
-        bottom: 0;
-        transform: translateX(-50%);
-        left: 43%;
+            width: 100%;
+            right: 0;
+            bottom: 0;
+            transform: translateX(-50%);
+            left: 43%;
         }
 
         .plugged-in {
@@ -1834,7 +1846,7 @@
             min-height: auto;
         }
 
-        #eighth-page > div {
+        #eighth-page>div {
             flex-direction: column;
             gap: 15px;
             align-items: center;
@@ -1847,7 +1859,7 @@
         }
 
         .socket img {
-        width: 144%;
+            width: 144%;
             bottom: -152px;
             /* right: -10px; */
         }
@@ -1857,21 +1869,21 @@
         }
 
         .plug img {
-          width: 85vh;
-        height: auto;
-        /* right: -16vh; */
-        bottom: -25vh;
+            width: 85vh;
+            height: auto;
+            /* right: -16vh; */
+            bottom: -25vh;
         }
 
-    .plugged-in {
-        transform: translate(-43%, -49%) translateX(-20%);
-        /* Adjust for plugging in */
-    }
+        .plugged-in {
+            transform: translate(-43%, -49%) translateX(-20%);
+            /* Adjust for plugging in */
+        }
 
-    .plugged-out {
-        transform: translate(-50%, -50%) translateX(-60%);
-        /* Adjust for unplugged state */
-    }
+        .plugged-out {
+            transform: translate(-50%, -50%) translateX(-60%);
+            /* Adjust for unplugged state */
+        }
 
 
         .graph-section {
@@ -1913,6 +1925,7 @@
             line-height: 1.5;
         }
     }
+
     /* Eight page modified section ended */
 
 
@@ -2472,19 +2485,27 @@
 
         .app-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Maintain 2x2 grid */
-            gap: 10px; /* Reduced gap for better fit */
-            width: 100%; /* Full width of container */
-            max-width: 100%; /* Ensure it fits viewport */
-            padding: 0; /* Remove excessive padding */
-            position: static; /* Remove relative positioning */
+            grid-template-columns: repeat(2, 1fr);
+            /* Maintain 2x2 grid */
+            gap: 10px;
+            /* Reduced gap for better fit */
+            width: 100%;
+            /* Full width of container */
+            max-width: 100%;
+            /* Ensure it fits viewport */
+            padding: 0;
+            /* Remove excessive padding */
+            position: static;
+            /* Remove relative positioning */
             left: 0;
             bottom: 0;
-            margin: 0 auto; /* Center the grid */
+            margin: 0 auto;
+            /* Center the grid */
         }
 
         .app-item {
-            min-height: 80px; /* Ensure sufficient height for images */
+            min-height: 80px;
+            /* Ensure sufficient height for images */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -2494,16 +2515,23 @@
         .app-item img.app-icon2,
         .app-item img.app-icon3,
         .app-item img.app-icon4 {
-            max-width: 120px; /* Appropriate size for small screens */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 10px; /* Consistent border radius */
-            position: static; /* Remove absolute positioning */
+            max-width: 120px;
+            /* Appropriate size for small screens */
+            height: auto;
+            /* Maintain aspect ratio */
+            border-radius: 10px;
+            /* Consistent border radius */
+            position: static;
+            /* Remove absolute positioning */
             top: 0;
             right: 0;
-            padding: 0; /* Remove padding */
-            object-fit: contain; /* Ensure images fit properly */
+            padding: 0;
+            /* Remove padding */
+            object-fit: contain;
+            /* Ensure images fit properly */
         }
     }
+
     .social-link {
         display: inline-block;
         transition: transform 0.3s ease;
@@ -3223,47 +3251,60 @@
     /* Slideshow Styles for Cross-Device Compatibility */
     .slideshow {
         width: 100%;
-        max-width: 1200px; /* Limit max width for large screens */
-        margin: 0 auto; /* Center the slideshow */
+        max-width: 1200px;
+        /* Limit max width for large screens */
+        margin: 0 auto;
+        /* Center the slideshow */
         position: relative;
-        overflow: hidden; /* Prevent images from overflowing */
-        aspect-ratio: 16 / 9; /* Maintain consistent aspect ratio */
-        height: auto; /* Allow height to adjust based on content */
+        overflow: hidden;
+        /* Prevent images from overflowing */
+        aspect-ratio: 16 / 9;
+        /* Maintain consistent aspect ratio */
+        height: auto;
+        /* Allow height to adjust based on content */
     }
 
     .slideshow-image {
         width: 100%;
         height: 100%;
-        object-fit: contain; /* Ensure SVGs scale properly without cropping */
+        object-fit: contain;
+        /* Ensure SVGs scale properly without cropping */
         position: absolute;
         top: 0;
         left: 0;
-        opacity: 0; /* Hide all images by default */
-        transition: opacity 1s ease-in-out; /* Smooth fade transition */
+        opacity: 0;
+        /* Hide all images by default */
+        transition: opacity 1s ease-in-out;
+        /* Smooth fade transition */
     }
 
     .slideshow-image.active {
-        opacity: 1; /* Show active image */
-        position: relative; /* Ensure active image is visible */
+        opacity: 1;
+        /* Show active image */
+        position: relative;
+        /* Ensure active image is visible */
     }
 
     /* Responsive adjustments for smaller screens */
     @media (max-width: 768px) {
         .slideshow {
-            aspect-ratio: 4 / 3; /* Adjust for smaller screens */
+            aspect-ratio: 4 / 3;
+            /* Adjust for smaller screens */
             max-width: 100%;
             padding: 0 10px;
         }
 
         .slideshow-image {
             width: 100%;
-            height: auto; /* Allow height to adjust */
+            height: auto;
+            /* Allow height to adjust */
         }
     }
 
     @media (max-width: 480px) {
         .slideshow {
-            aspect-ratio: 1 / 1; /* Square for very small screens */
+            aspect-ratio: 1 / 1;
+            /* Square for very small screens */
             padding: 0 5px;
         }
     }
@@ -3309,7 +3350,7 @@
             justify-content: flex-start;
             width: 100%;
             max-width: 600px;
-            height: 112vh;
+        height: 82vh;
             padding: 0 15px;
         }
 
@@ -3318,6 +3359,7 @@
             margin-bottom: 20px;
             text-align: center;
             max-width: 100%;
+            max-height: 0vh;
         }
 
         .energy-insights-slider {
@@ -3351,7 +3393,7 @@
 
         .insights-title {
             font-size: 1.7rem;
-                    text-align: center;
+            text-align: center;
         }
 
         .insights-subtitle {
@@ -3363,7 +3405,7 @@
         }
 
         .slider-dots {
-            margin-top: 15px;
+        margin-top: -13vh;
             gap: 8px;
         }
 
@@ -3372,12 +3414,6 @@
             height: 10px;
         }
     }
-
-
-
-
-
-
 
     /* Third Page - App Compatibility Section */
     #third-page {
@@ -3462,6 +3498,7 @@
         object-fit: contain;
         border-radius: 10px;
     }
+
     /* Third Page - App Compatibility Section Responsive Adjustments */
     @media (max-width: 1024px) {
         #third-page {
