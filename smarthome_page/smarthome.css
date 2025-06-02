@@ -1577,19 +1577,6 @@
     transform: translate(-50%, -50%) translateX(-60%) rotate(-0deg);
 }
 
-/* Add cable using pseudo-element */
-#eighth-page .plug::after {
-    content: '';
-    position: absolute;
-    width: 200px; /* Length of the cable */
-    height: 6px; /* Thickness of the cable */
-    background-color: #e0e0e0; /* Cable color */
-    bottom: -50px; /* Position cable below plug */
-    left: -150px; /* Extend cable to the left */
-    transform: rotate(45deg); /* Align cable with plug angle */
-    transform-origin: top left; /* Rotate from the top-left corner */
-    z-index: 1;
-}
 
 /* Responsive adjustments for the cable */
 @media (max-width: 1024px) {
@@ -1796,7 +1783,7 @@
         right: 0;
         bottom: 0;
         transform: translateX(-50%);
-        left: 52%;
+        left: 43%;
         }
 
         .plugged-in {
@@ -1873,7 +1860,7 @@
           width: 85vh;
         height: auto;
         /* right: -16vh; */
-        bottom: -28vh;
+        bottom: -25vh;
         }
 
     .plugged-in {
