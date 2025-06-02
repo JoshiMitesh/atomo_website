@@ -3177,25 +3177,52 @@ device-item {
     object-fit: contain;
 }
 
+/* Slideshow Styles for Cross-Device Compatibility */
 .slideshow {
-    position: relative;
     width: 100%;
-    height: 100%;
+    max-width: 1200px; /* Limit max width for large screens */
+    margin: 0 auto; /* Center the slideshow */
+    position: relative;
+    overflow: hidden; /* Prevent images from overflowing */
+    aspect-ratio: 16 / 9; /* Maintain consistent aspect ratio */
+    height: auto; /* Allow height to adjust based on content */
 }
 
 .slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure SVGs scale properly without cropping */
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    opacity: 0; /* Hide all images by default */
+    transition: opacity 1s ease-in-out; /* Smooth fade transition */
 }
 
 .slideshow-image.active {
-    opacity: 1;
+    opacity: 1; /* Show active image */
+    position: relative; /* Ensure active image is visible */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .slideshow {
+        aspect-ratio: 4 / 3; /* Adjust for smaller screens */
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .slideshow-image {
+        width: 100%;
+        height: auto; /* Allow height to adjust */
+    }
+}
+
+@media (max-width: 480px) {
+    .slideshow {
+        aspect-ratio: 1 / 1; /* Square for very small screens */
+        padding: 0 5px;
+    }
 }
 
 .slider-dots {
@@ -3281,6 +3308,7 @@ device-item {
 
     .insights-title {
         font-size: 1.7rem;
+                text-align: center;
     }
 
     .insights-subtitle {
