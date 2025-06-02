@@ -2389,46 +2389,78 @@ device-item {
     }
 }
 
+/* Sixth Page - App Store Section (Responsive Adjustments for 468px) */
 @media (max-width: 480px) {
     #sixth-page {
-        padding: 32px 8px 16px;
+        padding: 30px 10px;
+        min-height: 60vh;
+        height: auto;
+        overflow-x: hidden;
     }
 
-    .footer-top {
-        gap: 16px;
+    .app-store-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
     }
 
-    .footer-tagline {
-        font-size: 0.8rem;
-        margin-bottom: 12px;
+    .app-store-content {
+        width: 100%;
+        padding: 0 10px;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
-    .footer-social {
-        gap: 12px;
+    .app-store-title {
+        font-size: 1.8rem;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
     }
 
-    .social-link img {
-        width: 18px;
-        height: 18px;
+    .app-store-desc {
+        font-size: 1rem;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
     }
 
-    .footer-links {
-        gap: 16px;
+    .app-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Maintain 2x2 grid */
+        gap: 10px; /* Reduced gap for better fit */
+        width: 100%; /* Full width of container */
+        max-width: 100%; /* Ensure it fits viewport */
+        padding: 0; /* Remove excessive padding */
+        position: static; /* Remove relative positioning */
+        left: 0;
+        bottom: 0;
+        margin: 0 auto; /* Center the grid */
     }
 
-    .link-group {
-        min-width: 100%;
+    .app-item {
+        min-height: 80px; /* Ensure sufficient height for images */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .link-title {
-        font-size: 0.85rem;
-    }
-
-    .link-group a {
-        font-size: 0.75rem;
+    .app-item img.app-icon1,
+    .app-item img.app-icon2,
+    .app-item img.app-icon3,
+    .app-item img.app-icon4 {
+        max-width: 120px; /* Appropriate size for small screens */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 10px; /* Consistent border radius */
+        position: static; /* Remove absolute positioning */
+        top: 0;
+        right: 0;
+        padding: 0; /* Remove padding */
+        object-fit: contain; /* Ensure images fit properly */
     }
 }
-
 .social-link {
     display: inline-block;
     transition: transform 0.3s ease;
