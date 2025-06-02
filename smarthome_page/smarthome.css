@@ -1728,7 +1728,7 @@ device-item {
         bottom: -15px;
         right: 0;
         transform: translateX(-50%);
-        left: 69%;
+        left: 66%;
     }
 
     .plug {
@@ -1805,7 +1805,7 @@ device-item {
 
     .socket img {
       width: 144%;
-        bottom: -220px;
+        bottom: -152px;
         /* right: -10px; */
     }
 
