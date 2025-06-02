@@ -1,3 +1,23 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+    margin: 0 auto; /* Center the body */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
 /* ========== Hero Section ========== */
 .hero-section {
     position: relative;
@@ -1452,12 +1472,10 @@ device-item {
 }
 
 
-/* Eight page modified section started */
-
 /* Eighth Page */
 #eighth-page {
-    width: 126%;
-    min-height: 85vh;
+    width: 100%;
+    min-height: 89vh;
     height: auto;
     display: flex;
     justify-content: center;
@@ -1468,14 +1486,15 @@ device-item {
     overflow-x: hidden;
 }
 
-#eighth-page>div {
+#eighth-page > div {
     display: flex;
     flex-direction: row;
     gap: 40px;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+       width: 141%;
+    max-width: 212vh;
 }
 
 /* Socket and Plug Section */
@@ -1483,11 +1502,10 @@ device-item {
     flex: 1;
     max-width: 50%;
     aspect-ratio: 1 / 1;
-    /* Maintain square aspect ratio */
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .socket {
@@ -1499,46 +1517,55 @@ device-item {
     transform: translate(-50%, -50%);
 }
 
-
+.socket img {
+   width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: -78px;
+    right: -15px;
+    object-fit: contain;
+    transform: translateX(-50%);
+    left: 88%;
+}
 
 /* Plug Styles */
 .plug {
     position: absolute;
-    width: 118%;
-    height: 89%;
+    width: 60%;
+    height: auto;
     cursor: pointer;
     z-index: 10;
-    top: 51%;
-    left: 51%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     transition: transform 0.5s ease;
 }
 
 .plug img {
-      width: 171vh;
-    height: 64vh;
+   width: 80vh;
+    height: auto;
     position: absolute;
-    right: -51vh;
-    /* object-fit: contain; */
-    bottom: -22vh;
+    /* right: -86vh; */
+    bottom: -35vh;
+    object-fit: contain;
+    transform: translateX(-50%);
+    left: 105%;
 }
 
 .plugged-in {
-    transform: translate(-43%, -49%) translateX(-20%);
-    /* Adjust for plugging in */
+    transform: translate(-50%, -50%) translateX(-20%);
 }
 
 .plugged-out {
     transform: translate(-50%, -50%) translateX(-60%);
-    /* Adjust for unplugged state */
 }
 
 /* Graph Section */
 .graph-section {
     flex: 1;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 /* Mobile Mockup Styles */
@@ -1552,24 +1579,23 @@ device-item {
     box-shadow: 0 10px 70px rgba(0, 0, 0, 0.466);
     overflow: hidden;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
-/* Simulate the phone's top notch and status bar */
 .mobile-mockup::before {
     content: '';
     position: absolute;
-    top: -16px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 143px;
     height: 42px;
     background-color: #3c3c3c;
-    border-radius: 15px;
+    border-radius: 0 0 15px 15px;
 }
 
-/* Graph Container inside the Mobile Mockup */
 .mobile-mockup .graph-container {
     width: 90%;
     height: 80%;
@@ -1580,7 +1606,6 @@ device-item {
     z-index: 1;
 }
 
-/* Ensure the canvas fits properly */
 .mobile-mockup .graph-container canvas {
     width: 100% !important;
     height: 100% !important;
@@ -1588,70 +1613,76 @@ device-item {
 
 /* Text Content */
 .text-content {
+        max-width: 73vh;
     flex: 1;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .text-content h2 {
     font-size: 35px;
     font-weight: 600;
     color: #333;
-    margin-bottom: 20px;
-    width: 69vh;
+    margin: 0 0 20px;
     line-height: 1.2;
+    max-width: 90%;
 }
 
 .text-content .subtitle {
     font-size: 1.2rem;
     color: #555;
     line-height: 1.6;
+    margin: 0;
+    max-width: 90%;
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for 1024px */
 @media (max-width: 1024px) {
-    #eighth-page>div {
+    #eighth-page {
+        padding: 60px 20px;
+    }
+
+    #eighth-page > div {
         gap: 30px;
     }
 
     .socket-container {
-        max-width: 40%;
+        max-width: 35%;
+    }
+
+    .socket img {
+        width: 90%;
+        bottom: -20px;
+        right: 0;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .plug {
+        width: 50%;
+    }
+
+    .plug img {
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        transform: translateX(-50%);
+        left: 50%;
     }
 
     .plugged-in {
-        transform: translate(-50%, -50%) translateX(-15%);
+        transform: translate(-50%, -50%) translateX(-8%);
     }
 
     .plugged-out {
-        transform: translate(-50%, -50%) translateX(-50%);
+        transform: translate(-50%, -50%) translateX(-25%);
     }
 
     .mobile-mockup {
         width: 260px;
-        height: 540px;
-    }
-}
-
-@media (max-width: 768px) {
-    #eighth-page>div {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .socket-container {
-        max-width: 80%;
-        max-height: 400px;
-    }
-
-    .plugged-in {
-        transform: translate(-50%, -50%) translateX(-10%);
-    }
-
-    .plugged-out {
-        transform: translate(-50%, -50%) translateX(-40%);
-    }
-
-    .mobile-mockup {
-        width: 280px;
         height: 520px;
         border-width: 8px;
         border-radius: 35px;
@@ -1660,64 +1691,185 @@ device-item {
     .mobile-mockup::before {
         width: 100px;
         height: 25px;
-        top: 8px;
-        border-radius: 12px;
-    }
-
-    .text-content {
-        text-align: center;
+        border-radius: 0 0 12px 12px;
     }
 
     .text-content h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        max-width: 100%;
     }
 
     .text-content .subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        max-width: 100%;
     }
 }
 
-@media (max-width: 480px) {
+/* Responsive Adjustments for 768px */
+@media (max-width: 768px) {
     #eighth-page {
-        padding: 50px 15px;
+        padding: 40px 15px;
+    }
+
+    #eighth-page > div {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
     }
 
     .socket-container {
-        max-width: 100%;
-        max-height: 300px;
+        max-width: 70%;
+        max-height: 350px;
+        order: 2;
+    }
+
+    .socket img {
+               width: 85%;
+        bottom: -15px;
+        right: 0;
+        transform: translateX(-50%);
+        left: 69%;
+    }
+
+    .plug {
+        width: 50%;
+    }
+
+    .plug img {
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        transform: translateX(-50%);
+        left: 50%;
     }
 
     .plugged-in {
-        transform: translate(-50%, -50%) translateX(-8%);
+        transform: translate(-50%, -50%) translateX(-5%);
     }
 
     .plugged-out {
-        transform: translate(-50%, -50%) translateX(-30%);
+        transform: translate(-50%, -50%) translateX(-20%);
+    }
+
+    .graph-section {
+        order: 1;
     }
 
     .mobile-mockup {
         width: 240px;
-        height: 450px;
+        height: 480px;
         border-width: 6px;
-        border-radius: 30px;
+        border-radius: 35px;
     }
 
     .mobile-mockup::before {
-        width: 80px;
+        width: 90px;
         height: 20px;
-        top: 6px;
-        border-radius: 10px;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .text-content {
+        order: 3;
+        max-width: 90%;
     }
 
     .text-content h2 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
+        max-width: 100%;
     }
 
     .text-content .subtitle {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        max-width: 100%;
     }
 }
 
+/* Responsive Adjustments for 480px */
+@media (max-width: 480px) {
+    #eighth-page {
+        padding: 30px 10px;
+        min-height: auto;
+    }
+
+    #eighth-page > div {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .socket-container {
+        max-width: 100%;
+        max-height: 200px;
+        order: 2;
+    }
+
+    .socket img {
+      width: 144%;
+        bottom: -220px;
+        /* right: -10px; */
+    }
+
+    .plug {
+        width: 40%;
+    }
+
+    .plug img {
+             width: 80vh;
+        height: auto;
+        /* right: -16vh; */
+        bottom: -34vh;
+    }
+
+   .plugged-in {
+    transform: translate(-43%, -49%) translateX(-20%);
+    /* Adjust for plugging in */
+}
+
+.plugged-out {
+    transform: translate(-50%, -50%) translateX(-60%);
+    /* Adjust for unplugged state */
+}
+
+
+    .graph-section {
+        order: 1;
+    }
+
+    .mobile-mockup {
+        width: 180px;
+        height: 360px;
+        border-width: 5px;
+        border-radius: 25px;
+    }
+
+    .mobile-mockup::before {
+        width: 60px;
+        height: 12px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .mobile-mockup .graph-container {
+        width: 85%;
+        height: 75%;
+    }
+
+    .text-content {
+        order: 3;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .text-content h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .text-content .subtitle {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
 /* Eight page modified section ended */
 
 

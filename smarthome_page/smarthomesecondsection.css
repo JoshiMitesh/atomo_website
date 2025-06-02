@@ -630,7 +630,7 @@
 
     #eighth-page .flex.flex-col.md\:flex-row {
         flex-direction: column;
-        gap: 16px;
+        gap: 61px;
         justify-content: flex-start;
         align-items: center;
         width: 100%;
@@ -718,7 +718,7 @@
 
     .bulb-power-section .slider-container {
         width: 100% !important; /* Adjust slider width */
-        padding-top: 10vh !important;
+        padding-top: 9vh !important;
         padding-left: 0 !important; /* Center slider */
     }
 
@@ -729,7 +729,7 @@
     }
 
     .bulb-power-section .iphone-mockup {
-        width: 200px !important; /* Reduce mockup size */
+        width: 218px !important;
         height: 400px !important;
         border-radius: 30px !important;
     }
@@ -745,9 +745,6 @@
         height: 200px !important; /* Adjust graph height */
     }
 }
-
-
-
 
 /* responsive code for 9th page by rajat kuchara  */
 @media (max-width: 480px) {
