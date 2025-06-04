@@ -213,9 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
-
-
     // seventh page logic
     function initializeSlider() {
         const sliderContainer = $('#seventh-page .energy-slider-container');
@@ -313,14 +310,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initialize first slide
         showSlide(0);
     }
-
-
-
-
-
-
-
-
 
 
     // Plug and Graph Functionality
@@ -423,29 +412,32 @@ document.addEventListener('DOMContentLoaded', function() {
         let data = Array(30).fill(0);
         let lastValue = 0;
 
-        function updateChart() {
-            data.shift();
-            
-            if (isPluggedIn) {
-                const target = 8 + Math.random() * 2;
-                lastValue = lastValue + (target - lastValue) * 0.2;
-                data.push(lastValue);
-            } else {
-                const target = Math.random() * 2;
-                lastValue = lastValue * 0.8; // Gradually reduce toward 0;
-                data.push(lastValue);
-            }
-            
-            // Update chart
-            powerChart.data.datasets[0].data = data;
-            powerChart.data.datasets[0].borderColor = isPluggedIn ? '#22c55e' : '#ef4444';
-            powerChart.data.datasets[0].backgroundColor = isPluggedIn 
-                ? 'rgba(34, 197, 94, 0.1)' 
-                : 'rgba(239, 68, 68, 0.1)';
-            powerChart.update();
-            
-            setTimeout(updateChart, 100);
-        }
+        // Replace the updateChart() function in initializePlugAndGraph() with this:
+function updateChart() {
+    data.shift();
+    
+    if (isPluggedIn) {
+        // Target a constant 9 kW when plugged in, but with smooth transition
+        const target = 9;
+        lastValue = lastValue + (target - lastValue) * 0.05; // Slower smoothing factor
+        data.push(lastValue);
+    } else {
+        // When unplugged, smoothly drop to near-zero with minor fluctuations
+        const target = 0.5 + Math.random() * 0.5; // Small fluctuations between 0.5-1 kW
+        lastValue = lastValue * 0.95 + target * 0.05; // Very gradual decrease
+        data.push(lastValue);
+    }
+    
+    // Update chart
+    powerChart.data.datasets[0].data = data;
+    powerChart.data.datasets[0].borderColor = isPluggedIn ? '#22c55e' : '#ef4444';
+    powerChart.data.datasets[0].backgroundColor = isPluggedIn 
+        ? 'rgba(34, 197, 94, 0.1)' 
+        : 'rgba(239, 68, 68, 0.1)';
+    powerChart.update();
+    
+    setTimeout(updateChart, 100); // Keep the same update frequency
+}
 
         updateChart();
     }
@@ -467,7 +459,6 @@ window.addEventListener('scroll', function () {
     }
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const phoneGrid = document.querySelector('.phone-grid');
     let isDragging = false;
@@ -475,25 +466,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let scrollStart = 0;
     let animationId = null;
     let scrollSpeed = 1; // Adjust speed as needed
-    let isReturningToStart = false;
-    let returnSpeed = 1; // Faster speed when returning to start
 
     function autoScroll(timestamp) {
-        if (!isDragging && !isReturningToStart) {
+        if (!isDragging) {
             phoneGrid.scrollLeft += scrollSpeed;
 
-            // Check if we've reached the end
-            if (phoneGrid.scrollLeft >= phoneGrid.scrollWidth - phoneGrid.clientWidth) {
-                isReturningToStart = true;
-            }
-        } else if (isReturningToStart) {
-            // Smoothly return to start
-            phoneGrid.scrollLeft -= returnSpeed;
-            
-            // Check if we've returned to the start
-            if (phoneGrid.scrollLeft <= 0) {
-                phoneGrid.scrollLeft = 0;
-                isReturningToStart = false;
+            // Check if we've reached or exceeded the end
+            if (phoneGrid.scrollLeft >= phoneGrid.scrollWidth - phoneGrid.clientWidth - 1) {
+                phoneGrid.scrollLeft = 0; // Instantly reset to start
             }
         }
 

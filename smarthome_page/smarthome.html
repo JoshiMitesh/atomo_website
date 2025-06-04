@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="smarthome.css">
     <link rel="stylesheet" href="smarthomesecondsection.css">
     <link rel="stylesheet" href="smarthome-ipad-responsive.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="smarthome.js"></script>
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
@@ -48,26 +48,25 @@
             </ul>
         </nav>
 
-        <section class="hero-section">
+          <section class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-headline">Smart Home</h1>
-                <p class="hero-quote" style="color: #3C3C3C;font-style: italic;">Redefining the Future of Smart Living
-                </p>
+                <p class="hero-quote">Redefining the Future of Smart Living</p>
             </div>
         </section>
 
         <div class="smart-home-container">
             <div class="smart-home-content">
                 <div class="atomic-os-section">
-                    <h2 class="">Atomic home OS</h2>
-                    <p class="quote">The world's most futuristic smart home OS. <br> "What happens in your smartphone
-                        stays in your smartphone" </p>
+                    <h2>Atomic HomeOS</h2>
+                    <p class="quote">The World's most futuristic smart homeOS.<br>"What happens in your smartphone stays in your smartphone".</p>
                 </div>
             </div>
             <div class="smart-home-image-container">
                 <img src="/smarthome_asset/herodevices.svg" alt="Smart Home Interface" class="smart-home-image">
             </div>
         </div>
+
     </section>
 
     <!-- Second Page Section -->
@@ -193,7 +192,7 @@
                 <div class="device-card" aria-label="Proton device specifications">
                     <div class="device-specs-header">
                         <h3>Proton</h3>
-                        <img src="atomo_device.png" alt="Proton Logo" class="device-logo" loading="lazy">
+                        <img src="/smarthome_page/PROTON.71.png" alt="Proton Logo" class="device-logo" loading="lazy">
                     </div>
                     <div class="device-icon-placeholder"></div>
                     <ul class="device-specs">
@@ -239,7 +238,7 @@
                 <div class="device-card" aria-label="Neutron device specifications">
                     <div class="device-specs-header">
                         <h3>Neutron</h3>
-                        <img src="atomo_device.png" alt="Neutron Logo" class="device-logo" loading="lazy">
+                        <img src="/smarthome_page/PROTON.71.png" alt="Neutron Logo" class="device-logo" loading="lazy">
                     </div>
                     <div class="device-icon-placeholder"></div>
                     <ul class="device-specs">
@@ -312,9 +311,10 @@
                 <div class="energy-slider-container">
                     <div class="slider-item video-slide active">
                         <video oncontextmenu="return false" autoplay muted loop playsinline class="insights-video">
-                            <source src="/smarthome_asset/energy/energyvideo.webm" type="video/webm">
-                            Your browser does not support the video tag.
-                        </video>
+  <source src="/smarthome_asset/energy/energyvideo.mp4" type="video/mp4">
+  <source src="/smarthome_asset/energy/energyvideo.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
                     </div>
                     <div class="slider-item slideshow-slide">
                         <div class="slideshow">
@@ -340,46 +340,40 @@
     </section>
 
 
-    <!-- Eighth Page - Plug Section -->
-    <section id="eighth-page" class="max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
-            <div class="socket-container">
-                <div class="socket">
-                    <img src="/smarthome_asset/plugsocket/socket.svg" style="
-   width: 73vh;
-    /* height: 19vh; */
-    position: absolute;
-    
-" alt="Socket">
-                </div>
-                <div class="plug plugged-out" id="plug">    
-                    <img src="/smarthome_asset/plugsocket/plug.svg" alt="Plug">
-                </div>
+  <!-- Eighth Page - Plug Section -->
+<section id="eighth-page" class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+        <div class="socket-container">
+            <div class="socket">
+                <img class="asdf" src="/smarthome_asset/plugsocket/socket.svg">
             </div>
-            <div class="graph-section">
-                <div class="mobile-mockup">
-                    <div class="graph-container">
-                        <canvas id="powerChart"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="text-content">
-                <h2>Streamlining Energy Consumption</h2>
-                <p class="subtitle">Streamlining energy consumption helps you monitor, manage, and reduce usage
-                    effortlessly. Improve efficiency with real-time data and smart automation tailored to your needs.
-                </p>
+            <div class="plug plugged-out" id="plug">    
+                <img src="/smarthome_asset/plugsocket/plug.svg" alt="Plug">
             </div>
         </div>
-    </section>
+        <div class="graph-section">
+            <div class="mobile-mockup">
+                <div class="graph-container">
+                    <canvas id="powerChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="text-content">
+            <h2>Streamlining Energy Consumption</h2>
+            <p class="subtitle">Streamlining energy consumption helps you monitor, manage, and reduce usage
+                effortlessly. Improve efficiency with real-time data and smart automation tailored to your needs.
+            </p>
+        </div>
+    </div>
+</section>
 
-    <!-- bulb logic and code starts -->
-
-    <section class="bulb-power-section">
+   
+   <section class="bulb-power-section">
         <!-- Include dependencies (remove if already in parent page) -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        <!-- Scoped styles -->
+        <!-- Updated styles -->
         <style>
             .bulb-power-section {
                 max-width: 100%;
@@ -389,66 +383,36 @@
                 background-color: #000000;
             }
 
-            /* Flex row layout */
             .bulb-power-section .power-container {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: space-between;
+                    height: 84vh;
                 align-items: center;
-                gap: 20px;
-            }
-
-            @media (min-width: 768px) {
-                .bulb-power-section .power-container {
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: flex-start;
-                    padding-top: 190px;
-                }
+                padding: 40px 20px;
+                gap: 40px;
             }
 
             /* Left: Text */
             .bulb-power-section .text-container {
                 flex: 1;
-                text-align: center;
-            }
-
-            @media (min-width: 768px) {
-                .bulb-power-section .text-container {
-                    text-align: left;
-                    max-width: 300px;
-                    margin-left: 7vh;
-
-                }
+                text-align: left;
+    max-width: 64vh;
             }
 
             .bulb-power-section .text-container h2 {
                 font-size: 35px;
                 font-weight: bold;
-                color: #ffffff;
                 text-align: center;
+                color: #ffffff;
                 margin-bottom: 10px;
-    width: 85vh;
             }
 
-
-
-/* Small mobile devices (max-width: 480px) */
-@media (max-width: 480px) {
-    .bulb-power-section .text-container h2 {
-                font-size: 35px;
-                font-weight: bold;
-                color: #ffffff;
-                text-align: center;
-                margin-bottom: 10px;
-        width: 43vh;
-            }}
-
             .bulb-power-section .text-container p {
-                font-size: 25px;
+                font-size: 20px;
                 color: #ffffff;
-                line-height: 1.5;
-                width: 43vw;
                 text-align: center;
+                line-height: 1.5;
             }
 
             /* Middle: Bulb and Slider */
@@ -456,33 +420,34 @@
                 flex: 1;
                 display: flex;
                 flex-direction: column;
-                align-items: end;
+                align-items: center;
+                position: relative;
             }
 
             .bulb-power-section .bulb-container {
                 position: relative;
-                width: 350px;
-                height: 250px;
-                margin: 0 auto;
+                width: 200px;
+                height: 300px;
+                margin-bottom: 20px;
             }
 
             .bulb-power-section .bulb-image {
-                width: 480px;
+                width: 100%;
                 position: absolute;
-                top: -170px;
-                left: 15vw;
+                top: 0;
+                left: 0;
                 z-index: 4;
                 transition: none;
             }
 
             .bulb-power-section .light-effect {
                 position: absolute;
-                width: 300px;
-                height: 241px;
+                width: 150px;
+                height: 150px;
                 border-radius: 50%;
                 background: radial-gradient(circle, rgb(255, 255, 15) 0%, rgba(255, 204, 118) 70%);
-                top: 6.5vw;
-                left: 19.5vw;
+    top: 133px;
+                left: 25px;
                 z-index: 3;
                 opacity: 0;
                 transition: opacity 0.3s, transform 0.3s;
@@ -490,12 +455,17 @@
             }
 
             .bulb-power-section .slider-container {
-                width: 53%;
-                padding-top: 25vh;
-                padding-bottom: 8vh;
+                width: 80%;
+            }
 
-                /* padding-left: 38vw; */
-                margin-right: -4vh;
+            .bulb-power-section .slider-box {
+                background-color: #ffffff;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+                padding: 15px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                box-sizing: border-box;
             }
 
             .bulb-power-section .slider {
@@ -545,7 +515,6 @@
                 border-radius: 50px;
                 border: 10px solid #3c3c3c;
                 position: relative;
-                margin: 0 auto;
                 overflow: hidden;
             }
 
@@ -584,16 +553,68 @@
                 transform: translateX(-50%);
             }
 
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .bulb-power-section .power-container {
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 20px;
+                }
 
-            /* New: Slider Box */
-            .bulb-power-section .slider-box {
-                background-color: #ffffff;
-                border: 1px solid #e5e7eb;
-                border-radius: 8px;
-                padding: 15px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                width: 86%;
-                box-sizing: border-box;
+                .bulb-power-section .text-container {
+                    text-align: center;
+                    max-width: 100%;
+                    margin-bottom: 20px;
+                }
+
+                .bulb-power-section .text-container p {
+                    width: 100%;
+                }
+
+                .bulb-power-section .bulb-and-slider {
+                    margin-bottom: 20px;
+                }
+
+                .bulb-power-section .mockup-container {
+                    margin-top: 20px;
+                }
+            }
+
+            @media (max-width: 480px) {
+
+                .bulb-power-section .power-container {
+    height: auto;
+    
+}
+                .bulb-power-section .text-container h2 {
+                    font-size: 28px;
+                }
+
+                .bulb-power-section .text-container p {
+                    font-size: 16px;
+                }
+
+                .bulb-power-section .bulb-container {
+                    width: 150px;
+                    height: 225px;
+                }
+
+                .bulb-power-section .light-effect {
+                    width: 100px;
+                    height: 100px;
+                    top: 50px;
+                    left: 25px;
+                }
+
+                .bulb-power-section .iphone-mockup {
+                    width: 200px;
+                    height: 400px;
+                }
+
+                .bulb-power-section .iphone-notch {
+                    width: 120px;
+                    left: 40px;
+                }
             }
         </style>
 
@@ -602,8 +623,7 @@
             <!-- Left: Text -->
             <div class="text-container">
                 <h2>Estimation</h2>
-                <p>when a device is turned on or off. By knowing both standby and active power usage, it can estimate
-                    energy consumption using intelligent interpolation.</p>
+                <p>when a device is turned on or off. By knowing both standby and active power usage, it can estimate energy consumption using intelligent interpolation.</p>
             </div>
 
             <!-- Middle: Bulb and Slider -->
@@ -612,17 +632,11 @@
                     <div class="light-effect" id="lightEffect"></div>
                     <img src="/smarthome_asset/bulb/bulblamp.svg" alt="Bulb" class="bulb-image">
                 </div>
-
-
                 <div class="slider-container">
                     <div class="slider-box">
                         <input type="range" min="0" max="100" value="0" class="slider" id="brightnessSlider">
                     </div>
                 </div>
-
-
-
-
             </div>
 
             <!-- Right: iPhone Mockup with Graph -->
@@ -773,9 +787,7 @@
             })();
         </script>
     </section>
-
-    <!-- bulb logic and code starts -->
-
+    </section>
     <!-- Ninth Page - Unified Interface Section -->
     <section id="ninth-page">
         <div class="unified-interface-container">
