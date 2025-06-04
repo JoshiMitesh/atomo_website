@@ -43,10 +43,34 @@
             <p id="subtitle" >Design to be Perform</p>
         </div>
         <video autoplay muted playsinline id="electron-video">
-  <source src="/neutron_page/neutronoutput_vp8final.mp4" type="video/mp4">
-  <source src="/neutron_page/neutronoutput_vp8final.webm" type="video/webm">
-  Your browser does not support the video tag.
+    <source src="/neutron_page/neutronoutput_vp8final.webm" type="video/webm" id="webm-source">
+    <source src="/neutron_page/neutronoutput.mp4" type="video/mp4" id="mp4-source">
+    Your browser does not support the video tag.
 </video>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('electron-video');
+    const webmSource = document.getElementById('webm-source');
+    
+    // Check if WebM is supported
+    video.addEventListener('error', function() {
+        if (video.error && video.error.code === 4) { // MEDIA_ERR_SRC_NOT_SUPPORTED
+            // Switch to MP4 source if WebM fails
+            const mp4Source = document.getElementById('mp4-source');
+            video.src = mp4Source.src;
+            video.load();
+            video.play().catch(e => console.log('Autoplay prevented:', e));
+        }
+    });
+    
+    // iOS specific fix for autoplay
+    video.play().catch(e => {
+        // If autoplay is prevented, show play button or handle accordingly
+        console.log('Autoplay prevented:', e);
+    });
+});
+</script>
     </section>
 
     <h2 class="headingg">Get to know Neutron</h2>
