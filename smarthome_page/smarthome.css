@@ -349,7 +349,7 @@
 
     #navbar a:hover {
                 color: rgb(71, 160, 233);
-        background-color: rgba(255, 255, 255, 0.05);
+                background-color: rgba(255, 255, 255, 0.05);
     }
 
     #navbar a::after {
