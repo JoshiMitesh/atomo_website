@@ -48,7 +48,7 @@
             </ul>
         </nav>
 
-          <section class="hero-section">
+        <section class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-headline">Smart Home</h1>
                 <p class="hero-quote">Redefining the Future of Smart Living</p>
@@ -59,7 +59,8 @@
             <div class="smart-home-content">
                 <div class="atomic-os-section">
                     <h2>Atomic HomeOS</h2>
-                    <p class="quote">The World's most futuristic smart homeOS.<br>"What happens in your smartphone stays in your smartphone".</p>
+                    <p class="quote">The World's most futuristic smart homeOS.<br>"What happens in your smartphone stays
+                        in your smartphone".</p>
                 </div>
             </div>
             <div class="smart-home-image-container">
@@ -311,10 +312,10 @@
                 <div class="energy-slider-container">
                     <div class="slider-item video-slide active">
                         <video oncontextmenu="return false" autoplay muted loop playsinline class="insights-video">
-  <source src="/smarthome_asset/energy/energyvideo.mp4" type="video/mp4">
-  <source src="/smarthome_asset/energy/energyvideo.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+                            <source src="/smarthome_asset/energy/energyvideo.mp4" type="video/mp4">
+                            <source src="/smarthome_asset/energy/energyvideo.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="slider-item slideshow-slide">
                         <div class="slideshow">
@@ -340,35 +341,35 @@
     </section>
 
 
-  <!-- Eighth Page - Plug Section -->
-<section id="eighth-page" class="max-w-6xl mx-auto">
-    <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
-        <div class="socket-container">
-            <div class="socket">
-                <img class="asdf" src="/smarthome_asset/plugsocket/socket.svg">
-            </div>
-            <div class="plug plugged-out" id="plug">    
-                <img src="/smarthome_asset/plugsocket/plug.svg" alt="Plug">
-            </div>
-        </div>
-        <div class="graph-section">
-            <div class="mobile-mockup">
-                <div class="graph-container">
-                    <canvas id="powerChart"></canvas>
+    <!-- Eighth Page - Plug Section -->
+    <section id="eighth-page" class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+            <div class="socket-container">
+                <div class="socket">
+                    <img class="asdf" src="/smarthome_asset/plugsocket/socket.svg">
+                </div>
+                <div class="plug plugged-out" id="plug">
+                    <img src="/smarthome_asset/plugsocket/plug.svg" alt="Plug">
                 </div>
             </div>
+            <div class="graph-section">
+                <div class="mobile-mockup">
+                    <div class="graph-container">
+                        <canvas id="powerChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="text-content">
+                <h2>Streamlining Energy Consumption</h2>
+                <p class="subtitle">Streamlining energy consumption helps you monitor, manage, and reduce usage
+                    effortlessly. Improve efficiency with real-time data and smart automation tailored to your needs.
+                </p>
+            </div>
         </div>
-        <div class="text-content">
-            <h2>Streamlining Energy Consumption</h2>
-            <p class="subtitle">Streamlining energy consumption helps you monitor, manage, and reduce usage
-                effortlessly. Improve efficiency with real-time data and smart automation tailored to your needs.
-            </p>
-        </div>
-    </div>
-</section>
+    </section>
 
-   
-   <section class="bulb-power-section">
+
+    <section class="bulb-power-section">
         <!-- Include dependencies (remove if already in parent page) -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -387,7 +388,7 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                    height: 84vh;
+                height: 84vh;
                 align-items: center;
                 padding: 40px 20px;
                 gap: 40px;
@@ -397,7 +398,7 @@
             .bulb-power-section .text-container {
                 flex: 1;
                 text-align: left;
-    max-width: 64vh;
+                max-width: 64vh;
             }
 
             .bulb-power-section .text-container h2 {
@@ -427,7 +428,7 @@
             .bulb-power-section .bulb-container {
                 position: relative;
                 width: 200px;
-                height: 300px;
+                height: 374px;
                 margin-bottom: 20px;
             }
 
@@ -440,18 +441,38 @@
                 transition: none;
             }
 
+           
+
             .bulb-power-section .light-effect {
-               position: absolute;
-    width: 178px;
-    height: 179px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgb(255, 255, 15) 0%, rgba(255, 204, 118) 70%);
-    top: 133px;
-    left: 13px;
-    z-index: 3;
-    opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
-    filter: blur(20px);
+                position: absolute;
+                width: 215px;
+                height: 216px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgb(255, 255, 15) 0%, rgba(255, 204, 118) 70%);
+                top: 133px;
+                left: -9px;
+                z-index: 3;
+                opacity: 0;
+                transition: opacity 0.3s, transform 0.3s;
+                filter: blur(20px);
+                /* iOS specific fixes */
+                -webkit-backface-visibility: hidden;
+                -webkit-transform: translateZ(0);
+                backface-visibility: hidden;
+                transform: translateZ(0);
+                outline: none;
+                border: none !important;
+                box-shadow: none !important;
+                /* Prevent border rendering artifacts */
+                -webkit-mask-image: -webkit-radial-gradient(white, black);
+            }
+
+            /* Additional iOS specific fix */
+            @supports (-webkit-touch-callout: none) {
+                .bulb-power-section .bulb-container {
+                    overflow: hidden;
+                    -webkit-mask-image: -webkit-radial-gradient(white, black);
+                }
             }
 
             .bulb-power-section .slider-container {
@@ -583,9 +604,10 @@
             @media (max-width: 480px) {
 
                 .bulb-power-section .power-container {
-    height: auto;
-    
-}
+                    height: auto;
+
+                }
+
                 .bulb-power-section .text-container h2 {
                     font-size: 28px;
                 }
@@ -623,10 +645,10 @@
             <!-- Left: Text -->
             <div class="text-container">
                 <h2>Estimation</h2>
-                <p>when a device is turned on or off. By knowing both standby and active power usage, it can estimate energy consumption using intelligent interpolation.</p>
+                <p>when a device is turned on or off. By knowing both standby and active power usage, it can estimate
+                    energy consumption using intelligent interpolation.</p>
             </div>
 
-            <!-- Middle: Bulb and Slider -->
             <div class="bulb-and-slider">
                 <div class="bulb-container" id="bulb">
                     <div class="light-effect" id="lightEffect"></div>
@@ -638,7 +660,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Right: iPhone Mockup with Graph -->
             <div class="mockup-container">
                 <div class="iphone-mockup">

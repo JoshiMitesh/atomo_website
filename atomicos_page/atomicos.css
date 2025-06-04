@@ -123,13 +123,14 @@ body {
 }
 
 .matter-content {
-    display: flex;
+   display: flex;
     position: relative;
     width: 90%;
     height: 100px;
+    padding-top: 22vh;
     max-width: 93%;
-    /* margin-bottom: -135px; */
-    top: 9%;
+    /* top: 9%; */
+    n-bottom: -135px;
     flex-direction: row;
     align-items: end;
     justify-content: space-between;

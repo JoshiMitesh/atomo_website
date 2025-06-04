@@ -357,6 +357,7 @@
 .text-content {
     width: 100%;
     display: flex;
+            padding-top: 8vh;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 90px;

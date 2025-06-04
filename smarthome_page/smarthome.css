@@ -24,15 +24,17 @@
 
     /* ========== Hero Section ========== */
     .hero-section {
-        position: relative;
-        width: 100%;
-        min-height: 120px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 80px;
-        background-color: transparent;
-        z-index: 10;
+           position: relative;
+    width: 100%;
+    min-height: 120px;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    /* padding: 80px; */
+    padding-bottom: 7vh;
+    background-color: transparent;
+    z-index: 10;
     }
 
     .hero-content {
@@ -40,6 +42,8 @@
         justify-content: space-between;
         align-items: center;
         width: 90%;
+            padding-top: 4vh;
+
         /* max-width: 1200px; */
     }
 
