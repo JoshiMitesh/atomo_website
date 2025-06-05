@@ -430,6 +430,7 @@
                 width: 200px;
                 height: 374px;
                 margin-bottom: 20px;
+                        z-index: 9999; /* Extremely high z-index for container */
             }
 
             .bulb-power-section .bulb-image {
@@ -438,34 +439,35 @@
                 top: 0;
                 left: 0;
                 z-index: 4;
+                        z-index: 10001; /* Highest possible z-index */
+
                 transition: none;
             }
 
            
 
             .bulb-power-section .light-effect {
-                position: absolute;
-                width: 215px;
-                height: 216px;
-                border-radius: 50%;
-                background: radial-gradient(circle, rgb(255, 255, 15) 0%, rgba(255, 204, 118) 70%);
-                top: 133px;
-                left: -9px;
-                z-index: 3;
-                opacity: 0;
-                transition: opacity 0.3s, transform 0.3s;
-                filter: blur(20px);
-                /* iOS specific fixes */
-                -webkit-backface-visibility: hidden;
-                -webkit-transform: translateZ(0);
-                backface-visibility: hidden;
-                transform: translateZ(0);
-                outline: none;
-                border: none !important;
-                box-shadow: none !important;
-                /* Prevent border rendering artifacts */
-                -webkit-mask-image: -webkit-radial-gradient(white, black);
-            }
+        position: absolute;
+        width: 215px;
+        height: 216px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgb(255, 255, 15) 0%, rgba(255, 204, 118) 70%);
+        top: 133px;
+        left: -9px;
+        z-index: 10000; /* Very high but just below bulb image */
+        opacity: 0;
+        transition: opacity 0.3s, transform 0.3s;
+        filter: blur(20px);
+        /* iOS specific fixes */
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        transform: translateZ(0);
+        outline: none;
+        border: none !important;
+        box-shadow: none !important;
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
+    }
 
             /* Additional iOS specific fix */
             @supports (-webkit-touch-callout: none) {
