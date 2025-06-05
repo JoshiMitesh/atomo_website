@@ -1097,7 +1097,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(275px, 0fr));
         gap: 6px;
-        width: 36%;
+    width: 47%;
         max-width: 627px;
         position: relative;
         left: 55%;
@@ -1237,121 +1237,158 @@
     }
 
 
-    /* Eighth Page */
-    #eighth-page {
-        width: 100%;
-        min-height: 89vh;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 80px 20px;
-        box-sizing: border-box;
-        background-color: rgb(255, 255, 255);
-        overflow-x: hidden;
+    /* Eighth Page - Socket and Plug Section */
+#eighth-page {
+    width: 100%;
+    min-height: 89vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+}
+
+#eighth-page > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1710px;
+}
+
+.socket-container {
+    flex: 1;
+    max-width: 50%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socket {
+    width: 100%;
+    max-width: 500px; /* Limit maximum size */
+    height: auto;
+    position: relative; /* Changed from absolute to relative for better control */
+}
+
+.socket img {
+      width: 100%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    top: -7px;
+    left: 136px;
+    transform: none;
+}
+
+.plug {
+    position: absolute;
+    width: 60%;
+    max-width: 300px; /* Limit maximum size */
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the plug */
+    transition: transform 0.5s ease;
+}
+
+.plug img {
+   width: 188%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+}
+
+.plugged-in {
+    transform: translate(-50%, -50%) translateX(-20%); /* Adjusted for subtle movement */
+}
+
+.plugged-out {
+    transform: translate(-50%, -50%) translateX(-60%); /* Adjusted for subtle movement */
+}
+
+/* Remove rotation for simplicity and consistency */
+#eighth-page .plug {
+    transform: translate(-50%, -50%); /* Center without rotation */
+    transition: transform 0.5s ease;
+}
+
+#eighth-page .plugged-in {
+    transform: translate(-50%, -50%) translateX(-20%);
+}
+
+#eighth-page .plugged-out {
+    transform: translate(-50%, -50%) translateX(-60%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    #eighth-page > div {
+        max-width: 900px;
+        gap: 30px;
     }
 
-    #eighth-page>div {
-        display: flex;
-        flex-direction: row;
-        gap: 40px;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        width: 141%;
-        max-width: 212vh;
-    }
-
-    /* Socket and Plug Section */
     .socket-container {
-        flex: 1;
-        max-width: 50%;
-        aspect-ratio: 1 / 1;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .asdf {
-        width: 71vh;
-        /* height: 19vh; */
-        position: absolute;
+        max-width: 45%;
     }
 
     .socket {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        max-width: 400px;
     }
 
-    .socket img {
-        height: auto;
-        position: absolute;
-        bottom: -78px;
-        right: -15px;
-        object-fit: contain;
-        transform: translateX(-50%);
-        left: 88%;
-        width: 69vh;
-        /* height: 19vh; */
-        position: absolute;
-    }
-
-    /* Plug Styles */
     .plug {
-        position: absolute;
-        width: 60%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    #eighth-page {
+        padding: 40px 16px;
+        min-height: auto;
         height: auto;
-        cursor: pointer;
-        z-index: 10;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transition: transform 0.5s ease;
     }
 
-    .plug img {
-        width: 80vh;
-        height: auto;
-        position: absolute;
-        /* right: -86vh; */
-        bottom: -35vh;
-        object-fit: contain;
-        transform: translateX(-50%);
-        left: 105%;
+    #eighth-page > div {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 600px;
     }
 
-    .plugged-in {
-        transform: translate(-50%, -50%) translateX(-20%);
+    .socket-container {
+        order: 2;
+        max-width: 80%;
+        transform: scale(0.9); /* Slightly scale down to fit */
     }
 
-    .plugged-out {
-        transform: translate(-50%, -50%) translateX(-60%);
+    .socket {
+        max-width: 350px;
     }
 
-
-
-    #eighth-page .plug {
-        /* Add rotation to match the image's angle */
-        transform: translate(-50%, -50%) rotate(-45deg);
-        transition: transform 0.5s ease;
-        /* Smooth transition for both position and rotation */
+    .plug {
+        max-width: 200px;
     }
 
-    /* Adjust plugged-in and plugged-out states to include rotation */
-    #eighth-page .plugged-in {
-        transform: translate(-50%, -50%) translateX(-20%) rotate(-0deg);
+    .text-content {
+        order: 1;
+        margin-bottom: 20px;
     }
 
-    #eighth-page .plugged-out {
-        transform: translate(-50%, -50%) translateX(-60%) rotate(-0deg);
+    .graph-section {
+        order: 3;
+        transform: scale(0.9);
     }
-
-
+}
 
     /* Graph Section */
     .graph-section {
@@ -1449,16 +1486,16 @@
         }
 
         .socket img {
-            width: 100%;
-            left: 61%;
-            bottom: -74px;
+           width: 100%;
+        left: 25%;
+        bottom: -74px;
         }
 
         .plug img {
-            width: 109vw;
-            bottom: -41vw;
-            /* right: -47px; */
-            left: 52%;
+                  width: 109vw;
+        bottom: -41vw;
+        /* right: -47px; */
+        left: -46%;
         }
 
         .mobile-mockup {
@@ -3662,7 +3699,7 @@
         font-size: 35px;
         text-align: center;
         /* color: var(--text-dark); */
-        width: 100vh;
+        width: 100%;
         /* margin-bottom: 20px; */
         /* overflow-wrap: break-word; */
         /* word-break: break-word; */
@@ -3828,7 +3865,7 @@
             justify-content: flex-start;
             align-items: center;
             width: 100%;
-            height: 100vh;
+        height: auto;
             max-width: 600px;
             margin: 0 auto;
         }
