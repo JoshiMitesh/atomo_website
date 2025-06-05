@@ -670,8 +670,8 @@
 
     .devices-description {
         padding-top: 13vh;
-        max-width: 100%;
-        width: 86vh;
+    max-width: 121%;
+    width: 177vh;
     }
 
     .device-item {
@@ -964,6 +964,8 @@
     height: auto;
         display: flex;
         justify-content: center;
+            background-color: aliceblue;
+
         align-items: center;
         padding: 80px 20px;
         box-sizing: border-box;
@@ -1238,7 +1240,7 @@
         align-items: center;
         padding: 80px 20px;
         box-sizing: border-box;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(230 230 230);
         overflow-x: hidden;
     }
 
