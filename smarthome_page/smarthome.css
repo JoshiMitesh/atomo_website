@@ -3857,7 +3857,7 @@
             flex-direction: column;
             padding: 40px 16px;
             min-height: 100vh;
-            height: 126vh;
+        height: auto;
             overflow: hidden;
         }
 
@@ -3913,8 +3913,6 @@
             width: 100%;
             max-width: 600px;
             margin: 0 auto;
-            gap: 16px !important;
-            /* Override embedded gap */
         }
 
 
