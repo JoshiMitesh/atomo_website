@@ -458,31 +458,55 @@ window.addEventListener('scroll', function () {
         navbar.classList.remove('scrolled');
     }
 });
-
 document.addEventListener('DOMContentLoaded', () => {
     const phoneGrid = document.querySelector('.phone-grid');
+    if (!phoneGrid) {
+        console.warn('Phone grid not found!');
+        return;
+    }
+
     let isDragging = false;
     let startX = 0;
     let scrollStart = 0;
     let animationId = null;
-    let scrollSpeed = 1; // Adjust speed as needed
+    let scrollSpeed = 1; // Adjust for desired scroll speed (pixels per frame)
+    const scrollResetThreshold = 1; // Small threshold to prevent jittery resets
 
+    // Clone items to create a seamless loop
+    function setupInfiniteScroll() {
+        const phoneItems = phoneGrid.querySelectorAll('.phone-item');
+        if (phoneItems.length === 0) {
+            console.warn('No phone items found in phone grid!');
+            return;
+        }
+
+        // Duplicate the phone items to create a seamless loop
+        phoneItems.forEach(item => {
+            const clone = item.cloneNode(true);
+            phoneGrid.appendChild(clone);
+        });
+
+        // Ensure the grid is wide enough to allow smooth looping
+        phoneGrid.style.scrollBehavior = 'auto'; // Disable smooth scrolling for precise control
+    }
+
+    // Auto-scroll function
     function autoScroll(timestamp) {
         if (!isDragging) {
             phoneGrid.scrollLeft += scrollSpeed;
 
-            // Check if we've reached or exceeded the end
-            if (phoneGrid.scrollLeft >= phoneGrid.scrollWidth - phoneGrid.clientWidth - 1) {
-                phoneGrid.scrollLeft = 0; // Instantly reset to start
+            // Check if we've reached or exceeded the end of the original content
+            const maxScroll = phoneGrid.scrollWidth / 2; // Half the width since we duplicated content
+            if (phoneGrid.scrollLeft >= maxScroll - scrollResetThreshold) {
+                // Jump back to the start of the original content (not the cloned part)
+                phoneGrid.scrollLeft -= maxScroll;
             }
         }
 
         animationId = requestAnimationFrame(autoScroll);
     }
 
-    // Start the animation
-    animationId = requestAnimationFrame(autoScroll);
-
+    // Start dragging (mouse or touch)
     function startDragging(x) {
         isDragging = true;
         startX = x;
@@ -490,42 +514,56 @@ document.addEventListener('DOMContentLoaded', () => {
         cancelAnimationFrame(animationId);
     }
 
+    // Stop dragging and resume auto-scroll
     function stopDragging() {
         if (isDragging) {
             isDragging = false;
-            // Restart the animation after a short delay
+            // Resume auto-scroll after a short delay
             setTimeout(() => {
                 animationId = requestAnimationFrame(autoScroll);
             }, 1000);
         }
     }
 
-    // Event listeners
+    // Handle dragging movement
+    function handleDragMove(x) {
+        if (!isDragging) return;
+        const deltaX = (x - startX) * 1.5; // Sensitivity factor
+        phoneGrid.scrollLeft = scrollStart - deltaX;
+    }
+
+    // Initialize infinite scroll
+    setupInfiniteScroll();
+
+    // Start the auto-scroll
+    animationId = requestAnimationFrame(autoScroll);
+
+    // Mouse event listeners
     phoneGrid.addEventListener('mousedown', (e) => {
         startDragging(e.clientX);
-        e.preventDefault();
+        e.preventDefault(); // Prevent text selection
     });
 
     phoneGrid.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const x = e.clientX;
-        const deltaX = (x - startX) * 1.5;
-        phoneGrid.scrollLeft = scrollStart - deltaX;
+        handleDragMove(e.clientX);
     });
 
     phoneGrid.addEventListener('mouseup', stopDragging);
     phoneGrid.addEventListener('mouseleave', stopDragging);
 
+    // Touch event listeners for iOS compatibility
     phoneGrid.addEventListener('touchstart', (e) => {
         startDragging(e.touches[0].clientX);
-    });
+        e.preventDefault(); // Prevent iOS momentum scrolling
+    }, { passive: false });
 
     phoneGrid.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        const x = e.touches[0].clientX;
-        const deltaX = (x - startX) * 1.5;
-        phoneGrid.scrollLeft = scrollStart - deltaX;
-    });
+        handleDragMove(e.touches[0].clientX);
+        e.preventDefault(); // Prevent default scrolling behavior
+    }, { passive: false });
 
     phoneGrid.addEventListener('touchend', stopDragging);
+
+    // Prevent iOS overscroll
+    phoneGrid.addEventListener('touchcancel', stopDragging);
 });
