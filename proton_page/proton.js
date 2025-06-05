@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Hamburger Menu Functionality
     function initializeHamburgerMenu() {
@@ -88,6 +90,211 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Second Page Slider
+    function initializeSecondPageSlider() {
+        const slider = document.querySelector('#slidesContainer');
+        const prevBtn = document.querySelector('#second-page .prev-slide');
+        const nextBtn = document.querySelector('#second-page .next-slide');
+        const secondPageSection = document.querySelector('#second-page');
+
+        // Check if all required elements exist
+        if (!slider || !prevBtn || !nextBtn || !secondPageSection) {
+            console.warn('Slider elements not found:', { slider, prevBtn, nextBtn, secondPageSection });
+            return;
+        }
+
+        let currentIndex = 0;
+        const autoSlideInterval = 10000; // 10 seconds
+        const restartDelay = 1000; // 1 second
+        let autoSlideTimer = null;
+        let isAutoSliding = false;
+
+        // Sample data for slides
+        const slidesData = [
+            {
+                image: '/electron_page/Frame.svg',
+                title: 'What Is Electron?',
+                description: 'Atomo Innovation’s Electron is a powerful edge computing platform for industries, offering real-time intelligence, faster processing, and seamless automation at the edge.'
+            },
+            {
+                image: '/electron_page/Frame.svg',
+                title: 'Why It Exists?',
+                description: 'With Electron, industries can run AI locally - no cloud needed. This means faster, secure, and reliable operations, even offline or in remote locations.'
+            },
+            {
+                image: '/electron_page/Frame.svg',
+                title: "Who It's For?",
+                description: 'Ideal for system integrators and IoT providers, enabling intelligent edge systems with enhanced performance, reliability, and scalability for industrial applications.'
+            },
+            {
+                image: '/electron_page/Frame.svg',
+                title: 'Built for Harsh Realities!',
+                description: 'Electron excels in real-world environments - from remote farms to factory floors and power stations - delivering reliable edge intelligence wherever its needed most.'
+            },
+            {
+                image: '/electron_page/Frame.svg',
+                title: 'Beyond a Device.',
+                description: 'Electron is built to perform in the toughest environments-be it remote farms, factory floors, or power stations-ensuring dependable edge computing wherever its deployed.'
+            },
+            {
+                image: '/electron_page/Frame.svg',
+                title: 'Drives Smarter Ops.',
+                description: 'It empowers machines to communicate, predict potential issues, and optimize performance autonomously-directly at the edge, without relying on the cloud.'
+            },
+            {
+                image: '/electron_page/Frame.svg',
+                title: 'Step into Industry 4.0.',
+                description: 'Electron serves as a gateway to modern industrial practices, seamlessly bridging legacy systems with future-ready, intelligent infrastructure.'
+            },
+            {
+                image: '/electron_page/Frame.svg',
+                title: 'Easy In, Irreplaceable Out.', 
+                description: 'Electron integrates effortlessly into existing systems-and once its there, it becomes an indispensable part of operations, redefining efficiency and control.'
+            },
+            {
+                image: '/electron_page/Frame.svg',
+                title: 'Part of a Bigger Family.',
+                description: 'Electron integrates seamlessly with Neutron and Proton, creating a unified ecosystem for smart environments across both residential and industrial settings.'
+            },
+            {
+                image: '/electron_page/Frame.svg',
+                title: 'India-Born, World-Ready.',
+                description: 'A proudly Indian innovation, Electron is designed to empower industries both locally and globally, combining robust engineering with a vision for worldwide impact.'
+            }
+        ];
+
+        // Create slides
+        slidesData.forEach((slide, index) => {
+            const slideElement = document.createElement('div');
+            slideElement.className = 'slide';
+            slideElement.innerHTML = `
+                <img src="${slide.image}" alt="${slide.title}" class="slide-img">
+                <div class="slide-content">
+                    <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
+                    <p class="text-sm">${slide.description}</p>
+                </div>
+            `;
+            slider.appendChild(slideElement);
+        });
+
+        const slides = document.querySelectorAll('#second-page .slide');
+
+        // Ensure slides exist
+        if (slides.length === 0) {
+            console.warn('No slides found in #slidesContainer');
+            return;
+        }
+
+        function updateSlidesToShow() {
+            if (window.innerWidth <= 480) return 1;
+            if (window.innerWidth <= 768) return 2;
+            if (window.innerWidth <= 1024) return 3;
+            return 4;
+        }
+
+        function updateSlider() {
+            const slidesToShow = updateSlidesToShow();
+            const slideWidth = slides[0].offsetWidth + 10; // Width + margin (5px on each side)
+            const containerWidth = slider.parentElement.offsetWidth;
+            const totalWidthPerSlide = slideWidth;
+            let translateX = -currentIndex * totalWidthPerSlide;
+
+            // Center the slides on mobile
+            if (slidesToShow === 1) {
+                const offset = (containerWidth - slideWidth) / 2;
+                translateX += offset;
+            }
+
+            console.log('Updating slider: currentIndex:', currentIndex, 'translateX:', translateX);
+            slider.style.transform = `translateX(${translateX}px)`;
+
+            // Update button states
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= slides.length - slidesToShow;
+            console.log('Button states:', { prevDisabled: prevBtn.disabled, nextDisabled: nextBtn.disabled });
+        }
+
+        function autoSlide() {
+            const slidesToShow = updateSlidesToShow();
+            if (currentIndex >= slides.length - slidesToShow) {
+                setTimeout(() => {
+                    currentIndex = 0;
+                    updateSlider();
+                    if (isAutoSliding) {
+                        autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
+                    }
+                }, restartDelay);
+            } else {
+                currentIndex++;
+                updateSlider();
+                if (isAutoSliding) {
+                    autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
+                }
+            }
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (!isAutoSliding) {
+                            isAutoSliding = true;
+                            autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
+                        }
+                    } else {
+                        if (isAutoSliding) {
+                            isAutoSliding = false;
+                            clearTimeout(autoSlideTimer);
+                        }
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        observer.observe(secondPageSection);
+
+        prevBtn.addEventListener('click', () => {
+            console.log('Prev button clicked, currentIndex before:', currentIndex);
+            clearTimeout(autoSlideTimer);
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+                console.log('Prev button clicked, currentIndex after:', currentIndex);
+            }
+            if (isAutoSliding) {
+                autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            console.log('Next button clicked, currentIndex:', currentIndex);
+            clearTimeout(autoSlideTimer);
+            const slidesToShow = updateSlidesToShow();
+            if (currentIndex < slides.length - slidesToShow) {
+                currentIndex++;
+                updateSlider();
+            } else {
+                setTimeout(() => {
+                    currentIndex = 0;
+                    updateSlider();
+                    if (isAutoSliding) {
+                        autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
+                    }
+                }, restartDelay);
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            const slidesToShow = updateSlidesToShow();
+            currentIndex = Math.min(currentIndex, slides.length - slidesToShow);
+            updateSlider();
+        });
+
+        // Initial update
+        updateSlider();
+    }
+
     // Fourth Page Slider
     function initializeFourthPageSlider() {
         const featureSlider = document.querySelector('.features-slider');
@@ -97,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const fourthPageSection = document.querySelector('#fourth-page');
 
         let currentFeatureIndex = 0;
-        const autoSlideInterval = 10000; // 10 seconds
+        const autoSlideinterval = 10000; // 10 seconds
         const restartDelay = 1000; // 1 second
         let autoSlideTimer = null;
         let isAutoSliding = false;
@@ -115,12 +322,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const containerWidth = featureSlider.parentElement.offsetWidth;
             const totalWidthPerSlide = slideWidth;
             const translateX = -currentFeatureIndex * totalWidthPerSlide;
-            featureSlider.style.transform = `translateX(${translateX}px)`;
 
             // Center the slides on mobile
             if (slidesToShow === 1) {
                 const offset = (containerWidth - slideWidth) / 2;
                 featureSlider.style.transform = `translateX(calc(${translateX}px + ${offset}px))`;
+            } else {
+                featureSlider.style.transform = `translateX(${translateX}px)`;
             }
 
             // Disable buttons at boundaries
@@ -203,204 +411,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         updateFeatureSlider();
-    }
-
-    // Second Page Slider
-    function initializeSecondPageSlider() {
-        const slider = document.querySelector('#slidesContainer');
-        const prevBtn = document.querySelector('#second-page .prev-slide');
-        const nextBtn = document.querySelector('#second-page .next-slide');
-        const secondPageSection = document.querySelector('#second-page');
-
-        let currentIndex = 0;
-        const autoSlideInterval = 10000; // 10 seconds
-        const restartDelay = 1000; // 1 second
-        let autoSlideTimer = null;
-        let isAutoSliding = false;
-
-        // Sample data for slides
-        const slidesData = [
-            {
-              image: "/proton_page/Frame.svg",
-              title: "What Is Proton?",
-              description: "Proton is Atomo Innovation’s smart home controller delivering seamless integration, powerful performance, and full control for advanced users and automation setups."
-            },
-            {
-              image: "/proton_page/Frame.svg",
-              title: "Why It Was Created?",
-              description: "Designed to deliver a powerful, secure, and future-ready smart home hub with intelligent control, personalization, and scalability for evolving user needs."
-            },
-            {
-              image: "/proton_page/Frame.svg",
-              title: "Who It's For?",
-              description: "Built for smart homeowners, automation integrators, and builders seeking robust control, deep customization, and a seamless, connected smart living experience."
-            },
-            {
-              image: "/proton_page/Frame.svg",
-              title: "The Hub of the Home",
-              description: "Proton is the smart home’s intelligent core, orchestrating devices, sensors, scenes, and routines in real-time for seamless automation and unified control."
-            },
-            {
-              image: "/proton_page/Frame.svg",
-              title: "Engineered for Performance",
-              description: "With dedicated compute power and intelligent scheduling, Proton manages complex automation tasks reliably and with low latency for smooth smart home operations."
-            },
-            {
-              image: "/proton_page/Frame.svg",
-              title: "Personalized Control",
-              description: "From voice commands and mobile apps to AI-generated routines, Proton adapts seamlessly to your lifestyle, delivering a personalized smart home experience."
-            },
-            {
-              image: "/proton_page/Frame.svg",
-              title: "Future-Ready Smart Home",
-              description: "Future-proofed with Matter, Thread, Zigbee support, Proton integrates with upcoming connected devices, ensuring long-term compatibility and flexible smart home connectivity."
-            },
-            {
-              image: "/proton_page/Frame.svg",
-              title: "Security First, Always",
-              description: "With local processing and secure architecture, Proton ensures your smart home remains private, protected, and resilient - even without constant cloud connectivity."
-            },
-            {
-              image: "/proton_page/Frame.svg",
-              title: "Atomo Compatible",
-              description: "PProton seamlessly integrates with Neutron and Electron, providing a unified experience across home and industrial automation for enhanced control and efficiency."
-            },
-            {
-              image: "/proton_page/Frame.svg",
-              title: "Indian Craft, Global Reach",
-              description: "Developed in India to meet global standards, Proton ensures international compatibility, catering to the needs of modern living worldwide."
-            }
-          ];
-          
-        // Create slides
-        slidesData.forEach((slide, index) => {
-            const slideElement = document.createElement('div');
-            slideElement.className = 'slide';
-            slideElement.innerHTML = `
-                <img src="${slide.image}" alt="${slide.title}" class="slide-img">
-                <div class="slide-content">
-                    <h3 class="text-2xl font-bold mb-2 pb-[50px]">${slide.title}</h3>
-                    <p class="text-base">${slide.description}</p>
-                </div>
-            `;
-            slider.appendChild(slideElement);
-        });
-
-        const slides = document.querySelectorAll('#second-page .slide');
-
-        function updateSlidesToShow() {
-            if (window.innerWidth <= 480) return 1;
-            if (window.innerWidth <= 768) return 2;
-            if (window.innerWidth <= 1024) return 3;
-            return 4;
-        }
-
-        function updateSlider() {
-            const slidesToShow = updateSlidesToShow();
-            const slideWidth = slides[0].offsetWidth + 10; // Width + margin (5px on each side)
-            const containerWidth = slider.parentElement.offsetWidth;
-            const totalWidthPerSlide = slideWidth;
-            const translateX = -currentIndex * totalWidthPerSlide;
-            slider.style.transform = `translateX(${translateX}px)`;
-
-
-            if (slidesToShow === 1) {
-                const offset = (containerWidth - slideWidth) / 2;
-                translateX += offset;
-            }
-
-            slider.style.transform = `translateX(${translateX}px)`;
-
-            // Update button states
-            preview.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex >= slides.length - slidesToShow;
-        }
-            // Center the slides on mobile
-            // if (slidesToShow === 1) {
-            //     const offset = (containerWidth - slideWidth) / 2;
-            //     slider.style.transform = `translateX(calc(${translateX}px + ${offset}px))`;
-            // }
-
-            // Disable buttons at boundaries
-        //     prevBtn.disabled = currentIndex === 0;
-        //     nextBtn.disabled = currentIndex >= slides.length - slidesToShow;
-        // }
-
-        function autoSlide() {
-            const slidesToShow = updateSlidesToShow();
-            if (currentIndex >= slides.length - slidesToShow) {
-                setTimeout(() => {
-                    currentIndex = 0;
-                    updateSlider();
-                    if (isAutoSliding) {
-                        autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-                    }
-                }, restartDelay);
-            } else {
-                currentIndex++;
-                updateSlider();
-                if (isAutoSliding) {
-                    autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-                }
-            }
-        }
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        if (!isAutoSliding) {
-                            isAutoSliding = true;
-                            autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-                        }
-                    } else {
-                        if (isAutoSliding) {
-                            isAutoSliding = false;
-                            clearTimeout(autoSlideTimer);
-                        }
-                    }
-                });
-            },
-            { threshold: 0.3 }
-        );
-
-        observer.observe(secondPageSection);
-
-        prevBtn.addEventListener('click', () => {
-            clearTimeout(autoSlideTimer);
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateSlider();
-            }
-            if (isAutoSliding) {
-                autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-            }
-        });
-
-        nextBtn.addEventListener('click', () => {
-            clearTimeout(autoSlideTimer);
-            const slidesToShow = updateSlidesToShow();
-            if (currentIndex < slides.length - slidesToShow) {
-                currentIndex++;
-                updateSlider();
-            } else {
-                setTimeout(() => {
-                    currentIndex = 0;
-                    updateSlider();
-                    if (isAutoSliding) {
-                        autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-                    }
-                }, restartDelay);
-            }
-        });
-
-        window.addEventListener('resize', () => {
-            const slidesToShow = updateSlidesToShow();
-            currentIndex = Math.min(currentIndex, slides.length - slidesToShow);
-            updateSlider();
-        });
-
-        updateSlider();
     }
 
     // Initialize all components

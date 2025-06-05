@@ -792,7 +792,7 @@ body {
 .headingg {
     padding-left: 3vh;
     font-size: 40px;
-    padding-top: 4vh;
+    padding-top: 6vh;
     font-weight: 600;
 }
 
@@ -1102,7 +1102,7 @@ body {
 }
 
 .feature-title {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
     text-align: left;
 
@@ -1112,7 +1112,7 @@ body {
 }
 
 .feature-desc {
-    font-size: 16px;
+    font-size: 20px;
     text-align: left;
 
     color: #666;
@@ -1202,7 +1202,7 @@ body {
     }
 
     .feature-title {
-        font-size: 31px;
+        font-size: 20px;
     }
 
     .feature-desc {
