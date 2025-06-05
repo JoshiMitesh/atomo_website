@@ -467,41 +467,32 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    // Ensure exactly 8 images are present
+    const phoneItems = phoneGrid.querySelectorAll('.phone-item');
+    if (phoneItems.length !== 8) {
+        console.warn(`Expected 8 phone items, found ${phoneItems.length}!`);
+    }
+
     let isDragging = false;
     let startX = 0;
     let scrollStart = 0;
     let animationId = null;
-    let scrollSpeed = 1; // Adjust for desired scroll speed (pixels per frame)
+    let scrollSpeed = 1; // Slower scrolling (pixels per frame)
     const scrollResetThreshold = 1; // Small threshold to prevent jittery resets
 
-    // Clone items to create a seamless loop
-    function setupInfiniteScroll() {
-        const phoneItems = phoneGrid.querySelectorAll('.phone-item');
-        if (phoneItems.length === 0) {
-            console.warn('No phone items found in phone grid!');
-            return;
-        }
-
-        // Duplicate the phone items to create a seamless loop
-        phoneItems.forEach(item => {
-            const clone = item.cloneNode(true);
-            phoneGrid.appendChild(clone);
-        });
-
-        // Ensure the grid is wide enough to allow smooth looping
-        phoneGrid.style.scrollBehavior = 'auto'; // Disable smooth scrolling for precise control
-    }
+    // Set scroll behavior for precise resets
+    phoneGrid.style.scrollBehavior = 'auto';
 
     // Auto-scroll function
     function autoScroll(timestamp) {
         if (!isDragging) {
             phoneGrid.scrollLeft += scrollSpeed;
 
-            // Check if we've reached or exceeded the end of the original content
-            const maxScroll = phoneGrid.scrollWidth / 2; // Half the width since we duplicated content
+            // Check if we've reached the end of the content
+            const maxScroll = phoneGrid.scrollWidth - phoneGrid.clientWidth;
             if (phoneGrid.scrollLeft >= maxScroll - scrollResetThreshold) {
-                // Jump back to the start of the original content (not the cloned part)
-                phoneGrid.scrollLeft -= maxScroll;
+                // Reset to the start
+                phoneGrid.scrollLeft = 0;
             }
         }
 
@@ -533,9 +524,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const deltaX = (x - startX) * 1.5; // Sensitivity factor
         phoneGrid.scrollLeft = scrollStart - deltaX;
     }
-
-    // Initialize infinite scroll
-    setupInfiniteScroll();
 
     // Start the auto-scroll
     animationId = requestAnimationFrame(autoScroll);
