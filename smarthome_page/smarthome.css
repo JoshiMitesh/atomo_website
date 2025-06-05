@@ -670,8 +670,7 @@
 
     .devices-description {
         padding-top: 13vh;
-        padding-top: 13vh;
-        max-width: 108vh;
+        max-width: 100%;
         width: 86vh;
     }
 
@@ -3262,6 +3261,7 @@
             color: #000;
             margin-bottom: 20px;
             font-style: normal;
+            text-align: center;
             line-height: 1.2;
         }
 
