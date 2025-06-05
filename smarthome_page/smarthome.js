@@ -469,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let startX = 0;
     let scrollStart = 0;
     let animationId = null;
-    let scrollSpeed = 1; // Adjust for desired scroll speed (pixels per frame)
+    let scrollSpeed = 0.5; // Adjust for desired scroll speed (pixels per frame)
     const scrollResetThreshold = 1; // Small threshold to prevent jittery resets
 
     // Clone items to create a seamless loop
