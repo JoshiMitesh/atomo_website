@@ -24,17 +24,16 @@
 
     /* ========== Hero Section ========== */
     .hero-section {
-           position: relative;
-    width: 100%;
-    min-height: 120px;
-    display: flex
-;
-    justify-content: center;
-    align-items: center;
-    /* padding: 80px; */
-    padding-bottom: 7vh;
-    background-color: transparent;
-    z-index: 10;
+        position: relative;
+        width: 100%;
+        min-height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* padding: 80px; */
+        padding-bottom: 7vh;
+        background-color: transparent;
+        z-index: 10;
     }
 
     .hero-content {
@@ -42,7 +41,7 @@
         justify-content: space-between;
         align-items: center;
         width: 90%;
-            padding-top: 4vh;
+        padding-top: 4vh;
 
         /* max-width: 1200px; */
     }
@@ -352,8 +351,8 @@
     }
 
     #navbar a:hover {
-                color: rgb(71, 160, 233);
-                background-color: rgba(255, 255, 255, 0.05);
+        color: rgb(71, 160, 233);
+        background-color: rgba(255, 255, 255, 0.05);
     }
 
     #navbar a::after {
@@ -611,15 +610,32 @@
 
 
     /* Second Page - Devices Section */
+    #second-page {
+        position: relative;
+        width: 100%;
+    min-height: 70vh;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        background-color: rgb(255, 255, 255);
+        overflow-x: hidden;
+        /* Prevent horizontal overflow */
+    }
+
     #second-page .devices-container {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         width: 100%;
-        max-width: 100%;
+        max-width: 1200px;
+        /* Limit max-width to prevent stretching on large screens */
         margin: 0 auto;
         padding: 80px 40px;
         box-sizing: border-box;
+        gap: 40px;
+        /* Add spacing between elements */
     }
 
     #smart-home-section {
@@ -633,84 +649,8 @@
         box-sizing: border-box;
         background-color: transparent;
         flex: 1;
-        max-width: 56%;
-        margin: 0;
-        padding: 0;
-    }
-
-
-
-    device-item {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        width: 150px;
-        height: 150px;
-        background-color: #ffffff;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        transition: transform 0.3s ease;
-        box-sizing: border-box;
-    }
-
-    .device-item img.device-icon {
-        width: 69px;
-        height: 72px;
-        object-fit: contain;
-        margin-bottom: 29px;
-        margin-left: 13px;
-    }
-
-    .devices-right {
-        flex: 1;
-        max-width: 70%;
-        text-align: center;
-    }
-
-    .devices-title {
-        font-size: 40px;
-        text-align: center;
-        font-weight: 600;
-        padding-top: 3vh;
-        color: #000;
-        line-height: 1.4;
-    }
-
-    .devices-tagline {
-        font-size: 35px;
-        font-weight: 600;
-        padding-top: 13vh;
-
-        color: #000;
-        margin-bottom: 20px;
-        font-style: normal;
-        line-height: 1.2;
-    }
-
-    .devices-text {
-        font-size: 30px;
-        color: #555;
-        line-height: 1.6;
-        text-align: center;
-        width: 105vh;
-
-    }
-
-
-    #smart-home-section {
-        position: relative;
-        width: 100%;
-        min-height: auto;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
-        background-color: transparent;
-        flex: 1;
-        max-width: 56%;
+        max-width: 50%;
+        /* Adjusted to fit alongside .devices-right */
         margin: 0;
         padding: 0;
     }
@@ -718,7 +658,9 @@
     #smart-home-section .devices-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        width: 25vw;
+        /* 3 columns for desktop */
+        width: 100%;
+        /* Use full width of the parent */
         max-width: 100%;
         margin: 0;
         padding: 0;
@@ -726,13 +668,23 @@
         gap: 20px;
     }
 
+    .devices-description {
+        padding-top: 13vh;
+        padding-top: 13vh;
+        max-width: 108vh;
+        width: 86vh;
+    }
+
     .device-item {
         position: relative;
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
         justify-content: center;
-        width: 150px;
+        width: 100%;
+        /* Make width responsive */
+        max-width: 150px;
+        /* Limit max size */
         height: 150px;
         background-color: #ffffff;
         border: 1px solid #000000;
@@ -749,20 +701,13 @@
         background-color: #d3d3d3;
     }
 
-    /* custom added start */
     .device-item.grey .device-icon {
-        /* Add styles for the "off" state, if needed */
         opacity: 0.5;
     }
 
     .device-item .device-icon {
-        /* Add styles for the "on" state, if needed */
         opacity: 1;
     }
-
-    /* custom added end */
-
-
 
     .device-item img.device-icon {
         width: 69px;
@@ -790,25 +735,63 @@
         cursor: pointer;
     }
 
+    .devices-right {
+        flex: 1;
+        max-width: 50%;
+        /* Adjusted to fit alongside #smart-home-section */
+        text-align: center;
+    }
 
+    .devices-title {
+        font-size: 40px;
+        text-align: center;
+        font-weight: 600;
+        padding-top: 3vh;
+        color: #000;
+        line-height: 1.4;
+    }
+
+    .devices-tagline {
+        font-size: 35px;
+        font-weight: 600;
+        padding-top: 5vh;
+        /* Reduced padding to avoid excessive spacing */
+        color: #000;
+        margin-bottom: 20px;
+        font-style: normal;
+        line-height: 1.2;
+    }
+
+    .devices-text {
+        font-size: 30px;
+        color: #555;
+        line-height: 1.6;
+        text-align: center;
+        width: 100%;
+        /* Use full width instead of fixed 105vh */
+        margin: 0 auto;
+        /* Center the text */
+    }
 
     /* Responsive Adjustments for Second Page */
     @media (max-width: 1024px) {
         #second-page .devices-container {
             padding: 60px 30px;
+            gap: 30px;
         }
 
         #smart-home-section {
-            max-width: 100%;
+            max-width: 45%;
         }
 
         #smart-home-section .devices-container {
             grid-template-columns: repeat(2, 1fr);
+            /* 2 columns for tablet */
             gap: 15px;
         }
 
         .device-item {
-            width: 140px;
+            max-width: 140px;
             height: 140px;
         }
 
@@ -829,7 +812,7 @@
         }
 
         .devices-right {
-            max-width: 100%;
+            max-width: 55%;
             padding-right: 0;
         }
 
@@ -840,7 +823,7 @@
 
         .devices-tagline {
             font-size: 1.8rem;
-            padding-top: 10vh;
+            padding-top: 3vh;
         }
 
         .devices-text {
@@ -858,7 +841,8 @@
         #second-page .devices-container {
             flex-direction: column;
             align-items: center;
-            padding: 0px 20px;
+            padding: 20px;
+            gap: 20px;
         }
 
         #smart-home-section {
@@ -868,12 +852,13 @@
 
         #smart-home-section .devices-container {
             grid-template-columns: repeat(2, 1fr);
+            /* 2 columns for mobile */
             gap: 10px;
             width: 100%;
         }
 
         .device-item {
-            width: 120px;
+            max-width: 120px;
             height: 120px;
         }
 
@@ -905,7 +890,7 @@
 
         .devices-tagline {
             font-size: 1.5rem;
-            padding-top: 5vh;
+            padding-top: 2vh;
         }
 
         .devices-text {
@@ -921,15 +906,18 @@
 
         #second-page .devices-container {
             padding: 20px 10px;
+            gap: 15px;
         }
 
         #smart-home-section .devices-container {
             grid-template-columns: 1fr;
+            /* 1 column for small screens */
             gap: 8px;
+            width: 100%;
         }
 
         .device-item {
-            width: 100px;
+            max-width: 100px;
             height: 100px;
         }
 
@@ -958,7 +946,7 @@
 
         .devices-tagline {
             font-size: 1.2rem;
-            padding-top: 3vh;
+            padding-top: 1vh;
         }
 
         .devices-text {
@@ -974,7 +962,7 @@
         position: relative;
         width: 100%;
         /* min-height: 23vh; */
-        height: 111vh;
+    height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1097,7 +1085,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(275px, 0fr));
         gap: 6px;
-    width: 47%;
+        width: 47%;
         max-width: 627px;
         position: relative;
         left: 55%;
@@ -1106,7 +1094,8 @@
 
     .app-icon1 {
         border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1); /* Adjusted shadow for mobile */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+        /* Adjusted shadow for mobile */
         right: 39px;
         height: 44.35vh;
         width: 26.88vh;
@@ -1115,14 +1104,16 @@
     .app-icon2 {
         border-radius: 10px;
         top: 100px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1); /* Adjusted shadow for mobile */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+        /* Adjusted shadow for mobile */
         height: 44.35vh;
         width: 26.88vh;
     }
 
     .app-icon3 {
         border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1); /* Adjusted shadow for mobile */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+        /* Adjusted shadow for mobile */
         height: 44.35vh;
         width: 26.88vh;
         right: 21px;
@@ -1130,7 +1121,8 @@
 
     .app-icon4 {
         border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1); /* Adjusted shadow for mobile */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+        /* Adjusted shadow for mobile */
         top: 83px;
         height: 44.35vh;
         width: 26.88vh;
@@ -1238,157 +1230,165 @@
 
 
     /* Eighth Page - Socket and Plug Section */
-#eighth-page {
-    width: 100%;
-    min-height: 89vh;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 20px;
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
-    overflow-x: hidden;
-}
-
-#eighth-page > div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 1710px;
-}
-
-.socket-container {
-    flex: 1;
-    max-width: 50%;
-    aspect-ratio: 1 / 1;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.socket {
-    width: 100%;
-    max-width: 500px; /* Limit maximum size */
-    height: auto;
-    position: relative; /* Changed from absolute to relative for better control */
-}
-
-.socket img {
-      width: 100%;
-    height: auto;
-    object-fit: contain;
-    position: relative;
-    top: -7px;
-    left: 136px;
-    transform: none;
-}
-
-.plug {
-    position: absolute;
-    width: 60%;
-    max-width: 300px; /* Limit maximum size */
-    height: auto;
-    cursor: pointer;
-    z-index: 10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the plug */
-    transition: transform 0.5s ease;
-}
-
-.plug img {
-   width: 188%;
-    height: auto;
-    object-fit: contain;
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-}
-
-.plugged-in {
-    transform: translate(-50%, -50%) translateX(-20%); /* Adjusted for subtle movement */
-}
-
-.plugged-out {
-    transform: translate(-50%, -50%) translateX(-60%); /* Adjusted for subtle movement */
-}
-
-/* Remove rotation for simplicity and consistency */
-#eighth-page .plug {
-    transform: translate(-50%, -50%); /* Center without rotation */
-    transition: transform 0.5s ease;
-}
-
-#eighth-page .plugged-in {
-    transform: translate(-50%, -50%) translateX(-20%);
-}
-
-#eighth-page .plugged-out {
-    transform: translate(-50%, -50%) translateX(-60%);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    #eighth-page > div {
-        max-width: 900px;
-        gap: 30px;
-    }
-
-    .socket-container {
-        max-width: 45%;
-    }
-
-    .socket {
-        max-width: 400px;
-    }
-
-    .plug {
-        max-width: 250px;
-    }
-}
-
-@media (max-width: 768px) {
     #eighth-page {
-        padding: 40px 16px;
-        min-height: auto;
+        width: 100%;
+        min-height: 89vh;
         height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 20px;
+        box-sizing: border-box;
+        background-color: rgb(255, 255, 255);
+        overflow-x: hidden;
     }
 
-    #eighth-page > div {
-        flex-direction: column;
-        gap: 20px;
-        max-width: 600px;
+    #eighth-page>div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 1710px;
     }
 
     .socket-container {
-        order: 2;
-        max-width: 80%;
-        transform: scale(0.9); /* Slightly scale down to fit */
+        flex: 1;
+        max-width: 50%;
+        aspect-ratio: 1 / 1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .socket {
-        max-width: 350px;
+        width: 100%;
+        max-width: 500px;
+        /* Limit maximum size */
+        height: auto;
+        position: relative;
+        /* Changed from absolute to relative for better control */
+    }
+
+    .socket img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        position: relative;
+        top: -7px;
+        left: 136px;
+        transform: none;
     }
 
     .plug {
-        max-width: 200px;
+        position: absolute;
+        width: 60%;
+        max-width: 300px;
+        /* Limit maximum size */
+        height: auto;
+        cursor: pointer;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Center the plug */
+        transition: transform 0.5s ease;
     }
 
-    .text-content {
-        order: 1;
-        margin-bottom: 20px;
+    .plug img {
+        width: 188%;
+        height: auto;
+        object-fit: contain;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
     }
 
-    .graph-section {
-        order: 3;
-        transform: scale(0.9);
+    .plugged-in {
+        transform: translate(-50%, -50%) translateX(-20%);
+        /* Adjusted for subtle movement */
     }
-}
+
+    .plugged-out {
+        transform: translate(-50%, -50%) translateX(-60%);
+        /* Adjusted for subtle movement */
+    }
+
+    /* Remove rotation for simplicity and consistency */
+    #eighth-page .plug {
+        transform: translate(-50%, -50%);
+        /* Center without rotation */
+        transition: transform 0.5s ease;
+    }
+
+    #eighth-page .plugged-in {
+        transform: translate(-50%, -50%) translateX(-20%);
+    }
+
+    #eighth-page .plugged-out {
+        transform: translate(-50%, -50%) translateX(-60%);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+        #eighth-page>div {
+            max-width: 900px;
+            gap: 30px;
+        }
+
+        .socket-container {
+            max-width: 45%;
+        }
+
+        .socket {
+            max-width: 400px;
+        }
+
+        .plug {
+            max-width: 250px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #eighth-page {
+            padding: 40px 16px;
+            min-height: auto;
+            height: auto;
+        }
+
+        #eighth-page>div {
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+        }
+
+        .socket-container {
+            order: 2;
+            max-width: 80%;
+            transform: scale(0.9);
+            /* Slightly scale down to fit */
+        }
+
+        .socket {
+            max-width: 350px;
+        }
+
+        .plug {
+            max-width: 200px;
+        }
+
+        .text-content {
+            order: 1;
+            margin-bottom: 20px;
+        }
+
+        .graph-section {
+            order: 3;
+            transform: scale(0.9);
+        }
+    }
 
     /* Graph Section */
     .graph-section {
@@ -1486,22 +1486,22 @@
         }
 
         .socket img {
-           width: 100%;
-        left: 25%;
-        bottom: -74px;
+            width: 100%;
+            left: 25%;
+            bottom: -74px;
         }
 
         .plug img {
-                  width: 109vw;
-        bottom: -41vw;
-        /* right: -47px; */
-        left: -46%;
+            width: 109vw;
+            bottom: -41vw;
+            /* right: -47px; */
+            left: -46%;
         }
 
         .mobile-mockup {
-                    width: 225px;
-        height: 431px;
-        border-radius: 20px;
+            width: 225px;
+            height: 431px;
+            border-radius: 20px;
         }
 
         .mobile-mockup::before {
@@ -3455,7 +3455,7 @@
     #fourth-page .spec-label-list {
         list-style: none;
         padding: 0;
-    padding-top: 31vh;
+        padding-top: 31vh;
         margin: 0;
         display: flex;
         flex-direction: column;
@@ -3865,7 +3865,7 @@
             justify-content: flex-start;
             align-items: center;
             width: 100%;
-        height: auto;
+            height: auto;
             max-width: 600px;
             margin: 0 auto;
         }
