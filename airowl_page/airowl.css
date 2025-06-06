@@ -730,7 +730,7 @@ body {
 
 .logo1 {
     height: 32px;
-    position: fixed;
+    position: absolute;
     top: 14px;
     left: 24px;
     display: none;
@@ -1302,7 +1302,7 @@ body {
 
     #navbar ul {
         position: fixed;
-        top: 60px;
+        top: 0px;
         left: 0;
         width: 100%;
         flex-direction: column;
@@ -1316,8 +1316,7 @@ body {
     }
 
     #navbar ul.active {
-        max-height: 400px;
-        padding: 10px 0;
+        max-height: 531px;
     }
 
     #navbar li {
@@ -1334,7 +1333,7 @@ body {
 
     #navbar a {
         font-size: 1rem;
-        padding: 18px 1px;
+        padding: 13px 1px;
         line-height: normal;
         border-bottom: none;
         margin: 0;
