@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             image: '/neutron_page/Frame.svg',
             title: 'Designed for Daily Comfort.',
-            description: 'Effortlessly manages daily tasks such as lighting, fan control, remote switching, and basic sensor automation for convenient smart home control.'
+            description: 'Manages daily tasks such as lighting, fan control, remote switching, and basic sensor automation for convenient smart home control.'
         },
         {
             image: '/neutron_page/Frame.svg',
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             image: '/neutron_page/Frame.svg',
             title: 'Built for India.',
-            description: 'Neutron is tailored to Indian power systems, appliance types, and everyday lifestyles - proudly engineered to meet local needs with reliability, efficiency, and smart functionality.'
+            description: 'Neutron, engineered for Indian power systems, appliances, and lifestyles with reliability, efficiency, and smart functionality.'
         }
     ];
 
