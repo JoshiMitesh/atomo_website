@@ -417,14 +417,15 @@ function updateChart() {
     data.shift();
     
     if (isPluggedIn) {
-        // Target a constant 9 kW when plugged in, but with smooth transition
+        // Target a constant 9 kW when plugged in, with smooth transition
         const target = 9;
         lastValue = lastValue + (target - lastValue) * 0.05; // Slower smoothing factor
         data.push(lastValue);
     } else {
-        // When unplugged, smoothly drop to near-zero with minor fluctuations
-        const target = 0.5 + Math.random() * 0.5; // Small fluctuations between 0.5-1 kW
-        lastValue = lastValue * 0.95 + target * 0.05; // Very gradual decrease
+        // When unplugged, smoothly drop to exactly 0 kW
+        const target = 0; // Set target to 0 kW
+        lastValue = lastValue * 0.95; // Gradually decrease to 0
+        if (lastValue < 0.01) lastValue = 0; // Ensure it hits exactly 0
         data.push(lastValue);
     }
     
@@ -459,7 +460,6 @@ window.addEventListener('scroll', function () {
     }
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const phoneGrid = document.querySelector('.phone-grid');
     if (!phoneGrid) {
@@ -471,6 +471,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const phoneItems = phoneGrid.querySelectorAll('.phone-item');
     if (phoneItems.length !== 8) {
         console.warn(`Expected 8 phone items, found ${phoneItems.length}!`);
+    }
+
+    // Clone the 8 images 20 times (20 sets of 8 = 160 total images)
+    for (let i = 0; i < 19; i++) { // 19 additional sets to make 20 total (1 original + 19 clones)
+        phoneItems.forEach(item => {
+            const clone = item.cloneNode(true);
+            phoneGrid.appendChild(clone);
+        });
     }
 
     let isDragging = false;

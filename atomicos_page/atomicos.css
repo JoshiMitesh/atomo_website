@@ -231,7 +231,6 @@ body {
     position: relative;
     font-weight: 400;
     color: #3c3c3c;
-    margin: 2px 0px 12px;
     max-width: 474px;
     line-height: 1.5;
     text-align: center;
@@ -613,19 +612,25 @@ body {
     margin-bottom: 10px;
 }
 
+/* Update for #second-page */
 .page-content {
     text-align: center;
     max-width: 1691px;
     margin: 0 auto;
     width: 100%;
     padding: 0 20px;
+    position: relative; /* Add position relative for top to work */
+    top: 17%; /* Match previous matter-content */
 }
 
-#second-title {
-    font-size: 40px;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 16px;
+/* Update for #third-page to #eighth-page */
+.section-content {
+    width: 70%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    position: relative; /* Add position relative for top to work */
+    top: 17%; /* Match previous matter-content */
 }
 
 #second-subtitle {
@@ -1180,10 +1185,12 @@ body {
 }
 
 .tagline {
-    font-size: 2.1875rem;
+       font-size: 2.1875rem;
     font-weight: 400;
     color: #4a5568;
-    margin-top: 34px;
+    /* margin-top: 34px; */
+    padding-top: 6vh;
+    padding-bottom: 3vh;
     animation: fadeInUp 1s ease-out 0.8s forwards;
     opacity: 0;
     overflow-wrap: break-word;

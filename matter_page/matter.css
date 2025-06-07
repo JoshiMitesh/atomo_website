@@ -352,6 +352,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative; /* Add position relative for top to work */
+    top: 17%; /* Match previous matter-content */
 }
 
 .text-content {
@@ -359,7 +361,7 @@
     display: flex;
             padding-top: 6vh;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items:center ;
     margin-bottom: 90px;
 }
 
@@ -400,6 +402,7 @@
     max-width: 1406px;
 }
 
+
 .grid-item {
     background: #ededed;
     padding: 20px;
@@ -432,6 +435,8 @@
 .grid-item p img {
     display: none;
 }
+
+
 
 .grid-item .icon {
     width: 50px;
