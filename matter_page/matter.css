@@ -359,7 +359,7 @@
 .text-content {
     width: 100%;
     display: flex;
-            padding-top: 6vh;
+    padding-top: 7vh;
     justify-content: space-between;
     align-items:center ;
     margin-bottom: 90px;
@@ -1269,7 +1269,7 @@
     }
 
     .slide img {
-        width: 86%;
+    width: 90%;
         height: 100%;
         object-fit: cover;
         border-radius: 11px;
@@ -1935,7 +1935,7 @@
         
             #second-page {
         position: relative;
-        height: 60vh;
+        height: auto;
         background-color: white;
         width: 100%;
         display: flex
@@ -2067,7 +2067,7 @@
         }
 
         .grid-item-fourth {
-            padding: 20px;
+            padding: 12px;
         }
 
         .grid-item-fourth h3 {

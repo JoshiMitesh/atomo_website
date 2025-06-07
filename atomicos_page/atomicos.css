@@ -1111,7 +1111,7 @@ body {
 }
 
 .step-box:hover {
-        transform: translateY(-8px);
+      transform: translateY(-8px) scale(1.02); /* Add a slight scale for a "pop" effect */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     background-color: #d6d6d6;
 }
@@ -1726,7 +1726,7 @@ body {
     #eighth-page,
     #ninth-page {
         min-height: auto;
-        padding-top: 15vh;
+        padding-top: 11vh;
 
 
 
