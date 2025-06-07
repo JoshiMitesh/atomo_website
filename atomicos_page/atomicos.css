@@ -1111,8 +1111,9 @@ body {
 }
 
 .step-box:hover {
-    transform: translateY(-8px);
+        transform: translateY(-8px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background-color: #d6d6d6;
 }
 
 .step-box h3 {
