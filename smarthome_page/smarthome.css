@@ -648,7 +648,7 @@
     #second-page .devices-container {
        display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: anchor-center;
     width: 100%;
     max-width: 1425px;
     margin: 0 auto;
