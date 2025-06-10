@@ -999,6 +999,39 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
+
+    .price-button {
+    background-color: #2b6cb0;
+    /* Blue color from image */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 65px;
+    font-size: 1rem;
+    margin-right: 10px;
+    height: 5.74vh;
+        width: 19.46vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.buy-button {
+    background-color: #ffffff;
+    color: #2b6cb0;
+    border: 2px solid #2b6cb0;
+    padding: 10px 20px;
+    border-radius: 65px;
+    font-size: 1rem;
+     height: 5.74vh;
+        width: 19.46vh;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+
+
     .product-container h2 {
         font-size: 1.5rem;
         left: 10px;
@@ -1793,14 +1826,11 @@ body {
     }
 
     #subtitle {
-        font-size: 16px;
-        /* Adjusted for better fit */
+       font-size: 16px;
         position: static;
-        /* Remove absolute positioning */
-        margin-top: 5px;
-        /* Space below title */
-        max-width: 100%;
-        /* Full width of container */
+        /* margin-top: 5px; */
+        /* max-width: 130%; */
+        width: 34vh;
     }
 
     .matter-content {

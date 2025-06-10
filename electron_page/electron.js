@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Hamburger Menu Functionality
     function initializeHamburgerMenu() {
@@ -192,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function updateSlider() {
             const slidesToShow = updateSlidesToShow();
-            const slideWidth = slides[0].offsetWidth + 34; // Width + gap (from CSS gap: 34px)
+            const slideWidth = slides[0].offsetWidth + 10; // Width + margin (5px on each side)
             const containerWidth = slider.parentElement.offsetWidth;
             const totalWidthPerSlide = slideWidth;
             let translateX = -currentIndex * totalWidthPerSlide;
@@ -228,112 +230,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (isAutoSliding) {
                     autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
                 }
-            }
-        }
-
-        // Mouse wheel scrolling
-        let lastScrollTime = 0;
-        const scrollDelay = 200; // Delay between scroll events to prevent rapid firing
-
-        slider.addEventListener('wheel', (e) => {
-            e.preventDefault(); // Prevent default page scrolling
-            const currentTime = Date.now();
-            if (currentTime - lastScrollTime < scrollDelay) return; // Debounce scroll events
-            lastScrollTime = currentTime;
-
-            clearTimeout(autoSlideTimer); // Pause auto-slide during manual interaction
-
-            const slidesToShow = updateSlidesToShow();
-            const delta = e.deltaY;
-
-            if (delta > 0 && currentIndex < slides.length - slidesToShow) {
-                // Scroll down: move to next slide
-                currentIndex++;
-            } else if (delta < 0 && currentIndex > 0) {
-                // Scroll up: move to previous slide
-                currentIndex--;
-            }
-
-            updateSlider();
-
-            // Resume auto-sliding after interaction
-            if (isAutoSliding) {
-                autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-            }
-        }, { passive: false });
-
-        // Drag functionality
-        let isDragging = false;
-        let startX = 0;
-        let currentTranslate = 0;
-        let prevTranslate = 0;
-
-        slider.addEventListener('mousedown', startDragging);
-        slider.addEventListener('touchstart', startDragging, { passive: false });
-        slider.addEventListener('mousemove', drag);
-        slider.addEventListener('touchmove', drag, { passive: false });
-        slider.addEventListener('mouseup', stopDragging);
-        slider.addEventListener('touchend', stopDragging);
-        slider.addEventListener('mouseleave', stopDragging);
-
-        function startDragging(e) {
-            e.preventDefault();
-            isDragging = true;
-            startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
-            prevTranslate = currentTranslate;
-            clearTimeout(autoSlideTimer); // Pause auto-slide during dragging
-            slider.style.transition = 'none'; // Disable transition for smooth dragging
-        }
-
-        function drag(e) {
-            if (!isDragging) return;
-            e.preventDefault();
-            const currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
-            const deltaX = currentX - startX;
-            currentTranslate = prevTranslate + deltaX;
-
-            const slidesToShow = updateSlidesToShow();
-            const slideWidth = slides[0].offsetWidth + 34; // Width + gap
-            const containerWidth = slider.parentElement.offsetWidth;
-            const maxTranslate = 0;
-            const minTranslate = -(slides.length - slidesToShow) * slideWidth;
-
-            // Center on mobile
-            let offset = 0;
-            if (slidesToShow === 1) {
-                offset = (containerWidth - slideWidth) / 2;
-            }
-
-            // Limit dragging within bounds
-            if (currentTranslate > maxTranslate + offset) {
-                currentTranslate = maxTranslate + offset;
-            } else if (currentTranslate < minTranslate + offset) {
-                currentTranslate = minTranslate + offset;
-            }
-
-            slider.style.transform = `translateX(${currentTranslate}px)`;
-        }
-
-        function stopDragging() {
-            if (!isDragging) return;
-            isDragging = false;
-            slider.style.transition = 'transform 0.5s ease'; // Re-enable transition
-
-            const slidesToShow = updateSlidesToShow();
-            const slideWidth = slides[0].offsetWidth + 34; // Width + gap
-            const containerWidth = slider.parentElement.offsetWidth;
-            let offset = slidesToShow === 1 ? (containerWidth - slideWidth) / 2 : 0;
-
-            // Snap to nearest slide
-            const newIndex = Math.round(-currentTranslate / slideWidth);
-            currentIndex = Math.max(0, Math.min(newIndex, slides.length - slidesToShow));
-            currentTranslate = -currentIndex * slideWidth + offset;
-
-            updateSlider();
-
-            // Resume auto-sliding
-            if (isAutoSliding) {
-                autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
             }
         }
 
