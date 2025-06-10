@@ -2436,11 +2436,11 @@ body {
 }
 
 #second-page .slide-content p {
-    font-size: 20px;
+    font-size: 21px;
     color: #ffffff;
-    line-height: 22px;
+    line-height: 25px;
     text-align: left;
-    margin: 0; /* Remove default margin */
+    margin: 0;
 }
 
 /* Ensure slide dimensions and layout are consistent */
