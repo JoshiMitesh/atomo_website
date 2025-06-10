@@ -43,16 +43,24 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Video Pause on End
-    function initializeVideo() {
-        const video = document.getElementById('electron-video');
-        if (video) {
-            video.addEventListener('ended', () => {
-                video.pause();
-                video.currentTime = video.duration; // Stay on last frame
-            });
-        }
+    
+
+   // Video Pause on End and Remove Controls
+function initializeVideo() {
+    const video = document.getElementById('electron-video');
+    if (video) {
+        // Disable video controls to remove play button and other UI
+        video.controls = false;
+
+        // Existing functionality to pause on end and stay on last frame
+        video.addEventListener('ended', () => {
+            video.pause();
+            video.currentTime = video.duration; // Stay on last frame
+        });
+    } else {
+        console.warn('Video element not found!');
     }
+}
 
     // Popup Functionality
     function initializePopup() {

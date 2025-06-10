@@ -127,7 +127,7 @@ body {
     position: relative;
     width: 90%;
     height: 100px;
-    padding-top: 22vh;
+    padding-top: 21vh;
     max-width: 93%;
     /* top: 9%; */
     n-bottom: -135px;
@@ -297,7 +297,7 @@ body {
 
     .matter-content {
         position: absolute;
-        top: -98px;
+        top: -88px;
         left: 50%;
         transform: translateX(-50%);
         width: 90%;

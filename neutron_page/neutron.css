@@ -304,7 +304,7 @@ body {
     height: 100px;
     max-width: 90%;
     /* margin-bottom: -135px; */
-    top: 17%;
+    top: 15%;
     display: flex;
     justify-content: space-between;
 }
@@ -866,7 +866,7 @@ body {
 /* Styles for third-page */
 #third-page {
     position: relative;
-    height: 109vh;
+    height: 128vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1519,7 +1519,7 @@ body {
         font-size: 1rem;
         right: 15px;
         left: auto;
-        width: 161px;
+        width: 175px;
     }
 
     #dots-container {
@@ -1830,8 +1830,8 @@ body {
         position: static;
         /* margin-top: 5px; */
         /* max-width: 130%; */
-        max-width: 89%;
-        width: 116vh;    }
+        width: 34vh;
+    }
 
     .matter-content {
         position: absolute;
@@ -2080,6 +2080,8 @@ body {
     font-weight: 500;
     color: #333;
     min-width: 80px;
+        font-size: 22px;
+
     /* Ensures consistent spacing between label and description */
 }
 
@@ -2087,6 +2089,8 @@ body {
 .spec-desc {
     font-weight: 400;
     color: #666;
+        font-size: 16px;
+
     /* Lighter color to distinguish from the label */
     margin-left: 100px;
 }
@@ -2111,6 +2115,8 @@ body {
 
     .spec-label {
         min-width: 70px;
+                text-align: left;
+
         /* Adjust spacing for smaller screens */
     }
 
@@ -2421,7 +2427,7 @@ body {
 #second-page .slide-content h3 {
     font-size: 27px; /* Slightly smaller than text-xl for better fit */
     font-weight: bold;
-    margin-bottom: 18px;
+    margin-bottom: -37px;
     color: #ffffff;
     white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden; /* Hide overflow */
@@ -2518,13 +2524,13 @@ body {
 
     #second-page .slide-content h3 {
         font-size: 0.95rem; /* Small enough to fit in one line on mobile */
-        margin-bottom: -46px;
+        margin-bottom: 8px;
     }
 
     #second-page .slide-content p {
         font-size: 0.75rem;
         line-height: 25px;
-        max-width: 100%;
+        max-width: 100%; /* Maximize width for single slide */
     }
 }
 

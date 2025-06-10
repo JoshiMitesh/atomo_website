@@ -359,7 +359,7 @@
 .text-content {
     width: 100%;
     display: flex;
-    padding-top: 7vh;
+    padding-top: 5vh;
     justify-content: space-between;
     align-items:center ;
     margin-bottom: 90px;

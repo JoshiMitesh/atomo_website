@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
                 image: '/electron_page/Frame.svg',
-                title: 'Future-Ready Smart Home',
+                title: 'Future Living',
                 description: 'Future-proofed with Matter, Thread, Zigbee support, Proton integrates with upcoming connected devices, ensuring long-term compatibility and flexible smart home connectivity.'
             },
             {
