@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
     // Hamburger Menu Functionality
     function initializeHamburgerMenu() {
@@ -194,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function updateSlider() {
             const slidesToShow = updateSlidesToShow();
-            const slideWidth = slides[0].offsetWidth + 10; // Width + margin (5px on each side)
+            const slideWidth = slides[0].offsetWidth + 34; // Width + gap (from CSS gap: 34px)
             const containerWidth = slider.parentElement.offsetWidth;
             const totalWidthPerSlide = slideWidth;
             let translateX = -currentIndex * totalWidthPerSlide;
@@ -211,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Update button states
             prevBtn.disabled = currentIndex === 0;
             nextBtn.disabled = currentIndex >= slides.length - slidesToShow;
-            console.log('Button states:', { prevDisabled: prevBtn.disabled, nextDisabled: nextBtn.disabled });
+            console.log('Button states:', { prevDisabled: prevBtn.disabled, nextDisabled: nextDisabled });
         }
 
         function autoSlide() {
@@ -232,6 +230,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
+
+        // Mouse wheel scrolling
+        let lastScrollTime = 0;
+        const scrollDelay = 200; // Delay between scroll events to prevent rapid firing
+
+        slider.addEventListener('wheel', (e) => {
+            e.preventDefault(); // Prevent default page scrolling
+            const currentTime = Date.now();
+            if (currentTime - lastScrollTime < scrollDelay) return; // Debounce scroll events
+            lastScrollTime = currentTime;
+
+            clearTimeout(autoSlideTimer); // Pause auto-slide during manual interaction
+
+            const slidesToShow = updateSlidesToShow();
+            const delta = e.deltaY;
+
+            if (delta > 0 && currentIndex < slides.length - slidesToShow) {
+                // Scroll down: move to next slide
+                currentIndex++;
+            } else if (delta < 0 && currentIndex > 0) {
+                // Scroll up: move to previous slide
+                currentIndex--;
+            }
+
+            updateSlider();
+
+            // Resume auto-sliding after interaction
+            if (isAutoSliding) {
+                autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
+            }
+        }, { passive: false });
 
         const observer = new IntersectionObserver(
             (entries) => {
