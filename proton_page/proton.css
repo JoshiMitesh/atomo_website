@@ -2525,7 +2525,7 @@ body {
     #second-page .slide-content p {
         font-size: 0.75rem;
         line-height: 25px;
-        max-width: 95%; /* Maximize width for single slide */
+        max-width: 100%; /* Maximize width for single slide */
     }
 }
 

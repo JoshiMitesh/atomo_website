@@ -2518,13 +2518,13 @@ body {
 
     #second-page .slide-content h3 {
         font-size: 0.95rem; /* Small enough to fit in one line on mobile */
-        margin-bottom: 8px;
+        margin-bottom: -46px;
     }
 
     #second-page .slide-content p {
         font-size: 0.75rem;
         line-height: 25px;
-        max-width: 95%; /* Maximize width for single slide */
+        max-width: 100%;
     }
 }
 
