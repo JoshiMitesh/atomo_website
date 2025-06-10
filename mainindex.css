@@ -670,6 +670,11 @@ body {
         width: 129%;
         height: 155%;
         display: block;
+        object-fit: cover;
+        -webkit-appearance: none;
+        appearance: none;
+        -webkit-media-controls: none;
+        pointer-events: none;
     }
 }
 
@@ -677,9 +682,14 @@ body {
 @media (max-width: 480px) {
     #electron-video {
         width: 207%;
-        margin-top: 0px;
         height: 155%;
         display: block;
+        margin-top: 0px;
+        object-fit: cover;
+        -webkit-appearance: none;
+        appearance: none;
+        -webkit-media-controls: none;
+        pointer-events: none;
     }
     .grid-container {
         gap: 8px;
