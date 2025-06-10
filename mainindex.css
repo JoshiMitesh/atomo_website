@@ -137,8 +137,12 @@ body {
     width: 77%;
     height: 155%;
     display: block;
+    object-fit: cover; /* Ensures video fills container without distortion */
+    -webkit-appearance: none; /* Removes iOS-specific styling */
+    appearance: none; /* Standardizes appearance across browsers */
+    -webkit-media-controls: none; /* Hides iOS native controls, including play button */
+    pointer-events: none; /* Prevents user interaction to avoid triggering native controls */
 }
-
 /* ========== NAVBAR ========== */
 #navbar {
     position: fixed;
