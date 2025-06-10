@@ -1726,6 +1726,8 @@ body {
     #eighth-page,
     #ninth-page {
         min-height: auto;
+                padding-bottom: 8vh;
+
         padding-top: 11vh;
 
 
