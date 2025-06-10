@@ -1047,7 +1047,7 @@ body {
     .price-button,
     .buy-button {
         padding: 8px 15px;
-        font-size: 0.9rem;
+        font-size: 12px;
     }
 
     .specs-container {
@@ -1829,8 +1829,9 @@ body {
        font-size: 16px;
         position: static;
         /* margin-top: 5px; */
-        /* max-width: 130%; */
-        width: 34vh;
+              max-width: 130%;
+        width: 43vh;
+    
     }
 
     .matter-content {
