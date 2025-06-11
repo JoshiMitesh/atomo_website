@@ -314,13 +314,12 @@ document.addEventListener('DOMContentLoaded', function () {
         updateFeatureSlider();
     }
 
-    function initializeSecondPageSlider() {
+   function initializeSecondPageSlider() {
     const slider = document.querySelector('#slidesContainer');
     const prevBtn = document.querySelector('#second-page .prev-slide');
     const nextBtn = document.querySelector('#second-page .next-slide');
     const secondPageSection = document.querySelector('#second-page');
 
-    // Check if all required elements exist
     if (!slider || !prevBtn || !nextBtn || !secondPageSection) {
         console.warn('Slider elements not found:', { slider, prevBtn, nextBtn, secondPageSection });
         return;
@@ -331,58 +330,62 @@ document.addEventListener('DOMContentLoaded', function () {
     const restartDelay = 1000; // 1 second
     let autoSlideTimer = null;
     let isAutoSliding = false;
+    let touchStartX = 0;
+    let touchCurrentX = 0;
+    let isSwiping = false;
+    const swipeThreshold = 50; // Minimum swipe distance in pixels
 
-    // Sample data for slides
+    // Slide data
     const slidesData = [
         {
-            image: '/neutron_page/Frame.svg',
-            title: 'What Is Neutron?',
-            description: 'Neutron is Atomo Innovation’s entry-level smart home controller, designed for simplicity, efficiency, and seamless use in everyday homes.'
+            image: '/electron_page/Frame.svg',
+            title: 'What Is Electron?',
+            description: 'Atomo Innovation’s Electron is a powerful edge computing platform for industries, offering real-time intelligence, faster processing, and seamless automation at the edge.'
         },
         {
-            image: '/neutron_page/Frame.svg',
+            image: '/electron_page/Frame.svg',
             title: 'Why It Exists?',
-            description: 'Our mission is to make smart living accessible to all by providing essential home automation solutions at an affordable price point.'
+            description: 'With Electron, industries can run AI locally - no cloud needed. This means faster, secure, and reliable operations, even offline or in remote locations.'
         },
         {
-            image: '/neutron_page/Frame.svg',
+            image: '/electron_page/Frame.svg',
             title: "Who It's For?",
-            description: 'Perfect for first-time users, renters, and compact homes, Neutron offers easy, plug-and-play automation for hassle-free smart living.'
+            description: 'Ideal for system integrators and IoT providers, enabling intelligent edge systems with enhanced performance, reliability, and scalability for industrial applications.'
         },
         {
-            image: '/neutron_page/Frame.svg',
-            title: 'Designed for Daily Comfort.',
-            description: 'Manages daily tasks such as lighting, fan control, remote switching, and basic sensor automation for convenient smart home control.'
+            image: '/electron_page/Frame.svg',
+            title: 'Built for Harsh Realities!',
+            description: 'Electron excels in real-world environments - from remote farms to factory floors and power stations - delivering reliable edge intelligence wherever its needed most.'
         },
         {
-            image: '/neutron_page/Frame.svg',
-            title: 'Intuitive by Nature.',
-            description: 'With a simple app interface and easy setup, Neutron enables users of all ages to operate smart home controls effortlessly without technical skills.'
+            image: '/electron_page/Frame.svg',
+            title: 'Beyond a Device.',
+            description: 'Electron is built to perform in the toughest environments-be it remote farms, factory floors, or power stations-ensuring dependable edge computing wherever its deployed.'
         },
         {
-            image: '/neutron_page/Frame.svg',
-            title: 'Silently Powerful.',
-            description: 'Neutron seamlessly blends into your lifestyle, offering smart, hassle-free control that operates smoothly without any fuss or complexity.'
+            image: '/electron_page/Frame.svg',
+            title: 'Drives Smarter Ops.',
+            description: 'It empowers machines to communicate, predict potential issues, and optimize performance autonomously-directly at the edge, without relying on the cloud.'
         },
         {
-            image: '/neutron_page/Frame.svg',
-            title: 'Smart, Not Complicated.',
-            description: 'Provides the perfect balance of intelligence to automate your home efficiently, delivering smart control without overwhelming complexity.'
+            image: '/electron_page/Frame.svg',
+            title: 'Step into Industry 4.0.',
+            description: 'Electron serves as a gateway to modern industrial practices, seamlessly bridging legacy systems with future-ready, intelligent infrastructure.'
         },
         {
-            image: '/neutron_page/Frame.svg',
-            title: 'Future-Ready Starter Kit.',
-            description: 'Neutron serves as your gateway into the Atomo ecosystem - start simple and upgrade to Proton or Electron as your smart home needs grow.'
+            image: '/electron_page/Frame.svg',
+            title: 'Easy In, Irreplaceable Out.', 
+            description: 'Electron integrates effortlessly into existing systems-and once its there, it becomes an indispensable part of operations, redefining efficiency and control.'
         },
         {
-            image: '/neutron_page/Frame.svg',
-            title: 'Affordable, Yet Advanced.',
-            description: 'Despite its affordable price, Neutron supports essential protocols including WiFi, BLE, RF, and IR for versatile smart home connectivity.'
+            image: '/electron_page/Frame.svg',
+            title: 'Part of a Bigger Family.',
+            description: 'Electron integrates seamlessly with Neutron and Proton, creating a unified ecosystem for smart environments across both residential and industrial settings.'
         },
         {
-            image: '/neutron_page/Frame.svg',
-            title: 'Built for India.',
-            description: 'Neutron, engineered for Indian power systems, appliances, and lifestyles with reliability, efficiency, and smart functionality.'
+            image: '/electron_page/Frame.svg',
+            title: 'India-Born, World-Ready.',
+            description: 'A proudly Indian innovation, Electron is designed to empower industries both locally and globally, combining robust engineering with a vision for worldwide impact.'
         }
     ];
 
@@ -393,8 +396,8 @@ document.addEventListener('DOMContentLoaded', function () {
         slideElement.innerHTML = `
             <img src="${slide.image}" alt="${slide.title}" class="slide-img">
             <div class="slide-content">
-                <h3 class="text-2xl font-bold mb-2 pb-[50px]">${slide.title}</h3>
-                <p class="text-base">${slide.description}</p>
+                <h3 class="text-xl font-bold mb-2">${slide.title}</h3>
+                <p class="text-sm">${slide.description}</p>
             </div>
         `;
         slider.appendChild(slideElement);
@@ -402,7 +405,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const slides = document.querySelectorAll('#second-page .slide');
 
-    // Ensure slides exist
     if (slides.length === 0) {
         console.warn('No slides found in #slidesContainer');
         return;
@@ -417,22 +419,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateSlider() {
         const slidesToShow = updateSlidesToShow();
-        const slideWidth = slides[0].offsetWidth + 10; // Width + margin (5px on each side)
+        const slideWidth = slides[0].offsetWidth + 10; // Include margin (5px each side)
         const containerWidth = slider.parentElement.offsetWidth;
-        const totalWidthPerSlide = slideWidth;
-        let translateX = -currentIndex * totalWidthPerSlide;
+        let translateX = -currentIndex * slideWidth;
 
-        // Center the slides on mobile
+        // Center single slide on mobile
         if (slidesToShow === 1) {
             const offset = (containerWidth - slideWidth) / 2;
             translateX += offset;
         }
 
+        slider.style.transition = isSwiping ? 'none' : 'transform 0.3s ease';
         slider.style.transform = `translateX(${translateX}px)`;
 
-        // Update button states (corrected 'preview' to 'prevBtn')
+        // Update button states
         prevBtn.disabled = currentIndex === 0;
         nextBtn.disabled = currentIndex >= slides.length - slidesToShow;
+    }
+
+    function goToNextSlide() {
+        clearTimeout(autoSlideTimer);
+        const slidesToShow = updateSlidesToShow();
+        if (currentIndex < slides.length - slidesToShow) {
+            currentIndex++;
+            updateSlider();
+        } else {
+            setTimeout(() => {
+                currentIndex = 0;
+                updateSlider();
+                if (isAutoSliding) {
+                    autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
+                }
+            }, restartDelay);
+        }
+    }
+
+    function goToPrevSlide() {
+        clearTimeout(autoSlideTimer);
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+        if (isAutoSliding) {
+            autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
+        }
     }
 
     function autoSlide() {
@@ -454,6 +484,71 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Touch event handlers
+    function handleTouchStart(e) {
+        touchStartX = e.touches[0].clientX;
+        touchCurrentX = touchStartX;
+        isSwiping = true;
+        clearTimeout(autoSlideTimer); // Pause auto-slide during touch
+    }
+
+    function handleTouchMove(e) {
+        if (!isSwiping) return;
+        touchCurrentX = e.touches[0].clientX;
+        const deltaX = touchCurrentX - touchStartX;
+        const slideWidth = slides[0].offsetWidth + 10;
+        const slidesToShow = updateSlidesToShow();
+        let translateX = -currentIndex * slideWidth + deltaX;
+
+        // Center single slide on mobile
+        if (slidesToShow === 1) {
+            const containerWidth = slider.parentElement.offsetWidth;
+            const offset = (containerWidth - slideWidth) / 2;
+            translateX += offset;
+        }
+
+        // Bound the swipe to prevent sliding too far
+        const maxTranslate = 0;
+        const minTranslate = -((slides.length - slidesToShow) * slideWidth);
+        translateX = Math.max(minTranslate, Math.min(maxTranslate, translateX));
+
+        slider.style.transition = 'none';
+        slider.style.transform = `translateX(${translateX}px)`;
+    }
+
+    function handleTouchEnd() {
+        if (!isSwiping) return;
+        isSwiping = false;
+        const deltaX = touchCurrentX - touchStartX;
+
+        if (Math.abs(deltaX) > swipeThreshold) {
+            if (deltaX < 0) {
+                // Swipe left - next slide
+                goToNextSlide();
+            } else {
+                // Swipe right - previous slide
+                goToPrevSlide();
+            }
+        } else {
+            // Snap back to current slide
+            updateSlider();
+        }
+
+        // Resume auto-slide if enabled
+        if (isAutoSliding) {
+            autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
+        }
+    }
+
+    // Add touch event listeners
+    slider.addEventListener('touchstart', handleTouchStart, { passive: false });
+    slider.addEventListener('touchmove', handleTouchMove, { passive: false });
+    slider.addEventListener('touchend', handleTouchEnd, { passive: false });
+
+    // Prevent default drag behavior
+    slider.addEventListener('dragstart', (e) => e.preventDefault());
+
+    // IntersectionObserver for auto-sliding
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
@@ -475,40 +570,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     observer.observe(secondPageSection);
 
-    prevBtn.addEventListener('click', () => {
-        clearTimeout(autoSlideTimer);
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateSlider();
-        }
-        if (isAutoSliding) {
-            autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-        }
-    });
+    // Button event listeners
+    prevBtn.addEventListener('click', goToPrevSlide);
+    nextBtn.addEventListener('click', goToNextSlide);
 
-    nextBtn.addEventListener('click', () => {
-        clearTimeout(autoSlideTimer);
-        const slidesToShow = updateSlidesToShow();
-        if (currentIndex < slides.length - slidesToShow) {
-            currentIndex++;
-            updateSlider();
-        } else {
-            setTimeout(() => {
-                currentIndex = 0;
-                updateSlider();
-                if (isAutoSliding) {
-                    autoSlideTimer = setTimeout(autoSlide, autoSlideInterval);
-                }
-            }, restartDelay);
-        }
-    });
-
+    // Handle window resize
     window.addEventListener('resize', () => {
         const slidesToShow = updateSlidesToShow();
         currentIndex = Math.min(currentIndex, slides.length - slidesToShow);
         updateSlider();
     });
 
+    // Initial update
     updateSlider();
 }
     // Initialize all components
@@ -518,3 +591,4 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeFourthPageSlider();
     initializeSecondPageSlider();
 });
+
