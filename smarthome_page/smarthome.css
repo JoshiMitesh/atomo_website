@@ -3059,109 +3059,145 @@
 
     }
 
-  /* Third Page - App Compatibility Section */
-#third-page {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 0px;
-    box-sizing: border-box;
-    min-height: 85vh;
+
+    .smart-home-image {
+    /* Ensure the image maintains its aspect ratio */
+    width: auto;
     height: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-}
-
-.phone-slider-wrapper {
-    width: 127%;
-    overflow: visible; /* Changed from hidden to visible */
-    touch-action: pan-y; /* Allow vertical touch actions */
-}
-
-.app-compatibility-container {
-    width: 100%;
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 0px;
-    box-sizing: border-box;
-    touch-action: pan-y; /* Allow vertical touch actions */
-}
-
-.phone-grid {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-    gap: 138px;
-    width: 100%;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
-    touch-action: pan-x; /* Explicitly allow horizontal panning */
-    overscroll-behavior-x: contain; /* Prevent overscroll bleed */
-    padding-bottom: 20px; /* Add space at bottom for scrolling */
-}
-
-.phone-grid::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome/Safari */
-}
-
-.phone-grid:active {
-    cursor: grabbing;
-}
-
-.phone-item {
-    flex: 0 0 auto; /* Prevent items from shrinking/growing */
-    min-width: 200px;
-    max-width: 282px;
-    touch-action: manipulation; /* Optimize for touch */
-}
-
-.phone-item img {
-    width: 100vh;
-    height: auto;
+    max-height: 100%;
+    
+    /* Prevent blurring by ensuring proper scaling */
+    image-rendering: -webkit-optimize-contrast; /* For WebKit browsers */
+    image-rendering: crisp-edges; /* Standard property */
+    image-rendering: pixelated; /* For pixel art */
+    
+    /* Smooth scaling for high-resolution images */
+    -ms-interpolation-mode: nearest-neighbor; /* For IE */
     object-fit: contain;
-    border-radius: 10px;
-    pointer-events: none; /* Prevent image from blocking touch events */
 }
 
-/* Mobile specific adjustments */
+/* For high-DPI displays (retina) */
+@media (-webkit-min-device-pixel-ratio: 2), 
+       (min-resolution: 192dpi) {
+    .smart-home-image {
+        /* Use a higher resolution version of the image if available */
+        image-rendering: auto; /* Let browser decide best rendering */
+    }
+}
+
+/* Mobile-specific adjustments */
 @media (max-width: 768px) {
-    .phone-slider-wrapper {
+    .smart-home-image-container {
         width: 100%;
-        padding: 0 10px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
     
-    .phone-grid {
-        gap: 50px; /* Reduce gap for mobile */
-        padding: 0 20px; /* Add padding to ensure items don't touch edges */
-    }
-    
-    .phone-item {
-        min-width: 180px; /* Slightly smaller for mobile */
+    .smart-home-image {
+        /* For mobile, you might want to serve a different optimized image */
+        width: 100%;
+        height: auto;
+        max-width: 400px; /* Adjust based on your design */
     }
 }
 
 @media (max-width: 480px) {
-    .phone-grid {
-        gap: 30px; /* Even smaller gap for small screens */
-        padding: 0 15px; /* Adjust padding */
-    }
-    
-    .phone-item img {
-        width: 171vh;
-        height: 85vh;
-    }
-    
-    #third-page {
-        padding: 30px 0; /* Adjust padding */
+    .smart-home-image {
+        /* For very small screens */
+        max-width: 300px;
     }
 }
+
+    /* Third Page - App Compatibility Section */
+    #third-page {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 0px;
+        box-sizing: border-box;
+        min-height: 85vh;
+        height: auto;
+        overflow-x: hidden;
+    }
+
+    .phone-slider-wrapper {
+        width: 127%;
+    }
+
+    .app-compatibility-container {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0px;
+        box-sizing: border-box;
+    }
+
+    .app-compatibility-content {
+        text-align: center;
+        max-width: 1283px;
+    }
+
+    .app-title {
+        font-size: 35px;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .app-text {
+        font-size: 30px;
+        width: 128vh;
+        color: #555;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .phone-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 138px;
+        width: 100%;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        user-select: none;
+        touch-action: pan-x;
+        cursor: grab;
+    }
+
+    .phone-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .phone-grid:active {
+        cursor: grabbing;
+    }
+
+    .phone-item {
+        flex: 1;
+        min-width: 200px;
+        max-width: 282px;
+    }
+
+    .phone-item img {
+    width: 100vh;
+        height: auto;
+        object-fit: contain;
+        border-radius: 10px;
+    }
 
     /* Third Page - App Compatibility Section Responsive Adjustments */
     @media (max-width: 1024px) {

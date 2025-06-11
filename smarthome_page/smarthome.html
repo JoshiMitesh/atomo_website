@@ -947,39 +947,7 @@
             }
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-    const phoneGrid = document.querySelector('.phone-grid');
-    
-    // Prevent vertical scroll when horizontally scrolling
-    phoneGrid.addEventListener('touchstart', function(e) {
-        this.startX = e.touches[0].pageX;
-        this.startY = e.touches[0].pageY;
-        this.isScrolling = null;
-    }, {passive: true});
-    
-    phoneGrid.addEventListener('touchmove', function(e) {
-        if (!this.startX || !this.startY) return;
         
-        const xDiff = this.startX - e.touches[0].pageX;
-        const yDiff = this.startY - e.touches[0].pageY;
-        
-        // Determine scroll direction
-        if (this.isScrolling === null) {
-            this.isScrolling = Math.abs(xDiff) > Math.abs(yDiff);
-        }
-        
-        // Only prevent default if horizontal scroll
-        if (this.isScrolling) {
-            e.preventDefault();
-        }
-    }, {passive: false});
-    
-    phoneGrid.addEventListener('touchend', function() {
-        this.startX = null;
-        this.startY = null;
-        this.isScrolling = null;
-    }, {passive: true});
-});
     </script>
 </body>
 
