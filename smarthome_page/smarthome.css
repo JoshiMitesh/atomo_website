@@ -597,8 +597,7 @@
     }
 
 
-    /* ========== OTHER SECTIONS ========== */
-    #second-page,
+    /* #second-page,
     #third-page,
     #fourth-page,
     #fifth-page,
@@ -609,7 +608,7 @@
     #tenth-page,
     #eleventh-page {
         margin-top: 3vh;
-    }
+    } */
 
     /* modified */
     /* #second-page {
@@ -2764,14 +2763,15 @@
     }
 
     .energy-insights-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 1818px;
-        margin: 0 auto;
-        padding: 0 40px;
-        box-sizing: border-box;
+      display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1818px;
+    gap: 20vh;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
     }
 
     .energy-insights-content {
@@ -2798,7 +2798,7 @@
         font-size: 35px;
         font-weight: 700;
         color: #333;
-        width: 100vh;
+        width: 75vh;
         margin-bottom: 15px;
     }
 
@@ -2806,7 +2806,7 @@
         font-size: 25px;
         color: #555;
         line-height: 1.6;
-        width: 100vh;
+        width: 75vh;
         margin: 0;
     }
 
@@ -2815,10 +2815,10 @@
         position: relative;
         display: flex;
         flex-direction: column;
-    justify-content: end;
+    justify-content: center;
         align-items: center;
         overflow: hidden;
-        height: 51vh;
+    height: 63vh;
         padding-top: 1vh;
         padding-bottom: 1vh;
         margin-left: 203px;
@@ -2925,6 +2925,37 @@
 
     @media (max-width: 480px) {
 
+        .insights-subtitle {
+    font-size: 35px;
+    font-weight: 700;
+    color: #333;
+    width: 100vh;
+    margin-bottom: 15px;
+}
+
+.insights-desc {
+    font-size: 25px;
+    color: #555;
+    line-height: 1.6;
+        width: 100%;
+    margin: 0;
+}
+
+        .energy-insights-slider {
+    flex: 1;
+    position: relative;
+    display: flex
+;
+    flex-direction: column;
+        justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    height: 51vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-left: 203px;
+}
+
          .energy-slider-container {
         position: relative;
         width: 100%;
@@ -2951,7 +2982,7 @@
             font-size: 35px;
             font-weight: 700;
             color: #333;
-        width: 100%;
+            width: 43vh;
             margin-bottom: 15px;
         }
     }
