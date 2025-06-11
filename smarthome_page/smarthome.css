@@ -22,18 +22,17 @@
         line-height: 1.6;
     }
 
-  
+
 
     .hero-content {
-      position: relative;
-    width: 112%;
-    height: 100px;
-    max-width: 90%;
-    /* margin-bottom: -135px; */
-    top: -3%;
-    display: flex
-;
-    justify-content: space-between;
+        position: relative;
+        width: 112%;
+        height: 100px;
+        max-width: 90%;
+        /* margin-bottom: -135px; */
+        top: -3%;
+        display: flex;
+        justify-content: space-between;
     }
 
     .hero-headline {
@@ -47,9 +46,9 @@
     .hero-quote {
         font-weight: 400;
         font-style: normal;
-    color: #3C3C3C;
-    font-size: 30px;
-    font-style: italic;
+        color: #3C3C3C;
+        font-size: 30px;
+        font-style: italic;
         text-align: right;
         padding-top: 14px;
     }
@@ -94,7 +93,7 @@
         }
 
         .hero-quote {
-            font-size: 1.5rem;
+            font-size: 16px;
         }
     }
 
@@ -570,26 +569,32 @@
     }
 
     /* Responsive adjustments for smaller screens */
-@media (max-width: 480px) {
-    .smart-home-image-container {
-        max-width: 100%; /* Full width on small screens */
-        padding: 0 10px; /* Optional padding for spacing */
+    @media (max-width: 480px) {
+        .smart-home-image-container {
+            max-width: 100%;
+            /* Full width on small screens */
+            padding: 0 10px;
+            /* Optional padding for spacing */
+        }
+
+        .smart-home-image {
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+            /* Prevent over-scaling on small screens */
+            margin: 0 auto;
+            /* Center image */
+        }
     }
 
-    .smart-home-image {
-        width: 100%;
-        height: auto;
-        max-width: 400px; /* Prevent over-scaling on small screens */
-        margin: 0 auto; /* Center image */
+    /* High-DPI display optimization */
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+        .smart-home-image {
+            image-rendering: auto;
+            /* Let browser optimize for retina displays */
+        }
     }
-}
-
-/* High-DPI display optimization */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .smart-home-image {
-        image-rendering: auto; /* Let browser optimize for retina displays */
-    }
-}
 
 
     /* ========== OTHER SECTIONS ========== */
@@ -620,13 +625,13 @@
     } */
 
 
-    
+
 
     /* Second Page - Devices Section */
     #second-page {
         position: relative;
         width: 100%;
-    min-height: 70vh;
+        min-height: 70vh;
         height: auto;
         display: flex;
         justify-content: center;
@@ -638,14 +643,14 @@
     }
 
     #second-page .devices-container {
-       display: flex;
-    flex-direction: row;
-    align-items: anchor-center;
-    width: 100%;
-    max-width: 1425px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    gap: 167px;
+        display: flex;
+        flex-direction: row;
+        align-items: anchor-center;
+        width: 100%;
+        max-width: 1425px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        gap: 167px;
     }
 
     #smart-home-section {
@@ -782,7 +787,7 @@
         /* Center the text */
     }
 
-    
+
     /* Responsive Adjustments for Second Page */
     @media (max-width: 1024px) {
         #second-page .devices-container {
@@ -972,10 +977,10 @@
         position: relative;
         width: 100%;
         /* min-height: 23vh; */
-    height: auto;
+        height: auto;
         display: flex;
         justify-content: center;
-            background-color: aliceblue;
+        background-color: aliceblue;
 
         align-items: center;
         padding: 80px 20px;
@@ -2780,7 +2785,7 @@
         font-size: 35px;
         font-weight: 700;
         color: #333;
-            width: 100%;
+        width: 100%;
 
         /* margin-bottom: 20px; */
         /* line-height: 1.2; */
@@ -2807,22 +2812,22 @@
 
     .energy-insights-slider {
         flex: 1;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    height: 51vh;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    margin-left: 203px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    justify-content: end;
+        align-items: center;
+        overflow: hidden;
+        height: 51vh;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        margin-left: 203px;
     }
 
     .energy-slider-container {
         position: relative;
         width: 100%;
-        height: 100%;
+        height: 70%;
         overflow: hidden;
     }
 
@@ -2843,7 +2848,7 @@
     .video-slide,
     .slideshow-slide {
         width: 100%;
-    height: 44vh;
+        height: 44vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -2867,7 +2872,7 @@
         /* Prevent images from overflowing */
         aspect-ratio: 16 / 9;
         /* Maintain consistent aspect ratio */
-    height: 45vh;
+        height: 45vh;
         /* Allow height to adjust based on content */
     }
 
@@ -2913,20 +2918,29 @@
             font-size: 25px;
             color: #555;
             line-height: 1.6;
-            width: 42vh;
+        width: 100%;
             margin: 0;
         }
     }
 
     @media (max-width: 480px) {
-        .video-slide, .slideshow-slide {
-    width: 100%;
-    height: 44vh;
-    display: flex
-;
-    justify-content: center;
-    align-items: center;
-}
+
+         .energy-slider-container {
+        position: relative;
+        width: 100%;
+        height: 70%;
+        overflow: hidden;
+    }
+
+        .video-slide,
+        .slideshow-slide {
+            width: 100%;
+            height: 44vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .slideshow {
             aspect-ratio: 1 / 1;
             /* Square for very small screens */
@@ -2937,7 +2951,7 @@
             font-size: 35px;
             font-weight: 700;
             color: #333;
-            width: 43vh;
+        width: 100%;
             margin-bottom: 15px;
         }
     }
@@ -2951,8 +2965,8 @@
     }
 
     .dot {
-            width: 15px;
-    height: 15px;
+        width: 15px;
+        height: 15px;
         background-color: #bbb;
         border-radius: 50%;
         cursor: pointer;
@@ -2978,14 +2992,14 @@
             height: auto;
         }
 
-        .energy-insights-container {
-            flex-direction: column;
-            justify-content: flex-start;
-            width: 100%;
-            max-width: 600px;
-            height: 82vh;
-            padding: 0 15px;
-        }
+            .energy-insights-container {
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 600px;
+        height: 82vh;
+        padding: 0 15px;
+    }
 
         .energy-insights-content {
             order: 1;
@@ -3064,57 +3078,63 @@
 
 
     .smart-home-image {
-    /* Ensure the image maintains its aspect ratio */
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    
-    /* Prevent blurring by ensuring proper scaling */
-    image-rendering: -webkit-optimize-contrast; /* For WebKit browsers */
-    image-rendering: crisp-edges; /* Standard property */
-    image-rendering: pixelated; /* For pixel art */
-    
-    /* Smooth scaling for high-resolution images */
-    -ms-interpolation-mode: nearest-neighbor; /* For IE */
-    object-fit: contain;
-}
-
-/* For high-DPI displays (retina) */
-@media (-webkit-min-device-pixel-ratio: 2), 
-       (min-resolution: 192dpi) {
-    .smart-home-image {
-        /* Use a higher resolution version of the image if available */
-        image-rendering: auto; /* Let browser decide best rendering */
-    }
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-    .smart-home-image-container {
-        width: 100%;
+        /* Ensure the image maintains its aspect ratio */
+        width: auto;
         height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-    
-    .smart-home-image {
-        /* For mobile, you might want to serve a different optimized image */
-        width: 100%;
-        height: auto;
-        max-width: 400px; /* Adjust based on your design */
-    }
-}
+        max-width: 100%;
+        max-height: 100%;
 
-@media (max-width: 480px) {
-    .smart-home-image {
-        /* For very small screens */
-        max-width: 300px;
+        /* Prevent blurring by ensuring proper scaling */
+        image-rendering: -webkit-optimize-contrast;
+        /* For WebKit browsers */
+        image-rendering: crisp-edges;
+        /* Standard property */
+        image-rendering: pixelated;
+        /* For pixel art */
+
+        /* Smooth scaling for high-resolution images */
+        -ms-interpolation-mode: nearest-neighbor;
+        /* For IE */
+        object-fit: contain;
     }
-}
+
+    /* For high-DPI displays (retina) */
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+        .smart-home-image {
+            /* Use a higher resolution version of the image if available */
+            image-rendering: auto;
+            /* Let browser decide best rendering */
+        }
+    }
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 768px) {
+        .smart-home-image-container {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .smart-home-image {
+            /* For mobile, you might want to serve a different optimized image */
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+            /* Adjust based on your design */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .smart-home-image {
+            /* For very small screens */
+            max-width: 300px;
+        }
+    }
 
     /* Third Page - App Compatibility Section */
     #third-page {
@@ -3196,7 +3216,7 @@
     }
 
     .phone-item img {
-    width: 100vh;
+        width: 100vh;
         height: auto;
         object-fit: contain;
         border-radius: 10px;
@@ -3238,11 +3258,12 @@
     @media (max-width: 480px) {
 
         .phone-item img {
-   width: 171vh;
-        height: 85vh;
-    object-fit: contain;
-    border-radius: 10px;
-}
+            width: 171vh;
+            height: 85vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
         #third-page {
             padding: 30px 10px;
         }
@@ -3716,7 +3737,7 @@
         #fourth-page .spec-label-list {
             list-style: none;
             padding: 0;
-        padding-top: 23px;
+            padding-top: 23px;
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -3941,7 +3962,7 @@
             flex-direction: column;
             padding: 40px 16px;
             min-height: 100vh;
-        height: auto;
+            height: auto;
             overflow: hidden;
         }
 
