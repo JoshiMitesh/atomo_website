@@ -1047,7 +1047,7 @@ body {
     .price-button,
     .buy-button {
         padding: 8px 15px;
-        font-size: 12px;
+        font-size: 0.9rem;
     }
 
     .specs-container {
@@ -1167,6 +1167,8 @@ body {
 
 .slider-controls {
     display: flex;
+        padding-right: 6vh;
+
 }
 
 /* Responsive adjustments */
@@ -1187,6 +1189,11 @@ body {
 }
 
 @media (max-width: 768px) {
+    .slider-controls {
+    display: flex;
+    padding-right: 0vh;
+}
+
     #fourth-page {
         padding: 30px 0;
     }
@@ -1829,9 +1836,8 @@ body {
        font-size: 16px;
         position: static;
         /* margin-top: 5px; */
-      max-width: 130%;
-        width: 43vh;
-
+        /* max-width: 130%; */
+        width: 34vh;
     }
 
     .matter-content {
@@ -2116,8 +2122,7 @@ body {
 
     .spec-label {
         min-width: 70px;
-                text-align: left;
-
+        text-align: left;
         /* Adjust spacing for smaller screens */
     }
 
@@ -2428,7 +2433,7 @@ body {
 #second-page .slide-content h3 {
     font-size: 20px; /* Slightly smaller than text-xl for better fit */
     font-weight: bold;
-    margin-bottom: -37px;
+    margin-bottom: 18px;
     color: #ffffff;
     white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden; /* Hide overflow */
@@ -2525,11 +2530,12 @@ body {
 
     #second-page .slide-content h3 {
         font-size: 0.95rem; /* Small enough to fit in one line on mobile */
+        margin-bottom: 8px;
     }
 
     #second-page .slide-content p {
         font-size: 0.75rem;
-        line-height: 22px;
+        line-height: 25px;
         max-width: 100%; /* Maximize width for single slide */
     }
 }

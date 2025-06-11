@@ -1189,6 +1189,11 @@ body {
 }
 
 @media (max-width: 768px) {
+    .slider-controls {
+    display: flex;
+    padding-right: 0vh;
+}
+
     #fourth-page {
         padding: 30px 0;
     }

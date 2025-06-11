@@ -1047,7 +1047,7 @@ body {
     .price-button,
     .buy-button {
         padding: 8px 15px;
-        font-size: 12px;
+        font-size: 0.9rem;
     }
 
     .specs-container {
@@ -1167,6 +1167,8 @@ body {
 
 .slider-controls {
     display: flex;
+        padding-right: 6vh;
+
 }
 
 /* Responsive adjustments */
@@ -1187,6 +1189,11 @@ body {
 }
 
 @media (max-width: 768px) {
+    .slider-controls {
+    display: flex;
+    padding-right: 0vh;
+}
+
     #fourth-page {
         padding: 30px 0;
     }
@@ -1829,9 +1836,8 @@ body {
        font-size: 16px;
         position: static;
         /* margin-top: 5px; */
-              max-width: 130%;
-        width: 43vh;
-    
+        /* max-width: 130%; */
+        width: 34vh;
     }
 
     .matter-content {
@@ -2116,8 +2122,7 @@ body {
 
     .spec-label {
         min-width: 70px;
-                text-align: left;
-
+        text-align: left;
         /* Adjust spacing for smaller screens */
     }
 
@@ -2437,7 +2442,7 @@ body {
 }
 
 #second-page .slide-content p {
- font-size: 16px;
+    font-size: 16px;
     color: #ffffff;
     line-height: 25px;
     text-align: left;
