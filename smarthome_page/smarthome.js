@@ -463,18 +463,18 @@ window.addEventListener('scroll', function () {
 document.addEventListener('DOMContentLoaded', () => {
     const phoneGrid = document.querySelector('.phone-grid');
     if (!phoneGrid) {
-        console.warn('Phone grid not found!');
+        console.warn('Phone grid not found! Check if .phone-grid exists in the DOM.');
         return;
     }
 
     // Ensure exactly 8 images are present
     const phoneItems = phoneGrid.querySelectorAll('.phone-item');
     if (phoneItems.length !== 8) {
-        console.warn(`Expected 8 phone items, found ${phoneItems.length}!`);
+        console.warn(`Expected 8 phone items, found ${phoneItems.length}! Check .phone-item elements in .phone-grid.`);
     }
 
-    // Clone the 8 images 20 times (20 sets of 8 = 160 total images)
-    for (let i = 0; i < 19; i++) { // 19 additional sets to make 20 total (1 original + 19 clones)
+    // Clone the 8 images 19 times (20 sets of 8 = 160 total images)
+    for (let i = 0; i < 19; i++) {
         phoneItems.forEach(item => {
             const clone = item.cloneNode(true);
             phoneGrid.appendChild(clone);
@@ -483,10 +483,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let isDragging = false;
     let startX = 0;
+    let startY = 0;
     let scrollStart = 0;
     let animationId = null;
     let scrollSpeed = 1; // Slower scrolling (pixels per frame)
     const scrollResetThreshold = 1; // Small threshold to prevent jittery resets
+    const swipeThreshold = 50; // Minimum swipe distance in pixels
+    const angleThreshold = 30; // Max angle (degrees) for horizontal swipe detection (tighter for precision)
 
     // Set scroll behavior for precise resets
     phoneGrid.style.scrollBehavior = 'auto';
@@ -499,7 +502,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Check if we've reached the end of the content
             const maxScroll = phoneGrid.scrollWidth - phoneGrid.clientWidth;
             if (phoneGrid.scrollLeft >= maxScroll - scrollResetThreshold) {
-                // Reset to the start
                 phoneGrid.scrollLeft = 0;
             }
         }
@@ -508,29 +510,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Start dragging (mouse or touch)
-    function startDragging(x) {
+    function startDragging(x, y) {
         isDragging = true;
         startX = x;
+        startY = y;
         scrollStart = phoneGrid.scrollLeft;
         cancelAnimationFrame(animationId);
+        console.log('Drag started at:', { x, y, scrollLeft: phoneGrid.scrollLeft });
     }
 
     // Stop dragging and resume auto-scroll
     function stopDragging() {
         if (isDragging) {
             isDragging = false;
-            // Resume auto-scroll after a short delay
             setTimeout(() => {
                 animationId = requestAnimationFrame(autoScroll);
             }, 1000);
+            console.log('Drag stopped, scrollLeft:', phoneGrid.scrollLeft);
         }
     }
 
     // Handle dragging movement
-    function handleDragMove(x) {
-        if (!isDragging) return;
-        const deltaX = (x - startX) * 1.5; // Sensitivity factor
-        phoneGrid.scrollLeft = scrollStart - deltaX;
+    function handleDragMove(x, y, e) {
+        if (!isDragging) return false;
+
+        // Calculate swipe direction
+        const deltaX = x - startX;
+        const deltaY = y - startY;
+        const angle = Math.abs(Math.atan2(deltaY, deltaX) * 180 / Math.PI);
+
+        // Only handle horizontal swipes (angle < 30° or > 150°)
+        if (angle < angleThreshold || angle > 180 - angleThreshold) {
+            const dragDistance = deltaX * 1.5; // Sensitivity factor
+            phoneGrid.scrollLeft = scrollStart - dragDistance;
+            console.log('Horizontal swipe:', { deltaX, angle, scrollLeft: phoneGrid.scrollLeft });
+            e.preventDefault(); // Prevent default only for horizontal swipes
+            return true;
+        }
+        console.log('Vertical swipe ignored:', { deltaY, angle });
+        return false; // Allow vertical scrolling
     }
 
     // Start the auto-scroll
@@ -538,30 +556,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mouse event listeners
     phoneGrid.addEventListener('mousedown', (e) => {
-        startDragging(e.clientX);
-        e.preventDefault(); // Prevent text selection
+        startDragging(e.clientX, e.clientY);
+        e.preventDefault();
     });
 
     phoneGrid.addEventListener('mousemove', (e) => {
-        handleDragMove(e.clientX);
+        handleDragMove(e.clientX, e.clientY, e);
     });
 
     phoneGrid.addEventListener('mouseup', stopDragging);
     phoneGrid.addEventListener('mouseleave', stopDragging);
 
-    // Touch event listeners for iOS compatibility
+    // Touch event listeners
     phoneGrid.addEventListener('touchstart', (e) => {
-        startDragging(e.touches[0].clientX);
-        e.preventDefault(); // Prevent iOS momentum scrolling
+        startDragging(e.touches[0].clientX, e.touches[0].clientY);
     }, { passive: false });
 
     phoneGrid.addEventListener('touchmove', (e) => {
-        handleDragMove(e.touches[0].clientX);
-        e.preventDefault(); // Prevent default scrolling behavior
+        handleDragMove(e.touches[0].clientX, e.touches[0].clientY, e);
     }, { passive: false });
 
     phoneGrid.addEventListener('touchend', stopDragging);
-
-    // Prevent iOS overscroll
     phoneGrid.addEventListener('touchcancel', stopDragging);
 });
