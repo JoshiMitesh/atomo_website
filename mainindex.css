@@ -1034,10 +1034,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-.device-container:hover .device-image {
-    transform: scale(1.02);
-}
-
 .device-container2:hover .device-image {
     transform: scale(1.02);
 }

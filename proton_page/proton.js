@@ -54,40 +54,116 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Popup Functionality
+  // Popup Functionality with Email Validation
     function initializePopup() {
         const buyButtons = document.querySelectorAll('.buy-button');
+        const comingSoonButton = document.querySelector('.price-button');
         const popup = document.getElementById('subscription-popup');
         const subscribeButton = document.getElementById('subscribe-button');
         const emailInput = document.getElementById('email-input');
+        const popupContent = document.querySelector('.popup-content');
 
-        if (!popup || !subscribeButton || !emailInput) {
+        if (!popup || !subscribeButton || !emailInput || !popupContent) {
             console.warn('Popup elements not found!');
             return;
         }
 
+        // Show popup on button clicks
         buyButtons.forEach(button => {
             button.addEventListener('click', () => {
                 popup.classList.add('active');
+                emailInput.focus(); // Improve accessibility
             });
         });
 
+        if (comingSoonButton) {
+            comingSoonButton.addEventListener('click', () => {
+                popup.classList.add('active');
+                emailInput.focus();
+            });
+        }
+
+        // Hide popup when clicking outside
         popup.addEventListener('click', (e) => {
             if (e.target === popup) {
                 popup.classList.remove('active');
+                clearMessages();
             }
         });
 
+        // Email validation on subscribe
         subscribeButton.addEventListener('click', () => {
             const email = emailInput.value.trim();
-            if (email) {
-                alert(`Thank you for subscribing with ${email}!`);
-                emailInput.value = '';
-                popup.classList.remove('active');
+            const emailRegex = /^[a-z0-9]+([.][a-z0-9]+)*@gmail\.in$/;
+
+            clearMessages();
+
+            if (!email) {
+                showError('Please enter an email address.');
+            } else if (email !== email.toLowerCase()) {
+                showError('Email must be in lowercase.');
+            } else if (!emailRegex.test(email)) {
+                showError('Please enter a valid email address (e.g., xyz@gmail.in).');
             } else {
-                alert('Please enter a valid email address.');
+                showSuccess('Subscribed successfully!');
+                emailInput.value = '';
+                // Optional: Add backend integration here
+                /*
+                fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                })
+                .then(response => response.json())
+                .then(data => console.log('Subscription successful:', data))
+                .catch(error => showError('Subscription failed. Please try again.'));
+                */
+                setTimeout(() => {
+                    popup.classList.remove('active');
+                    clearMessages();
+                }, 2000);
             }
         });
+
+        // Clear existing error/success messages
+        function clearMessages() {
+            const existingMessage = popupContent.querySelector('.error-message, .success-message');
+            if (existingMessage) existingMessage.remove();
+        }
+
+        // Show error message
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.style.color = 'red';
+            errorDiv.style.marginTop = '10px';
+            errorDiv.style.textAlign = 'center';
+            errorDiv.style.fontSize = '14px';
+            errorDiv.textContent = message;
+            errorDiv.setAttribute('role', 'alert');
+            popupContent.appendChild(errorDiv);
+
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 3000);
+        }
+
+        // Show success message
+        function showSuccess(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-message';
+            successDiv.style.color = 'green';
+            successDiv.style.marginTop = '10px';
+            successDiv.style.textAlign = 'center';
+            successDiv.style.fontSize = '14px';
+            successDiv.textContent = message;
+            successDiv.setAttribute('role', 'alert');
+            popupContent.appendChild(successDiv);
+
+            setTimeout(() => {
+                successDiv.remove();
+            }, 3000);
+        }
     }
 
     // Second Page Slider

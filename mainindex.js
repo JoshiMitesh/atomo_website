@@ -1,3 +1,70 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // First Page: Electron "Learn More"
+    const learnMoreButton = document.getElementById('learn-more');
+    if (learnMoreButton) {
+        learnMoreButton.addEventListener('click', () => {
+            window.location.href = '/electron_page/electron.html';
+        });
+    }
+
+    // Second Page: Proton "Learn More"
+    const exploreButton = document.getElementById('explore');
+    if (exploreButton) {
+        exploreButton.addEventListener('click', () => {
+            window.location.href = '/proton_page/proton.html';
+        });
+    }
+
+    // Third Page: Neutron "Learn More"
+    const discoverButton = document.getElementById('discover');
+    if (discoverButton) {
+        discoverButton.addEventListener('click', () => {
+            window.location.href = '/neutron_page/neutron.html';
+        });
+    }
+
+    // Fourth Page: AtomicOS "Learn More"
+    const featuresButton = document.getElementById('features');
+    if (featuresButton) {
+        featuresButton.addEventListener('click', () => {
+            window.location.href = '/atomicos_page/atomicos.html';
+        });
+    }
+
+    // Fifth Page: Airowl "Learn More"
+    const airowlLearnButton = document.getElementById('airowl-learn');
+    if (airowlLearnButton) {
+        airowlLearnButton.addEventListener('click', () => {
+            window.location.href = '/airowl_page/airowl.html';
+        });
+    }
+
+    // Fifth Page: Matter "Learn More"
+    const matterLearnButton = document.getElementById('matter-learn');
+    if (matterLearnButton) {
+        matterLearnButton.addEventListener('click', () => {
+            window.location.href = '/matter_page/matter.html';
+        });
+    }
+
+    // Fifth Page: Smart Home "Learn More"
+    const smartHomeLearnButton = document.getElementById('smart-home-learn');
+    if (smartHomeLearnButton) {
+        smartHomeLearnButton.addEventListener('click', () => {
+            window.location.href = '/smarthome_page/smarthome.html';
+        });
+    }
+
+    // Fifth Page: Support "Learn More"
+    const supportLearnButton = document.getElementById('support-learn');
+    if (supportLearnButton) {
+        supportLearnButton.addEventListener('click', () => {
+            window.location.href = '/support_page/support.html'; // Update with actual support page path
+        });
+    }
+});
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Hamburger Menu Functionality
     function initializeHamburgerMenu() {

@@ -1,3 +1,118 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Inject Popup Styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup.active {
+            display: flex;
+        }
+        .popup-content {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 300px;
+            width: 90%;
+            font-family: 'Inter', sans-serif;
+        }
+        .popup-content h2 {
+            font-size: 24px;
+            margin: 0;
+            color: #333;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Inject Popup HTML
+    const popupHtml = `
+        <div id="sdk-popup" class="popup">
+            <div class="popup-content">
+                <h2>Coming Soon!</h2>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', popupHtml);
+
+    // Popup Functionality
+    const sdkButton = document.querySelector('.sdk-button');
+    const popup = document.getElementById('sdk-popup');
+
+    if (!sdkButton || !popup) {
+        console.warn('SDK button or popup not found!');
+        return;
+    }
+
+    // Show popup on SDK button click
+    sdkButton.addEventListener('click', () => {
+        popup.classList.add('active');
+    });
+
+    // Hide popup when clicking outside
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.classList.remove('active');
+        }
+    });
+
+    // Existing Smooth Scrolling and Animations
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
+            if (target) {
+                const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 60;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.box, .step-box, .section-text-container, .section-title').forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+
+    let isScrolling = false;
+    window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            isScrolling = true;
+            requestAnimationFrame(() => {
+                document.documentElement.style.scrollBehavior = 'smooth';
+                isScrolling = false;
+            });
+        }
+    });
+
+    document.addEventListener('touchmove', () => {
+        document.documentElement.style.scrollBehavior = 'smooth';
+    }, { passive: true });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     // Hamburger Menu Functionality
     function initializeHamburgerMenu() {

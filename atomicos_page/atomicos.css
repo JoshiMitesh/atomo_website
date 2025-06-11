@@ -123,16 +123,14 @@ body {
 }
 
 .matter-content {
-   display: flex;
     position: relative;
-    width: 90%;
+    width: 112%;
     height: 100px;
-    padding-top: 21vh;
-    max-width: 93%;
-    /* top: 9%; */
-    n-bottom: -135px;
-    flex-direction: row;
-    align-items: end;
+    max-width: 90%;
+    /* margin-bottom: -135px; */
+    top: 13%;
+    display: flex
+;
     justify-content: space-between;
 }
 
