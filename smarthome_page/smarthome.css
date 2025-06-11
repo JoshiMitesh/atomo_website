@@ -3116,7 +3116,6 @@
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
         gap: 120px;
-        padding: 20px 0;
         width: 100%;
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -3140,7 +3139,7 @@
     }
 
     .phone-item img {
-        width: 90vh;
+    width: 106vh;
         height: auto;
         object-fit: contain;
         border-radius: 10px;
