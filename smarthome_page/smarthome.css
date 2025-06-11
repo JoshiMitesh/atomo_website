@@ -3181,8 +3181,8 @@
     @media (max-width: 480px) {
 
         .phone-item img {
-    width: 136vh;
-    height: auto;
+   width: 171vh;
+        height: 85vh;
     object-fit: contain;
     border-radius: 10px;
 }
