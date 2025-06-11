@@ -3115,7 +3115,7 @@
         overflow-x: auto;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-        gap: 120px;
+        gap: 138px;
         width: 100%;
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -3139,7 +3139,7 @@
     }
 
     .phone-item img {
-    width: 106vh;
+    width: 100vh;
         height: auto;
         object-fit: contain;
         border-radius: 10px;
@@ -3179,6 +3179,13 @@
     }
 
     @media (max-width: 480px) {
+
+        .phone-item img {
+    width: 136vh;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
         #third-page {
             padding: 30px 10px;
         }
