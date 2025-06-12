@@ -191,53 +191,53 @@ document.addEventListener('DOMContentLoaded', function () {
     const slidesData = [
         {
             image: '/electron_page/Frame.svg',
-            title: 'What Is Electron?',
-            description: 'Atomo Innovation’s Electron is a powerful edge computing platform for industries, offering real-time intelligence, faster processing, and seamless automation at the edge.'
+            title: 'What Is Proton?',
+            description: 'Proton is Atomo Innovation’s smart home controller delivering seamless integration, powerful performance, and full control for advanced users and automation setups.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Why It Exists?',
-            description: 'With Electron, industries can run AI locally - no cloud needed. This means faster, secure, and reliable operations, even offline or in remote locations.'
+            title: 'Why It Was Created?',
+            description: 'Designed to deliver a powerful, secure, and future-ready smart home hub with intelligent control, personalization, and scalability for evolving user needs.'
         },
         {
             image: '/electron_page/Frame.svg',
             title: "Who It's For?",
-            description: 'Ideal for system integrators and IoT providers, enabling intelligent edge systems with enhanced performance, reliability, and scalability for industrial applications.'
+            description: 'Built for smart homeowners, automation integrators, and builders seeking robust control, deep customization, and a seamless, connected smart living experience.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Built for Harsh Realities!',
-            description: 'Electron excels in real-world environments - from remote farms to factory floors and power stations - delivering reliable edge intelligence wherever its needed most.'
+            title: 'The Hub of the Home',
+            description: 'Proton is the smart home’s intelligent core, orchestrating devices, sensors, scenes, and routines in real-time for seamless automation and unified control.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Beyond a Device.',
-            description: 'Electron is built to perform in the toughest environments-be it remote farms, factory floors, or power stations-ensuring dependable edge computing wherever its deployed.'
+            title: 'Engineered for Excellence.',
+            description: 'With dedicated compute power and intelligent scheduling, Proton manages complex automation tasks reliably and with low latency for smooth smart home operations.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Drives Smarter Ops.',
-            description: 'It empowers machines to communicate, predict potential issues, and optimize performance autonomously-directly at the edge, without relying on the cloud.'
+            title: 'Personalized Control.',
+            description: 'From voice commands and mobile apps to AI-generated routines, Proton adapts seamlessly to your lifestyle, delivering a personalized smart home experience.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Step into Industry 4.0.',
-            description: 'Electron serves as a gateway to modern industrial practices, seamlessly bridging legacy systems with future-ready, intelligent infrastructure.'
+            title: 'Future-Ready Smart Home.',
+            description: 'Future-proofed with Matter, Thread, Zigbee support, Proton integrates with upcoming connected devices, ensuring long-term compatibility and flexible smart home connectivity.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Easy In, Irreplaceable Out.', 
-            description: 'Electron integrates effortlessly into existing systems-and once its there, it becomes an indispensable part of operations, redefining efficiency and control.'
+            title: 'Security First, Always.', 
+            description: 'With local processing and secure architecture, Proton ensures your smart home remains private, protected, and resilient - even without constant cloud connectivity.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Part of a Bigger Family.',
-            description: 'Electron integrates seamlessly with Neutron and Proton, creating a unified ecosystem for smart environments across both residential and industrial settings.'
+            title: 'Atomo Compatible.',
+            description: 'Proton seamlessly integrates with Neutron and Electron, providing a unified experience across home and industrial automation for enhanced control and efficiency.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'India-Born, World-Ready.',
-            description: 'A proudly Indian innovation, Electron is designed to empower industries both locally and globally, combining robust engineering with a vision for worldwide impact.'
+            title: 'Indian Craft, Global Reach.',
+            description: 'Developed in India to meet global standards, Proton ensures international compatibility, catering to the needs of modern living worldwide.'
         }
     ];
 

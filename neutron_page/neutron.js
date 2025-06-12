@@ -339,53 +339,53 @@ document.addEventListener('DOMContentLoaded', function () {
     const slidesData = [
         {
             image: '/electron_page/Frame.svg',
-            title: 'What Is Electron?',
-            description: 'Atomo Innovation’s Electron is a powerful edge computing platform for industries, offering real-time intelligence, faster processing, and seamless automation at the edge.'
+            title: 'What Is Neutron?',
+            description: 'Neutron is Atomo Innovation’s entry-level smart home controller, designed for simplicity, efficiency, and seamless use in everyday homes.'
         },
         {
             image: '/electron_page/Frame.svg',
             title: 'Why It Exists?',
-            description: 'With Electron, industries can run AI locally - no cloud needed. This means faster, secure, and reliable operations, even offline or in remote locations.'
+            description: 'Our mission is to make smart living accessible to all by providing essential home automation solutions at an affordable price point.'
         },
         {
             image: '/electron_page/Frame.svg',
             title: "Who It's For?",
-            description: 'Ideal for system integrators and IoT providers, enabling intelligent edge systems with enhanced performance, reliability, and scalability for industrial applications.'
+            description: 'Perfect for first-time users, renters, and compact homes, Neutron offers easy, plug-and-play automation for hassle-free smart living.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Built for Harsh Realities!',
-            description: 'Electron excels in real-world environments - from remote farms to factory floors and power stations - delivering reliable edge intelligence wherever its needed most.'
+            title: 'Designed for Daily Comfort.',
+            description: 'Effortlessly manages daily tasks such as lighting, fan control, remote switching, and basic sensor automation for convenient smart home control.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Beyond a Device.',
-            description: 'Electron is built to perform in the toughest environments-be it remote farms, factory floors, or power stations-ensuring dependable edge computing wherever its deployed.'
+            title: 'Intuitive by Nature.',
+            description: 'With a simple app interface and easy setup, Neutron enables users of all ages to operate smart home controls effortlessly without technical skills.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Drives Smarter Ops.',
-            description: 'It empowers machines to communicate, predict potential issues, and optimize performance autonomously-directly at the edge, without relying on the cloud.'
+            title: 'Silently Powerful.',
+            description: 'Neutron seamlessly blends into your lifestyle, offering smart, hassle-free control that operates smoothly without any fuss or complexity.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Step into Industry 4.0.',
-            description: 'Electron serves as a gateway to modern industrial practices, seamlessly bridging legacy systems with future-ready, intelligent infrastructure.'
+            title: 'Smart, Not Complicated.',
+            description: 'Provides the perfect balance of intelligence to automate your home efficiently, delivering smart control without overwhelming complexity.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Easy In, Irreplaceable Out.', 
-            description: 'Electron integrates effortlessly into existing systems-and once its there, it becomes an indispensable part of operations, redefining efficiency and control.'
+            title: 'Future-Ready Starter Kit.', 
+            description: 'Neutron serves as your gateway into the Atomo ecosystem - start simple and upgrade to Proton or Electron as your smart home needs grow.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'Part of a Bigger Family.',
-            description: 'Electron integrates seamlessly with Neutron and Proton, creating a unified ecosystem for smart environments across both residential and industrial settings.'
+            title: 'Affordable, Yet Advanced.',
+            description: 'Despite its affordable price, Neutron supports essential protocols including WiFi, BLE, RF, and IR for versatile smart home connectivity.'
         },
         {
             image: '/electron_page/Frame.svg',
-            title: 'India-Born, World-Ready.',
-            description: 'A proudly Indian innovation, Electron is designed to empower industries both locally and globally, combining robust engineering with a vision for worldwide impact.'
+            title: 'Built for India.',
+            description: 'Neutron is tailored to Indian power systems, appliance types, and everyday lifestyles - proudly engineered to meet local needs with reliability, efficiency, and smart functionality.'
         }
     ];
 

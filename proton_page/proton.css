@@ -1007,7 +1007,6 @@ body {
     border: none;
     padding: 10px 20px;
     border-radius: 65px;
-    font-size: 1rem;
     margin-right: 10px;
     height: 5.74vh;
         width: 19.46vh;
@@ -1047,7 +1046,7 @@ body {
     .price-button,
     .buy-button {
         padding: 8px 15px;
-        font-size: 0.9rem;
+                font-size: 11px;
     }
 
     .specs-container {
