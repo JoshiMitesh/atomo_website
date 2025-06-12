@@ -1945,6 +1945,8 @@ body {
 
     .section-description {
         font-size: 0.875rem;
+                text-align: left;
+
     }
 
     .step-box h3 {
