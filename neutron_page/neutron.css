@@ -2433,7 +2433,7 @@ body {
 #second-page .slide-content h3 {
     font-size: 20px; /* Slightly smaller than text-xl for better fit */
     font-weight: bold;
-    color: #ffffff;
+        color: #ffffff;
     white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden; /* Hide overflow */
     text-overflow: ellipsis; /* Add ellipsis for long titles */

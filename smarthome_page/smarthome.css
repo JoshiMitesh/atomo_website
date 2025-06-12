@@ -25,14 +25,14 @@
 
 
     .hero-content {
-        position: relative;
-        width: 112%;
-        height: 100px;
-        max-width: 90%;
-        /* margin-bottom: -135px; */
-        top: -3%;
-        display: flex;
-        justify-content: space-between;
+            position: absolute;
+    width: 90%;
+    height: 100px;
+    /* max-width: 90%; */
+    /* margin-bottom: -135px; */
+    top: 13%;
+    display: flex;
+    justify-content: space-between;
     }
 
     .hero-headline {
@@ -54,6 +54,18 @@
     }
 
     @media (max-width: 768px) {
+        .hero-content {
+    position: relative;
+    width: 90%;
+    height: 100px;
+    /* max-width: 90%; */
+    /* margin-bottom: -135px; */
+    top: 12%;
+    display: flex
+;
+    justify-content: space-between;
+}
+
         .hero-section {
             padding: 15px;
             min-height: 100px;
@@ -532,6 +544,8 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+            padding-top: 24vh;
+
         max-width: 1800px;
     }
 
