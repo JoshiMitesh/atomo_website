@@ -291,7 +291,7 @@ body {
 
     .matter-content {
         position: absolute;
-        top: -88px;
+        top: 60px;
         left: 50%;
         transform: translateX(-50%);
         width: 90%;
