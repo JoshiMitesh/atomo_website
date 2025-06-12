@@ -123,12 +123,12 @@ body {
 }
 
 .matter-content {
-    position: relative;
-    width: 112%;
+  position: absolute;
+    width: 90%;
     height: 100px;
-    max-width: 90%;
+    /* max-width: 90%; */
     /* margin-bottom: -135px; */
-    top: 120px;
+    top: 11%;
     display: flex
 ;
     justify-content: space-between;
@@ -223,15 +223,11 @@ body {
     color: #3c3c3c;
     margin: 0;
     letter-spacing: 2px;
+    line-height: 2.2;
 }
 
 #subtitle {
-    position: relative;
-    font-weight: 400;
-    color: #3c3c3c;
-    max-width: 474px;
-    line-height: 1.5;
-    text-align: center;
+    padding-top: 4vh;
     color: #3C3C3C;
     font-size: 30px;
     font-style: italic;

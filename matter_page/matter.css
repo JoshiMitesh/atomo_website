@@ -362,7 +362,7 @@
     height: 100px;
     max-width: 100%;
     /* margin-bottom: -135px; */
-    top: 50px;
+    top: 27px;
     display: flex
 ;
     justify-content: space-between;
@@ -373,7 +373,7 @@
     font-weight: 700;
     color: #3c3c3c;
     margin: 0;
-    line-height: 1.2;
+    line-height: 2.2;
     letter-spacing: 1px;
     text-align: left;
 }
@@ -381,7 +381,7 @@
 #subtitle {
     font-size: 30px;
     font-weight: 400;
-    padding-top: 3vh;
+    padding-top: 6vh;
     color: #3c3c3c;
     margin: 0;
     line-height: 1.5;
