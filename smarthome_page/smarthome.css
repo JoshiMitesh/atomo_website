@@ -52,21 +52,21 @@
         font-size: 30px;
         font-style: italic;
         text-align: right;
-        padding-top: 14px;
+        padding-top: 24px;
     }
 
     @media (max-width: 768px) {
-        .hero-content {
-    position: relative;
-    width: 90%;
-    height: 100px;
-    /* max-width: 90%; */
-    /* margin-bottom: -135px; */
-    top: 12%;
-    display: flex
+           .hero-content {
+        position: relative;
+        width: 90%;
+        height: 111px;
+        /* max-width: 90%; */
+        /* margin-bottom: -135px; */
+        top: 7%;
+        display: flex
 ;
-    justify-content: space-between;
-}
+        justify-content: space-between;
+    }
 
         .hero-section {
             padding: 15px;
@@ -75,7 +75,6 @@
 
         .hero-content {
             flex-direction: column;
-            gap: 15px;
             align-items: center;
         }
 
@@ -103,7 +102,7 @@
 
     @media (max-width: 480px) {
         .hero-headline {
-            font-size: 3rem;
+            font-size: 2rem;
         }
 
         .hero-quote {
@@ -1262,7 +1261,7 @@
     /* Eighth Page - Socket and Plug Section */
     #eighth-page {
         width: 100%;
-        min-height: 89vh;
+        min-height: 96vh;
         height: auto;
         display: flex;
         justify-content: center;
@@ -1731,7 +1730,7 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        max-width: 800px;
+    max-width: 951px;
         gap: 20px;
     }
 

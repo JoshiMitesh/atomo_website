@@ -170,6 +170,19 @@ body {
     overflow-x: hidden;
 }
 
+
+.section-icon {
+     height: 74px;
+    width: 74px;
+}
+
+@media (max-width: 480px) {
+.section-icon {
+             height: 57px;
+        padding-top: 20px;
+        width: 57px;
+}}
+
 /* First Page Section */
 #first-page {
     position: relative;
@@ -252,7 +265,7 @@ body {
 
 .assisted-logos {
     display: flex;
-    gap: 9.43vw;
+    gap: 1.43vw;
     /* Equivalent to 181px on a 1920px viewport */
     width: 82.28vw;
     height: 20.83vh;
@@ -429,7 +442,7 @@ body {
     }
 
     .assisted-logo {
-        max-width: 126%;
+        max-width: 80%;
     }
 }
 
@@ -953,6 +966,8 @@ body {
 }
 
 @media (max-width: 576px) {
+
+
     #second-title {
         font-size: 30px;
     }
@@ -989,8 +1004,9 @@ body {
 }
 
 .headingg {
-    font-size: 30px;
+        font-size: 30px;
     margin-top: 0vh;
+    margin-bottom: 1px;
 }
 
 /* Ensure no horizontal overflow for the entire page */
@@ -1040,15 +1056,17 @@ body {
 }
 
 .section-text-container {
-    border-radius: 12px;
+   border-radius: 12px;
     padding: 32px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.05);
     /* height: 49vh; */
-        background-color: whitesmoke;
+    background-color: whitesmoke;
     /* width: 72%; */
-   height: 298px;
-    width: 1588px;
+    width: 100%;
+    max-width: 67.34vw;
+    height: 298px;
+    /* width: 1588px; */
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 0 auto;
@@ -1056,7 +1074,7 @@ body {
 }
 
 .section-description {
-    font-size: 25px;
+    font-size: 21px;
     font-weight: 400;
 
     color: #4a5568;

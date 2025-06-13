@@ -646,12 +646,13 @@ body {
 }
 
 #second-text {
-    font-size: 22px;
+  font-size: 22px;
     font-weight: 400;
     color: #4a5568;
     text-align: center;
-    width: 100%;
+    width: 101%;
     line-height: 1.7;
+    max-width: 1940px;
     margin-top: -6vh;
 }
 
