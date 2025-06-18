@@ -178,7 +178,7 @@ body {
 
 @media (max-width: 480px) {
     .section-icon {
-        height: 57px;
+        height: 41px;
         padding-top: 20px;
         width: 57px;
     }
@@ -439,12 +439,17 @@ body {
     }
 
     .assisted-logos {
-        gap: 21vw;
+        gap: 18vw;
         max-width: 100%;
     }
 
     .assisted-logo {
         max-width: 80%;
+    }
+
+    #last-logo {
+               max-width: 102%;
+        height: 21vh;
     }
 }
 

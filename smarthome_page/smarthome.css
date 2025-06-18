@@ -2401,7 +2401,7 @@
 
         #navbar a {
             font-size: 1rem;
-            padding: 18px 1px;
+            padding: 13px 1px;
             line-height: normal;
             border-bottom: none;
             margin: 0;
@@ -2922,7 +2922,7 @@
 
         .slideshow-image {
             width: 100%;
-            height: auto;
+    height: 85%;
             /* Allow height to adjust */
         }
 

@@ -1577,7 +1577,7 @@ body {
     #electron-video {
         max-width: 135%;
         /* Full width on smaller screens */
-        margin-top: 23vh;
+        margin-top: 0vh;
     }
 
     .section-header1 h2 {
@@ -1840,11 +1840,12 @@ body {
         /* margin-top: 5px; */
         /* max-width: 130%; */
         width: 34vh;
+                padding-top: 0vh;
+
     }
 
     .matter-content {
         position: absolute;
-        top: 77px;
         /* Position at the top */
         left: 50%;
         /* Center horizontally */

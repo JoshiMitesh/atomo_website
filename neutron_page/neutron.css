@@ -1801,7 +1801,7 @@ body {
 
     #subtitle {
         font-size: 0.8rem;
-        max-width: 200px;
+        max-width: 350px;
     }
 
     #electron-video {
@@ -1839,7 +1839,8 @@ body {
         position: static;
         /* margin-top: 5px; */
         /* max-width: 130%; */
-        width: 34vh;
+        padding-top: 0vh;
+        width: 76vh;
     }
 
     .matter-content {

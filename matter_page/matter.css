@@ -368,6 +368,7 @@
     justify-content: space-between;
 }
 
+
 #main-title {
     font-size: 45px;
     font-weight: 700;
@@ -590,6 +591,10 @@
 }
 
 @media (max-width: 480px) {
+
+    #subtitle {
+font-size: 15px;
+    }
     #first-page {
         min-height: 60vh;
         padding: clamp(40px, 6vh, 50px) clamp(6px, 1.5vw, 8px);
