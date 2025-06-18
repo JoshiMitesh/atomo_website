@@ -276,6 +276,14 @@ body {
 }
 
 @media (max-width: 480px) {
+    #subtitle {
+    padding-top: 0px;
+    color: #3C3C3C;
+    font-size: 30px;
+    font-style: italic;
+}
+
+
     #first-page {
         height: auto;
     }
@@ -340,13 +348,14 @@ body {
 
 @media (max-width: 480px) {
     .hero-container {
-        height: 43vh;
+       height: 61vh;
         position: relative;
     }
 
     .hero-image {
-        width: 80%;
-        top: 46vh;
+       width: 83%;
+        top: 27vh;
+        height: 33vh;
         position: relative;
         left: 42%;
     }
