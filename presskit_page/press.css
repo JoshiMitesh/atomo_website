@@ -175,12 +175,12 @@ body {
 }
 
 #hamburger:hover span {
-    background-color: var(--accent-color);
+    background-color:rgb(71, 160, 233);
 }
 
 #hamburger.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    background-color: var(--accent-color);
+    background-color:rgb(71, 160, 233);
 }
 
 #hamburger.open span:nth-child(2) {
@@ -189,7 +189,7 @@ body {
 
 #hamburger.open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-    background-color: var(--accent-color);
+    background-color:rgb(71, 160, 233);
 }
 
 /* Update your first-page styles with this */
@@ -599,7 +599,7 @@ body {
 }
 
 .link-group a:hover {
-    color: var(--accent-color);
+    color:rgb(71, 160, 233);
 }
 
 /* ========== ANIMATIONS ========== */
@@ -975,7 +975,7 @@ body {
     }
 
     #navbar a:hover {
-        color: var(--accent-color);
+        color:rgb(71, 160, 233);
     }
 
     /* Other responsive adjustments */

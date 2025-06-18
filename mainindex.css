@@ -984,7 +984,7 @@ body {
 }
 
 .link-group a:hover {
-    color: var(--accent-color);
+    color: rgb(71, 160, 233);
 }
 
 /* ========== DEVICE CONTAINER STYLING ========== */

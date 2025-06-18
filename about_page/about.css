@@ -172,16 +172,17 @@ body {
 
 
 .section-icon {
-     height: 74px;
+    height: 74px;
     width: 74px;
 }
 
 @media (max-width: 480px) {
-.section-icon {
-             height: 57px;
+    .section-icon {
+        height: 57px;
         padding-top: 20px;
         width: 57px;
-}}
+    }
+}
 
 /* First Page Section */
 #first-page {
@@ -199,7 +200,7 @@ body {
 .about-container {
     width: 100%;
     margin: 0 auto;
-        padding-top: 8vh;
+    padding-top: 8vh;
     position: relative;
 }
 
@@ -213,7 +214,7 @@ body {
 .about-title {
     font-size: 45px;
     font-weight: 700;
-    color: #181818;
+    color: #3c3c3c;
     line-height: 1.2;
     text-align: left;
 }
@@ -221,8 +222,9 @@ body {
 .about-subtitle {
     font-size: 30px;
     font-weight: 400;
-    color: #181818;
+    color: #3c3c3c;
     line-height: 1.3;
+    font-style: italic;
     margin-top: -8vh;
     text-align: right;
     padding-bottom: 8vh;
@@ -270,7 +272,7 @@ body {
     width: 82.28vw;
     height: 20.83vh;
     align-items: center;
-        padding-bottom: 10vh;
+    padding-bottom: 10vh;
     justify-content: center;
 
 }
@@ -535,7 +537,7 @@ body {
 }
 
 #navbar a:hover {
-    color: var(--accent-color);
+    color: rgb(71, 160, 233);
     background-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -575,12 +577,12 @@ body {
 }
 
 #hamburger:hover span {
-    background-color: var(--accent-color);
+    background-color: rgb(71, 160, 233);
 }
 
 #hamburger.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    background-color: var(--accent-color);
+    background-color: rgb(71, 160, 233);
 }
 
 #hamburger.open span:nth-child(2) {
@@ -589,7 +591,7 @@ body {
 
 #hamburger.open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-    background-color: var(--accent-color);
+    background-color: rgb(71, 160, 233);
 }
 
 @media (max-width: 1024px) {
@@ -678,7 +680,7 @@ body {
     }
 
     #navbar a:hover {
-        color: var(--accent-color);
+        color: rgb(71, 160, 233);
     }
 
 
@@ -1004,7 +1006,7 @@ body {
 }
 
 .headingg {
-        font-size: 30px;
+    font-size: 30px;
     margin-top: 0vh;
     margin-bottom: 1px;
 }
@@ -1056,7 +1058,7 @@ body {
 }
 
 .section-text-container {
-   border-radius: 12px;
+    border-radius: 12px;
     padding: 32px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -1715,7 +1717,7 @@ body {
 }
 
 .link-group a:hover {
-    color: var(--accent-color);
+    color: rgb(71, 160, 233);
 }
 
 /* ========== ANIMATIONS ========== */
@@ -1963,7 +1965,7 @@ body {
 
     .section-description {
         font-size: 0.875rem;
-                text-align: left;
+        text-align: left;
 
     }
 

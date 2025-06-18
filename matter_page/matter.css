@@ -198,12 +198,12 @@
     }
 
     #hamburger:hover span {
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
     #hamburger.open span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
     #hamburger.open span:nth-child(2) {
@@ -212,7 +212,7 @@
 
     #hamburger.open span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
     /* ========== RESPONSIVE STYLES ========== */
@@ -314,12 +314,12 @@
     }
 
     #hamburger:hover span {
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
     #hamburger.open span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
     #hamburger.open span:nth-child(2) {
@@ -328,7 +328,7 @@
 
     #hamburger.open span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
 /* ========== FIRST PAGE ========== */
@@ -381,7 +381,7 @@
 #subtitle {
     font-size: 30px;
     font-weight: 400;
-    padding-top: 4vh;
+    padding-top: 28px;
     color: #3c3c3c;
     margin: 0;
     line-height: 1.5;
@@ -1353,7 +1353,7 @@
     }
 
     .dot.active {
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
         transform: scale(1.2);
     }
 
@@ -1782,7 +1782,7 @@
     }
 
     .link-group a:hover {
-        color: var(--accent-color);
+        color:rgb(71, 160, 233);
     }
 
     /* ========== ANIMATIONS ========== */

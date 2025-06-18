@@ -299,12 +299,12 @@ body {
 
 
 .matter-content {
-    position: relative;
-    width: 112%;
+    position: absolute;
+    width: 90%;
     height: 100px;
-    max-width: 90%;
+    /* max-width: 90%; */
     /* margin-bottom: -135px; */
-    top: 15%;
+    top: 11%;
     display: flex;
     justify-content: space-between;
 }
@@ -314,6 +314,8 @@ body {
     /* right: 104%; */
     font-size: 45px;
     font-weight: 700;
+        line-height: 2.2;
+
     color: #3c3c3c;
     margin: 0;
     /* line-height: 1; */
@@ -321,7 +323,7 @@ body {
 }
 
 #subtitle {
-    padding-top: 4vh;
+    padding-top: 28px;
     color: #3C3C3C;
     font-size: 30px;
     font-style: italic;
@@ -829,7 +831,7 @@ body {
 }
 
 .dot.active {
-    background-color: var(--accent-color);
+    background-color:rgb(71, 160, 233);
     transform: scale(1.2);
 }
 
@@ -1368,7 +1370,7 @@ body {
 }
 
 .link-group a:hover {
-    color: var(--accent-color);
+    color:rgb(71, 160, 233);
 }
 
 /* ========== ANIMATIONS ========== */
@@ -2127,8 +2129,10 @@ body {
     }
 
     .spec-desc {
-        margin-left: 35px;
-        /* Adjust spacing for smaller screens */
+        padding-left: 52px;
+        width: 100%;
+        text-align: left;
+        margin-left: 0px;
     }
 }
 

@@ -52,7 +52,7 @@
         font-size: 30px;
         font-style: italic;
         text-align: right;
-        padding-top: 24px;
+    padding-top: 28px;
     }
 
     @media (max-width: 768px) {
@@ -394,12 +394,12 @@
     }
 
     #hamburger:hover span {
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
     #hamburger.open span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
     #hamburger.open span:nth-child(2) {
@@ -408,7 +408,7 @@
 
     #hamburger.open span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
     /* ========== RESPONSIVE STYLES ========== */
@@ -510,12 +510,12 @@
     }
 
     #hamburger:hover span {
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
     #hamburger.open span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
     #hamburger.open span:nth-child(2) {
@@ -524,7 +524,7 @@
 
     #hamburger.open span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
     }
 
     /* ========== FIRST PAGE ========== */
@@ -2202,7 +2202,7 @@
     }
 
     .link-group a:hover {
-        color: var(--accent-color);
+        color:rgb(71, 160, 233);
     }
 
     /* ========== RESPONSIVE DESIGN ========== */
@@ -3017,7 +3017,7 @@
     }
 
     .dot.active {
-        background-color: var(--accent-color);
+        background-color:rgb(71, 160, 233);
         transform: scale(1.2);
     }
 
@@ -3108,7 +3108,7 @@
         }
 
         #seventh-page .slider-dots .dot.active {
-            background-color: var(--accent-color);
+            background-color:rgb(71, 160, 233);
             transform: scale(1.2);
         }
 
