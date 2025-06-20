@@ -1,4 +1,8 @@
-
+html, body {
+    overflow-x: hidden; /* Already in your code */
+    overflow-y: auto; /* Allow vertical scrolling if needed */
+    height: 100%; /* Ensure body takes full viewport height */
+}
 
 @media (max-width: 768px) {
     #second-page {

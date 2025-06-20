@@ -1104,15 +1104,16 @@ body {
 }
 
 .step-box {
+     display: flex;
+    flex-direction: column;
     background-color: #ffffff;
     border-radius: 12px;
     padding: 24px;
-    height: 38.63vh;
     width: 27.63vh;
+    min-height: 38.63vh; /* Minimum height for larger screens */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
-    position: relative;
 }
 
 .step-box:hover {
@@ -1139,13 +1140,13 @@ body {
 }
 
 .para {
+    margin-top: auto; /* Push to bottom of flex container */
+    align-self: flex-end; /* Align to the right */
     font-size: 1.25rem;
     font-weight: 500;
     color: #4a5568;
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    margin: 0;
+    overflow-wrap: break-word; /* Ensure text wraps properly */
+
 }
 
 .sdk-button {
