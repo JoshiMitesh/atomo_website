@@ -262,8 +262,9 @@ body {
 
 
 #first-page .content {
-    max-width: 1200px;
+        max-width: 1501px;
     margin: 0 auto;
+    width: 167vh;
 }
 
 #first-page .header-text {
@@ -272,6 +273,8 @@ body {
     border-radius: 5px;
     background: #ffffff;
     margin-bottom: 30px;
+        height: 24vh;
+
 }
 
 #first-page .header-text h1 {
@@ -299,7 +302,7 @@ body {
 #first-page .cards .card {
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 540px;
     box-sizing: border-box;
 }
 
