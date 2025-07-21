@@ -23,9 +23,10 @@
 /* Update your media query for small screens */
 @media (max-width: 480px) {
     body {
-        min-width: 320px; /* iPhone SE width */
+        min-width: 320px;
+        /* iPhone SE width */
     }
-    
+
     /* Ensure all sections take full width without overflow */
     #first-page,
     #second-page,
@@ -36,29 +37,31 @@
         width: 100%;
         overflow: hidden;
     }
-    
+
     /* Fix device image width */
     .device-image {
         width: 184%;
         margin-top: -57px;
         max-width: 210%;
     }
-    
+
     /* Adjust hamburger position for small screens */
     #hamburger {
-        right: 15px; /* Reduce right spacing */
+        right: 15px;
+        /* Reduce right spacing */
     }
-    
+
     /* Adjust logo position for small screens */
     .logo1 {
-        left: 15px; /* Reduce left spacing */
+        left: 15px;
+        /* Reduce left spacing */
     }
-    
+
     /* Ensure grid items don't cause overflow */
     .grid-container {
         padding: 10px;
     }
-    
+
     .grid-item {
         padding: 15px;
     }
@@ -188,7 +191,7 @@ body {
 }
 
 #navbar a:hover {
-    color:rgb(71, 160, 233);
+    color: rgb(71, 160, 233);
     background-color: rgba(190, 170, 170, 0.05);
 }
 
@@ -199,7 +202,7 @@ body {
     height: 2px;
     bottom: 12px;
     left: 50%;
-   
+
 }
 
 #navbar a:hover::after {
@@ -262,7 +265,7 @@ body {
 
 
 #first-page .content {
-        max-width: 1501px;
+    max-width: 1501px;
     margin: 0 auto;
     width: 167vh;
 }
@@ -273,7 +276,10 @@ body {
     border-radius: 5px;
     background: #ffffff;
     margin-bottom: 30px;
-        height: 24vh;
+    display: flex;
+    height: 24vh;
+    /* justify-content: center; */
+    align-items: center;
 
 }
 
@@ -519,7 +525,7 @@ body {
 .feature-insights .search-container {
     display: flex;
     gap: 10px;
-        height: 4vh;
+    height: 4vh;
 
 }
 
@@ -553,9 +559,8 @@ body {
 }
 
 
-.ccc{
-    display: flex
-;
+.ccc {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
@@ -644,6 +649,7 @@ body {
     flex-wrap: wrap;
     gap: 48px;
 }
+
 /* ========== RESPONSIVE DESIGN FOR FOOTER ========== */
 @media (max-width: 1024px) {
     #sixth-page {
@@ -774,6 +780,7 @@ body {
         font-size: 0.75rem;
     }
 }
+
 .social-link {
     display: inline-block;
     transition: transform 0.3s ease;
@@ -948,19 +955,20 @@ body {
         font-size: 4rem;
         color: #ffffff;
     }
-    
+
     #subtitle1 {
         position: relative;
         padding-top: 2vh;
         font-size: 1.5rem;
         color: #ffffff;
     }
+
     #button-container1 {
         position: relative;
         padding-top: 4vh;
     }
 
-    
+
     #navbar ul {
         gap: 8px;
     }
@@ -998,7 +1006,7 @@ body {
         top: 38%;
     }
 
-   
+
 }
 
 @media (max-width: 768px) {
@@ -1009,43 +1017,45 @@ body {
         font-size: 4rem;
         color: #ffffff;
     }
-    
+
     #subtitle1 {
         position: relative;
         padding-top: 2vh;
         font-size: 1.5rem;
         color: #ffffff;
     }
+
     #button-container1 {
         position: relative;
         padding-top: 4vh;
     }
-    
+
 
     .device-image {
         width: 188%;
         max-width: 210%;
     }
-    
+
     /* Add this to remove the navbar border completely */
     #navbar {
         border-bottom: none;
-        box-shadow: none; /* Optional: Remove shadow if not needed */
+        box-shadow: none;
+        /* Optional: Remove shadow if not needed */
     }
 
     /* Keep your existing logo and hamburger styles */
     .navbar-logo {
         display: none;
     }
-    
+
     .logo1 {
         display: block;
     }
-    
+
     #logo {
         display: none;
     }
-    
+
     #hamburger {
         display: block;
     }
@@ -1053,17 +1063,21 @@ body {
     /* Modify the ul styles */
     #navbar ul {
         position: fixed;
-        top: -6px; /* Changed from 64px to match navbar height exactly */
+        top: -6px;
+        /* Changed from 64px to match navbar height exactly */
         left: 0;
         width: 100%;
         flex-direction: column;
         background-color: #181818;
-        padding: 0; /* Changed from 16px 0 - remove initial padding */
-        margin: 0; /* Add this to remove default margins */
+        padding: 0;
+        /* Changed from 16px 0 - remove initial padding */
+        margin: 0;
+        /* Add this to remove default margins */
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
-        border: none; /* Explicitly remove any borders */
+        border: none;
+        /* Explicitly remove any borders */
     }
 
     /* Add padding only when menu is active */
@@ -1079,7 +1093,7 @@ body {
         transform: translateY(-10px);
         transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
     }
-    
+
     #navbar ul.active li {
         opacity: 1;
         transform: translateY(0);
@@ -1092,65 +1106,69 @@ body {
         line-height: normal;
         border-bottom: none;
         margin: 0;
-        text-align: center; /* Add this line to center the text */
-        display: flex; /* Add these lines to properly center */
-        justify-content: center; /* the text vertically and horizontally */
+        text-align: center;
+        /* Add this line to center the text */
+        display: flex;
+        /* Add these lines to properly center */
+        justify-content: center;
+        /* the text vertically and horizontally */
         align-items: center;
     }
 }
 
-    #main-title,
-    #second-title,
-    #third-title,
-    #fourth-title {
-        font-size: 2.5rem;
-        top: 18%;
-    }
+#main-title,
+#second-title,
+#third-title,
+#fourth-title {
+    font-size: 2.5rem;
+    top: 18%;
+}
 
-    #subtitle,
-    #second-subtitle,
-    #third-subtitle,
-    #fourth-subtitle {
-        font-size: 1.5rem;
-        top: 29%;
-    }
+#subtitle,
+#second-subtitle,
+#third-subtitle,
+#fourth-subtitle {
+    font-size: 1.5rem;
+    top: 29%;
+}
 
-  
 
-    #button-container,
-    .second-button-container,
-    .third-button-container,
-    .fourth-button-container {
-        top: 34%;
-        gap: 16px;
-    }
 
-    .action-button {
-        width: 140px;
-        height: 44px;
-    }
+#button-container,
+.second-button-container,
+.third-button-container,
+.fourth-button-container {
+    top: 34%;
+    gap: 16px;
+}
 
-    .device-container {
-        max-width: 400px;
-    }
+.action-button {
+    width: 140px;
+    height: 44px;
+}
 
-    #first-page .device-container {
-        top: 48%;
-    }
+.device-container {
+    max-width: 400px;
+}
 
-    #second-page .device-container,
-    #third-page .device-container,
-    #fourth-page .device-container {
-        top: 37%;
-    }
+#first-page .device-container {
+    top: 48%;
+}
+
+#second-page .device-container,
+#third-page .device-container,
+#fourth-page .device-container {
+    top: 37%;
+}
 
 @media (max-width: 480px) {
 
     .device-image {
         width: 188%;
-        max-width: 210%;;
+        max-width: 210%;
+        ;
     }
-    
+
 
     #main-title,
     #second-title,
@@ -1158,7 +1176,7 @@ body {
     #fourth-title {
         font-size: 3rem;
         top: 6%;
-        }
+    }
 
     #subtitle,
     #second-subtitle,
@@ -1221,7 +1239,10 @@ body {
     }
 }
 
-#first-page, #second-page, #third-page, #fourth-page {
+#first-page,
+#second-page,
+#third-page,
+#fourth-page {
     margin-bottom: 10px;
 }
 
@@ -1240,8 +1261,9 @@ body {
     padding-bottom: 23px;
     font-size: 1.5rem;
     color: #ffffff;
-    
+
 }
+
 #button-container1 {
     position: relative;
 }
@@ -1255,7 +1277,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent overlay */
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -1343,4 +1366,3 @@ body {
         font-size: 0.9rem;
     }
 }
-
