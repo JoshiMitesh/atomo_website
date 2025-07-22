@@ -1522,7 +1522,8 @@ font-size: 15px;
 
     @media (max-width: 480px) {
         #fourth-page {
-            padding: clamp(15px, 4vh, 30px) clamp(6px, 1vw, 10px);
+            padding: clamp(15px, 4vh, 30px) clamp(16px, 1vw, 10px);
+
         }
 
         .features-grid-fourth {
