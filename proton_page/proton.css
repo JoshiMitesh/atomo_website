@@ -1576,7 +1576,7 @@ body {
     #electron-video {
         max-width: 135%;
         /* Full width on smaller screens */
-        margin-top: 23vh;
+        margin-top: 14vh;
     }
 
     .section-header1 h2 {
@@ -1866,8 +1866,8 @@ body {
     }
 
     #first-page {
-        padding: 50px 5px 5px;
-        height: 73vh;
+        /* padding: 50px 5px 5px; */
+        height: 68vh;
     }
 
 
