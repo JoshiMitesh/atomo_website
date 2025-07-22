@@ -1703,7 +1703,7 @@ body {
     }
 
     .slide img {
-        height: 567px;
+        height: 298px;
     }
 
     .prev-btn,
@@ -1793,7 +1793,7 @@ body {
     #second-page {
         position: relative;
         padding-top: 0px;
-        height: 96vh;
+        height: auto;
         /* Creates space for the header */
     }
 
@@ -1806,7 +1806,7 @@ body {
 /* Second Page Header Styles */
 #second-page {
     position: relative;
-    padding-top: 25px;
+    padding-top: 0px;
     /* Creates space for the header */
 }
 
