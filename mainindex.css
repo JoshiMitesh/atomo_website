@@ -185,6 +185,7 @@ body {
     line-height: 64px;
     transition: color 0.3s ease, background-color 0.3s ease;
     border-radius: 6px;
+    position: relative;
 }
 
 #navbar a:hover {
