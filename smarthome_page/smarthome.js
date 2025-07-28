@@ -1,5 +1,3 @@
-
-
 // Utility function to safely select elements
 const $ = (selector, context = document) => context.querySelector(selector);
 const $$ = (selector, context = document) => Array.from(context.querySelectorAll(selector));
@@ -491,21 +489,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set scroll behavior for precise resets
     phoneGrid.style.scrollBehavior = 'auto';
 
-    // Auto-scroll function
-    function autoScroll(timestamp) {
-        if (!isDragging) {
-            phoneGrid.scrollLeft += scrollSpeed;
+    // // Auto-scroll function
+    // function autoScroll(timestamp) {
+    //     if (!isDragging) {
+    //         phoneGrid.scrollLeft += scrollSpeed;
 
-            // Check if we've reached the end of the content
-            const maxScroll = phoneGrid.scrollWidth - phoneGrid.clientWidth;
-            if (phoneGrid.scrollLeft >= maxScroll - scrollResetThreshold) {
-                // Reset to the start
-                phoneGrid.scrollLeft = 0;
-            }
-        }
+    //         // Check if we've reached the end of the content
+    //         const maxScroll = phoneGrid.scrollWidth - phoneGrid.clientWidth;
+    //         if (phoneGrid.scrollLeft >= maxScroll - scrollResetThreshold) {
+    //             // Reset to the start
+    //             phoneGrid.scrollLeft = 0;
+    //         }
+    //     }
 
-        animationId = requestAnimationFrame(autoScroll);
-    }
+    //     animationId = requestAnimationFrame(autoScroll);
+    // }
 
     // Start dragging (mouse or touch)
     function startDragging(x) {
