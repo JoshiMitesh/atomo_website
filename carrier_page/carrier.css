@@ -537,6 +537,11 @@ body {
     color: #fff;
 }
 
+.company-name{
+color: #ffffff;
+    margin-bottom: -18px;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
     .slide {

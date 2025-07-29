@@ -563,3 +563,67 @@ document.addEventListener('DOMContentLoaded', () => {
     // Prevent iOS overscroll
     phoneGrid.addEventListener('touchcancel', stopDragging);
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const phoneGrid = document.querySelector('.phone-grid');
+    const navDots = document.querySelectorAll('.nav-dot');
+    
+    if (!phoneGrid || !navDots.length) {
+        console.warn('Phone grid or navigation dots not found!');
+        return;
+    }
+
+    // Get all phone items
+    const phoneItems = Array.from(phoneGrid.querySelectorAll('.phone-item'));
+    const itemCount = phoneItems.length;
+    const itemWidth = phoneItems[0] ? phoneItems[0].offsetWidth : 300;
+    
+    // Track current position
+    let currentIndex = 0;
+
+    // Function to scroll to specific index
+    function scrollToIndex(index) {
+        // Ensure index stays within bounds
+        currentIndex = Math.max(0, Math.min(index, itemCount - 1));
+        
+        // Calculate scroll position
+        const scrollPos = currentIndex * itemWidth;
+        
+        phoneGrid.scrollTo({
+            left: scrollPos,
+            behavior: 'smooth'
+        });
+    }
+
+    // Navigation dot click handler
+    navDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const direction = dot.dataset.direction;
+            
+            if (direction === 'left') {
+                scrollToIndex(currentIndex - 1);
+            } else {
+                scrollToIndex(currentIndex + 1);
+            }
+        });
+    });
+
+    // Disable manual scrolling
+    phoneGrid.style.overflowX = 'hidden';
+    
+    // Prevent touch events
+    phoneGrid.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+    }, { passive: false });
+    
+    phoneGrid.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+    }, { passive: false });
+
+    // Initialize first item position
+    scrollToIndex(0);
+});
+

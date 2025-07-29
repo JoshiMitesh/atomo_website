@@ -145,6 +145,11 @@
         flex: none;
     }
 
+    .company-name{
+color: #ffffff;
+    margin-bottom: -16px;
+}
+
     #navbar a {
         text-decoration: none;
         color: #181818;

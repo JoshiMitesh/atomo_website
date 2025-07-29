@@ -48,10 +48,10 @@
             </ul>
         </nav>
 
-            <div class="hero-content">
-                <h1 class="hero-headline">Smart Home</h1>
-                <p class="hero-quote">"Redefining the Future of Smart Living"</p>
-            </div>
+        <div class="hero-content">
+            <h1 class="hero-headline">Smart Home</h1>
+            <p class="hero-quote">"Redefining the Future of Smart Living"</p>
+        </div>
 
         <div class="smart-home-container">
             <div class="smart-home-content">
@@ -172,6 +172,13 @@
                         <img src="/smarthome_asset/app_screenshot/8.png" alt="Phone 8">
                     </div>
                 </div>
+            </div>
+            <div class="slider-controls">
+                 <div class="slider-dots-container">
+            <span class="slider-dot nav-dot" data-direction="left">◀</span>
+            <span class="slider-dot active-dot"></span>
+            <span class="slider-dot nav-dot" data-direction="right">▶</span>
+        </div>
             </div>
         </div>
     </section>
@@ -300,7 +307,7 @@
     <section id="seventh-page">
         <div class="energy-insights-container">
             <div class="energy-insights-content">
-    <h2 class="insights-title">Real time insights into your energy usage</h2>
+                <h2 class="insights-title">Real time insights into your energy usage</h2>
 
                 <h3 class="insights-subtitle">Energy usage</h3>
                 <p class="insights-desc">Gain real-time visibility into your energy consumption through clear, intuitive
@@ -381,9 +388,10 @@
                 padding: 20px;
                 height: auto;
                 background-color: #000000;
-                 position: relative;
-        z-index: 1;
-        -webkit-transform: translate3d(0,0,0); /* iOS hardware acceleration */
+                position: relative;
+                z-index: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                /* iOS hardware acceleration */
             }
 
             .bulb-power-section .power-container {
@@ -432,9 +440,12 @@
                 width: 200px;
                 height: 374px;
                 z-index: 9999;
-        -webkit-transform: translate3d(0,0,0); /* iOS fix */
-        transform: translate3d(0,0,0); /* iOS fix */
-        isolation: isolate; /* Creates new stacking context */
+                -webkit-transform: translate3d(0, 0, 0);
+                /* iOS fix */
+                transform: translate3d(0, 0, 0);
+                /* iOS fix */
+                isolation: isolate;
+                /* Creates new stacking context */
                 margin-bottom: 20px;
             }
 
@@ -443,62 +454,64 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                  z-index: 10001;
-        transition: none;
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        will-change: transform; /* Optimizes for animations */
+                z-index: 10001;
+                transition: none;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                will-change: transform;
+                /* Optimizes for animations */
             }
 
-           
-
-              .bulb-power-section .light-effect {
-        position: absolute;
-        width: 215px;
-        height: 216px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgb(255, 255, 15) 0%, rgba(255, 204, 118) 70%);
-        top: 133px;
-        left: -9px;
-        z-index: 10000;
-        opacity: 0;
-        transition: opacity 0.3s, transform 0.3s;
-        filter: blur(20px);
-        /* iOS specific fixes */
-        -webkit-backface-visibility: hidden;
-        -webkit-transform: translate3d(0,0,0);
-        backface-visibility: hidden;
-        transform: translate3d(0,0,0);
-        will-change: transform, opacity;
-        outline: none;
-        border: none !important;
-        box-shadow: none !important;
-        /* -webkit-mask-image: -webkit-radial-gradient(white, black); */
-        /* Creates new stacking context */
-        isolation: isolate;
-    }
 
 
-               /* Special iOS-only fixes */
-    @supports (-webkit-touch-callout: none) {
-        .bulb-power-section .bulb-container {
-            overflow: visible !important;
-            -webkit-mask-image: none !important;
-        }
-        
-        .bulb-power-section .light-effect {
-            -webkit-transform: translateZ(0) scale(1);
-            transform: translateZ(0) scale(1);
-        }
-        
-        /* Force hardware acceleration for parent elements */
-        .bulb-power-section, 
-        .bulb-power-section .power-container,
-        .bulb-power-section .bulb-and-slider {
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-        }
-    }
+            .bulb-power-section .light-effect {
+                position: absolute;
+                width: 215px;
+                height: 216px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgb(255, 255, 15) 0%, rgba(255, 204, 118) 70%);
+                top: 133px;
+                left: -9px;
+                z-index: 10000;
+                opacity: 0;
+                transition: opacity 0.3s, transform 0.3s;
+                filter: blur(20px);
+                /* iOS specific fixes */
+                -webkit-backface-visibility: hidden;
+                -webkit-transform: translate3d(0, 0, 0);
+                backface-visibility: hidden;
+                transform: translate3d(0, 0, 0);
+                will-change: transform, opacity;
+                outline: none;
+                border: none !important;
+                box-shadow: none !important;
+                /* -webkit-mask-image: -webkit-radial-gradient(white, black); */
+                /* Creates new stacking context */
+                isolation: isolate;
+            }
+
+
+            /* Special iOS-only fixes */
+            @supports (-webkit-touch-callout: none) {
+                .bulb-power-section .bulb-container {
+                    overflow: visible !important;
+                    -webkit-mask-image: none !important;
+                }
+
+                .bulb-power-section .light-effect {
+                    -webkit-transform: translateZ(0) scale(1);
+                    transform: translateZ(0) scale(1);
+                }
+
+                /* Force hardware acceleration for parent elements */
+                .bulb-power-section,
+                .bulb-power-section .power-container,
+                .bulb-power-section .bulb-and-slider {
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
             .bulb-power-section .slider-container {
                 width: 80%;
             }
@@ -913,7 +926,7 @@
                     <div class="link-group">
                         <h3 class="link-title">Products</h3>
                         <ul>
-                             <li><a href="electron_page/electron.html">Electron</a></li>
+                            <li><a href="/electron_page/electron.html">Electron</a></li>
                             <li><a href="/proton_page/proton.html">Proton</a></li>
                             <li><a href="/neutron_page/neutron.html">Neutron</a></li>
                             <li><a href="/airowl_page/airowl.html">Airowl</a></li>
@@ -948,7 +961,7 @@
             }
         });
 
-        
+
     </script>
 </body>
 

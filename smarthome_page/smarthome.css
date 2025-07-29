@@ -1691,6 +1691,51 @@
         }
     }
 
+    /* Slider dots styling */
+.slider-dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.slider-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Navigation dots (left/right) */
+.nav-dot {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+}
+
+.nav-dot:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.nav-dot:active {
+    transform: scale(0.9);
+}
+
+
+
+/* Center dot (indicator) */
+.active-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgb(0, 0, 0);
+    cursor: default; /* Not clickable */
+}
     /* Tenth Page - Family Sharing Section */
     #tenth-page {
         position: relative;
@@ -3301,6 +3346,21 @@
     }
 
     @media (max-width: 480px) {
+        .phone-grid {
+    display: flex
+;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 0px;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    user-select: none;
+    touch-action: pan-x;
+    cursor: grab;
+}
 
         .phone-item img {
             width: 100vh;

@@ -454,6 +454,11 @@ body {
 }
 
 
+.company-name{
+color: #ffffff;
+    margin-bottom: -16px;
+}
+
 /* Existing styles for other sections remain unchanged */
 /* Include the rest of your CSS here to ensure the file is complete */
 .navbar-logo {

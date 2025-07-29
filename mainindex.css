@@ -188,6 +188,11 @@ body {
     position: relative;
 }
 
+.company-name{
+color: #ffffff;
+    margin-bottom: -16px;
+}
+
 #navbar a:hover {
     color:rgb(71, 160, 233);
     background-color: rgba(190, 170, 170, 0.05);
