@@ -3353,7 +3353,7 @@
     overflow-x: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    gap: 0px;
+    gap: 100px;
     width: 100%;
     scrollbar-width: none;
     -ms-overflow-style: none;
