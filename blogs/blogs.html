@@ -29,15 +29,14 @@
             <ul>
                 <a href="/index.html"><img class="navbar-logo" src="/assets/atomoheaderlogo.png" alt="Atomo Logo"></a>
                 <li><a href="/electron_page/electron.html">Electron</a></li>
-                <li><a href="proton_page/proton.html">Proton</a></li>
-                <li><a href="neutron_page/neutron.html">Neutron</a></li>
-                <li><a href="atomicos_page/atomicos.html">AtomicOS</a></li>
-                <li><a href="matter_page/matter.html">Matter</a></li>
-                <li><a href="smarthome_page/smarthome.html">Smart Home</a></li>
-                <li><a href="airowl_page/airowl.html">Airowl</a></li>
+                <li><a href="/proton_page/proton.html">Proton</a></li>
+                <li><a href="/neutron_page/neutron.html">Neutron</a></li>
+                <li><a href="/atomicos_page/atomicos.html">AtomicOS</a></li>
+                <li><a href="/matter_page/matter.html">Protocol</a></li>
+                <li><a href="/smarthome_page/smarthome.html">Smart Home</a></li>
+                <li><a href="/airowl_page/airowl.html">Airowl</a></li>
                 <li><a href="">Support</a></li>
-                <li><a href="">Blogs</a></li>
-                <li><a href="../blog-publisher/public/publish-blog.html">Publish Blog</a></li> <!-- Add this line -->
+                <li><a href="/blogs/blogs.html">Blogs</a></li>
 
             </ul>
         </nav>
@@ -262,6 +261,25 @@
             <p>Subscribe For Updates</p>
             <input type="email" id="email-input" placeholder="Email" aria-label="Email input for subscription">
             <button id="subscribe-button" class="subscribe-button">Subscribe</button>
+        </div>
+    </div>
+
+    <!-- Blog Popup -->
+    <div id="blog-popup" class="popup">
+        <div class="popup-content blog-popup-content">
+            <span class="close-btn">&times;</span>
+            <div class="blog-header">
+                <h1 id="blog-title"></h1>
+                <p id="blog-subtitle" class="blog-subtitle"></p>
+                <div class="blog-meta">
+                    <div class="author">
+                        <img id="blog-author-img" src="" alt="Author Image">
+                        <span id="blog-author"></span>
+                    </div>
+                    <p id="blog-date" class="blog-date"></p>
+                </div>
+            </div>
+            <div id="blog-content" class="blog-content"></div>
         </div>
     </div>
 
