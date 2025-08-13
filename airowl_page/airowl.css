@@ -527,9 +527,9 @@ body {
 }
 
 
-.anmol1,
-.anmol2,
-.anmol3 {
+.air1,
+.air2,
+.air3 {
   padding-left: 5%;
   padding-right: 5%;
   letter-spacing: -0.02em;
@@ -537,21 +537,21 @@ body {
 }
 
 /* Default Styles (for < 480px or base mobile) */
-.anmol1 {
+.air1 {
   font-size: 18px;
   font-weight: 700;
   line-height: 150%;
   color: rgb(94, 187, 62);
 }
 
-.anmol2 {
+.air2 {
   font-size: 26px;
   font-weight: 500;
   line-height: 125%;
   color: rgb(22, 28, 45);
 }
 
-.anmol3 {
+.air3 {
   font-size: 26px;
   font-style: italic;
   font-weight: 700;
@@ -561,27 +561,27 @@ body {
 
 /* For screen width ≥ 480px */
 @media (min-width: 480px) {
-  .anmol1 {
+  .air1 {
     font-size: 20px;
   }
-  .anmol2,
-  .anmol3 {
+  .air2,
+  .air3 {
     font-size: 34px;
   }
-  .anmol4 {
+  .air4 {
     font-size: 2vw;
   }
 }
-.anmol4{text-align: center;padding-top: 60px;}
+.air4{text-align: center;padding-top: 60px;}
 /* For screen width ≥ 768px */
 @media (min-width: 768px) {
-  .anmol1 {
+  .air1 {
     font-size: 24px;
     padding-left: 10%;
     padding-right: 0;
   }
-  .anmol2,
-  .anmol3 {
+  .air2,
+  .air3 {
     font-size: 46px;
     padding-left: 10%;
     padding-right: 0;
