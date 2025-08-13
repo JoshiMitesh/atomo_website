@@ -2084,6 +2084,8 @@ body {
     width: 24px;
     height: 24px;
     vertical-align: middle;
+        filter: grayscale(100%) brightness(0%);
+
 }
 
 /* Style for the label (e.g., "CPU") */
@@ -2091,21 +2093,20 @@ body {
     font-weight: 500;
     color: #333;
     min-width: 80px;
-        font-size: 22px;
+    font-size: 22px;
+    width: 16vh;
 
-    /* Ensures consistent spacing between label and description */
 }
 
-/* Style for the description (e.g., "2.4 GHz hex-core CPU") */
 .spec-desc {
     font-weight: 400;
     color: #666;
-        font-size: 16px;
+    font-size: 16px;
 
-    /* Lighter color to distinguish from the label */
-    margin-left: 100px;
+    width: 26vh;
+    display: flex;
+    justify-content: center;
 }
-
 /* Responsive adjustments */
 @media (max-width: 480px) {
     .spec-label-list {

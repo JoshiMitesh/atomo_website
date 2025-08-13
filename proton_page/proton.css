@@ -1,5 +1,3 @@
-
-
 @media (max-width: 768px) {
     #second-page {
         position: relative;
@@ -315,7 +313,7 @@ body {
     /* right: 104%; */
     font-size: 45px;
     font-weight: 700;
-        line-height: 2.2;
+    line-height: 2.2;
 
     color: #3c3c3c;
     margin: 0;
@@ -591,7 +589,7 @@ body {
 }
 
 @media (max-width: 768px) {
-   
+
     .headingg {
         font-size: 2.5rem;
         padding-left: 2vh;
@@ -657,7 +655,7 @@ body {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    
+
     .slider-controls-container {
         bottom: 15px;
         /* Adjust for smaller screens */
@@ -832,7 +830,7 @@ body {
 }
 
 .dot.active {
-    background-color:rgb(71, 160, 233);
+    background-color: rgb(71, 160, 233);
     transform: scale(1.2);
 }
 
@@ -932,7 +930,7 @@ body {
 .price-section {
     position: inherit;
     margin-top: -420px;
-        padding-bottom: 3vh;
+    padding-bottom: 3vh;
 }
 
 .price-button {
@@ -962,7 +960,7 @@ body {
     padding: 10px 20px;
     border-radius: 65px;
     font-size: 1rem;
-     height: 5.74vh;
+    height: 5.74vh;
     width: 20.46vh;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1004,32 +1002,32 @@ body {
 @media (max-width: 480px) {
 
     .price-button {
-    background-color: #2b6cb0;
-    /* Blue color from image */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 65px;
-    margin-right: 10px;
-    height: 5.74vh;
+        background-color: #2b6cb0;
+        /* Blue color from image */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 65px;
+        margin-right: 10px;
+        height: 5.74vh;
         width: 19.46vh;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
 
-.buy-button {
-    background-color: #ffffff;
-    color: #2b6cb0;
-    border: 2px solid #2b6cb0;
-    padding: 10px 20px;
-    border-radius: 65px;
-    font-size: 1rem;
-     height: 5.74vh;
+    .buy-button {
+        background-color: #ffffff;
+        color: #2b6cb0;
+        border: 2px solid #2b6cb0;
+        padding: 10px 20px;
+        border-radius: 65px;
+        font-size: 1rem;
+        height: 5.74vh;
         width: 19.46vh;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
 
 
 
@@ -1049,7 +1047,7 @@ body {
     .price-button,
     .buy-button {
         padding: 8px 15px;
-                font-size: 11px;
+        font-size: 11px;
     }
 
     .specs-container {
@@ -1116,8 +1114,10 @@ body {
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
-    height: 28.33vh; /* Adjust based on your viewport height */
-  width: 39.72vh; /* Adjust based on your viewport height */
+    height: 28.33vh;
+    /* Adjust based on your viewport height */
+    width: 39.72vh;
+    /* Adjust based on your viewport height */
     box-sizing: border-box;
 }
 
@@ -1169,7 +1169,7 @@ body {
 
 .slider-controls {
     display: flex;
-        padding-right: 6vh;
+    padding-right: 6vh;
 
 }
 
@@ -1192,9 +1192,9 @@ body {
 
 @media (max-width: 768px) {
     .slider-controls {
-    display: flex;
-    padding-right: 0vh;
-}
+        display: flex;
+        padding-right: 0vh;
+    }
 
     #fourth-page {
         padding: 30px 0;
@@ -1263,12 +1263,13 @@ body {
         height: 40px;
         font-size: 1rem;
     }
+
     .features-slider-container {
-    width: 96%;
-    position: relative;
-    overflow-x: hidden !important;
-    /* Strictly enforce overflow hiding */
-}
+        width: 96%;
+        position: relative;
+        overflow-x: hidden !important;
+        /* Strictly enforce overflow hiding */
+    }
 }
 
 /* ========== SIXTH PAGE (FOOTER) ========== */
@@ -1370,7 +1371,7 @@ body {
 }
 
 .link-group a:hover {
-    color:rgb(71, 160, 233);
+    color: rgb(71, 160, 233);
 }
 
 /* ========== ANIMATIONS ========== */
@@ -1806,7 +1807,7 @@ body {
     }
 
     #electron-video {
-        
+
         max-width: 163%;
         padding-right: 18px;
         border-radius: 8px;
@@ -1815,7 +1816,7 @@ body {
 }
 
 @media (max-width: 480px) {
-   
+
 
     .slider-container1 {
         position: static;
@@ -1836,11 +1837,11 @@ body {
     }
 
     #subtitle {
-       font-size: 16px;
+        font-size: 16px;
         position: static;
         /* margin-top: 5px; */
         /* max-width: 130%; */
-                padding-top: 0vh;
+        padding-top: 0vh;
         width: 76vh;
     }
 
@@ -2084,6 +2085,8 @@ body {
     width: 24px;
     height: 24px;
     vertical-align: middle;
+        filter: grayscale(100%) brightness(0%);
+
 }
 
 /* Style for the label (e.g., "CPU") */
@@ -2091,19 +2094,19 @@ body {
     font-weight: 500;
     color: #333;
     min-width: 80px;
-        font-size: 22px;
+    font-size: 22px;
+    width: 16vh;
 
-    /* Ensures consistent spacing between label and description */
 }
 
-/* Style for the description (e.g., "2.4 GHz hex-core CPU") */
 .spec-desc {
     font-weight: 400;
     color: #666;
-        font-size: 16px;
+    font-size: 16px;
 
-    /* Lighter color to distinguish from the label */
-    margin-left: 100px;
+    width: 26vh;
+    display: flex;
+    justify-content: center;
 }
 
 /* Responsive adjustments */
@@ -2279,7 +2282,7 @@ body {
     overflow: hidden;
     border-radius: 12px;
     /* Static depth shadow for popped-up box effect */
-  
+
     /* Solid background for card effect */
     z-index: 1;
 }
@@ -2290,8 +2293,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
@@ -2302,7 +2304,7 @@ body {
 }
 
 #second-page .slide-img {
-    
+
     object-fit: cover;
 }
 
@@ -2332,25 +2334,25 @@ body {
 /* Responsive adjustments for second page slider */
 @media (max-width: 1200px) {
     #second-page {
-    position: relative;
-    width: 100%;
-    padding: 0px 20px;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    height: 54vh;
-    /* Match slides-container height */
-}
+        position: relative;
+        width: 100%;
+        padding: 0px 20px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        height: 54vh;
+        /* Match slides-container height */
+    }
 
 
-#second-page .slides-wrapper {
+    #second-page .slides-wrapper {
         width: 100%;
         height: 52vh;
-    overflow: hidden;
-    /* padding: 0 10px; */
-    padding: 0 10px;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-}
+        overflow: hidden;
+        /* padding: 0 10px; */
+        padding: 0 10px;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+    }
 
     #second-page .slides-container {
         display: flex;
@@ -2386,12 +2388,13 @@ body {
 
 @media (max-width: 480px) {
     #second-page .slides-wrapper {
-    width: 100%;
+        width: 100%;
         height: 58vh;
-    overflow: hidden;
-    position: relative;
-    padding: 0 10px;
-}
+        overflow: hidden;
+        position: relative;
+        padding: 0 10px;
+    }
+
     #second-page {
         position: relative;
         width: 100%;
@@ -2428,23 +2431,30 @@ body {
 /* second page css ends */
 @media (max-width: 375px) {
     #second-page .slides-wrapper {
-    width: 100%;
-    height: 70vh;
-    overflow: hidden;
-    position: relative;
-    padding: 0 10px;
-}}
+        width: 100%;
+        height: 70vh;
+        overflow: hidden;
+        position: relative;
+        padding: 0 10px;
+    }
+}
+
 /* Second Page Slider Text Alignment */
 
 #second-page .slide-content h3 {
-    font-size: 20px; /* Slightly smaller than text-xl for better fit */
+    font-size: 20px;
+    /* Slightly smaller than text-xl for better fit */
     font-weight: bold;
     margin-bottom: 18px;
     color: #ffffff;
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Add ellipsis for long titles */
-    max-width: 100%; /* Ensure it stays within slide width */
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    overflow: hidden;
+    /* Hide overflow */
+    text-overflow: ellipsis;
+    /* Add ellipsis for long titles */
+    max-width: 100%;
+    /* Ensure it stays within slide width */
 }
 
 #second-page .slide-content p {
@@ -2458,12 +2468,12 @@ body {
 /* Ensure slide dimensions and layout are consistent */
 #second-page .slide {
     height: 49.07vh;
-  width: 20.78vw;
+    width: 20.78vw;
     position: relative;
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 12px;
-   
+
     z-index: 1;
 }
 
@@ -2471,7 +2481,7 @@ body {
 @media (max-width: 1200px) {
     #second-page .slide {
         width: 300px;
-        height:fit-content;
+        height: fit-content;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.15);
     }
 
@@ -2480,12 +2490,14 @@ body {
     }
 
     #second-page .slide-content h3 {
-        font-size: 1.1rem; /* Smaller font to fit in one line */
+        font-size: 1.1rem;
+        /* Smaller font to fit in one line */
     }
 
     #second-page .slide-content p {
         font-size: 0.85rem;
-        max-width: 85%; /* Slightly wider for smaller slides */
+        max-width: 85%;
+        /* Slightly wider for smaller slides */
     }
 }
 
@@ -2497,12 +2509,14 @@ body {
     }
 
     #second-page .slide-content h3 {
-        font-size: 1rem; /* Further reduced for smaller screens */
+        font-size: 1rem;
+        /* Further reduced for smaller screens */
     }
 
     #second-page .slide-content p {
         font-size: 0.8rem;
-        max-width: 90%; /* Adjust for narrower slides */
+        max-width: 90%;
+        /* Adjust for narrower slides */
     }
 }
 
@@ -2535,14 +2549,16 @@ body {
     }
 
     #second-page .slide-content h3 {
-        font-size: 0.95rem; /* Small enough to fit in one line on mobile */
+        font-size: 0.95rem;
+        /* Small enough to fit in one line on mobile */
         margin-bottom: 8px;
     }
 
     #second-page .slide-content p {
         font-size: 0.75rem;
         line-height: 25px;
-        max-width: 100%; /* Maximize width for single slide */
+        max-width: 100%;
+        /* Maximize width for single slide */
     }
 }
 
@@ -2552,7 +2568,8 @@ body {
     }
 
     #second-page .slide-content h3 {
-        font-size: 0.9rem; /* Further adjustment for very small screens */
+        font-size: 0.9rem;
+        /* Further adjustment for very small screens */
     }
 
     #second-page .slide-content p {
