@@ -620,6 +620,7 @@
 //   });
 // }); working code
 
+
 document.addEventListener('DOMContentLoaded', async () => {
   // Debugging setup
   const debugContainer = document.createElement('div');
@@ -635,7 +636,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     max-width: 400px;
     max-height: 200px;
     overflow: auto;
-    display: none; /* Hide by default */
+    display: none;
   `;
   document.body.appendChild(debugContainer);
 
@@ -644,25 +645,39 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log(message);
   }
 
+  // Sanitize non-HTML content to prevent XSS
+  function sanitizeHTML(str) {
+    const div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML;
+  }
+
+  // Convert plain text to structured HTML
+  function formatContent(content) {
+    if (!content) return '<p>No content available.</p>';
+    if (content.trim().startsWith('<') && content.trim().includes('>')) {
+      return content; // Already HTML
+    }
+    // Split plain text by newlines and wrap in paragraphs
+    return content.split('\n').map(line => `<p>${sanitizeHTML(line.trim())}</p>`).join('');
+  }
+
   try {
     debugLog('Starting blog loading...');
     
-    // Try Node server first, then fallback to local JSON
+    // Fetch blogs
     let allBlogs = [];
     let dataSource = 'server';
     
     try {
       debugLog('Attempting to fetch from server...');
       const response = await fetch('http://localhost:3001/api/blogs?_=' + Date.now());
-      
       if (!response.ok) throw new Error(`Server error: ${response.status}`);
-      
       allBlogs = await response.json();
       debugLog(`Loaded ${allBlogs.length} blogs from server`);
     } catch (serverError) {
       debugLog(`Server fetch failed: ${serverError.message}`);
       dataSource = 'fallback';
-      
       try {
         debugLog('Attempting fallback to local JSON...');
         const fallbackResponse = await fetch('../data/blogs.json');
@@ -673,8 +688,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     }
 
-    // ===== 1. FEATURE INSIGHTS (Main Grid) =====
-    debugLog('Rendering main blog grid...');
+    // Initialize elements
     const insightsContainer = document.querySelector('#second-page .cards');
     const showMoreBtn = document.querySelector('.show-more-btn');
     const searchInput = document.querySelector('.search-input');
@@ -694,13 +708,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function getFilteredBlogs() {
       let blogs = allBlogs;
-      
-      // Apply category filter if not All
       if (currentCategory !== 'All Insight') {
         blogs = blogs.filter(blog => blog.category === currentCategory);
       }
-      
-      // Apply search filter if query exists
       if (searchQuery) {
         blogs = blogs.filter(blog => 
           (blog.title?.toLowerCase().includes(searchQuery) ?? false) ||
@@ -710,7 +720,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           (blog.author?.toLowerCase().includes(searchQuery) ?? false)
         );
       }
-      
       return blogs;
     }
 
@@ -718,44 +727,42 @@ document.addEventListener('DOMContentLoaded', async () => {
       insightsContainer.innerHTML = blogs.slice(0, visibleCount).map(blog => {
         const imageFile = blog.image || 'default-author.jpg';
         const imagePath = `${dataSource === 'server' ? 'http://localhost:3001/uploads/' : './assets/'}${imageFile}`;
-        console.log(`Loading image: ${imagePath}`); // Debug log
         return `
           <div class="card">
             <div class="card-header" style="background-color: #19529a;">
-              <h2>${blog.title}</h2>
+              <h2>${sanitizeHTML(blog.title)}</h2>
             </div>
             <div class="card-body">
-              <p class="category">${blog.category}</p>
-              <h3>${blog.subtitle || ''}</h3>
-              <p>${blog.content?.substring(0, 100) || ''}...</p>
+              <p class="category">${sanitizeHTML(blog.category)}</p>
+              <h3>${sanitizeHTML(blog.subtitle || '')}</h3>
+              <p>${sanitizeHTML(blog.content?.substring(0, 100).replace(/<[^>]+>/g, '') || '')}...</p>
               <div class="author">
                 <img src="${imagePath}" 
-                     alt="${blog.author || 'Author'}"
-                     onerror="this.src='./assets/default-author.jpg'; console.error('Failed to load image: ${imagePath}');">
-                <span>${blog.author || 'Anonymous'}<br>${blog.position || 'Writer'}</span>
+                     alt="${sanitizeHTML(blog.author || 'Author')}"
+                     onerror="this.src='./assets/default-author.jpg';">
+                <span>${sanitizeHTML(blog.author || 'Anonymous')}<br>${sanitizeHTML(blog.position || 'Writer')}</span>
               </div>
-              <p class="date">${blog.date || new Date().toLocaleDateString()}</p>
-              <a href="#" class="read-more" data-slug="${blog.slug}">Read more →</a>
+              <p class="date">${sanitizeHTML(blog.date || new Date('2025-08-13T12:00:00+05:30').toLocaleDateString())}</p>
+              <a href="#" class="read-more" data-slug="${sanitizeHTML(blog.slug)}">Read more →</a>
             </div>
           </div>
         `;
       }).join('');
       showMoreBtn.style.display = visibleCount >= blogs.length ? 'none' : 'block';
 
-      // Add event listeners to "Read more" links
       document.querySelectorAll('.read-more').forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
           const slug = link.getAttribute('data-slug');
           const blog = allBlogs.find(b => b.slug === slug);
           if (blog) {
-            blogTitle.textContent = blog.title;
+            blogTitle.textContent = blog.title || 'Untitled';
             blogSubtitle.textContent = blog.subtitle || '';
             blogAuthorImg.src = `${dataSource === 'server' ? 'http://localhost:3001/uploads/' : './assets/'}${blog.image || 'default-author.jpg'}`;
             blogAuthorImg.onerror = () => { blogAuthorImg.src = './assets/default-author.jpg'; };
-            blogAuthor.innerHTML = `${blog.author || 'Anonymous'}<br>${blog.position || 'Writer'}`;
-            blogDate.textContent = blog.date || new Date().toLocaleDateString();
-            blogContent.innerHTML = blog.content || 'No content available.';
+            blogAuthor.innerHTML = `${sanitizeHTML(blog.author || 'Anonymous')}<br>${sanitizeHTML(blog.position || 'Writer')}`;
+            blogDate.textContent = blog.date || new Date('2025-08-13T12:00:00+05:30').toLocaleDateString();
+            blogContent.innerHTML = formatContent(blog.content);
             blogPopup.classList.add('active');
             debugLog(`Opened popup for blog: ${blog.title}`);
           }
@@ -763,45 +770,38 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     }
 
-    // Close popup functionality
     function closePopup() {
-      blogPopup.classList.remove('active');
+      const popupContent = blogPopup.querySelector('.blog-popup-content');
+      popupContent.style.opacity = '0';
+      popupContent.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        blogPopup.classList.remove('active');
+        popupContent.style.opacity = '0';
+        popupContent.style.transform = 'translateY(20px)';
+      }, 400);
       debugLog('Popup closed');
     }
 
     closeBtn.addEventListener('click', closePopup);
-
-    // Close on outside click
     blogPopup.addEventListener('click', (e) => {
-      if (e.target === blogPopup) {
-        closePopup();
-      }
+      if (e.target === blogPopup) closePopup();
     });
-
-    // Close on Escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && blogPopup.classList.contains('active')) {
-        closePopup();
-      }
+      if (e.key === 'Escape' && blogPopup.classList.contains('active')) closePopup();
     });
 
-    // Initial render
     currentDisplayedBlogs = getFilteredBlogs();
     renderInsights(currentDisplayedBlogs);
 
-    // Show More button
     showMoreBtn.addEventListener('click', () => {
       visibleCount += 3;
       renderInsights(currentDisplayedBlogs);
     });
 
-    // ===== 2. CATEGORY FILTERS =====
     document.querySelectorAll('.category-buttons button').forEach(button => {
       button.addEventListener('click', () => {
-        document.querySelectorAll('.category-buttons button').forEach(btn => 
-          btn.classList.remove('active'));
+        document.querySelectorAll('.category-buttons button').forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
-        
         currentCategory = button.textContent;
         currentDisplayedBlogs = getFilteredBlogs();
         visibleCount = 6;
@@ -809,22 +809,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     });
 
-    // ===== 3. SEARCH FUNCTIONALITY =====
     function performSearch() {
       searchQuery = searchInput.value.trim().toLowerCase();
       currentDisplayedBlogs = getFilteredBlogs();
       visibleCount = 6;
       renderInsights(currentDisplayedBlogs);
     }
-
-    // Search on button click
     searchButton.addEventListener('click', performSearch);
-
-    // Search on Enter key
     searchInput.addEventListener('keyup', (e) => {
-      if (e.key === 'Enter') {
-        performSearch();
-      }
+      if (e.key === 'Enter') performSearch();
     });
 
     debugLog('Blog rendering complete!');
@@ -832,8 +825,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   } catch (error) {
     debugLog(`Fatal error: ${error.message}`);
     console.error("Error loading blogs:", error);
-    
-    // Show error message in the UI
     const errorContainer = document.createElement('div');
     errorContainer.className = 'blog-error';
     errorContainer.style.cssText = `
@@ -858,7 +849,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelector('#second-page .container').prepend(errorContainer);
   }
 
-  // Toggle debug view with Ctrl+Shift+D
   document.addEventListener('keydown', (e) => {
     if (e.ctrlKey && e.shiftKey && e.key === 'D') {
       debugContainer.style.display = debugContainer.style.display === 'none' ? 'block' : 'none';
