@@ -575,13 +575,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemWidth = phoneItems[0]?.offsetWidth || 300;
     let currentIndex = 0;
 
-    // Function to disable touch scrolling
-    function preventTouchScroll(e) {
-        e.preventDefault();
-    }
+    // CSS to allow vertical scrolling but block horizontal
+    phoneGrid.style.touchAction = 'pan-y'; // Allow vertical touch scrolling
+    phoneGrid.style.overflowX = 'hidden'; // Hide horizontal scrollbar
+    phoneGrid.style.overscrollBehaviorX = 'contain'; // Prevent horizontal overscroll
 
-    // Add touch event listeners to prevent scrolling
-    phoneGrid.addEventListener('touchmove', preventTouchScroll, { passive: false });
+    // Prevent horizontal touch scrolling
+    phoneGrid.addEventListener('touchstart', (e) => {
+        this.touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    phoneGrid.addEventListener('touchmove', (e) => {
+        const touchX = e.touches[0].clientX;
+        const diffX = this.touchStartX - touchX;
+        
+        // If horizontal movement is dominant, prevent it
+        if (Math.abs(diffX) > 5) { // Threshold of 5px
+            e.preventDefault();
+        }
+        // Vertical scrolling will work normally
+    }, { passive: false });
 
     // Scroll to a specific slide
     function goToSlide(index) {
