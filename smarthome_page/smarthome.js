@@ -565,65 +565,41 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const phoneGrid = document.querySelector('.phone-grid');
     const navDots = document.querySelectorAll('.nav-dot');
     
-    if (!phoneGrid || !navDots.length) {
-        console.warn('Phone grid or navigation dots not found!');
-        return;
-    }
+    if (!phoneGrid || !navDots.length) return;
 
-    // Get all phone items
-    const phoneItems = Array.from(phoneGrid.querySelectorAll('.phone-item'));
-    const itemCount = phoneItems.length;
-    const itemWidth = phoneItems[0] ? phoneItems[0].offsetWidth : 300;
-    
-    // Track current position
+    const phoneItems = phoneGrid.querySelectorAll('.phone-item');
+    const itemWidth = phoneItems[0]?.offsetWidth || 300;
     let currentIndex = 0;
 
-    // Function to scroll to specific index
-    function scrollToIndex(index) {
-        // Ensure index stays within bounds
-        currentIndex = Math.max(0, Math.min(index, itemCount - 1));
-        
-        // Calculate scroll position
-        const scrollPos = currentIndex * itemWidth;
-        
+    // Function to disable touch scrolling
+    function preventTouchScroll(e) {
+        e.preventDefault();
+    }
+
+    // Add touch event listeners to prevent scrolling
+    phoneGrid.addEventListener('touchmove', preventTouchScroll, { passive: false });
+
+    // Scroll to a specific slide
+    function goToSlide(index) {
+        currentIndex = Math.max(0, Math.min(index, phoneItems.length - 1));
         phoneGrid.scrollTo({
-            left: scrollPos,
+            left: currentIndex * itemWidth,
             behavior: 'smooth'
         });
     }
 
-    // Navigation dot click handler
+    // Dot navigation controls
     navDots.forEach(dot => {
         dot.addEventListener('click', () => {
             const direction = dot.dataset.direction;
-            
-            if (direction === 'left') {
-                scrollToIndex(currentIndex - 1);
-            } else {
-                scrollToIndex(currentIndex + 1);
-            }
+            goToSlide(direction === 'left' ? currentIndex - 1 : currentIndex + 1);
         });
     });
 
-    // Disable manual scrolling
-    phoneGrid.style.overflowX = 'hidden';
-    
-    // Prevent touch events
-    phoneGrid.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-    }, { passive: false });
-    
-    phoneGrid.addEventListener('touchmove', (e) => {
-        e.preventDefault();
-    }, { passive: false });
-
-    // Initialize first item position
-    scrollToIndex(0);
+    // Initialize first slide
+    goToSlide(0);
 });
-
