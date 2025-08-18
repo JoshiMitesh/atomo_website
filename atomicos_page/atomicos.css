@@ -579,6 +579,8 @@ body {
         padding: 92px 0;
     }
 
+    
+
     #navbar a {
         font-size: 1rem;
         padding: 13px 1px;
@@ -1699,7 +1701,7 @@ body {
     }
 
     #navbar ul.active {
-        max-height: 449px;
+        max-height: 494px;
         padding: 94px 0;
     }
 

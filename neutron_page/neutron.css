@@ -1725,14 +1725,11 @@ body {
         border: none;
     }
 
-    #navbar ul.active {
-        max-height: 474px;
-        padding: 10px 0;
-
+   #navbar ul.active {
+        max-height: 509px;
+        padding: 0px 0;
         background-color: white;
-        /* Ensure solid white background when active */
         opacity: 1;
-        /* Reinforce full opacity when active */
     }
 
     #navbar a {

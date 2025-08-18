@@ -400,227 +400,6 @@
 //   });
 // }); main code Aug 12
 
-// document.addEventListener('DOMContentLoaded', async () => {
-//   // Debugging setup
-//   const debugContainer = document.createElement('div');
-//   debugContainer.style.cssText = `
-//     position: fixed;
-//     bottom: 10px;
-//     right: 10px;
-//     background: rgba(0,0,0,0.8);
-//     color: white;
-//     padding: 15px;
-//     z-index: 9999;
-//     font-family: monospace;
-//     max-width: 400px;
-//     max-height: 200px;
-//     overflow: auto;
-//     display: none; /* Hide by default */
-//   `;
-//   document.body.appendChild(debugContainer);
-
-//   function debugLog(message) {
-//     debugContainer.innerHTML += `<div>${new Date().toLocaleTimeString()}: ${message}</div>`;
-//     console.log(message);
-//   }
-
-//   try {
-//     debugLog('Starting blog loading...');
-    
-//     // Try Node server first, then fallback to local JSON
-//     let allBlogs = [];
-//     let dataSource = 'server';
-    
-//     try {
-//       debugLog('Attempting to fetch from server...');
-//       const response = await fetch('http://localhost:3001/api/blogs?_=' + Date.now());
-      
-//       if (!response.ok) throw new Error(`Server error: ${response.status}`);
-      
-//       allBlogs = await response.json();
-//       debugLog(`Loaded ${allBlogs.length} blogs from server`);
-//     } catch (serverError) {
-//       debugLog(`Server fetch failed: ${serverError.message}`);
-//       dataSource = 'fallback';
-      
-//       try {
-//         debugLog('Attempting fallback to local JSON...');
-//         const fallbackResponse = await fetch('../data/blogs.json');
-//         allBlogs = await fallbackResponse.json();
-//         debugLog(`Loaded ${allBlogs.length} blogs from fallback`);
-//       } catch (fallbackError) {
-//         throw new Error(`Both server and fallback failed: ${fallbackError.message}`);
-//       }
-//     }
-
-//     // ===== 1. FEATURED BLOGS (Top Section) =====
-//     // Uncomment and adjust if you want to enable featured blogs
-//     // debugLog('Rendering featured blogs...');
-//     // const featuredBlogs = allBlogs.filter(blog => blog.featured);
-//     // const featuredContainer = document.querySelector('.content .cards');
-
-//     // if (featuredBlogs.length > 0) {
-//     //   featuredContainer.innerHTML = `
-//     //     <div class="card highlight">
-//     //       <div class="highlight-content">
-//     //         <h2>${featuredBlogs[0].title}</h2>
-//     //         <p>${featuredBlogs[0].subtitle || ''}</p>
-//     //         <a href="blog-detail.html?slug=${featuredBlogs[0].slug}">Read more →</a>
-//     //       </div>
-//     //     </div>
-//     //     <div class="card info">
-//     //       <p>${featuredBlogs[1]?.category || 'Featured'} · ${featuredBlogs[1]?.date || ''}</p>
-//     //       <h2>${featuredBlogs[1]?.title || 'Featured Blog'}</h2>
-//     //       <p>${featuredBlogs[1]?.subtitle || ''}</p>
-//     //       <a href="blog-detail.html?slug=${featuredBlogs[1]?.slug || ''}">Read more →</a>
-//     //     </div>
-//     //   `;
-//     // }
-
-//     // ===== 2. FEATURE INSIGHTS (Main Grid) =====
-//     debugLog('Rendering main blog grid...');
-//     const insightsContainer = document.querySelector('#second-page .cards');
-//     const showMoreBtn = document.querySelector('.show-more-btn');
-//     const searchInput = document.querySelector('.search-input');
-//     const searchButton = document.querySelector('.search-button');
-//     let visibleCount = 6;
-//     let currentCategory = 'All Insight';
-//     let searchQuery = '';
-//     let currentDisplayedBlogs = allBlogs;
-
-//     function getFilteredBlogs() {
-//       let blogs = allBlogs;
-      
-//       // Apply category filter if not All
-//       if (currentCategory !== 'All Insight') {
-//         blogs = blogs.filter(blog => blog.category === currentCategory);
-//       }
-      
-//       // Apply search filter if query exists
-//       if (searchQuery) {
-//         blogs = blogs.filter(blog => 
-//           (blog.title?.toLowerCase().includes(searchQuery) ?? false) ||
-//           (blog.subtitle?.toLowerCase().includes(searchQuery) ?? false) ||
-//           (blog.content?.toLowerCase().includes(searchQuery) ?? false) ||
-//           (blog.category?.toLowerCase().includes(searchQuery) ?? false) ||
-//           (blog.author?.toLowerCase().includes(searchQuery) ?? false)
-//         );
-//       }
-      
-//       return blogs;
-//     }
-
-//     function renderInsights(blogs) {
-//       insightsContainer.innerHTML = blogs.slice(0, visibleCount).map(blog => {
-//         const imageFile = blog.image || 'default-author.jpg';
-//         const imagePath = `${dataSource === 'server' ? 'http://localhost:3001/uploads/' : './assets/'}${imageFile}`;
-//         console.log(`Loading image: ${imagePath}`); // Debug log
-//         return `
-//           <div class="card">
-//             <div class="card-header" style="background-color: #19529a;">
-//               <h2>${blog.title}</h2>
-//             </div>
-//             <div class="card-body">
-//               <p class="category">${blog.category}</p>
-//               <h3>${blog.subtitle || ''}</h3>
-//               <p>${blog.content?.substring(0, 100) || ''}...</p>
-//               <div class="author">
-//                 <img src="${imagePath}" 
-//                      alt="${blog.author || 'Author'}"
-//                      onerror="this.src='./assets/default-author.jpg'; console.error('Failed to load image: ${imagePath}');">
-//                 <span>${blog.author || 'Anonymous'}<br>${blog.position || 'Writer'}</span>
-//               </div>
-//               <p class="date">${blog.date || new Date().toLocaleDateString()}</p>
-//               <a href="blog-detail.html?slug=${blog.slug}" class="read-more">Read more →</a>
-//             </div>
-//           </div>
-//         `;
-//       }).join('');
-//       showMoreBtn.style.display = visibleCount >= blogs.length ? 'none' : 'block';
-//     }
-
-//     // Initial render
-//     currentDisplayedBlogs = getFilteredBlogs();
-//     renderInsights(currentDisplayedBlogs);
-
-//     // Show More button
-//     showMoreBtn.addEventListener('click', () => {
-//       visibleCount += 3;
-//       renderInsights(currentDisplayedBlogs);
-//     });
-
-//     // ===== 3. CATEGORY FILTERS =====
-//     document.querySelectorAll('.category-buttons button').forEach(button => {
-//       button.addEventListener('click', () => {
-//         document.querySelectorAll('.category-buttons button').forEach(btn => 
-//           btn.classList.remove('active'));
-//         button.classList.add('active');
-        
-//         currentCategory = button.textContent;
-//         currentDisplayedBlogs = getFilteredBlogs();
-//         visibleCount = 6;
-//         renderInsights(currentDisplayedBlogs);
-//       });
-//     });
-
-//     // ===== 4. SEARCH FUNCTIONALITY =====
-//     function performSearch() {
-//       searchQuery = searchInput.value.trim().toLowerCase();
-//       currentDisplayedBlogs = getFilteredBlogs();
-//       visibleCount = 6;
-//       renderInsights(currentDisplayedBlogs);
-//     }
-
-//     // Search on button click
-//     searchButton.addEventListener('click', performSearch);
-
-//     // Search on Enter key
-//     searchInput.addEventListener('keyup', (e) => {
-//       if (e.key === 'Enter') {
-//         performSearch();
-//       }
-//     });
-
-//     debugLog('Blog rendering complete!');
-
-//   } catch (error) {
-//     debugLog(`Fatal error: ${error.message}`);
-//     console.error("Error loading blogs:", error);
-    
-//     // Show error message in the UI
-//     const errorContainer = document.createElement('div');
-//     errorContainer.className = 'blog-error';
-//     errorContainer.style.cssText = `
-//       background: #ffebee;
-//       color: #c62828;
-//       padding: 20px;
-//       margin: 20px;
-//       border-radius: 8px;
-//     `;
-//     errorContainer.innerHTML = `
-//       <h3>⚠️ Blog Loading Error</h3>
-//       <p>${error.message}</p>
-//       <button onclick="location.reload()" style="
-//         background: #c62828;
-//         color: white;
-//         border: none;
-//         padding: 8px 16px;
-//         border-radius: 4px;
-//         cursor: pointer;
-//       ">Retry</button>
-//     `;
-//     document.querySelector('#second-page .container').prepend(errorContainer);
-//   }
-
-//   // Toggle debug view with Ctrl+Shift+D
-//   document.addEventListener('keydown', (e) => {
-//     if (e.ctrlKey && e.shiftKey && e.key === 'D') {
-//       debugContainer.style.display = debugContainer.style.display === 'none' ? 'block' : 'none';
-//     }
-//   });
-// }); working code
-
-
 document.addEventListener('DOMContentLoaded', async () => {
   // Debugging setup
   const debugContainer = document.createElement('div');
@@ -636,7 +415,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     max-width: 400px;
     max-height: 200px;
     overflow: auto;
-    display: none;
+    display: none; /* Hide by default */
   `;
   document.body.appendChild(debugContainer);
 
@@ -645,39 +424,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log(message);
   }
 
-  // Sanitize non-HTML content to prevent XSS
-  function sanitizeHTML(str) {
-    const div = document.createElement('div');
-    div.textContent = str || '';
-    return div.innerHTML;
-  }
-
-  // Convert plain text to structured HTML
-  function formatContent(content) {
-    if (!content) return '<p>No content available.</p>';
-    if (content.trim().startsWith('<') && content.trim().includes('>')) {
-      return content; // Already HTML
-    }
-    // Split plain text by newlines and wrap in paragraphs
-    return content.split('\n').map(line => `<p>${sanitizeHTML(line.trim())}</p>`).join('');
-  }
-
   try {
     debugLog('Starting blog loading...');
     
-    // Fetch blogs
+    // Try Node server first, then fallback to local JSON
     let allBlogs = [];
     let dataSource = 'server';
     
     try {
       debugLog('Attempting to fetch from server...');
       const response = await fetch('http://localhost:3001/api/blogs?_=' + Date.now());
+      
       if (!response.ok) throw new Error(`Server error: ${response.status}`);
+      
       allBlogs = await response.json();
       debugLog(`Loaded ${allBlogs.length} blogs from server`);
     } catch (serverError) {
       debugLog(`Server fetch failed: ${serverError.message}`);
       dataSource = 'fallback';
+      
       try {
         debugLog('Attempting fallback to local JSON...');
         const fallbackResponse = await fetch('../data/blogs.json');
@@ -688,19 +453,36 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     }
 
-    // Initialize elements
+    // ===== 1. FEATURED BLOGS (Top Section) =====
+    // Uncomment and adjust if you want to enable featured blogs
+    // debugLog('Rendering featured blogs...');
+    // const featuredBlogs = allBlogs.filter(blog => blog.featured);
+    // const featuredContainer = document.querySelector('.content .cards');
+
+    // if (featuredBlogs.length > 0) {
+    //   featuredContainer.innerHTML = `
+    //     <div class="card highlight">
+    //       <div class="highlight-content">
+    //         <h2>${featuredBlogs[0].title}</h2>
+    //         <p>${featuredBlogs[0].subtitle || ''}</p>
+    //         <a href="blog-detail.html?slug=${featuredBlogs[0].slug}">Read more →</a>
+    //       </div>
+    //     </div>
+    //     <div class="card info">
+    //       <p>${featuredBlogs[1]?.category || 'Featured'} · ${featuredBlogs[1]?.date || ''}</p>
+    //       <h2>${featuredBlogs[1]?.title || 'Featured Blog'}</h2>
+    //       <p>${featuredBlogs[1]?.subtitle || ''}</p>
+    //       <a href="blog-detail.html?slug=${featuredBlogs[1]?.slug || ''}">Read more →</a>
+    //     </div>
+    //   `;
+    // }
+
+    // ===== 2. FEATURE INSIGHTS (Main Grid) =====
+    debugLog('Rendering main blog grid...');
     const insightsContainer = document.querySelector('#second-page .cards');
     const showMoreBtn = document.querySelector('.show-more-btn');
     const searchInput = document.querySelector('.search-input');
     const searchButton = document.querySelector('.search-button');
-    const blogPopup = document.getElementById('blog-popup');
-    const blogTitle = document.getElementById('blog-title');
-    const blogSubtitle = document.getElementById('blog-subtitle');
-    const blogAuthorImg = document.getElementById('blog-author-img');
-    const blogAuthor = document.getElementById('blog-author');
-    const blogDate = document.getElementById('blog-date');
-    const blogContent = document.getElementById('blog-content');
-    const closeBtn = document.querySelector('.blog-popup-content .close-btn');
     let visibleCount = 6;
     let currentCategory = 'All Insight';
     let searchQuery = '';
@@ -708,9 +490,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function getFilteredBlogs() {
       let blogs = allBlogs;
+      
+      // Apply category filter if not All
       if (currentCategory !== 'All Insight') {
         blogs = blogs.filter(blog => blog.category === currentCategory);
       }
+      
+      // Apply search filter if query exists
       if (searchQuery) {
         blogs = blogs.filter(blog => 
           (blog.title?.toLowerCase().includes(searchQuery) ?? false) ||
@@ -720,88 +506,126 @@ document.addEventListener('DOMContentLoaded', async () => {
           (blog.author?.toLowerCase().includes(searchQuery) ?? false)
         );
       }
+      
       return blogs;
     }
 
     function renderInsights(blogs) {
-      insightsContainer.innerHTML = blogs.slice(0, visibleCount).map(blog => {
+    insightsContainer.innerHTML = blogs.slice(0, visibleCount).map(blog => {
         const imageFile = blog.image || 'default-author.jpg';
         const imagePath = `${dataSource === 'server' ? 'http://localhost:3001/uploads/' : './assets/'}${imageFile}`;
+        
         return `
-          <div class="card">
-            <div class="card-header" style="background-color: #19529a;">
-              <h2>${sanitizeHTML(blog.title)}</h2>
+            <div class="card">
+                <div class="card-header" style="background-color: #19529a;">
+                    <h2>${blog.title}</h2>
+                </div>
+                <div class="card-body">
+                    <p class="category">${blog.category}</p>
+                    <h3>${blog.subtitle || ''}</h3>
+                    <p>${blog.content?.substring(0, 100) || ''}...</p>
+                    <div class="author">
+                        <img src="${imagePath}" 
+                             alt="${blog.author || 'Author'}"
+                             onerror="this.src='./assets/default-author.jpg'; console.error('Failed to load image: ${imagePath}');">
+                        <span>${blog.author || 'Anonymous'}<br>${blog.position || 'Writer'}</span>
+                    </div>
+                    <p class="date">${blog.date || new Date().toLocaleDateString()}</p>
+                    <a href="#" class="read-more" data-blog-id="${blog.id || blog.slug}">Read more →</a>
+                </div>
             </div>
-            <div class="card-body">
-              <p class="category">${sanitizeHTML(blog.category)}</p>
-              <h3>${sanitizeHTML(blog.subtitle || '')}</h3>
-              <p>${sanitizeHTML(blog.content?.substring(0, 100).replace(/<[^>]+>/g, '') || '')}...</p>
-              <div class="author">
-                <img src="${imagePath}" 
-                     alt="${sanitizeHTML(blog.author || 'Author')}"
-                     onerror="this.src='./assets/default-author.jpg';">
-                <span>${sanitizeHTML(blog.author || 'Anonymous')}<br>${sanitizeHTML(blog.position || 'Writer')}</span>
-              </div>
-              <p class="date">${sanitizeHTML(blog.date || new Date('2025-08-13T12:00:00+05:30').toLocaleDateString())}</p>
-              <a href="#" class="read-more" data-slug="${sanitizeHTML(blog.slug)}">Read more →</a>
-            </div>
-          </div>
         `;
-      }).join('');
-      showMoreBtn.style.display = visibleCount >= blogs.length ? 'none' : 'block';
+    }).join('');
 
-      document.querySelectorAll('.read-more').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const slug = link.getAttribute('data-slug');
-          const blog = allBlogs.find(b => b.slug === slug);
-          if (blog) {
-            blogTitle.textContent = blog.title || 'Untitled';
-            blogSubtitle.textContent = blog.subtitle || '';
-            blogAuthorImg.src = `${dataSource === 'server' ? 'http://localhost:3001/uploads/' : './assets/'}${blog.image || 'default-author.jpg'}`;
-            blogAuthorImg.onerror = () => { blogAuthorImg.src = './assets/default-author.jpg'; };
-            blogAuthor.innerHTML = `${sanitizeHTML(blog.author || 'Anonymous')}<br>${sanitizeHTML(blog.position || 'Writer')}`;
-            blogDate.textContent = blog.date || new Date('2025-08-13T12:00:00+05:30').toLocaleDateString();
-            blogContent.innerHTML = formatContent(blog.content);
-            blogPopup.classList.add('active');
-            debugLog(`Opened popup for blog: ${blog.title}`);
-          }
+    // Add click handlers to all "Read more" buttons
+    document.querySelectorAll('.read-more').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const blogId = button.getAttribute('data-blog-id');
+            const blog = allBlogs.find(b => b.id === blogId || b.slug === blogId);
+            if (blog) {
+                showBlogPopup(blog);
+            }
         });
-      });
-    }
-
-    function closePopup() {
-      const popupContent = blogPopup.querySelector('.blog-popup-content');
-      popupContent.style.opacity = '0';
-      popupContent.style.transform = 'translateY(20px)';
-      setTimeout(() => {
-        blogPopup.classList.remove('active');
-        popupContent.style.opacity = '0';
-        popupContent.style.transform = 'translateY(20px)';
-      }, 400);
-      debugLog('Popup closed');
-    }
-
-    closeBtn.addEventListener('click', closePopup);
-    blogPopup.addEventListener('click', (e) => {
-      if (e.target === blogPopup) closePopup();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && blogPopup.classList.contains('active')) closePopup();
     });
 
+    showMoreBtn.style.display = visibleCount >= blogs.length ? 'none' : 'block';
+}
+
+// Function to show the blog popup
+function showBlogPopup(blog) {
+    const popup = document.getElementById('blog-popup');
+    const imageFile = blog.image || 'default-author.jpg';
+    const imagePath = `${dataSource === 'server' ? 'http://localhost:3001/uploads/' : './assets/'}${imageFile}`;
+    
+    // Set the blog content
+    document.getElementById('blog-title').textContent = blog.title;
+    document.getElementById('blog-subtitle').textContent = blog.subtitle || '';
+    document.getElementById('blog-author-img').src = imagePath;
+    document.getElementById('blog-author').textContent = `${blog.author || 'Anonymous'}, ${blog.position || 'Writer'}`;
+    document.getElementById('blog-date').textContent = blog.date || new Date().toLocaleDateString();
+    
+    // Format the content with proper paragraphs and dashes
+    const contentElement = document.getElementById('blog-content');
+    contentElement.innerHTML = formatBlogContent(blog.content || '');
+    
+    // Show the popup
+    popup.style.display = 'block';
+    
+    // Close button handler
+    document.querySelector('.close-btn').onclick = () => {
+        popup.style.display = 'none';
+    };
+    
+    // Close when clicking outside content
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+    
+    // Close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            popup.style.display = 'none';
+        }
+    });
+}
+
+// New function to format blog content
+function formatBlogContent(content) {
+    // Add dashes to the start if they're not already there
+    if (!content.startsWith('')) {
+        content = '- ' + content;
+    }
+    
+    // Replace line breaks with paragraph breaks
+    content = content.replace(/\n/g, '</p><p>');
+    
+    // Ensure each dash starts a new paragraph
+    content = content.replace(/- /g, '</p><p>- ');
+    
+    // Wrap in paragraphs and add proper spacing
+    return `<p>${content}</p>`;
+}
+
+    // Initial render
     currentDisplayedBlogs = getFilteredBlogs();
     renderInsights(currentDisplayedBlogs);
 
+    // Show More button
     showMoreBtn.addEventListener('click', () => {
       visibleCount += 3;
       renderInsights(currentDisplayedBlogs);
     });
 
+    // ===== 3. CATEGORY FILTERS =====
     document.querySelectorAll('.category-buttons button').forEach(button => {
       button.addEventListener('click', () => {
-        document.querySelectorAll('.category-buttons button').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.category-buttons button').forEach(btn => 
+          btn.classList.remove('active'));
         button.classList.add('active');
+        
         currentCategory = button.textContent;
         currentDisplayedBlogs = getFilteredBlogs();
         visibleCount = 6;
@@ -809,15 +633,22 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     });
 
+    // ===== 4. SEARCH FUNCTIONALITY =====
     function performSearch() {
       searchQuery = searchInput.value.trim().toLowerCase();
       currentDisplayedBlogs = getFilteredBlogs();
       visibleCount = 6;
       renderInsights(currentDisplayedBlogs);
     }
+
+    // Search on button click
     searchButton.addEventListener('click', performSearch);
+
+    // Search on Enter key
     searchInput.addEventListener('keyup', (e) => {
-      if (e.key === 'Enter') performSearch();
+      if (e.key === 'Enter') {
+        performSearch();
+      }
     });
 
     debugLog('Blog rendering complete!');
@@ -825,6 +656,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   } catch (error) {
     debugLog(`Fatal error: ${error.message}`);
     console.error("Error loading blogs:", error);
+    
+    // Show error message in the UI
     const errorContainer = document.createElement('div');
     errorContainer.className = 'blog-error';
     errorContainer.style.cssText = `
@@ -849,9 +682,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelector('#second-page .container').prepend(errorContainer);
   }
 
+  // Toggle debug view with Ctrl+Shift+D
   document.addEventListener('keydown', (e) => {
     if (e.ctrlKey && e.shiftKey && e.key === 'D') {
       debugContainer.style.display = debugContainer.style.display === 'none' ? 'block' : 'none';
     }
   });
 });
+
+

@@ -1241,7 +1241,7 @@ color: #ffffff;
 
     /* Add padding only when menu is active */
     #navbar ul.active {
-        max-height: 318px;
+                max-height: 369px;
         padding: 92px 0;
     }
 

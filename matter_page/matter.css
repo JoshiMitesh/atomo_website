@@ -260,7 +260,7 @@
 
         #navbar ul {
             position: fixed;
-            top: 60px;
+            top: 15px;
             left: 0;
             width: 100%;
             flex-direction: column;
@@ -712,7 +712,7 @@
 
         #navbar ul {
             position: fixed;
-            top: 60px;
+            top: 15px;
             left: 0;
             width: 100%;
             flex-direction: column;
@@ -870,7 +870,7 @@
 
         #navbar ul {
             position: fixed;
-            top: 60px;
+            top: 15px;
             left: 0;
             width: 100%;
             flex-direction: column;
@@ -2001,7 +2001,7 @@
 
         #navbar ul {
             position: fixed;
-            top: 60px;
+            top: 15px;
             left: 0;
             width: 100%;
             flex-direction: column;
@@ -2015,10 +2015,10 @@
         }
 
         #navbar ul.active {
-            max-height: 400px;
-            position: absolute;
-            padding: 10px 0;
-        }
+                    max-height: 470px;
+        position: absolute;
+        padding: 0px 0px;
+    }
 
         #navbar li {
             width: 100%;
@@ -2032,17 +2032,18 @@
             transform: translateY(0);
         }
 
-        #navbar a {
-            font-size: 1rem;
-            padding: 18px 1px;
-            line-height: normal;
-            border-bottom: none;
-            margin: 0;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            #navbar a {
+        font-size: 1rem;
+        padding: 10px 0px;
+        line-height: normal;
+        border-bottom: none;
+        margin: 0;
+        text-align: center;
+        display: flex
+;
+        justify-content: center;
+        align-items: center;
+    }
 
 
 
