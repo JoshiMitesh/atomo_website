@@ -14,6 +14,68 @@
         rel="stylesheet">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Ensure Quill CSS for rendering formatted content -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+    <style>
+        /* Blog content styles to match publisher theme and ensure Quill formatting */
+        #blog-content {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0; /* Light text for dark background */
+            background-color: #f3f3f3; /* Dark surface */
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-y: auto;
+            max-height: 60vh; /* Prevent overflow in popup */
+        }
+        /* Ensure Quill alignment classes are applied with high specificity */
+        #blog-content p,
+        #blog-content div,
+        #blog-content ul,
+        #blog-content ol,
+        #blog-content li {
+            margin-bottom: 1rem;
+            text-align: left; /* Default alignment */
+        }
+        #blog-content .ql-align-center {
+            text-align: center !important;
+        }
+        #blog-content .ql-align-right {
+            text-align: right !important;
+        }
+        #blog-content .ql-align-justify {
+            text-align: justify !important;
+        }
+        /* Additional Quill styles for consistency */
+        #blog-content .ql-bold {
+            font-weight: 700;
+        }
+        #blog-content .ql-italic {
+            font-style: italic;
+        }
+        #blog-content .ql-underline {
+            text-decoration: underline;
+        }
+        #blog-content .ql-strike {
+            text-decoration: line-through;
+        }
+        #blog-content ul.ql-list,
+        #blog-content ol.ql-list {
+            padding-left: 2rem;
+        }
+        #blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        /* Ensure popup content area has proper spacing */
+        .blog-popup-content {
+            background-color: #000000;
+            color: #e0e0e0;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,171 +99,58 @@
                 <li><a href="/airowl_page/airowl.html">Airowl</a></li>
                 <li><a href="">Support</a></li>
                 <li><a href="/blogs/blogs.html">Blogs</a></li>
-
             </ul>
         </nav>
 
         <div class="content">
             <div class="header-text">
-                <h1>Atomo Innovation Pvt Ltd_Future with Smart Solutions
-</h1>
-                <p>Atomo Innovation Pvt. Ltd. is a forward-thinking technology company dedicated to creating cutting-edge solutions that bridge the gap between innovation and real-world impact. With a passion for excellence and a commitment to quality, we specialize in developing smart, sustainable, and user-friendly products that empower individuals and businesses alike.
-</p>
+                <h1>Atomo Innovation Pvt Ltd_Future with Smart Solutions</h1>
+                <p>Atomo Innovation Pvt. Ltd. is a forward-thinking technology company dedicated to creating cutting-edge solutions that bridge the gap between innovation and real-world impact. With a passion for excellence and a commitment to quality, we specialize in developing smart, sustainable, and user-friendly products that empower individuals and businesses alike.</p>
             </div>
             <div class="cards">
                 <div class="card highlight">
                     <div class="highlight-content">
-                        <h2>Atomo Innovation Pvt Ltd–Ideas into Impact
-</h2>
-                        <p>Atomo Innovation Pvt. Ltd. turns creative ideas into practical, high-quality solutions that make life smarter and more efficient.
-
-</p>
+                        <h2>Atomo Innovation Pvt Ltd–Ideas into Impact</h2>
+                        <p>Atomo Innovation Pvt. Ltd. turns creative ideas into practical, high-quality solutions that make life smarter and more efficient.</p>
                     </div>
                 </div>
                 <div class="card info">
                     <p>Explained Simply · Date</p>
-                    <h2>Atomo Innovation Pvt. Ltd. – Innovating for Tomorrow
-</h2>
-                    <p>We focus on developing smart, sustainable technologies that shape a better and more connected future.
-
-</p>
+                    <h2>Atomo Innovation Pvt. Ltd. – Innovating for Tomorrow</h2>
+                    <p>We focus on developing smart, sustainable technologies that shape a better and more connected future.</p>
                     <a href="#">Read more →</a>
                 </div>
             </div>
         </div>
-
     </section>
 
     <section id="second-page" class="feature-insights">
         <div class="container">
             <h1>Feature Insights</h1>
-            
             <div class="ccc">
-            <div class="category-buttons">
-                <button class="active">All Insight</button>
-                <button>Innovation</button>
-                <button>Explained Simply</button>
-                <button>Market Trends & Insights</button>
-                <button>Cultural Values</button>
-                <button>Tech Vault</button>
-
+                <div class="category-buttons">
+                    <button class="active">All Insight</button>
+                    <button>Innovation</button>
+                    <button>Explained Simply</button>
+                    <button>Market Trends & Insights</button>
+                    <button>Cultural Values</button>
+                    <button>Tech Vault</button>
+                </div>
+                <div class="search-container">
+                    <input type="text" placeholder="Search blogs..." class="search-input">
+                    <button class="search-button">Search</button>
+                </div>
             </div>
-            <div class="search-container">
-                <input type="text" placeholder="Search blogs..." class="search-input">
-                <button class="search-button">Search</button>
-            </div>
-            </div>
-            
             <div class="cards">
-                <div class="card">
-                    <div class="card-header" style="background-color: #635e5e;">
-                        <h2>Title</h2>
-                    </div>
-                    <div class="card-body">
-                        <p class="category">Explained Simply</p>
-                        <h3>Subtitle</h3>
-                        <p>Paragraph</p>
-                        <div class="author">
-                            <img src="https://via.placeholder.com/40" alt="Author Image">
-                            <span>Name<br>position</span>
-                        </div>
-                        <p class="date">Date</p>
-                        <a href="#" class="read-more">Read more →</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #635e5e;">
-                        <h2>Title</h2>
-                    </div>
-                    <div class="card-body">
-                        <p class="category">Explained Simply</p>
-                        <h3>Subtitle</h3>
-                        <p>Paragraph</p>
-                        <div class="author">
-                            <img src="https://via.placeholder.com/40" alt="Author Image">
-                            <span>Name<br>position</span>
-                        </div>
-                        <p class="date">Date</p>
-                        <a href="#" class="read-more">Read more →</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #635e5e;">
-                        <h2>Title</h2>
-                    </div>
-                    <div class="card-body">
-                        <p class="category">Explained Simply</p>
-                        <h3>Subtitle</h3>
-                        <p>Paragraph</p>
-                        <div class="author">
-                            <img src="https://via.placeholder.com/40" alt="Author Image">
-                            <span>Name<br>position</span>
-                        </div>
-                        <p class="date">Date</p>
-                        <a href="#" class="read-more">Read more →</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #635e5e;">
-                        <h2>Title</h2>
-                    </div>
-                    <div class="card-body">
-                        <p class="category">Explained Simply</p>
-                        <h3>Subtitle</h3>
-                        <p>Paragraph</p>
-                        <div class="author">
-                            <img src="https://via.placeholder.com/40" alt="Author Image">
-                            <span>Name<br>position</span>
-                        </div>
-                        <p class="date">Date</p>
-                        <a href="#" class="read-more">Read more →</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #635e5e;">
-                        <h2>Title</h2>
-                    </div>
-                    <div class="card-body">
-                        <p class="category">Explained Simply</p>
-                        <h3>Subtitle</h3>
-                        <p>Paragraph</p>
-                        <div class="author">
-                            <img src="https://via.placeholder.com/40" alt="Author Image">
-                            <span>Name<br>position</span>
-                        </div>
-                        <p class="date">Date</p>
-                        <a href="#" class="read-more">Read more →</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #635e5e;">
-                        <h2>Title</h2>
-                    </div>
-                    <div class="card-body">
-                        <p class="category">Explained Simply</p>
-                        <h3>Subtitle</h3>
-                        <p>Paragraph</p>
-                        <div class="author">
-                            <img src="https://via.placeholder.com/40" alt="Author Image">
-                            <span>Name<br>position</span>
-                        </div>
-                        <p class="date">Date</p>
-                        <a href="#" class="read-more">Read more →</a>
-                    </div>
-                </div>
-                
+                <!-- Blog cards will be populated by blogs.js -->
             </div>
-                <button class="show-more-btn">Show More</button>
-    <script src="blogs.js"></script>
-
+            <button class="show-more-btn">Show More</button>
         </div>
     </section>
 
-   
     <section id="sixth-page">
         <footer id="footer">
             <div class="footer-top">
-
                 <div class="footer-brand">
                     <h2 class="company-name">Atomo Innovation PVT. LTD.</h2>
                     <p class="footer-tagline">Innovating the future of smart living</p>
@@ -216,18 +165,12 @@
                                 src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
                     </div>
                 </div>
-
                 <div class="footer-links">
                     <div class="link-group">
                         <h3 class="link-title">India</h3>
                         <ul>
-                            <li>W-406 4th Floor, Siddhraj Z Square Near Landmark Mall Kudasan Gandhinagar 382024 India
-                            </li>
-
-                            <li>AI Center of Excellence
-                                13th Floor, Gift Tower One, Gujarat International Finance Tec-City, Gandhinagar, Gujarat
-                                382355</li>
-
+                            <li>W-406 4th Floor, Siddhraj Z Square Near Landmark Mall Kudasan Gandhinagar 382024 India</li>
+                            <li>AI Center of Excellence 13th Floor, Gift Tower One, Gujarat International Finance Tec-City, Gandhinagar, Gujarat 382355</li>
                             <li>Email: <a href="mailto:hello@atomo.in">hello@atomo.in</a></li>
                         </ul>
                     </div>
@@ -240,7 +183,6 @@
                             <li><a href="/airowl_page/airowl.html">Airowl</a></li>
                         </ul>
                     </div>
-
                     <div class="link-group">
                         <h3 class="link-title">Quick Links</h3>
                         <ul>
@@ -253,11 +195,9 @@
                             <li><a href="#">Assisted By</a></li>
                         </ul>
                     </div>
-
                     <a href="/index.html" style="text-decoration: none; color: white;">
                         <p>© 2025 Atomo Innovation Pvt. Ltd. All rights reserved.</p>
                     </a>
-
                 </div>
             </div>
         </footer>
@@ -293,9 +233,7 @@
 
     <script src="mainindex.js"></script>
     <script src="popup.js"></script>
-    <script>
-
-    </script>
+    <script src="blogs.js"></script>
 </body>
 
 </html>
