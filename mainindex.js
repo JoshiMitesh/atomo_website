@@ -1,3 +1,17 @@
+// Detect the base URL dynamically
+const baseURL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? window.location.origin
+  : `http://${window.location.hostname}:5500`; // Adjust port if different
+
+// Example: Load blog content (if stored in a separate file or hardcoded)
+fetch(`${baseURL}/blogs_page`)
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById('blog-container').innerHTML = html; // Ensure you have a div with this ID
+  })
+  .catch(error => console.error('Error loading blogs:', error));
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // First Page: Electron "Learn More"
     const learnMoreButton = document.getElementById('learn-more');

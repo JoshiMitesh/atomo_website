@@ -1500,27 +1500,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     debugLog('Starting blog loading...');
     
-    let allBlogs = [];
-    let dataSource = 'server';
-    
-    try {
-      debugLog('Attempting to fetch from server...');
-      const response = await fetch('http://localhost:3001/api/blogs?_=' + Date.now());
-      if (!response.ok) throw new Error(`Server error: ${response.status}`);
-      allBlogs = await response.json();
-      debugLog(`Loaded ${allBlogs.length} blogs from server`);
-    } catch (serverError) {
-      debugLog(`Server fetch failed: ${serverError.message}`);
-      dataSource = 'fallback';
-      try {
-        debugLog('Attempting fallback to local JSON...');
-        const fallbackResponse = await fetch('../data/blogs.json');
-        allBlogs = await fallbackResponse.json();
-        debugLog(`Loaded ${allBlogs.length} blogs from fallback`);
-      } catch (fallbackError) {
-        throw new Error(`Both server and fallback failed: ${fallbackError.message}`);
-      }
-    }
+    // Fetch blogs from your Node.js server using your machine's IP
+    debugLog('Attempting to fetch from server...');
+    const response = await fetch('http://192.168.1.111:3001/api/blogs?_=' + Date.now());
+    if (!response.ok) throw new Error(`Server error: ${response.status}`);
+    const allBlogs = await response.json();
+    debugLog(`Loaded ${allBlogs.length} blogs from server`);
 
     const insightsContainer = document.querySelector('#second-page .cards');
     const header = document.createElement('h2');
@@ -1561,7 +1546,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       div.innerHTML = html || '';
       const text = div.textContent || div.innerText || '';
       const preview = text.substring(0, 100) + (text.length > 100 ? '...' : '');
-      // Wrap in a span to preserve inline styles
       return `<span>${preview}</span>`;
     }
 
@@ -1569,7 +1553,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const blogDetailPath = './blog-detail.html';
       insightsContainer.innerHTML = blogs.slice(0, visibleCount).map(blog => {
         const imageFile = blog.image || 'default-author.jpg';
-        const imagePath = `${dataSource === 'server' ? 'http://localhost:3001/uploads/' : './assets/'}${imageFile}`;
+        const imagePath = `http://192.168.1.111:3001/uploads/${imageFile}`;
         const previewText = getPreviewHTML(blog.content);
         const subtitle = blog.subtitle || 'No subtitle available';
         const author = blog.author || 'Anonymous';
