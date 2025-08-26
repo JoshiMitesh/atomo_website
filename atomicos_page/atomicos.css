@@ -1611,6 +1611,16 @@ body {
     }
 }
 
+.my-link{
+    text-decoration: none;
+    color: white;
+}
+
+#second-title{
+    font-size: 35px;
+    font-weight: 600;
+}
+
 /* ========== RESPONSIVE STYLES ========== */
 @media (max-width: 1024px) {
     #navbar ul {

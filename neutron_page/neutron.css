@@ -308,6 +308,7 @@ body {
     top: 11%;
     display: flex;
     justify-content: space-between;
+    z-index: 30;
 }
 
 #main-title {
@@ -1073,6 +1074,10 @@ body {
 
 }
 
+.w-full{
+    padding-top: 20px;
+}
+
 /* ========== FOURTH PAGE (FEATURES SLIDER) ========== */
 #fourth-page {
     position: relative;
@@ -1732,6 +1737,8 @@ body {
         opacity: 1;
     }
 
+
+
     #navbar a {
         font-size: 1rem;
         padding: 13px 1px;
@@ -1973,6 +1980,12 @@ body {
         height: auto;
     }
 
+}
+
+
+.my-link{
+    text-decoration: none;
+    color: white;
 }
 
 /* Second Page Header Styles */

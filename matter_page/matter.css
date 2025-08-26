@@ -394,6 +394,7 @@
     }
 
     #subtitle {
+        color: #3C3C3C; font-size: 30px;font-style: italic;
         font-size: 30px;
         font-weight: 400;
         padding-top: 28px;
@@ -402,6 +403,7 @@
         line-height: 1.5;
         text-align: right;
         max-width: 62%;
+
     }
 
     #description {
@@ -454,7 +456,9 @@
         display: none;
     }
 
-
+    .icon{
+        padding-top: 4vh;
+    }
 
     .grid-item .icon {
         width: 50px;
@@ -1857,6 +1861,10 @@
         }
     }
 
+    .my-link{
+    text-decoration: none;
+    color: white;
+}
 
 
     @media (max-width: 1500px) {

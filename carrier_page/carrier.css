@@ -542,6 +542,11 @@ color: #ffffff;
     margin-bottom: -18px;
 }
 
+.my-link{
+    text-decoration: none;
+    color: white;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
     .slide {

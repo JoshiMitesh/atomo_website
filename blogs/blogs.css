@@ -938,6 +938,11 @@ body {
     text-transform: uppercase;
 }
 
+.my-link{
+    text-decoration: none;
+    color: white;
+}
+
 .feature-insights .card .card-body {
     padding: 20px;
     text-align: left;

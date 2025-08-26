@@ -265,6 +265,11 @@ body {
     margin: 0;
 }
 
+.my-link{
+    text-decoration: none;
+    color: white;
+}
+
 .assisted-logos {
     display: flex;
     /* gap: 1.43vw; */

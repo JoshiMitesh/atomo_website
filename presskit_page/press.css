@@ -127,6 +127,12 @@ color: #ffffff;
     margin-bottom: -18px;
 }
 
+
+.my-link{
+    text-decoration: none;
+    color: white;
+}
+
 #navbar a {
     text-decoration: none;
     color: #181818;

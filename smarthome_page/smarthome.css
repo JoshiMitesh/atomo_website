@@ -27,6 +27,11 @@
         line-height: 1.6;
     }
 
+    .my-link{
+    text-decoration: none;
+    color: white;
+}
+
 
 
     .hero-content {

@@ -65,6 +65,7 @@ body {
     padding: 20px;
     background-color: transparent;
     z-index: 10;
+    
 }
 
 .hero-content {
@@ -138,6 +139,21 @@ body {
     vertical-align: middle;
     padding-left: 30px;
 }
+
+
+.airowllll{
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 15%;
+}
+
+
+.framer-text{
+    font-size: 46px; font-weight: 700; letter-spacing: -0.02em; line-height: 125%; color: rgb(22, 28, 45);
+}
+
+.framer-text1{
+    font-size: 18px; letter-spacing: -0.02em; line-height: 150%; color: rgb(82, 82, 82);
+}
+
 
 .alexa{
     width: 90px;
@@ -362,6 +378,7 @@ body {
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
 .partner-card:hover {
@@ -965,6 +982,11 @@ body {
 #hamburger.open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
     background-color:rgb(71, 160, 233);
+}
+
+.my-link{
+    text-decoration: none;
+    color: white;
 }
 
 /* Logo Container */

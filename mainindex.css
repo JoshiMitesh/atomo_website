@@ -646,6 +646,7 @@ color: #ffffff;
     .grid-button-container {
         flex-direction: column;
         gap: 10px;
+        padding-top: 21px;
     }
 
     .grid-button-container .action-button {
@@ -1417,6 +1418,11 @@ color: #ffffff;
 }
 #button-container1 {
     position: relative;
+}
+
+.my-link{
+    text-decoration: none;
+    color: white;
 }
 
 
