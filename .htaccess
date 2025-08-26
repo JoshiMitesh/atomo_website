@@ -1,0 +1,13 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Agar request kisi existing file/folder ka nahi hai
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# /electron_page → /electron_page/electron.html
+RewriteRule ^electron/?$ electron_page/electron.html [L]
+RewriteRule ^proton/?$ proton_page/proton.html [L]
+RewriteRule ^neutron/?$ neutron_page/neutron.html [L]
+RewriteRule ^about/?$ about_page/about.html [L]
