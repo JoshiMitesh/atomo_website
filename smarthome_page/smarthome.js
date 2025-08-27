@@ -7,57 +7,57 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeDeviceToggles() {
         const deviceImageMap = {
             'garage-door': {
-                statusOffSrc: '/smarthome_asset/lock.svg',
-                statusOnSrc: '/smarthome_asset/unlock.svg',
-                deviceIconOffSrc: '/smarthome_asset/offscreen/garage.svg',
+                statusOffSrc: '/smarthome_asset/lock.svg?v=2.0',
+                statusOnSrc: '/smarthome_asset/unlock.svg?v=2.0',
+                deviceIconOffSrc: '/smarthome_asset/offscreen/garage.svg?v=2.0',
                 deviceIconOnSrc: '/smarthome_asset/garagedoor.gif'
             },
             'jacuzzi': {
-                statusOffSrc: '/smarthome_asset/jacuzzistatusfade.svg',
-                statusOnSrc: '/smarthome_asset/jacuzzistatus.svg',
-                deviceIconOffSrc: '/smarthome_asset/offscreen/Jacuzzi.svg',
+                statusOffSrc: '/smarthome_asset/jacuzzistatusfade.svg?v=2.0',
+                statusOnSrc: '/smarthome_asset/jacuzzistatus.svg?v=2.0',
+                deviceIconOffSrc: '/smarthome_asset/offscreen/Jacuzzi.svg?v=2.0',
                 deviceIconOnSrc: '/smarthome_asset/jacuzzi.gif'
             },
             'fan': {
-                statusOffSrc: '/smarthome_asset/yellowfade.svg',
-                statusOnSrc: '/smarthome_asset/yellow.svg',
-                deviceIconOffSrc: '/smarthome_asset/offscreen/fan.svg',
+                statusOffSrc: '/smarthome_asset/yellowfade.svg?v=2.0',
+                statusOnSrc: '/smarthome_asset/yellow.svg?v=2.0',
+                deviceIconOffSrc: '/smarthome_asset/offscreen/fan.svg?v=2.0',
                 deviceIconOnSrc: '/smarthome_asset/fan.gif'
             },
             'light': {
-                statusOffSrc: '/smarthome_asset/yellowfade.svg',
-                statusOnSrc: '/smarthome_asset/yellow.svg',
-                deviceIconOffSrc: '/smarthome_asset/offscreen/Light.svg',
+                statusOffSrc: '/smarthome_asset/yellowfade.svg?v=2.0',
+                statusOnSrc: '/smarthome_asset/yellow.svg?v=2.0',
+                deviceIconOffSrc: '/smarthome_asset/offscreen/Light.svg?v=2.0',
                 deviceIconOnSrc: '/smarthome_asset/bulb.gif'
             },
             'ac': {
-                statusOffSrc: '/smarthome_asset/ACiconfade.svg',
-                statusOnSrc: '/smarthome_asset/ACiconfull.svg',
-                deviceIconOffSrc: '/smarthome_asset/offscreen/ac.svg',
+                statusOffSrc: '/smarthome_asset/ACiconfade.svg?v=2.0',
+                statusOnSrc: '/smarthome_asset/ACiconfull.svg?v=2.0',
+                deviceIconOffSrc: '/smarthome_asset/offscreen/ac.svg?v=2.0',
                 deviceIconOnSrc: '/smarthome_asset/AC.gif'
             },
             'motion-sensor': {
-                statusOffSrc: '/smarthome_asset/sensoriconfade.svg',
-                statusOnSrc: '/smarthome_asset/sensoricon.svg',
-                deviceIconOffSrc: '/smarthome_asset/offscreen/sensor.svg',
+                statusOffSrc: '/smarthome_asset/sensoriconfade.svg?v=2.0',
+                statusOnSrc: '/smarthome_asset/sensoricon.svg?v=2.0',
+                deviceIconOffSrc: '/smarthome_asset/offscreen/sensor.svg?v=2.0',
                 deviceIconOnSrc: '/smarthome_asset/motionsensor.gif'
             },
             'vacuum-robot': {
-                statusOffSrc: '/smarthome_asset/yellowfade.svg',
-                statusOnSrc: '/smarthome_asset/yellow.svg',
-                deviceIconOffSrc: '/smarthome_asset/offscreen/robot.svg',
+                statusOffSrc: '/smarthome_asset/yellowfade.svg?v=2.0',
+                statusOnSrc: '/smarthome_asset/yellow.svg?v=2.0',
+                deviceIconOffSrc: '/smarthome_asset/offscreen/robot.svg?v=2.0',
                 deviceIconOnSrc: '/smarthome_asset/robot.gif'
             },
             'car': {
-                statusOffSrc: '/smarthome_asset/lock.svg',
-                statusOnSrc: '/smarthome_asset/unlock.svg',
-                deviceIconOffSrc: '/smarthome_asset/offscreen/car.svg',
+                statusOffSrc: '/smarthome_asset/lock.svg?v=2.0',
+                statusOnSrc: '/smarthome_asset/unlock.svg?v=2.0',
+                deviceIconOffSrc: '/smarthome_asset/offscreen/car.svg?v=2.0',
                 deviceIconOnSrc: '/smarthome_asset/car.gif'
             },
             'door-lock': {
-                statusOffSrc: '/smarthome_asset/lock.svg',
-                statusOnSrc: '/smarthome_asset/unlock.svg',
-                deviceIconOffSrc: '/smarthome_asset/offscreen/lock.svg',
+                statusOffSrc: '/smarthome_asset/lock.svg?v=2.0',
+                statusOnSrc: '/smarthome_asset/unlock.svg?v=2.0',
+                deviceIconOffSrc: '/smarthome_asset/offscreen/lock.svg?v=2.0',
                 deviceIconOnSrc: '/smarthome_asset/doorlock.gif'
             }
         };

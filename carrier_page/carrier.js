@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Create 32 slides (4 original images multiplied by 8)
-        const slideImages = ['1.png', '2.png', '3.png', '4.png'];
+        const slideImages = ['1.png?v=1.0', '2.png?v=1.0', '3.png?v=1.0', '4.png?v=1.0'];
         let slidesHTML = '';
         
         // Multiply the slides by 8 (4 images × 8 = 32 slides)

@@ -1,3 +1,8 @@
+* {
+    font-display: swap;
+}
+
+
 /* Define a modern color palette */
 :root {
     --primary-color: #2b6cb0;

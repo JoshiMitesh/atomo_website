@@ -28,13 +28,13 @@ Disallow: /*.lock$
 
 # Allow asset files
 Allow: /assets/
-Allow: /*.css$
+Allow: /*.css?v=2.0$
 Allow: /*.js$
-Allow: /*.png$
+Allow: /*.png?v=1.0$
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.gif$
-Allow: /*.svg$
+Allow: /*.svg?v=2.0$
 Allow: /*.webp$
 Allow: /*.webm$
 
