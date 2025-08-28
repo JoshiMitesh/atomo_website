@@ -1583,7 +1583,7 @@ body {
     #electron-video {
         max-width: 135%;
         /* Full width on smaller screens */
-        margin-top: 23vh;
+        margin-top: 11vh;
     }
 
     .section-header1 h2 {
