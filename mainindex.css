@@ -288,22 +288,6 @@ color: #ffffff;
     animation: fadeInDown 1s ease-out;
 }
 
-#subtitle {
-    
-    position: absolute;
-    top: 28%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #000000;
-    font-size: 1.25rem;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    text-align: center;
-    z-index: 10;
-    animation: fadeInUp 1s ease-out 0.3s forwards;
-    opacity: 0;
-}
-
 #button-container {
     position: absolute;
     top: 36%;
@@ -1156,7 +1140,6 @@ color: #ffffff;
         font-size: 3.5rem;
     }
 
-    #subtitle,
     #second-subtitle,
     #third-subtitle,
     #fourth-subtitle {
@@ -1286,7 +1269,6 @@ color: #ffffff;
         top: 18%;
     }
 
-    #subtitle,
     #second-subtitle,
     #third-subtitle,
     #fourth-subtitle {
@@ -1339,7 +1321,6 @@ color: #ffffff;
         top: 6%;
         }
 
-    #subtitle,
     #second-subtitle,
     #third-subtitle,
     #fourth-subtitle {
@@ -1527,4 +1508,3 @@ color: #ffffff;
         font-size: 0.9rem;
     }
 }
-
