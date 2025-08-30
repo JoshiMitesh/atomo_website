@@ -4,8 +4,8 @@ const urlsToCache = [
     '/',
     '/index.html',
     '/assets/mainfavicon.ico',
-    '/assets/atomoheaderlogo.png?v=1.0',
-    '/assets/Atomo_link (1).png?v=1.0',
+    '/assets/atomoheaderlogo.png?v=1.1',
+    '/assets/Atomo_link (1).png?v=1.1',
     '/mainindex.css?v=2.0',
     '/mainindex.js?v=2.0',
     '/offline.html'
@@ -92,7 +92,7 @@ self.addEventListener('fetch', event => {
                         
                         // For images, return a placeholder if available
                         if (event.request.destination === 'image') {
-                            return caches.match('/assets/atomoheaderlogo.png?v=1.0')
+                            return caches.match('/assets/atomoheaderlogo.png?v=1.1')
                                 .then(response => response || new Response(''));
                         }
                         

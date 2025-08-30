@@ -30,11 +30,11 @@ Disallow: /*.lock$
 Allow: /assets/
 Allow: /*.css?v=2.0$
 Allow: /*.js$
-Allow: /*.png?v=1.0$
+Allow: /*.png?v=1.1$
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.gif$
-Allow: /*.svg?v=2.0$
+Allow: /*.svg?v=2.1$
 Allow: /*.webp$
 Allow: /*.webm$
 

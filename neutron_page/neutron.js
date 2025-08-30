@@ -338,52 +338,52 @@ document.addEventListener('DOMContentLoaded', function () {
         // Slide data
         const slidesData = [
             {
-                image: '/electron_page/Frame.svg?v=2.0',
+                image: '/electron_page/Frame.svg?v=2.1',
                 title: 'What Is Neutron?',
                 description: 'Neutron is Atomo Innovation’s entry-level smart home controller, designed for simplicity, efficiency, and seamless use in everyday homes.'
             },
             {
-                image: '/electron_page/Frame.svg?v=2.0',
+                image: '/electron_page/Frame.svg?v=2.1',
                 title: 'Why It Exists?',
                 description: 'Our mission is to make smart living accessible to all by providing essential home automation solutions at an affordable price point.'
             },
             {
-                image: '/electron_page/Frame.svg?v=2.0',
+                image: '/electron_page/Frame.svg?v=2.1',
                 title: "Who It's For?",
                 description: 'Perfect for first-time users, renters, and compact homes, Neutron offers easy, plug-and-play automation for hassle-free smart living.'
             },
             {
-                image: '/electron_page/Frame.svg?v=2.0',
+                image: '/electron_page/Frame.svg?v=2.1',
                 title: 'Designed for Daily Comfort.',
                 description: 'Effortlessly manages daily tasks such as lighting, fan control, remote switching, and basic sensor automation for convenient smart home control.'
             },
             {
-                image: '/electron_page/Frame.svg?v=2.0',
+                image: '/electron_page/Frame.svg?v=2.1',
                 title: 'Intuitive by Nature.',
                 description: 'With a simple app interface and easy setup, Neutron enables users of all ages to operate smart home controls effortlessly without technical skills.'
             },
             {
-                image: '/electron_page/Frame.svg?v=2.0',
+                image: '/electron_page/Frame.svg?v=2.1',
                 title: 'Silently Powerful.',
                 description: 'Neutron seamlessly blends into your lifestyle, offering smart, hassle-free control that operates smoothly without any fuss or complexity.'
             },
             {
-                image: '/electron_page/Frame.svg?v=2.0',
+                image: '/electron_page/Frame.svg?v=2.1',
                 title: 'Smart, Not Complicated.',
                 description: 'Provides the perfect balance of intelligence to automate your home efficiently, delivering smart control without overwhelming complexity.'
             },
             {
-                image: '/electron_page/Frame.svg?v=2.0',
+                image: '/electron_page/Frame.svg?v=2.1',
                 title: 'Future-Ready Starter Kit.', 
                 description: 'Neutron serves as your gateway into the Atomo ecosystem - start simple and upgrade to Proton or Electron as your smart home needs grow.'
             },
             {
-                image: '/electron_page/Frame.svg?v=2.0',
+                image: '/electron_page/Frame.svg?v=2.1',
                 title: 'Affordable, Yet Advanced.',
                 description: 'Despite its affordable price, Neutron supports essential protocols including WiFi, BLE, RF, and IR for versatile smart home connectivity.'
             },
             {
-                image: '/electron_page/Frame.svg?v=2.0',
+                image: '/electron_page/Frame.svg?v=2.1',
                 title: 'Built for India.',
                 description: 'Neutron is tailored to Indian power systems, appliance types, and everyday lifestyles - proudly engineered to meet local needs with reliability, efficiency, and smart functionality.'
             }
