@@ -1,23 +1,31 @@
-const fs = require('fs');
-const path = require('path');
-const cssMinify = require('css-minify');
+const CleanCSS = require('clean-css');
+const fs = require('fs-extra');
+const glob = require('glob');
 
-// Directory containing your CSS files
-const cssDir = './';
-
-// Get all CSS files
-fs.readdir(cssDir, (err, files) => {
-  if (err) throw err;
-  
-  files.forEach(file => {
-    if (path.extname(file) === '.css') {
-      const css = fs.readFileSync(path.join(cssDir, file), 'utf8');
-      const minified = cssMinify.minify(css);
-      
-      // Save minified version (you can keep original with .min.css)
-      fs.writeFileSync(path.join(cssDir, file.replace('.css', '.min.css')), minified);
-      
-      console.log(`Minified ${file}`);
-    }
-  });
+const cssFiles = glob.sync('**/*.css', {
+  ignore: ['node_modules/**', 'dist/**'] // ignore these folders
 });
+
+if (cssFiles.length === 0) {
+  console.log('No CSS files found to minify.');
+  process.exit(0);
+}
+
+console.log(`Found ${cssFiles.length} CSS files. Minifying...`);
+
+cssFiles.forEach(file => {
+  const css = fs.readFileSync(file, 'utf-8');
+  const output = new CleanCSS().minify(css);
+
+  if (output.errors.length) {
+    console.error(`Error minifying ${file}:`, output.errors);
+    return;
+  }
+
+  fs.writeFileSync(file, output.styles);
+  console.log(`Minified: ${file}`);
+});
+
+console.log('✅ All CSS files have been minified successfully!');
+
+//node minify-css.js -- to run the script

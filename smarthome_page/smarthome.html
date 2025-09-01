@@ -21,14 +21,14 @@
         property="twitter:description" />
     <meta content="https://atomo.in/smart-home/assets/social-smarthome-twitter.jpg" property="twitter:image" />
     <link href="/assets/mainfavicon.ico" rel="icon" type="image/png" />
-    <link href="smarthome.css?v=2.2" rel="stylesheet" />
-    <link href="smarthomesecondsection.css?v=2.2" media="print" onload="this.media='all'" rel="stylesheet" />
-    <link href="smarthome-ipad-responsive.css?v=2.2" media="print" onload="this.media='all'" rel="stylesheet" />
-    <script defer="" src="smarthome.js?v=2.2"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=2.2" media="print"
+    <link href="smarthome.css?v=2.3" rel="stylesheet" />
+    <link href="smarthomesecondsection.css?v=2.3" media="print" onload="this.media='all'" rel="stylesheet" />
+    <link href="smarthome-ipad-responsive.css?v=2.3" media="print" onload="this.media='all'" rel="stylesheet" />
+    <script defer="" src="smarthome.js?v=2.3"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=2.3" media="print"
         onload="this.media='all'" rel="stylesheet" />
     <link href="https://rsms.me/" rel="preconnect" />
-    <link href="https://rsms.me/inter/inter.css?v=2.2" media="print" onload="this.media='all'" rel="stylesheet" />
+    <link href="https://rsms.me/inter/inter.css?v=2.3" media="print" onload="this.media='all'" rel="stylesheet" />
     <style>
         .insights-video {
             pointer-events: none;
@@ -444,8 +444,8 @@
     </section>
     <section class="bulb-power-section">
         <!-- Include dependencies (remove if already in parent page) -->
-        <script defer="" src="https://cdn.jsdelivr.net/npm/chart.js?v=2.2"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=2.2" media="print"
+        <script defer="" src="https://cdn.js?v=2.3delivr.net/npm/chart.js?v=2.3"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=2.3" media="print"
             onload="this.media='all'" rel="stylesheet" />
         <!-- Updated styles -->
         <style>
@@ -778,7 +778,7 @@
                         <div class="graph-axis graph-axis-x" style="left: 50%;">15s</div>
                         <div class="graph-axis graph-axis-x" style="left: 70%;">20s</div>
                         <div class="graph-axis graph-axis-x" style="left: 90%;">25s</div>
-                        <!-- Chart.js canvas -->
+                        <!-- Chart.js?v=2.3 canvas -->
                         <canvas id="brightnessChart"></canvas>
                     </div>
                 </div>
@@ -793,7 +793,7 @@
                 const bulb = section.querySelector('#bulb');
                 const lightEffect = section.querySelector('#lightEffect');
 
-                // Initialize Chart.js for power consumption graph
+                // Initialize Chart.js?v=2.3 for power consumption graph
                 const canvas = section.querySelector('#brightnessChart');
                 const ctx = canvas.getContext('2d');
                 let brightnessChart = new Chart(ctx, {
@@ -1016,7 +1016,7 @@
             </div>
         </footer>
     </section>
-    <script defer="" src="smarthome.js?v=2.2"></script>
+    <script defer="" src="smarthome.js?v=2.3"></script>
     <script>
         document.addEventListener('contextmenu', function (e) {
             if (e.target.tagName === 'VIDEO') {
@@ -1041,7 +1041,7 @@
         const brightnessSlider = document.getElementById('brightnessSlider');
         const lightEffect = document.getElementById('lightEffect');
         
-        // Initialize Chart.js for power consumption graph
+        // Initialize Chart.js?v=2.3 for power consumption graph
         const canvas = document.getElementById('brightnessChart');
         const ctx = canvas.getContext('2d');
         
@@ -1167,14 +1167,14 @@
     });
 </script>
 
-<script src="/path/to/image-preload.js?v=1.0" defer></script>
+<script src="/path/to/image-preload.js?v=2.3" defer></script>
 
 <!-- Service Worker Registration -->
 <script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
         // Register with a new version number
-        navigator.serviceWorker.register('/sw.js?v=2.2')
+        navigator.serviceWorker.register('/sw.js?v=2.3')
             .then(function(registration) {
                 console.log('SW registered successfully with scope: ', registration.scope);
                 

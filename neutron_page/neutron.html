@@ -16,14 +16,14 @@
     <meta content="Voice-controlled smart home assistant with AI and AtomoLink for seamless, affordable automation." property="twitter:description"/>
     <meta content="https://atomo.in/neutron/assets/social-neutron-twitter.jpg" property="twitter:image"/>
     <link href="/assets/mainfavicon.ico" rel="icon" type="image/png"/>
-    <link href="/neutron_page/neutron.css?v=2.2" rel="stylesheet"/>
+    <link href="/neutron_page/neutron.css?v=2.3" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=2.2" media="print" onload="this.media='all'" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=2.3" media="print" onload="this.media='all'" rel="stylesheet"/>
     <link href="https://rsms.me/" rel="preconnect"/>
-    <link href="https://rsms.me/inter/inter.css?v=2.2" media="print" onload="this.media='all'" rel="stylesheet"/>
+    <link href="https://rsms.me/inter/inter.css?v=2.3" media="print" onload="this.media='all'" rel="stylesheet"/>
     <meta name="robots" content="index, follow"/>
     <script type="application/ld+json">
     {
@@ -354,7 +354,7 @@
 <button class="subscribe-button" id="subscribe-button">Subscribe</button>
 </div>
 </div>
-<script defer="" src="/neutron_page/neutron.js?v=2.2"></script>
+<script defer="" src="/neutron_page/neutron.js?v=2.3"></script>
 <script>
         document.addEventListener('DOMContentLoaded', function () {
             const video = document.getElementById('electron-video');
@@ -387,13 +387,13 @@
         gtag('js', new Date());
         gtag('config', 'G-9B6Y9XH11N');
 </script>
-<script src="/path/to/image-preload.js?v=1.0" defer></script>
+<script src="/path/to/image-preload.js?v=2.3" defer></script>
 <!-- Service Worker Registration -->
 <script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
         // Register with a new version number
-        navigator.serviceWorker.register('/sw.js?v=2.2')
+        navigator.serviceWorker.register('/sw.js?v=2.3')
             .then(function(registration) {
                 console.log('SW registered successfully with scope: ', registration.scope);
                 // Check if there's a new service worker waiting
@@ -416,7 +416,7 @@ if ('serviceWorker' in navigator) {
             .catch(function(error) {
                 console.log('SW registration failed: ', error);
             });
-        // Listen for controller changes (when SW takes control)
+        // Listen for controller changes (when SW takes control)   node update-css-version.js?v=2.3 to update the CSS version
         navigator.serviceWorker.addEventListener('controllerchange', () => {
             console.log('Controller changed, page will be reloaded');
             window.location.reload();
@@ -426,3 +426,4 @@ if ('serviceWorker' in navigator) {
 </script>
 </body>
 </html>
+
