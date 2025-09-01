@@ -1454,6 +1454,18 @@ color: #ffffff;
     margin: 0 0 20px 0;
 }
 
+/* Updated CSS for #main-title1 to preserve layout when using H1 */
+#main-title1 {
+    position: relative;
+    padding-top: 43vh;
+    font-size: 38px;
+    padding-bottom: 5px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0; /* Reset default H1 margins */
+    line-height: 1; /* Match div's default line-height */
+}
+
 .popup-content input[type="email"] {
     width: 100%;
     padding: 12px;
