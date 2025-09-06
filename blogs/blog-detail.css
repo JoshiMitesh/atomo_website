@@ -164,6 +164,65 @@ body {
     display: block
 }
 
+/* Make all blog content images responsive */
+#blog-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+}
+
+/* Override explicit width/height attributes */
+#blog-content img[width],
+#blog-content img[height] {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Handle Quill editor content specifically */
+#blog-content .ql-editor img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Alignment handling for Quill */
+#blog-content .ql-align-center img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#blog-content .ql-align-right img {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+#blog-content .ql-align-left img {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Ensure card body properly contains content */
+.card-body {
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Container adjustments for blog detail */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Card styling to prevent overflow */
+.card {
+    width: 100%;
+    overflow: hidden;
+}
+
 #navbar {
     position: absolute;
     top: 0;
